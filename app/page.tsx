@@ -1,9 +1,9 @@
-import { Carousel } from 'components/carousel';
 import { ThreeItemGrid } from 'components/grid/three-items';
+import HeroSection from 'components/hero-section';
 import Footer from 'components/layout/footer';
 
 export const metadata = {
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
+  description: 'healthy brain nutrition supplement',
   openGraph: {
     type: 'website'
   }
@@ -12,8 +12,8 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
+      <HeroSection />
       <ThreeItemGrid />
-      <Carousel />
       <Footer />
     </>
   );

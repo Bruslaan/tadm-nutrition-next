@@ -2,6 +2,7 @@ const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'selector',
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -12,6 +13,10 @@ module.exports = {
         fadeIn: {
           from: { opacity: 0 },
           to: { opacity: 1 }
+        },
+        marquee2: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' }
         },
         marquee: {
           '0%': { transform: 'translateX(0%)' },
@@ -26,7 +31,9 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn .3s ease-in-out',
         carousel: 'marquee 60s linear infinite',
-        blink: 'blink 1.4s both infinite'
+        blink: 'blink 1.4s both infinite',
+        marquee: 'marquee2 var(--duration) linear infinite',
+        'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
       }
     }
   },
