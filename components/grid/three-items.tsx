@@ -47,11 +47,16 @@ export async function ThreeItemGrid() {
     collection: 'meine-test-collection'
   });
 
-  const [firstProduct, secondProduct, thirdProduct] = homepageItems;
-
   return (
-    <section className="mx-auto grid max-w-screen-2xl gap-4 px-4 pb-4 md:grid-cols-6 md:grid-rows-2 lg:max-h-[calc(100vh-200px)]">
-      {firstProduct && <ThreeItemGridItem size="half" item={firstProduct} priority={true} />}
+    <section className="mx-auto max-w-screen-xl px-4">
+      <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white">
+        Order your package
+      </h1>
+      <div className="mx-auto grid gap-4 pb-4 md:grid-cols-6 md:grid-rows-2 lg:max-h-[calc(100vh-200px)]">
+        {homepageItems.map((item) => (
+          <ThreeItemGridItem size="half" item={item} priority={true} />
+        ))}
+      </div>
     </section>
   );
 }

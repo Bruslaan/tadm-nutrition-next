@@ -3,8 +3,8 @@ import FloatingIcon from './floating-icon';
 
 const HeroSection = () => {
   return (
-    <section className="min-h-[90vh] bg-teal-50 dark:bg-gray-900">
-      <div className="m-auto flex max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
+    <section className="flex min-h-[90vh] flex-col dark:bg-gray-900">
+      <div className="m-auto flex h-full w-full max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
         <div className="mr-auto flex-1 place-self-center lg:col-span-7">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
             Healthy, Organic Brain Nutrition
@@ -15,7 +15,7 @@ const HeroSection = () => {
 
           <a
             href="#"
-            className="hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg bg-black px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
+            className="hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 mt-5 inline-flex items-center justify-center rounded-lg bg-black px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
           >
             Shop Now
             <svg
