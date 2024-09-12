@@ -57,6 +57,7 @@ const VideoScrollSection = () => {
             ref={videoRef}
             className="object-cover object-center lg:h-screen"
             muted
+            autoPlay
             loop
           >
             <source
