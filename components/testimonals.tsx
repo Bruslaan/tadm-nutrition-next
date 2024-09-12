@@ -92,14 +92,14 @@ const ReviewCard = ({
 
 export function MarqueeDemo() {
   return (
-    <section className="w-full">
+    <section className="w-full pt-10">
       <div className="mx-auto flex max-w-screen-xl justify-center px-4">
         <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white">
           What our Customers think
         </h1>
       </div>
       <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-hidden">
-        <div className="flex flex-col items-center justify-center gap-4 overflow-auto py-7">
+        <div className="flex flex-col items-center justify-center gap-4 py-7">
           <div className="flex animate-carousel gap-4">
             {firstRowRepeat.map((review) => (
               <ReviewCard key={review.username} {...review} />
