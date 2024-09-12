@@ -10,7 +10,7 @@ function FadeInAnimation({
   withTransform?: boolean;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: '-50% 0px -30% 0px' }); // You can adjust this margin for triggering points.
+  const isInView = useInView(ref, { margin: '-40% 0px -30% 0px' }); // You can adjust this margin for triggering points.
 
   return (
     <motion.div

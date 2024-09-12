@@ -3,7 +3,7 @@ import FloatingIcon from './floating-icon';
 
 const HeroSection = () => {
   return (
-    <section className="flex min-h-[90vh] flex-col dark:bg-gray-900">
+    <section className="flex min-h-[90vh] flex-col overflow-hidden dark:bg-gray-900">
       <div className="m-auto flex h-full w-full max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
         <div className="mr-auto flex-1 place-self-center lg:col-span-7">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
@@ -48,13 +48,32 @@ const HeroSection = () => {
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="relative p-10">
-            <FloatingIcon className="right-0 top-0" size={70} />
+            <FloatingIcon className="right-0 top-0 w-14 blur-sm" size={70} />
             <FloatingIcon className="bottom-0 left-0 z-10 blur-sm" size={150} />
             <FloatingIcon className="left-0" size={50} />
+            <FloatingIcon className="-right-32 top-20 -rotate-45" size={120} />
+            <FloatingIcon
+              imageURL="/static/cumin.png"
+              className="-left-32 top-20 -rotate-45"
+              size={120}
+            />
+            <FloatingIcon
+              imageURL="/static/wallnut.png"
+              className="-left-32 bottom-20"
+              size={120}
+            />
 
             <Image
-              className="h-52 rotate-12 object-contain lg:h-96"
-              src="/static/hero-img.png"
+              className="custom-float absolute -top-12 right-0 h-20 w-auto object-cover lg:h-32"
+              src="/static/cap.png"
+              width={100}
+              height={100}
+              alt="cap image"
+            />
+
+            <Image
+              className="h-52 w-auto object-cover lg:h-96"
+              src="/static/hero-rotated.png"
               width={200}
               height={200}
               alt="hero image"

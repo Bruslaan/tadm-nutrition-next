@@ -8,16 +8,34 @@ import MobileMenu from './mobile-menu';
 
 export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
+  const mockedMenu = [
+    {
+      path: '',
+      title: 'Inside the tadm'
+    },
+    {
+      path: '',
+      title: 'Benefits'
+    },
+    {
+      path: '',
+      title: 'Faq'
+    },
+    {
+      path: '',
+      title: 'Knowledge Hub'
+    }
+  ];
 
   return (
     <nav className="relative flex items-center justify-between p-4">
       <div className="block flex-none md:hidden">
         <Suspense fallback={null}>
-          <MobileMenu menu={menu} />
+          <MobileMenu menu={mockedMenu} />
         </Suspense>
       </div>
       <div className="flex w-full items-center justify-center">
-        <div className="flex w-full md:max-w-3xl">
+        <div className="flex w-full justify-between md:max-w-3xl">
           <Link
             href="/"
             prefetch={true}
@@ -25,14 +43,14 @@ export async function Navbar() {
           >
             <LogoSquare />
           </Link>
-          {menu.length ? (
-            <ul className="hidden gap-6 text-sm md:flex md:items-center">
-              {menu.map((item: Menu) => (
+          {mockedMenu.length ? (
+            <ul className="hidden justify-between gap-6 text-sm md:flex md:items-center">
+              {mockedMenu.map((item: Menu) => (
                 <li key={item.title}>
                   <Link
                     href={item.path}
                     prefetch={true}
-                    className="text-neutral-500 underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
+                    className="font-semibold uppercase text-black underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
                   >
                     {item.title}
                   </Link>
