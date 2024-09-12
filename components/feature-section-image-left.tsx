@@ -8,13 +8,13 @@ const ImageLeftSection = () => {
         {/* Component */}
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
           {/* Item */}
-          <div className="h-full w-full items-center overflow-hidden rounded-xl">
+          <div className="h-full w-full max-w-xl items-center overflow-hidden rounded-xl">
             <Image
               width={500}
               height={500}
               src="/static/coolboy.webp"
               alt=""
-              className="mx-auto inline-block h-full w-full max-w-xl object-cover object-center"
+              className="mx-auto inline-block h-full w-full object-cover object-center"
             />
           </div>
           <div className="py-20">
@@ -35,7 +35,7 @@ const ImageLeftSection = () => {
             </p>
 
             <div className="mt-10">
-              <Link href="#" className="text-blue-500">
+              <Link href="#" className="text-lg text-blue-500">
                 Learn More →
               </Link>
             </div>

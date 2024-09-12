@@ -36,7 +36,10 @@ const VideoScrollSection = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={container} className="relative min-h-[500vh] bg-white pt-10 lg:min-h-[450vh]">
+    <section
+      ref={container}
+      className="relative min-h-[500vh] bg-white pt-10 md:min-h-[400vh] lg:min-h-[450vh]"
+    >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -55,7 +58,7 @@ const VideoScrollSection = () => {
           <video
             playsInline
             ref={videoRef}
-            className="object-cover object-center lg:h-screen"
+            className="custom-float object-cover object-center lg:h-screen"
             muted
             autoPlay
             loop
@@ -82,10 +85,10 @@ const VideoScrollSection = () => {
           <VideoScrollCard title="Walnut oil" color="from-orange-500 to-orange-200" />
         </FadeInAnimation>
         <FadeInAnimation>
-          <VideoScrollCard title="Hamp Oil" color="from-teal-500 to-teal-200" />
+          <VideoScrollCard title="Hamp Seed Oil" color="from-teal-500 to-teal-200" />
         </FadeInAnimation>
         <FadeInAnimation>
-          <VideoScrollCard title="Vegan" color="from-gray-600 to-gray-200" />
+          <VideoScrollCard title="Vegan Capsule" color="from-gray-600 to-gray-200" />
         </FadeInAnimation>
       </div>
     </section>

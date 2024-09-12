@@ -59,13 +59,13 @@ const FeatureSection = () => {
             </ul>
           </div>
           {/* Item */}
-          <div className="h-full w-full overflow-hidden rounded-xl">
+          <div className="h-full w-full max-w-xl overflow-hidden rounded-xl">
             <Image
               width={500}
               height={500}
               src="/static/footprint.png"
               alt=""
-              className="mx-auto inline-block h-full w-full max-w-xl object-cover"
+              className="mx-auto inline-block h-full w-full object-cover"
             />
           </div>
         </div>
