@@ -36,7 +36,7 @@ const VideoScrollSection = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={container} className="relative h-[450vh] bg-white pt-10">
+    <section ref={container} className="relative min-h-[500vh] bg-white pt-10 lg:min-h-[450vh]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

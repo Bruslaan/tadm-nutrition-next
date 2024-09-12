@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 const ImageLeftSection = () => {
   return (
     <section>
@@ -7,65 +8,37 @@ const ImageLeftSection = () => {
         {/* Component */}
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
           {/* Item */}
-          <div className="h-full w-full overflow-hidden rounded-xl">
+          <div className="h-full w-full items-center overflow-hidden rounded-xl">
             <Image
               width={500}
               height={500}
               src="/static/coolboy.webp"
               alt=""
-              className="mx-auto inline-block h-full w-full max-w-xl object-cover"
+              className="mx-auto inline-block h-full w-full max-w-xl object-cover object-center"
             />
           </div>
           <div className="py-20">
             <h2 className="mb-6 inline-block text-4xl font-bold md:mb-10 md:text-6xl lg:mb-12">
               Only cool People use it
             </h2>
-            <ul className="grid max-w-2xl grid-cols-2 sm:gap-5 lg:max-w-none">
-              <li className="flex flex-col p-5">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
-                  alt=""
-                  className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
-                />
-                <p className="mb-4 font-semibold">Support</p>
-                <p className="text-sm text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit.
-                </p>
-              </li>
-              <li className="flex flex-col p-5">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
-                  alt=""
-                  className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
-                />
-                <p className="mb-4 font-semibold">Organise</p>
-                <p className="text-sm text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit.
-                </p>
-              </li>
-              <li className="flex flex-col p-5">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
-                  alt=""
-                  className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
-                />
-                <p className="mb-4 font-semibold">Flexibility</p>
-                <p className="text-sm text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit.
-                </p>
-              </li>
-              <li className="flex flex-col p-5">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
-                  alt=""
-                  className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
-                />
-                <p className="mb-4 font-semibold">Speed</p>
-                <p className="text-sm text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit.
-                </p>
-              </li>
-            </ul>
+
+            <p className="text-xl text-neutral-700">
+              Schaffst du es immer dich gesund zu ernähren, besonders wenn die Zeit mal knapp ist?
+              In solchen Momenten greifen viele von uns oft zu Fast Food oder essen gar nichts –
+              nicht die beste Option. Genau hier ist yfood die perfekte Lösung: ausgewogen, schnell,
+              einfach und super lecker. Probiers mal!
+            </p>
+            <p className="mt-5 text-xl text-neutral-700">
+              Here we have the most powerful brian liquid oil that revolutionizes your memory. Here
+              we have the most powerful brian liquid oil that revolutionizes your memory. Here we
+              have the most powerful brian liquid oil that revolutionizes your memory.{' '}
+            </p>
+
+            <div className="mt-10">
+              <Link href="#" className="text-blue-500">
+                Learn More →
+              </Link>
+            </div>
           </div>
         </div>
       </div>
