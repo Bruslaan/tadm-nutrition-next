@@ -51,8 +51,8 @@ const VideoScrollSection = () => {
       </div>
       {/* Video */}
       <div className="sticky top-0 mr-auto h-[100vh] w-full overflow-hidden">
-        <div className="w-[160%] lg:w-full">
-          <video ref={videoRef} className="w-[200%] object-cover" muted>
+        <div className="w-[160%] lg:h-screen lg:w-auto">
+          <video ref={videoRef} className="object-cover object-center lg:h-screen" muted>
             <source
               src="https://res.cloudinary.com/dtvtmykeg/video/upload/v1718573595/tadm_skbkly.mp4"
               type="video/mp4"

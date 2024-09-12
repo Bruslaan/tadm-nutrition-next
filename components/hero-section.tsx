@@ -53,7 +53,7 @@ const HeroSection = () => {
             <FloatingIcon className="left-0" size={50} />
 
             <Image
-              className="h-52 rotate-12 object-contain lg:h-72"
+              className="h-52 rotate-12 object-contain lg:h-96"
               src="/static/hero-img.png"
               width={200}
               height={200}
