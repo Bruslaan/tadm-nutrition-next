@@ -51,7 +51,7 @@ const VideoScrollSection = () => {
       <div className="sticky top-0 mr-auto h-[100vh] w-full overflow-hidden">
         {/* <FloatingIcon className="right-10 top-[50%] z-10 rotate-45 blur-sm" size={100} /> */}
         <div className="w-[160%] lg:h-screen lg:w-auto">
-          <video ref={videoRef} className="object-cover object-center lg:h-screen" muted>
+          <video autoPlay ref={videoRef} className="object-cover object-center lg:h-screen" muted>
             <source
               src="https://res.cloudinary.com/dtvtmykeg/video/upload/v1718573595/tadm_skbkly.mp4"
               type="video/mp4"
