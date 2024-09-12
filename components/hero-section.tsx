@@ -51,7 +51,7 @@ const HeroSection = () => {
             <FloatingIcon className="right-0 top-0 w-14 blur-sm" size={70} />
             <FloatingIcon className="bottom-0 left-0 z-10 blur-sm" size={150} />
             <FloatingIcon className="left-0" size={50} />
-            <FloatingIcon className="-right-32 top-20 -rotate-45" size={120} />
+            <FloatingIcon className="-right-32 top-20 -rotate-45" size={80} />
             <FloatingIcon
               imageURL="/static/cumin.png"
               className="-left-32 top-20 -rotate-45"

@@ -1,5 +1,6 @@
 import FaqPage from 'components/faq-page';
 import FeatureSection from 'components/feature-section';
+import ImageLeftSection from 'components/feature-section-image-left';
 import { ThreeItemGrid } from 'components/grid/three-items';
 import HeroSection from 'components/hero-section';
 import Footer from 'components/layout/footer';
@@ -18,6 +19,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ThreeItemGrid />
+      <ImageLeftSection />
       <VideoScrollSection />
       <FeatureSection />
       <MarqueeDemo />
