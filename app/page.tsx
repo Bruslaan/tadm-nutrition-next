@@ -1,6 +1,7 @@
 import { ThreeItemGrid } from 'components/grid/three-items';
 import HeroSection from 'components/hero-section';
 import Footer from 'components/layout/footer';
+import { MarqueeDemo } from 'components/testimonals';
 
 export const metadata = {
   description: 'healthy brain nutrition supplement',
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ThreeItemGrid />
+      <MarqueeDemo />
       <Footer />
     </>
   );

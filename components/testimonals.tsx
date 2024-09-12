@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
-import Marquee from '/components/magicui/marquee';
+import clsx from 'clsx';
+import StarRating from './star-rating';
 
 const reviews = [
   {
@@ -43,6 +43,16 @@ const reviews = [
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
+const firstRowRepeat = [
+  ...firstRow,
+  ...firstRow,
+  ...secondRow,
+  ...secondRow,
+  ...firstRow,
+  ...firstRow,
+  ...secondRow,
+  ...secondRow
+];
 const ReviewCard = ({
   img,
   name,
@@ -56,7 +66,7 @@ const ReviewCard = ({
 }) => {
   return (
     <figure
-      className={cn(
+      className={clsx(
         'relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4',
         // light styles
         'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
@@ -65,12 +75,16 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        {/* <img className="rounded-full" width="32" height="32" alt="" src={img} /> */}
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">{name}</figcaption>
           <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
+      <div className="-ml-1 mt-2">
+        <StarRating />
+      </div>
+
       <blockquote className="mt-2 text-sm">{body}</blockquote>
     </figure>
   );
@@ -78,19 +92,26 @@ const ReviewCard = ({
 
 export function MarqueeDemo() {
   return (
-    <div className="bg-background relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border md:shadow-xl">
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white"></div>
-      <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white"></div>
-    </div>
+    <section className="w-full">
+      <div className="mx-auto flex max-w-screen-xl justify-center px-4">
+        <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white">
+          What our Customers think
+        </h1>
+      </div>
+      <div className="bg-background relative flex h-[500px] w-full flex-col items-center justify-center gap-4 overflow-hidden">
+        <div className="flex animate-carousel gap-4">
+          {firstRowRepeat.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </div>
+        <div className="animate-carousel_reverse flex gap-4">
+          {firstRowRepeat.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </div>
+        <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white"></div>
+        <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white"></div>
+      </div>
+    </section>
   );
 }
