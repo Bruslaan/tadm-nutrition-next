@@ -48,11 +48,11 @@ export async function ThreeItemGrid() {
   });
 
   return (
-    <section className="mx-auto max-w-screen-xl px-4">
+    <section className="mx-auto h-full min-h-[80vh] max-w-screen-xl">
       <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white">
         Order your package
       </h1>
-      <div className="mx-auto grid gap-4 pb-4 md:grid-cols-6 md:grid-rows-2 lg:max-h-[calc(100vh-200px)]">
+      <div className="mx-auto mt-10 grid gap-4 pb-4 md:grid-cols-6">
         {homepageItems.map((item) => (
           <ThreeItemGridItem size="half" item={item} priority={true} />
         ))}

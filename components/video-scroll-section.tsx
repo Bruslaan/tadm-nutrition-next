@@ -1,6 +1,8 @@
 'use client';
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+import FadeInAnimation from './fade-in-animation';
+import VideoScrollCard from './video-scroll-card';
 const videoJson = {
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
@@ -33,7 +35,7 @@ const VideoScrollSection = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={container} className="h-[400vh] bg-white pt-10">
+    <section ref={container} className="relative h-[450vh] bg-white pt-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -41,23 +43,44 @@ const VideoScrollSection = () => {
         }}
       />
       <div className="mx-auto flex max-w-screen-xl justify-center px-4">
-        <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white">
-          What is Tadm
-        </h1>
+        <FadeInAnimation withTransform>
+          <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white">
+            What is Tadm
+          </h1>
+        </FadeInAnimation>
       </div>
       {/* Video */}
-      <video
-        ref={videoRef}
-        className="sticky top-0 mr-auto h-[100vh] w-auto overflow-hidden object-cover object-left"
-        muted
-      >
-        <source
-          src="https://res.cloudinary.com/dtvtmykeg/video/upload/v1718573595/tadm_skbkly.mp4"
-          type="video/mp4"
-        />
-        <track src="/path/to/captions.vtt" kind="subtitles" srcLang="en" label="English" />
-        Your browser does not support the video tag.
-      </video>
+      <div className="sticky top-0 mr-auto h-[100vh] w-full overflow-hidden">
+        <div className="w-[160%] lg:w-full">
+          <video ref={videoRef} className="w-[200%] object-cover" muted>
+            <source
+              src="https://res.cloudinary.com/dtvtmykeg/video/upload/v1718573595/tadm_skbkly.mp4"
+              type="video/mp4"
+            />
+            <track src="/path/to/captions.vtt" kind="subtitles" srcLang="en" label="English" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      {/* Cards */}
+      <div className="absolute top-0 h-full w-full px-10 pt-80 lg:right-0 lg:max-w-[40%]">
+        <FadeInAnimation>
+          <VideoScrollCard />
+        </FadeInAnimation>
+        <FadeInAnimation>
+          <VideoScrollCard />
+        </FadeInAnimation>
+        <FadeInAnimation>
+          <VideoScrollCard />
+        </FadeInAnimation>
+        <FadeInAnimation>
+          <VideoScrollCard />
+        </FadeInAnimation>
+        <FadeInAnimation>
+          <VideoScrollCard />
+        </FadeInAnimation>
+      </div>
     </section>
   );
 };
