@@ -1,3 +1,4 @@
+import FaqPage from 'components/faq-page';
 import { ThreeItemGrid } from 'components/grid/three-items';
 import HeroSection from 'components/hero-section';
 import Footer from 'components/layout/footer';
@@ -18,6 +19,7 @@ export default function HomePage() {
       <ThreeItemGrid />
       <VideoScrollSection />
       <MarqueeDemo />
+      <FaqPage />
       <Footer />
     </>
   );
