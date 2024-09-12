@@ -3,40 +3,40 @@ import StarRating from './star-rating';
 
 const reviews = [
   {
-    name: 'Jack',
-    username: '@jack',
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: 'https://avatar.vercel.sh/jack'
+    name: 'Sarah',
+    username: '@sarah',
+    body: 'I was skeptical at first, but after using this for a few weeks, I definitely feel more focused. The fact that it has algae-based Omega-3 and cumin oil makes it a unique combination. I’m happy with the results.',
+    img: 'https://avatar.vercel.sh/sarah'
   },
   {
-    name: 'Jill',
-    username: '@jill',
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: 'https://avatar.vercel.sh/jill'
+    name: 'David',
+    username: '@david',
+    body: 'I’ve tried a lot of supplements, but this one really stands out. I feel more mentally clear and less foggy. The algae oil is a nice touch compared to fish oil.',
+    img: 'https://avatar.vercel.sh/david'
   },
   {
-    name: 'John',
-    username: '@john',
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: 'https://avatar.vercel.sh/john'
+    name: 'Emma',
+    username: '@emma',
+    body: 'This brain nutrition product has made a noticeable difference in my concentration levels. The combination of Omega-3 from algae oil and cumin oil works wonders.',
+    img: 'https://avatar.vercel.sh/emma'
   },
   {
-    name: 'Jane',
-    username: '@jane',
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: 'https://avatar.vercel.sh/jane'
+    name: 'Michael',
+    username: '@michael',
+    body: 'I love how natural this supplement is. I can feel the difference when I’m working or studying. My focus has definitely improved since I started taking it.',
+    img: 'https://avatar.vercel.sh/michael'
   },
   {
-    name: 'Jenny',
-    username: '@jenny',
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: 'https://avatar.vercel.sh/jenny'
+    name: 'Lily',
+    username: '@lily',
+    body: 'This product is amazing! It has improved my cognitive function and I no longer feel sluggish throughout the day. The algae oil is a game changer.',
+    img: 'https://avatar.vercel.sh/lily'
   },
   {
-    name: 'James',
-    username: '@james',
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: 'https://avatar.vercel.sh/james'
+    name: 'Ethan',
+    username: '@ethan',
+    body: 'I didn’t expect such fast results. After just a week, I noticed that I was thinking more clearly and had more energy. The combination of algae oil and cumin oil is perfect. Highly recommend!',
+    img: 'https://avatar.vercel.sh/ethan'
   }
 ];
 
@@ -98,17 +98,20 @@ export function MarqueeDemo() {
           What our Customers think
         </h1>
       </div>
-      <div className="bg-background relative flex h-[500px] w-full flex-col items-center justify-center gap-4 overflow-hidden">
-        <div className="flex animate-carousel gap-4">
-          {firstRowRepeat.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
+      <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-hidden">
+        <div className="flex flex-col items-center justify-center gap-4 overflow-auto py-7">
+          <div className="flex animate-carousel gap-4">
+            {firstRowRepeat.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </div>
+          <div className="animate-carousel_reverse flex gap-4">
+            {firstRowRepeat.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </div>
         </div>
-        <div className="animate-carousel_reverse flex gap-4">
-          {firstRowRepeat.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </div>
+
         <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white"></div>
         <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white"></div>
       </div>

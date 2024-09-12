@@ -42,7 +42,7 @@ const HeroSection = () => {
             className="object-contain"
             src="/static/vegan.png"
             width={150}
-            height={150}
+            height={20}
             alt="vegan icon"
           />
         </div>

@@ -20,11 +20,11 @@ module.exports = {
         },
         marquee: {
           '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' }
+          '100%': { transform: 'translateX(-50%)' }
         },
         marquee_reverse: {
           '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(100%)' }
+          '100%': { transform: 'translateX(50%)' }
         },
         blink: {
           '0%': { opacity: 0.2 },
@@ -34,8 +34,8 @@ module.exports = {
       },
       animation: {
         fadeIn: 'fadeIn .3s ease-in-out',
-        carousel: 'marquee 500s linear infinite',
-        carousel_reverse: 'marquee_reverse 500s linear infinite',
+        carousel: 'marquee 200s linear infinite',
+        carousel_reverse: 'marquee_reverse 200s linear infinite',
         blink: 'blink 1.4s both infinite',
         marquee: 'marquee2 var(--duration) linear infinite',
         'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'

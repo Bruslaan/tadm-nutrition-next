@@ -8,6 +8,15 @@
   }
 }
 
+.animate-carousel:hover {
+  animation-play-state: paused;
+}
+
+.animate-carousel_reverse:hover {
+  animation-play-state: paused;
+}
+
+
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading='lazy'] {
     clip-path: inset(0.6px);
