@@ -4,7 +4,7 @@ import { ReactNode, useRef } from 'react';
 
 function FadeInAnimation({ children }: { children: ReactNode }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: '0% 0px -30% 0px' }); // You can adjust this margin for triggering points.
+  const isInView = useInView(ref, { margin: '-40% 0px -30% 0px' }); // You can adjust this margin for triggering points.
 
   return (
     <motion.div

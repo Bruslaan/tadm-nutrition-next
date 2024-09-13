@@ -1,3 +1,4 @@
+import CallToActionBanner from 'components/call-to-action-banner';
 import FaqPage from 'components/faq-page';
 import FeatureSection from 'components/feature-section';
 import ImageLeftSection from 'components/feature-section-image-left';
@@ -23,6 +24,7 @@ export default function HomePage() {
       <VideoScrollSection />
       <FeatureSection />
       <MarqueeDemo />
+      <CallToActionBanner />
       <FaqPage />
       <Footer />
     </>

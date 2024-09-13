@@ -23,14 +23,11 @@ const VideoScrollCard = ({ title, color }: { title: string; color: string }) => 
         most powerful brian liquid oil that revolutionizes your memory.{' '}
       </p>
       <div className="mt-5 flex gap-4">
-        <span className="inline-flex items-center gap-x-1.5 rounded-full border border-green-600 px-3 py-1.5 text-xs font-medium text-green-600 dark:text-green-500">
-          Badge
+        <span className="inline-flex items-center gap-x-1.5 rounded-full border px-3 py-1.5 text-xs font-medium text-green-600 dark:text-green-500">
+          Power brain
         </span>
-        <span className="inline-flex items-center gap-x-1.5 rounded-full border border-green-600 px-3 py-1.5 text-xs font-medium text-green-600 dark:text-green-500">
-          Badge
-        </span>
-        <span className="inline-flex items-center gap-x-1.5 rounded-full border border-green-600 px-3 py-1.5 text-xs font-medium text-green-600 dark:text-green-500">
-          Badge
+        <span className="inline-flex items-center gap-x-1.5 rounded-full border px-3 py-1.5 text-xs font-medium text-green-600 dark:text-green-500">
+          Eye sight
         </span>
       </div>
       <div className="mt-5">
