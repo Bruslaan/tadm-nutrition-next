@@ -1,5 +1,7 @@
+import CallToActionBanner from 'components/call-to-action-banner';
 import ImageLeftSection from 'components/feature-section-image-left';
 import NatureHeroSection from './nature-hero-section';
+import RecycleSection from './recycle-section';
 
 export const metadata = {
   title: 'Nature Page',
@@ -11,6 +13,10 @@ const NaturePage = () => {
     <>
       <NatureHeroSection />
       <ImageLeftSection imageURL="/static/footprint.png" />
+      <RecycleSection />
+      <br />
+      <CallToActionBanner />
+      <br />
     </>
   );
 };

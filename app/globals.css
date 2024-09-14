@@ -16,6 +16,10 @@
   animation-play-state: paused;
 }
 
+.nature_green {
+  background-color: #F8FCEE;
+}
+
 
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading='lazy'] {
