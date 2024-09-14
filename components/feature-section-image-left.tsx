@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-const ImageLeftSection = () => {
+const ImageLeftSection = ({ imageURL }: { imageURL: string }) => {
   return (
     <section>
       {/* Container */}
@@ -12,7 +12,7 @@ const ImageLeftSection = () => {
             <Image
               width={500}
               height={500}
-              src="/static/coolboy.webp"
+              src={imageURL}
               alt=""
               className="mx-auto inline-block h-full w-full object-cover object-center"
             />

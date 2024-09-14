@@ -3,7 +3,7 @@ import FloatingIcon from './floating-icon';
 
 const HeroSection = () => {
   return (
-    <section className="flex min-h-[90vh] flex-col overflow-hidden dark:bg-gray-900">
+    <section className="flex min-h-screen flex-col overflow-hidden dark:bg-gray-900">
       <div className="m-auto flex h-full w-full max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
         <div className="mr-auto flex-1 place-self-center lg:col-span-7">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
