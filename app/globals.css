@@ -37,6 +37,25 @@ button {
   animation: float 5s infinite;
 }
 
+.custom-breath {
+  animation: breath 5s infinite;
+}
+
+@keyframes breath {
+  0% {
+    scale: 0.98
+  }
+
+  50% {
+    scale: 1
+  }
+
+
+  100% {
+    scale: 0.98
+  }
+}
+
 @keyframes float {
   0% {
     transform: translatey(0px);
