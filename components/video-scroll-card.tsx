@@ -1,7 +1,15 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-const VideoScrollCard = ({ title, color }: { title: string; color: string }) => {
+const VideoScrollCard = ({
+  title,
+  color,
+  urlTo
+}: {
+  title: string;
+  color: string;
+  urlTo?: string;
+}) => {
   return (
     <div
       className="relative flex flex-col gap-3 rounded-lg bg-white p-4"
@@ -30,11 +38,13 @@ const VideoScrollCard = ({ title, color }: { title: string; color: string }) => 
           Eye sight
         </span>
       </div>
-      <div className="mt-5">
-        <Link href="#" className="text-blue-500">
-          Learn More →
-        </Link>
-      </div>
+      {urlTo && (
+        <div className="mt-5">
+          <Link href={urlTo} className="text-blue-500">
+            Learn More →
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

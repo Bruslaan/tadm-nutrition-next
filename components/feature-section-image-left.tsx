@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-const ImageLeftSection = ({ imageURL }: { imageURL: string }) => {
+const ImageLeftSection = ({ imageURL, linkTo }: { imageURL: string; linkTo?: string }) => {
   return (
     <section>
       {/* Container */}
@@ -19,7 +19,7 @@ const ImageLeftSection = ({ imageURL }: { imageURL: string }) => {
           </div>
           <div className="py-20">
             <h2 className="mb-6 inline-block text-4xl font-bold md:mb-10 md:text-6xl lg:mb-12">
-              Only cool People use it
+              With nature in mind
             </h2>
 
             <p className="text-xl text-neutral-700">
@@ -33,12 +33,13 @@ const ImageLeftSection = ({ imageURL }: { imageURL: string }) => {
               we have the most powerful brian liquid oil that revolutionizes your memory. Here we
               have the most powerful brian liquid oil that revolutionizes your memory.{' '}
             </p>
-
-            <div className="mt-10">
-              <Link href="#" className="text-lg text-blue-500">
-                Learn More →
-              </Link>
-            </div>
+            {linkTo && (
+              <div className="mt-10">
+                <Link href={linkTo} className="text-lg text-blue-500">
+                  Learn More →
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

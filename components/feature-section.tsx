@@ -1,5 +1,5 @@
 import Image from 'next/image';
-const FeatureSection = () => {
+const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
   return (
     <section>
       {/* Container */}
@@ -8,8 +8,8 @@ const FeatureSection = () => {
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
           {/* Item */}
           <div className="py-20">
-            <h2 className="mb-6 inline-block bg-gradient-to-r from-green-400 to-green-200 bg-clip-text text-4xl font-bold text-transparent md:mb-10 md:text-6xl lg:mb-12">
-              With Nature in Mind
+            <h2 className="mb-6 inline-block bg-gradient-to-r to-green-200 bg-clip-text text-4xl font-bold text-neutral-900 text-transparent md:mb-10 md:text-6xl lg:mb-12">
+              Some mulate people use it
             </h2>
             <ul className="grid max-w-2xl grid-cols-2 sm:gap-5 lg:max-w-none">
               <li className="flex flex-col p-5">
@@ -63,7 +63,7 @@ const FeatureSection = () => {
             <Image
               width={500}
               height={500}
-              src="/static/footprint.png"
+              src={imageUrl}
               alt=""
               className="mx-auto inline-block h-full w-full object-cover"
             />

@@ -76,16 +76,28 @@ const VideoScrollSection = () => {
       {/* Cards */}
       <div className="absolute top-0 h-full w-full px-10 pt-80 lg:right-0 lg:max-w-[40%]">
         <FadeInAnimation>
-          <VideoScrollCard title="Black seed oil" color="from-blue-500 to-blue-200" />
+          <VideoScrollCard
+            urlTo="/cumin"
+            title="Black seed oil"
+            color="from-blue-500 to-blue-200"
+          />
         </FadeInAnimation>
         <FadeInAnimation>
-          <VideoScrollCard title="Algae Oil" color="from-green-500 to-green-200" />
+          <VideoScrollCard urlTo="/algae" title="Algae Oil" color="from-green-500 to-green-200" />
         </FadeInAnimation>
         <FadeInAnimation>
-          <VideoScrollCard title="Walnut oil" color="from-orange-500 to-orange-200" />
+          <VideoScrollCard
+            urlTo="/walnut"
+            title="Walnut oil"
+            color="from-orange-500 to-orange-200"
+          />
         </FadeInAnimation>
         <FadeInAnimation>
-          <VideoScrollCard title="Hamp Seed Oil" color="from-teal-500 to-teal-200" />
+          <VideoScrollCard
+            urlTo="/cannabis"
+            title="Hamp Seed Oil"
+            color="from-teal-500 to-teal-200"
+          />
         </FadeInAnimation>
         <FadeInAnimation>
           <VideoScrollCard title="Vegan Capsule" color="from-gray-600 to-gray-200" />

@@ -20,9 +20,9 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ThreeItemGrid />
-      <ImageLeftSection imageURL="/static/coolboy.webp" />
+      <FeatureSection imageUrl="/static/coolboy.webp" />
       <VideoScrollSection />
-      <FeatureSection />
+      <ImageLeftSection linkTo="/nature" imageURL="/static/footprint.png" />
       <MarqueeDemo />
       <CallToActionBanner />
       <FaqPage />
