@@ -8,7 +8,7 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
           {/* Item */}
           <div className="py-20">
-            <h2 className="mb-6 inline-block bg-gradient-to-r to-green-200 bg-clip-text text-4xl font-bold text-neutral-900 text-transparent md:mb-10 md:text-6xl lg:mb-12">
+            <h2 className="mb-6 inline-block bg-clip-text text-4xl font-bold text-neutral-900 text-transparent md:mb-10 md:text-6xl lg:mb-12">
               Some mulate people use it
             </h2>
             <ul className="grid max-w-2xl grid-cols-2 sm:gap-5 lg:max-w-none">
