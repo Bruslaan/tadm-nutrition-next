@@ -22,7 +22,7 @@ export async function Navbar() {
       title: 'Faq'
     },
     {
-      path: '',
+      path: 'https://blog.tadm-nutrition.com/de/blog',
       title: 'Knowledge Hub'
     }
   ];
