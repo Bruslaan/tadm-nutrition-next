@@ -94,24 +94,25 @@ export function MarqueeDemo() {
   return (
     <section className="min-h-screen w-full pt-10">
       <div className="mx-auto flex max-w-screen-xl justify-center px-4">
-        <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white">
+        <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
           What our Customers think
         </h1>
       </div>
-      <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-hidden">
-        <div className="flex flex-col items-center justify-center gap-4 py-7">
-          <div className="flex animate-carousel gap-4">
-            {firstRowRepeat.map((review) => (
-              <ReviewCard key={review.username} {...review} />
-            ))}
-          </div>
-          <div className="animate-carousel_reverse flex gap-4">
-            {firstRowRepeat.map((review) => (
-              <ReviewCard key={review.username} {...review} />
-            ))}
+      <div className="relative w-full">
+        <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-scroll">
+          <div className="flex flex-col items-center justify-center gap-4 py-7">
+            <div className="flex animate-carousel gap-4">
+              {firstRowRepeat.map((review) => (
+                <ReviewCard key={review.username} {...review} />
+              ))}
+            </div>
+            <div className="flex animate-carousel_reverse gap-4">
+              {firstRowRepeat.map((review) => (
+                <ReviewCard key={review.username} {...review} />
+              ))}
+            </div>
           </div>
         </div>
-
         <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white"></div>
         <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white"></div>
       </div>
