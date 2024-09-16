@@ -5,6 +5,7 @@ const TableSection = () => {
         <div className="">
           <h1 className="text-5xl font-semibold">Recycle and reuse.</h1>
           <br />
+          <br />
 
           {/* table */}
           <div className="rounded-2xl bg-white p-2">

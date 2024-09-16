@@ -4,7 +4,7 @@ import Link from 'next/link';
 const VideoScrollCard = ({ title, color }: { title: string; color: string }) => {
   return (
     <div
-      className="flex flex-col gap-3 rounded-lg bg-white p-4"
+      className="relative flex flex-col gap-3 rounded-lg bg-white p-4"
       style={{
         marginBlock: '30vh'
       }}
