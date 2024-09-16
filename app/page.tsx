@@ -22,6 +22,8 @@ export default function HomePage() {
       <ThreeItemGrid />
       <FeatureSection imageUrl="/static/coolboy.webp" />
       <VideoScrollSection />
+      <br />
+      <br />
       <ImageLeftSection linkTo="/nature" imageURL="/static/footprint.png" />
       <MarqueeDemo />
       <CallToActionBanner />

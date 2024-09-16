@@ -24,11 +24,11 @@ const FaqPage = () => {
   ];
 
   return (
-    <div className="relative min-h-screen w-full bg-white">
+    <section id="faq" className="relative min-h-screen w-full bg-white">
       <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
       <div className="relative z-10 mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto flex max-w-screen-xl justify-center px-4">
-          <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white">
+          <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
             What our Customers think
           </h1>
         </div>
@@ -97,7 +97,7 @@ const FaqPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -37,6 +37,7 @@ const VideoScrollSection = () => {
 
   return (
     <section
+      id="inside-tadm"
       ref={container}
       className="relative min-h-[500vh] bg-white pt-10 md:min-h-[400vh] lg:min-h-[450vh]"
     >
