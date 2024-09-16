@@ -81,8 +81,8 @@ export default async function ProductPage({ params }: { params: { handle: string
         }}
       />
       <div className="mx-auto max-w-screen-2xl bg-blue-50 px-4 pt-28">
-        <div className="flex min-h-screen flex-col rounded-lg p-8 md:p-12 lg:flex-row lg:gap-8">
-          <div className="h-full w-full lg:w-[50%]">
+        <div className="flex flex-col gap-8 rounded-lg p-8 md:flex-row md:p-12">
+          <div className="h-full w-full md:w-[50%]">
             <Suspense
               fallback={
                 <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
@@ -97,7 +97,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             </Suspense>
           </div>
 
-          <div className="h-full p-10 lg:w-[50%]">
+          <div className="mx-auto h-full w-full md:w-[40%]">
             <Suspense fallback={null}>
               <ProductDescription product={product} />
             </Suspense>
