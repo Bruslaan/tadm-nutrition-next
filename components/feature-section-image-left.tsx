@@ -4,7 +4,7 @@ const ImageLeftSection = ({ imageURL }: { imageURL: string }) => {
   return (
     <section>
       {/* Container */}
-      <div className="mx-auto w-full max-w-7xl px-5 py-12 md:px-10 md:py-20">
+      <div className="mx-auto mb-10 w-full max-w-7xl px-5 md:px-10">
         {/* Component */}
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
           {/* Item */}

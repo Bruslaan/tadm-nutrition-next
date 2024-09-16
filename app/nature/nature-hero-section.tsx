@@ -16,7 +16,7 @@ const NatureHeroSection = () => {
 
       <div className="absolute bottom-10 z-10 flex flex-col items-center justify-center gap-3 text-white">
         <span className="font-thin uppercase">LEARN More</span>
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-xl text-black">
+        <span className="flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-white text-xl text-black">
           ↓
         </span>
       </div>
