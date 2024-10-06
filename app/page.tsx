@@ -1,7 +1,6 @@
 import CallToActionBanner from 'components/call-to-action-banner';
 import FaqPage from 'components/faq-page';
 import FeatureSection from 'components/feature-section';
-import ImageLeftSection from 'components/feature-section-image-left';
 import { ThreeItemGrid } from 'components/grid/three-items';
 import HeroSection from 'components/hero-section';
 import Footer from 'components/layout/footer';
@@ -24,7 +23,6 @@ export default function HomePage() {
       <VideoScrollSection />
       <br />
       <br />
-      <ImageLeftSection linkTo="/nature" imageURL="/static/footprint.png" />
       <MarqueeDemo />
       <CallToActionBanner />
       <FaqPage />

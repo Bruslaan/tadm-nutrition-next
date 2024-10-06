@@ -14,7 +14,7 @@ export default function LogoSquare({ size }: { size?: 'sm' | undefined }) {
         alt="logo"
         width={200}
         height={200}
-        style={{ clipPath: 'inset(0px)' }}
+        style={{ clipPath: 'inset(-2px)' }}
       ></Image>
     </div>
   );
