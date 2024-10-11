@@ -80,30 +80,8 @@ export default async function ProductPage({ params }: { params: { handle: string
           __html: JSON.stringify(productJsonLd)
         }}
       />
-      <div className="mx-auto max-w-screen-2xl px-4 pt-28">
-        <div className="flex flex-col gap-8 rounded-lg p-8 md:flex-row md:p-12">
-          <div className="h-full w-full md:w-[50%]">
-            <Suspense
-              fallback={
-                <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
-              }
-            >
-              <Gallery
-                images={product.images.slice(0, 5).map((image: Image) => ({
-                  src: image.url,
-                  altText: image.altText
-                }))}
-              />
-            </Suspense>
-          </div>
-
-          <div className="mx-auto h-full w-full md:w-[40%]">
-            <Suspense fallback={null}>
-              <ProductDescription product={product} />
-            </Suspense>
-          </div>
-        </div>
-
+      <div className="min-h-screen mt-20 max-w-3xl mx-auto flex flex-col gap-4">
+        <ProductCard product={product} />
         <RelatedProducts id={product.id} />
       </div>
       <Footer />
@@ -111,40 +89,73 @@ export default async function ProductPage({ params }: { params: { handle: string
   );
 }
 
-async function RelatedProducts({ id }: { id: string }) {
+
+const ProductCard = ({product}) =>{
+  return (
+      <div className="flex w-full  justify-center items-center rounded-2xl border overflow-hidden">
+        <div className="h-full w-full object-cover">
+          <Suspense
+              fallback={
+                <div className=""/>
+              }
+          >
+            <Gallery
+                images={product.images.slice(0, 5).map((image: Image) => ({
+                  src: image.url,
+                  altText: image.altText
+                }))}
+            />
+          </Suspense>
+        </div>
+
+        <div className="w-full p-4">
+          <Suspense fallback={null}>
+            <ProductDescription product={product}/>
+          </Suspense>
+        </div>
+      </div>
+
+  )
+}
+
+async function RelatedProducts({id}: { id: string }) {
   const relatedProducts = await getProductRecommendations(id);
 
   if (!relatedProducts.length) return null;
 
   return (
-    <div className="mx-auto w-full max-w-7xl py-8">
-      <h2 className="mb-4 text-4xl font-bold">You may also like</h2>
-      <ul className="flex w-full gap-4 overflow-x-auto pt-1">
-        {relatedProducts.map((product) => (
-          <li
-            key={product.handle}
-            className="aspect-square w-full flex-none min-[475px]:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"
-          >
-            <Link
-              className="relative h-full w-full"
-              href={`/product/${product.handle}`}
-              prefetch={true}
-            >
-              <GridTileImage
-                alt={product.title}
-                label={{
-                  title: product.title,
-                  amount: product.priceRange.maxVariantPrice.amount,
-                  currencyCode: product.priceRange.maxVariantPrice.currencyCode
-                }}
-                src={product.featuredImage?.url}
-                fill
-                sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, (min-width: 475px) 50vw, 100vw"
-              />
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+
+      relatedProducts.map((product) => (
+            <ProductCard product={product}/>
+        ))
+    //   <div className="mx-auto w-full max-w-7xl py-8">
+    //     {/*<h2 className="mb-4 text-4xl font-bold">You may also like</h2>*/}
+    //     <ul className="flex flex-col w-full gap-4 overflow-x-auto pt-1">
+    //       {relatedProducts.map((product) => (
+    //           <li
+    //               key={product.handle}
+    //               className="aspect-square w-full flex-none min-[475px]:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"
+    //           >
+    //             <Link
+    //                 className="relative h-full w-full"
+    //                 href={`/product/${product.handle}`}
+    //                 prefetch={true}
+    //         >
+    //           <GridTileImage
+    //             alt={product.title}
+    //             label={{
+    //               title: product.title,
+    //               amount: product.priceRange.maxVariantPrice.amount,
+    //               currencyCode: product.priceRange.maxVariantPrice.currencyCode
+    //             }}
+    //             src={product.featuredImage?.url}
+    //             fill
+    //             sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, (min-width: 475px) 50vw, 100vw"
+    //           />
+    //         </Link>
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </div>
   );
 }
