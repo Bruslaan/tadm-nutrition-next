@@ -8,8 +8,7 @@ import { ProductProvider } from 'components/product/product-context';
 import { ProductDescription } from 'components/product/product-description';
 import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
 import { getProduct, getProductRecommendations } from 'lib/shopify';
-import { Image } from 'lib/shopify/types';
-import Link from 'next/link';
+import { Image, Product } from 'lib/shopify/types';
 import { Suspense } from 'react';
 
 export async function generateMetadata({
@@ -80,7 +79,7 @@ export default async function ProductPage({ params }: { params: { handle: string
           __html: JSON.stringify(productJsonLd)
         }}
       />
-      <div className="min-h-screen mt-20 max-w-3xl mx-auto flex flex-col gap-4">
+      <div className="mx-auto mt-20 flex min-h-screen max-w-3xl flex-col gap-4">
         <ProductCard product={product} />
         <RelatedProducts id={product.id} />
       </div>
@@ -89,73 +88,62 @@ export default async function ProductPage({ params }: { params: { handle: string
   );
 }
 
-
-const ProductCard = ({product}) =>{
+const ProductCard = ({ product }: { product: Product }) => {
   return (
-      <div className="flex w-full  justify-center items-center rounded-2xl border overflow-hidden">
-        <div className="h-full w-full object-cover">
-          <Suspense
-              fallback={
-                <div className=""/>
-              }
-          >
-            <Gallery
-                images={product.images.slice(0, 5).map((image: Image) => ({
-                  src: image.url,
-                  altText: image.altText
-                }))}
-            />
-          </Suspense>
-        </div>
-
-        <div className="w-full p-4">
-          <Suspense fallback={null}>
-            <ProductDescription product={product}/>
-          </Suspense>
-        </div>
+    <div className="flex w-full items-center justify-center overflow-hidden rounded-2xl border">
+      <div className="h-full w-full object-cover">
+        <Suspense fallback={<div className="" />}>
+          <Gallery
+            images={product.images.slice(0, 5).map((image: Image) => ({
+              src: image.url,
+              altText: image.altText
+            }))}
+          />
+        </Suspense>
       </div>
 
-  )
-}
+      <div className="w-full p-4">
+        <Suspense fallback={null}>
+          <ProductDescription product={product} />
+        </Suspense>
+      </div>
+    </div>
+  );
+};
 
-async function RelatedProducts({id}: { id: string }) {
+async function RelatedProducts({ id }: { id: string }) {
   const relatedProducts = await getProductRecommendations(id);
 
   if (!relatedProducts.length) return null;
 
-  return (
-
-      relatedProducts.map((product) => (
-            <ProductCard product={product}/>
-        ))
-    //   <div className="mx-auto w-full max-w-7xl py-8">
-    //     {/*<h2 className="mb-4 text-4xl font-bold">You may also like</h2>*/}
-    //     <ul className="flex flex-col w-full gap-4 overflow-x-auto pt-1">
-    //       {relatedProducts.map((product) => (
-    //           <li
-    //               key={product.handle}
-    //               className="aspect-square w-full flex-none min-[475px]:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"
-    //           >
-    //             <Link
-    //                 className="relative h-full w-full"
-    //                 href={`/product/${product.handle}`}
-    //                 prefetch={true}
-    //         >
-    //           <GridTileImage
-    //             alt={product.title}
-    //             label={{
-    //               title: product.title,
-    //               amount: product.priceRange.maxVariantPrice.amount,
-    //               currencyCode: product.priceRange.maxVariantPrice.currencyCode
-    //             }}
-    //             src={product.featuredImage?.url}
-    //             fill
-    //             sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, (min-width: 475px) 50vw, 100vw"
-    //           />
-    //         </Link>
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </div>
-  );
+  return relatedProducts.map((product) => <ProductCard product={product} />);
+  //   <div className="mx-auto w-full max-w-7xl py-8">
+  //     {/*<h2 className="mb-4 text-4xl font-bold">You may also like</h2>*/}
+  //     <ul className="flex flex-col w-full gap-4 overflow-x-auto pt-1">
+  //       {relatedProducts.map((product) => (
+  //           <li
+  //               key={product.handle}
+  //               className="aspect-square w-full flex-none min-[475px]:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"
+  //           >
+  //             <Link
+  //                 className="relative h-full w-full"
+  //                 href={`/product/${product.handle}`}
+  //                 prefetch={true}
+  //         >
+  //           <GridTileImage
+  //             alt={product.title}
+  //             label={{
+  //               title: product.title,
+  //               amount: product.priceRange.maxVariantPrice.amount,
+  //               currencyCode: product.priceRange.maxVariantPrice.currencyCode
+  //             }}
+  //             src={product.featuredImage?.url}
+  //             fill
+  //             sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, (min-width: 475px) 50vw, 100vw"
+  //           />
+  //         </Link>
+  //       </li>
+  //     ))}
+  //   </ul>
+  // </div>
 }

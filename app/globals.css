@@ -17,9 +17,8 @@
 }
 
 .nature_green {
-  background-color: #F8FCEE;
+  background-color: #f8fcee;
 }
-
 
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading='lazy'] {
@@ -43,16 +42,15 @@ button {
 
 @keyframes breath {
   0% {
-    scale: 0.98
+    scale: 0.98;
   }
 
   50% {
-    scale: 1
+    scale: 1;
   }
 
-
   100% {
-    scale: 0.98
+    scale: 0.98;
   }
 }
 
