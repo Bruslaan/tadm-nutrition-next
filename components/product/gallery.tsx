@@ -17,13 +17,13 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
     'h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-black dark:hover:text-white flex items-center justify-center';
 
   return (
-    <form>
-      <div className="bg-white-200 relative aspect-square h-full max-h-[250px] w-full overflow-hidden rounded-xl">
+    <form className="h-full">
+      <div className="relative h-full w-20 overflow-hidden bg-red-300">
         {images[imageIndex] && (
           <Image
-            className="h-full w-full object-cover"
-            fill
-            sizes="(min-width: 1024px) 66vw, 100vw"
+            className="h-full object-cover"
+            height={500}
+            width={500}
             alt={images[imageIndex]?.altText as string}
             src={images[imageIndex]?.src as string}
             priority={true}

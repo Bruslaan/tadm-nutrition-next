@@ -2,17 +2,18 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { createContext, useContext, useMemo, useOptimistic } from 'react';
+import { Image } from '../../lib/shopify/types';
 
 type ProductState = {
   [key: string]: string;
 } & {
-  image?: string;
+  image?: Image;
 };
 
 type ProductContextType = {
   state: ProductState;
   updateOption: (name: string, value: string) => ProductState;
-  updateImage: (index: string) => ProductState;
+  updateImage: (index: Image) => ProductState;
 };
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
