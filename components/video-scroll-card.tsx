@@ -12,39 +12,30 @@ const VideoScrollCard = ({
 }) => {
   return (
     <div
-      className="relative flex flex-col gap-3 rounded-lg bg-white p-4"
+      className={clsx('sticky flex flex-col gap-3 rounded-[50px] p-10', color)}
       style={{
         marginBlock: '30vh'
       }}
     >
-      <h1
-        className={clsx(
-          'inline-block bg-gradient-to-r bg-clip-text text-5xl font-bold text-transparent',
-          color
-        )}
-      >
-        {title}
-      </h1>
-      <p className="text-xl text-neutral-700">
+      {urlTo && (
+        <div className="absolute right-2 top-2">
+          <Link href={urlTo} className="">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white pt-1 text-3xl">
+              ↗
+            </div>
+          </Link>
+        </div>
+      )}
+      <h1 className={clsx('mt-20 text-3xl')}>{title}</h1>
+      <p className="text-xl font-light text-neutral-700">
         Here we have the most powerful brian liquid oil that revolutionizes your memory. Here we
         have the most powerful brian liquid oil that revolutionizes your memory. Here we have the
         most powerful brian liquid oil that revolutionizes your memory.{' '}
       </p>
-      <div className="mt-5 flex gap-4">
-        <span className="inline-flex items-center gap-x-1.5 rounded-full border px-3 py-1.5 text-xs font-medium text-green-600 dark:text-green-500">
-          Power brain
-        </span>
-        <span className="inline-flex items-center gap-x-1.5 rounded-full border px-3 py-1.5 text-xs font-medium text-green-600 dark:text-green-500">
-          Eye sight
-        </span>
+
+      <div className="mt-10">
+        <span className="rounded-3xl bg-white p-2 px-5 text-2xl"> Omega-3</span>
       </div>
-      {urlTo && (
-        <div className="mt-5">
-          <Link href={urlTo} className="text-blue-500">
-            Learn More →
-          </Link>
-        </div>
-      )}
     </div>
   );
 };

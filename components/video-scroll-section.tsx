@@ -1,8 +1,8 @@
 'use client';
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import FadeInAnimation from './fade-in-animation';
 import VideoScrollCard from './video-scroll-card';
+
 const videoJson = {
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
@@ -39,7 +39,7 @@ const VideoScrollSection = () => {
     <section
       id="inside-tadm"
       ref={container}
-      className="relative min-h-[500vh] bg-white pt-10 md:min-h-[400vh] lg:min-h-[450vh]"
+      className="relative min-h-[600vh] bg-white pt-10 lg:min-h-[500vh]"
     >
       <script
         type="application/ld+json"
@@ -75,34 +75,28 @@ const VideoScrollSection = () => {
       </div>
 
       {/* Cards */}
-      <div className="absolute top-0 h-full w-full px-10 pt-80 lg:right-0 lg:max-w-[40%]">
-        <FadeInAnimation>
-          <VideoScrollCard
-            urlTo="/cumin"
-            title="Black seed oil"
-            color="from-blue-500 to-blue-200"
-          />
-        </FadeInAnimation>
-        <FadeInAnimation>
-          <VideoScrollCard urlTo="/algae" title="Algae Oil" color="from-green-500 to-green-200" />
-        </FadeInAnimation>
-        <FadeInAnimation>
-          <VideoScrollCard
-            urlTo="/walnut"
-            title="Walnut oil"
-            color="from-orange-500 to-orange-200"
-          />
-        </FadeInAnimation>
-        <FadeInAnimation>
-          <VideoScrollCard
-            urlTo="/cannabis"
-            title="Hamp Seed Oil"
-            color="from-teal-500 to-teal-200"
-          />
-        </FadeInAnimation>
-        <FadeInAnimation>
-          <VideoScrollCard title="Vegan Capsule" color="from-gray-600 to-gray-200" />
-        </FadeInAnimation>
+      <div className="absolute top-0 h-full w-full px-5 pt-80 lg:right-0 lg:max-w-[40%]">
+        <VideoScrollCard
+          urlTo="/cumin"
+          title="Black seed oil"
+          color="bg-blue-200 md:top-10 top-[30%]"
+        />
+        <VideoScrollCard
+          urlTo="/algae"
+          title="Algae Oil"
+          color="bg-green-200 md:top-12 top-[32%]"
+        />
+        <VideoScrollCard
+          urlTo="/walnut"
+          title="Walnut oil"
+          color="bg-orange-200 md:top-14 top-[34%]"
+        />
+        <VideoScrollCard
+          urlTo="/cannabis"
+          title="Hamp Seed Oil"
+          color="bg-teal-200 md:top-16 top-[36%]"
+        />
+        <VideoScrollCard title="Vegan Capsule" color="bg-gray-200 md:top-20 top-[38%]" />
       </div>
     </section>
   );
