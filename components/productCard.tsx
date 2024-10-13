@@ -25,9 +25,7 @@ export const ProductCard = ({ product, selected }: { product: Product; selected:
       </div>
 
       <div className="ml-28 w-full flex-1 p-4 md:ml-0">
-        <Suspense fallback={null}>
-          <ProductDescription product={product} />
-        </Suspense>
+        <ProductDescription product={product} />
       </div>
     </div>
   );

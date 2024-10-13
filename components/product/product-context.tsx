@@ -2,18 +2,21 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { createContext, useContext, useMemo, useOptimistic } from 'react';
-import { Image } from '../../lib/shopify/types';
+import { Product } from 'lib/shopify/types';
 
 type ProductState = {
   [key: string]: string;
 } & {
   image?: string;
+} & {
+  product?: string;
 };
 
 type ProductContextType = {
   state: ProductState;
   updateOption: (name: string, value: string) => ProductState;
   updateImage: (index: string) => ProductState;
+  updateProduct: (product: string) => ProductState;
 };
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
@@ -49,11 +52,18 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     return { ...state, ...newState };
   };
 
+  const updateProduct = (product: string) => {
+    const newState = { product };
+    setOptimisticState(newState);
+    return { ...state, ...newState };
+  };
+
   const value = useMemo(
     () => ({
       state,
       updateOption,
-      updateImage
+      updateImage,
+      updateProduct
     }),
     [state]
   );
