@@ -7,13 +7,13 @@ import { Image } from '../../lib/shopify/types';
 type ProductState = {
   [key: string]: string;
 } & {
-  image?: Image;
+  image?: string;
 };
 
 type ProductContextType = {
   state: ProductState;
   updateOption: (name: string, value: string) => ProductState;
-  updateImage: (index: Image) => ProductState;
+  updateImage: (index: string) => ProductState;
 };
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
