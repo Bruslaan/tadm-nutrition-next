@@ -22,7 +22,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
         {initialImage && <DynamicImage image={initialImage} />}
       </div>
       <div className="mx-auto flex h-full w-full max-w-xl flex-col items-center justify-center p-10 py-20">
-        <h2 className="font-manrope mb-2 bg-gradient-to-r from-orange-400 to-yellow-300 bg-clip-text text-center text-4xl font-bold capitalize leading-10 text-gray-900 text-transparent">
+        <h2 className="font-manrope mb-2 bg-clip-text text-center text-4xl font-bold capitalize leading-10">
           Hol dir dein TADM
         </h2>
         <ReviewStars />
