@@ -5,15 +5,15 @@ export default function LogoSquare({ size }: { size?: 'sm' | undefined }) {
   return (
     <div
       className={clsx('flex flex-none items-center justify-center', {
-        'h-[60px] w-[60px] rounded-xl': !size,
+        'h-[70px] w-[70px] rounded-xl': !size,
         'h-[30px] w-[30px] rounded-lg': size === 'sm'
       })}
     >
       <Image
         src="/static/logo-hd.webp"
         alt="logo"
-        width={200}
-        height={200}
+        width={300}
+        height={300}
         style={{ clipPath: 'inset(-2px)' }}
       ></Image>
     </div>

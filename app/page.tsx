@@ -6,6 +6,7 @@ import HeroSection from 'components/hero-section';
 import Footer from 'components/layout/footer';
 import { MarqueeDemo } from 'components/testimonals';
 import VideoScrollSection from 'components/video-scroll-section';
+import { TextRevealDemo } from 'components/text-reveal';
 
 export const metadata = {
   description: 'healthy brain nutrition supplement',
@@ -18,11 +19,13 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <TextRevealDemo />
       <ThreeItemGrid />
-      <FeatureSection imageUrl="/static/coolboy.webp" />
+      <FeatureSection imageUrl="/static/section1.png" />
       <VideoScrollSection />
       <br />
       <br />
+      <FeatureSection imageUrl="/static/doctor.png" />
       <MarqueeDemo />
       <CallToActionBanner />
       <FaqPage />

@@ -9,7 +9,7 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
           {/* Item */}
           <div className="py-20">
             <h2 className="mb-6 inline-block text-4xl font-bold text-neutral-900 md:mb-10 md:text-6xl lg:mb-12">
-              Some mulate people use it
+              Most important bullet points
             </h2>
             <ul className="grid max-w-2xl grid-cols-2 sm:gap-5 lg:max-w-none">
               <li className="flex flex-col p-5">

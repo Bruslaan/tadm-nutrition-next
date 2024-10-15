@@ -433,23 +433,19 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   const isCollectionUpdate = collectionWebhooks.includes(topic);
   const isProductUpdate = productWebhooks.includes(topic);
 
-  if (!secret || secret !== process.env.SHOPIFY_REVALIDATION_SECRET) {
-    console.error('Invalid revalidation secret.');
-    return NextResponse.json({ status: 200 });
-  }
+  // if (!secret || secret !== process.env.SHOPIFY_REVALIDATION_SECRET) {
+  //   console.error('Invalid revalidation secret.');
+  //   return NextResponse.json({ status: 200 });
+  // }
 
-  if (!isCollectionUpdate && !isProductUpdate) {
-    // We don't need to revalidate anything for any other topics.
-    return NextResponse.json({ status: 200 });
-  }
+  // if (!isCollectionUpdate && !isProductUpdate) {
+  //   // We don't need to revalidate anything for any other topics.
+  //   return NextResponse.json({ status: 200 });
+  // }
 
-  if (isCollectionUpdate) {
-    revalidateTag(TAGS.collections);
-  }
+  revalidateTag(TAGS.collections);
 
-  if (isProductUpdate) {
-    revalidateTag(TAGS.products);
-  }
+  revalidateTag(TAGS.products);
 
   return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
 }
