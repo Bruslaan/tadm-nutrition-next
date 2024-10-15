@@ -1,8 +1,6 @@
 'use client';
 import { Product } from '../lib/shopify/types';
 import clsx from 'clsx';
-import { Suspense } from 'react';
-import { Gallery } from './product/gallery';
 import { ProductDescription } from './product/product-description';
 import Image from 'next/image';
 
