@@ -9,7 +9,7 @@ export const ProductCard = ({ product, selected }: { product: Product; selected:
     <div
       className={clsx(
         'relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl border',
-        selected && 'border-black shadow-lg'
+        selected && 'border-gray-800'
       )}
     >
       <div className="h-full md:hidden">

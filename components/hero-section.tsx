@@ -52,16 +52,7 @@ const HeroSection = () => {
             <FloatingIcon className="bottom-0 left-0 z-10 blur-sm" size={150} />
             <FloatingIcon className="left-0" size={50} />
             <FloatingIcon className="-right-32 top-20 -rotate-45" size={80} />
-            <FloatingIcon
-              imageURL="/static/cumin.png"
-              className="-left-32 top-20 -rotate-45"
-              size={120}
-            />
-            <FloatingIcon
-              imageURL="/static/wallnut.png"
-              className="-left-32 bottom-20"
-              size={120}
-            />
+            <FloatingIcon className="-left-32 top-32 -rotate-45" size={90} />
 
             <Image
               className="custom-float absolute -top-12 right-0 h-20 w-auto object-cover lg:h-32"

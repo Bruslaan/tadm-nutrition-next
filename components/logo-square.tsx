@@ -5,7 +5,7 @@ export default function LogoSquare({ size }: { size?: 'sm' | undefined }) {
   return (
     <div
       className={clsx('flex flex-none items-center justify-center', {
-        'h-[70px] w-[70px] rounded-xl': !size,
+        'h-[90px] w-[90px] rounded-xl': !size,
         'h-[30px] w-[30px] rounded-lg': size === 'sm'
       })}
     >

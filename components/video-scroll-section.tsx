@@ -55,11 +55,11 @@ const VideoScrollSection = () => {
       {/* Video */}
       <div className="sticky top-0 mr-auto h-[100vh] w-full overflow-hidden">
         {/* <FloatingIcon className="right-10 top-[50%] z-10 rotate-45 blur-sm" size={100} /> */}
-        <div className="w-[160%] lg:h-screen lg:w-auto">
+        <div className="w-[160%] lg:min-h-screen lg:w-[110%] lg:w-auto">
           <video
             playsInline
             ref={videoRef}
-            className="custom-float object-cover object-center lg:h-screen"
+            className="custom-float object-cover object-center lg:min-h-screen"
             muted
             autoPlay
             loop
@@ -79,20 +79,24 @@ const VideoScrollSection = () => {
         <VideoScrollCard
           urlTo="/cumin"
           title="Black seed oil"
-          color="bg-blue-50 md:top-10 top-[30%]"
+          color="bg-blue-50 md:top-[10%] top-[30%]"
         />
-        <VideoScrollCard urlTo="/algae" title="Algae Oil" color="bg-green-50 md:top-12 top-[32%]" />
+        <VideoScrollCard
+          urlTo="/algae"
+          title="Algae Oil"
+          color="bg-green-50 md:top-[15%] top-[32%]"
+        />
         <VideoScrollCard
           urlTo="/walnut"
           title="Walnut oil"
-          color="bg-orange-50 md:top-14 top-[34%]"
+          color="bg-orange-50 md:top-[20%] top-[34%]"
         />
         <VideoScrollCard
           urlTo="/cannabis"
           title="Hamp Seed Oil"
-          color="bg-teal-50 md:top-16 top-[36%]"
+          color="bg-teal-50 md:top-[25%] top-[36%]"
         />
-        <VideoScrollCard title="Vegan Capsule" color="bg-gray-50 md:top-20 top-[38%]" />
+        <VideoScrollCard title="Vegan Capsule" color="bg-gray-50 md:top-[30%] top-[38%]" />
       </div>
     </section>
   );
