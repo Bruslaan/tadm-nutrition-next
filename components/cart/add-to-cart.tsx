@@ -5,8 +5,8 @@ import clsx from 'clsx';
 import { addItem } from 'components/cart/actions';
 import { useProduct } from 'components/product/product-context';
 import { Product, ProductVariant } from 'lib/shopify/types';
-import { useFormState } from 'react-dom';
 import { useCart } from './cart-context';
+import { useActionState } from 'react';
 
 function SubmitButton({
   availableForSale,
@@ -63,7 +63,7 @@ export function AddToCart({ product }: { product: Product }) {
   const { addCartItem } = useCart();
   const { state } = useProduct();
   console.log(state);
-  const [message, formAction] = useFormState(addItem, null);
+  const [message, formAction] = useActionState(addItem, null);
 
   const variant = variants.find((variant: ProductVariant) =>
     variant.selectedOptions.every((option) => option.value === state[option.name.toLowerCase()])

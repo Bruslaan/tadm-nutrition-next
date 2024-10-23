@@ -54,7 +54,6 @@ const firstRowRepeat = [
   ...secondRow
 ];
 const ReviewCard = ({
-  img,
   name,
   username,
   body
@@ -102,13 +101,13 @@ export function MarqueeDemo() {
         <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-scroll">
           <div className="flex flex-col items-center justify-center gap-4 py-7">
             <div className="flex animate-carousel gap-4">
-              {firstRowRepeat.map((review) => (
-                <ReviewCard key={review.username} {...review} />
+              {firstRowRepeat.map((review, index) => (
+                <ReviewCard key={'first-row-' + index} {...review} />
               ))}
             </div>
             <div className="flex animate-carousel_reverse gap-4">
-              {firstRowRepeat.map((review) => (
-                <ReviewCard key={review.username} {...review} />
+              {firstRowRepeat.map((review, index) => (
+                <ReviewCard key={'second-row' + index} {...review} />
               ))}
             </div>
           </div>

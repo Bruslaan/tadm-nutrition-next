@@ -1,10 +1,11 @@
 const StarRating = ({ rating = 5 }: { rating?: number }) => {
   const notFilledStars = 5 - rating;
   return (
-    <div className="flex items-center">
+    <div key="star-rating" className="flex items-center">
       {rating > 0 &&
-        new Array(rating).fill(0).map(() => (
+        new Array(rating).fill(0).map((_, index) => (
           <svg
+            key={'rating-' + index}
             className="ms-1 h-4 w-4 text-yellow-300"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -17,8 +18,9 @@ const StarRating = ({ rating = 5 }: { rating?: number }) => {
       {notFilledStars > 0 &&
         Array(notFilledStars)
           .fill(0)
-          .map(() => (
+          .map((rating) => (
             <svg
+              key={'not-filled' + rating}
               className="ms-1 h-4 w-4 text-gray-300 dark:text-gray-500"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"

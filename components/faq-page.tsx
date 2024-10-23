@@ -38,7 +38,7 @@ const FaqPage = () => {
         <div className="mx-auto mt-10 max-w-5xl">
           <div className="grid gap-6 sm:grid-cols-2 md:gap-12">
             {faqs.map((faq, index) => (
-              <FAQ faq={faq} />
+              <FAQ faq={faq} key={'faq-' + index} />
             ))}
           </div>
         </div>
