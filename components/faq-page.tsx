@@ -1,50 +1,124 @@
-import FAQ from './faq-question';
+'use client';
+import React, { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
-const FaqPage = () => {
-  // FAQs array
-  const faqs = [
-    {
-      question: 'How this theme is different from others in market?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna'
-    },
-    {
-      question: 'What is your policy on distribution of Devjoy assets?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna'
-    },
-    {
-      question: 'How can I contribute to Devjoy?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna'
-    },
-    {
-      question: 'What other themes do you have?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna'
-    }
-  ];
+const Card = ({ className, children }: { className?: string; children: React.ReactNode }) => {
+  return <div className={` ${className}`}>{children}</div>;
+};
+
+const CardContent = ({
+  className,
+  children
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return <div className={`p-6 ${className}`}>{children}</div>;
+};
+
+// @ts-ignore
+const FAQItem = ({ question, answer }: { question?: string; answer: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section id="faq" className="relative min-h-screen w-full bg-white">
-      <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-      <div className="relative z-10 mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto flex max-w-screen-xl justify-center px-4">
-          <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
-            What our Customers think
-          </h1>
-        </div>
-
-        <div className="mx-auto mt-10 max-w-5xl">
-          <div className="grid gap-6 sm:grid-cols-2 md:gap-12">
-            {faqs.map((faq, index) => (
-              <FAQ faq={faq} key={'faq-' + index} />
-            ))}
-          </div>
-        </div>
+    <div className="mb-4">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between rounded-lg bg-white p-4 transition-colors duration-200 hover:bg-gray-50"
+      >
+        <span className="text-lg font-medium text-gray-900">{question}</span>
+        <ChevronDown
+          className={`ml-4 h-5 w-5 flex-shrink-0 text-gray-500 transition-transform duration-200 ${
+            isOpen ? 'rotate-180 transform' : ''
+          }`}
+        />
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-200 ease-in-out ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="rounded-b-lg bg-gray-50 p-4 text-gray-600">{answer}</div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default FaqPage;
+const FAQ = () => {
+  const faqData = [
+    {
+      question: 'What services do you offer?',
+      answer:
+        'We offer a wide range of services including web development, mobile app development, UI/UX design, and digital marketing solutions. Each service is customized to meet your specific needs and goals.'
+    },
+    {
+      question: 'How can I get started?',
+      answer:
+        "Getting started is easy! Simply reach out through our contact form or schedule a free consultation. We'll discuss your project requirements and provide you with a detailed proposal."
+    },
+    {
+      question: 'What are your pricing plans?',
+      answer:
+        'Our pricing varies depending on project scope and requirements. We offer flexible packages to accommodate different budgets and needs. Contact us for a personalized quote.'
+    },
+    {
+      question: 'How long does a typical project take?',
+      answer:
+        "Project timelines vary based on complexity and scope. A simple website might take 2-4 weeks, while more complex applications can take several months. We'll provide a detailed timeline during our initial consultation."
+    },
+    {
+      question: 'Do you offer support after project completion?',
+      answer:
+        'Yes! We provide ongoing support and maintenance services to ensure your project continues to run smoothly. Our support packages can be tailored to your specific needs.'
+    },
+    {
+      question: 'What technologies do you work with?',
+      answer:
+        "We work with a wide range of modern technologies including React, Node.js, Python, AWS, and more. We choose the best tech stack based on your project's specific requirements."
+    }
+  ];
+
+  // Split FAQ items into two columns
+  const midPoint = Math.ceil(faqData.length / 2);
+  const leftColumnFAQs = faqData.slice(0, midPoint);
+  const rightColumnFAQs = faqData.slice(midPoint);
+
+  return (
+    <Card className="mx-auto w-full max-w-6xl">
+      <CardContent>
+        <div className="mb-8 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+          <p className="text-gray-600">
+            Find answers to common questions about our services and processes
+          </p>
+        </div>
+
+        {/* Mobile view: Single column */}
+        <div className="space-y-4 md:hidden">
+          {faqData.map((faq, index) => (
+            <FAQItem key={index} question={faq.question} answer={faq.answer} />
+          ))}
+        </div>
+
+        {/* Desktop view: Two columns */}
+        <div className="hidden md:grid md:grid-cols-2 md:gap-6">
+          {/* Left column */}
+          <div className="space-y-4">
+            {leftColumnFAQs.map((faq, index) => (
+              <FAQItem key={`left-${index}`} question={faq.question} answer={faq.answer} />
+            ))}
+          </div>
+
+          {/* Right column */}
+          <div className="space-y-4">
+            {rightColumnFAQs.map((faq, index) => (
+              <FAQItem key={`right-${index}`} question={faq.question} answer={faq.answer} />
+            ))}
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default FAQ;
