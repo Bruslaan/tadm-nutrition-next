@@ -4,14 +4,17 @@ import Link from 'next/link';
 const VideoScrollCard = ({
   title,
   color,
-  urlTo
+  urlTo,
+  ref
 }: {
   title: string;
   color: string;
   urlTo?: string;
+  ref?: any;
 }) => {
   return (
     <div
+      ref={ref}
       className={clsx('sticky flex flex-col gap-3 rounded-[50px] p-10', color)}
       style={{
         marginBlock: '30vh'

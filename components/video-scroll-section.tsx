@@ -20,6 +20,10 @@ const VideoScrollSection = () => {
     // @ts-ignore
     target: container
   });
+  const firstCard = useRef<HTMLDivElement>(null);
+  const secondCard = useRef<HTMLDivElement>(null);
+  const thirdCard = useRef<HTMLDivElement>(null);
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -27,9 +31,36 @@ const VideoScrollSection = () => {
     videoRef.current.pause();
 
     const handleScrollChange = (progress: number) => {
+      console.log({ progress });
       const duration = videoRef.current!.duration;
       requestAnimationFrame(() => {
         videoRef.current!.currentTime = progress * duration;
+        if (firstCard.current) {
+          firstCard.current.style.transition = 'transform 0.3s';
+          if (progress > 0.2) {
+            firstCard.current.style.transform = 'scale(0.94)';
+          } else {
+            firstCard.current.style.transform = 'scale(1)';
+          }
+        }
+
+        if (secondCard.current) {
+          secondCard.current.style.transition = 'transform 0.3s';
+          if (progress > 0.35) {
+            secondCard.current.style.transform = 'scale(0.96)';
+          } else {
+            secondCard.current.style.transform = 'scale(1)';
+          }
+        }
+
+        if (thirdCard.current) {
+          thirdCard.current.style.transition = 'transform 0.3s';
+          if (progress > 0.5) {
+            thirdCard.current.style.transform = 'scale(0.98)';
+          } else {
+            thirdCard.current.style.transform = 'scale(1)';
+          }
+        }
       });
     };
 
@@ -77,24 +108,28 @@ const VideoScrollSection = () => {
       {/* Cards */}
       <div className="absolute top-0 h-full w-full px-5 pt-80 lg:right-0 lg:max-w-[40%]">
         <VideoScrollCard
+          ref={firstCard}
           urlTo="/cumin"
           title="Black seed oil"
           color="bg-blue-50 md:top-[10%] top-[30%]"
         />
+
         <VideoScrollCard
+          ref={secondCard}
           urlTo="/algae"
           title="Algae Oil"
-          color="bg-green-50 md:top-[15%] top-[32%]"
+          color="bg-green-50 md:top-[12%] top-[32%]"
         />
         <VideoScrollCard
+          ref={thirdCard}
           urlTo="/walnut"
           title="Walnut oil"
-          color="bg-orange-50 md:top-[20%] top-[34%]"
+          color="bg-orange-50 md:top-[14%] top-[34%]"
         />
         <VideoScrollCard
           urlTo="/cannabis"
           title="Hamp Seed Oil"
-          color="bg-teal-50 md:top-[25%] top-[36%]"
+          color="bg-teal-50 md:top-[16%] top-[36%]"
         />
         <VideoScrollCard title="Vegan Capsule" color="bg-gray-50 md:top-[30%] top-[38%]" />
       </div>
