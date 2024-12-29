@@ -80,9 +80,9 @@ const VideoScrollSection = () => {
         }}
       />
       <div className="mx-auto flex max-w-screen-xl justify-center px-4">
-        <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
+        <h2 className="mb-4 max-w-2xl text-3xl font-bold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
           What is Tadm
-        </h1>
+        </h2>
       </div>
       {/* Video */}
       <div className="sticky top-0 mr-auto h-[100vh] w-full overflow-hidden">

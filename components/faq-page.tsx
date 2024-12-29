@@ -1,6 +1,6 @@
 'use client';
-import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import React, { useState } from 'react';
 
 const Card = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return <div className={` ${className}`}>{children}</div>;
@@ -17,14 +17,14 @@ const CardContent = ({
 };
 
 // @ts-ignore
-const FAQItem = ({ question, answer }: { question?: string; answer: string }) => {
+export const FAQItem = ({ question, answer }: { question?: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="mb-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between rounded-lg bg-white p-4 transition-colors duration-200 hover:bg-gray-50"
+        className="flex w-full items-center justify-between rounded-lg bg-white p-4 text-left transition-colors duration-200 hover:bg-gray-50"
       >
         <span className="text-lg font-medium text-gray-900">{question}</span>
         <ChevronDown
@@ -84,40 +84,42 @@ const FAQ = () => {
   const rightColumnFAQs = faqData.slice(midPoint);
 
   return (
-    <Card className="mx-auto w-full max-w-6xl">
-      <CardContent>
-        <div className="mb-8 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
-          <p className="text-gray-600">
-            Find answers to common questions about our services and processes
-          </p>
-        </div>
+    <section id="faq">
+      <Card className="mx-auto w-full max-w-6xl">
+        <CardContent>
+          <div className="mb-8 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+            <p className="text-gray-600">
+              Find answers to common questions about our services and processes
+            </p>
+          </div>
 
-        {/* Mobile view: Single column */}
-        <div className="space-y-4 md:hidden">
-          {faqData.map((faq, index) => (
-            <FAQItem key={index} question={faq.question} answer={faq.answer} />
-          ))}
-        </div>
-
-        {/* Desktop view: Two columns */}
-        <div className="hidden md:grid md:grid-cols-2 md:gap-6">
-          {/* Left column */}
-          <div className="space-y-4">
-            {leftColumnFAQs.map((faq, index) => (
-              <FAQItem key={`left-${index}`} question={faq.question} answer={faq.answer} />
+          {/* Mobile view: Single column */}
+          <div className="space-y-4 md:hidden">
+            {faqData.map((faq, index) => (
+              <FAQItem key={index} question={faq.question} answer={faq.answer} />
             ))}
           </div>
 
-          {/* Right column */}
-          <div className="space-y-4">
-            {rightColumnFAQs.map((faq, index) => (
-              <FAQItem key={`right-${index}`} question={faq.question} answer={faq.answer} />
-            ))}
+          {/* Desktop view: Two columns */}
+          <div className="hidden md:grid md:grid-cols-2 md:gap-6">
+            {/* Left column */}
+            <div className="space-y-4">
+              {leftColumnFAQs.map((faq, index) => (
+                <FAQItem key={`left-${index}`} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+
+            {/* Right column */}
+            <div className="space-y-4">
+              {rightColumnFAQs.map((faq, index) => (
+                <FAQItem key={`right-${index}`} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
           </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </section>
   );
 };
 

@@ -93,9 +93,9 @@ export function MarqueeDemo() {
   return (
     <section className="min-h-screen w-full pt-10">
       <div className="mx-auto flex max-w-screen-xl justify-center px-4">
-        <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
+        <h2 className="mb-4 max-w-2xl text-3xl font-bold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
           What our Customers think
-        </h1>
+        </h2>
       </div>
       <div className="relative w-full">
         <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-scroll">

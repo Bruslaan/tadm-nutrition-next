@@ -1,14 +1,17 @@
 'use client';
 export function TextRevealDemo() {
   return (
-    <div className="z-10 flex min-h-64 items-center justify-center rounded-lg bg-white dark:bg-black">
+    <div
+      className="z-10 flex min-h-64 items-center justify-center rounded-lg dark:bg-black"
+      style={{ background: '#F2F9FF' }}
+    >
       <TextRevealByWord text="We feed your brain so you could feed your family and your boss." />
     </div>
   );
 }
 
-import { FC, ReactNode, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { FC, ReactNode, useRef } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -30,14 +33,12 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className })
     <div ref={targetRef} className={cn('relative z-0 h-[200vh]', className)}>
       <div
         className={
-          'sticky top-0 mx-auto flex h-[50%] max-w-4xl items-center bg-transparent px-[1rem] py-[5rem]'
+          'sticky top-0 mx-auto flex h-[50%] max-w-6xl items-center bg-transparent px-[1rem] py-[5rem]'
         }
       >
         <p
           ref={targetRef}
-          className={
-            'flex flex-wrap p-5 text-2xl font-bold text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl'
-          }
+          className={'flex flex-wrap p-5 text-4xl font-bold dark:text-white/20 md:p-8 md:text-6xl'}
         >
           {words.map((word, i) => {
             const start = i / words.length;

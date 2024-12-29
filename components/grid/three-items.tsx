@@ -50,12 +50,12 @@ export async function ThreeItemGrid() {
   return (
     <section className="relative mx-auto h-full min-h-[80vh] max-w-screen-xl overflow-hidden p-4">
       <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-      <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
+      <h2 className="mb-4 max-w-2xl text-3xl font-bold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
         Order your package
-      </h1>
+      </h2>
       <div className="mx-auto mt-10 grid gap-4 pb-4 md:grid-cols-6">
-        {homepageItems.map((item) => (
-          <ThreeItemGridItem size="half" item={item} priority={true} />
+        {homepageItems.map((item, index) => (
+          <ThreeItemGridItem key={index} size="half" item={item} priority={true} />
         ))}
       </div>
     </section>

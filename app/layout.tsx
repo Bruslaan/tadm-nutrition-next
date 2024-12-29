@@ -4,6 +4,7 @@ import { WelcomeToast } from 'components/welcome-toast';
 import { GeistSans } from 'geist/font/sans';
 import { getCart } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
+import { Urbanist } from 'next/font/google';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
 import { Toaster } from 'sonner';
@@ -36,6 +37,8 @@ export const metadata = {
     })
 };
 
+const urbanist = Urbanist({ subsets: ['latin'] });
+
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const cartId = (await cookies()).get('cartId')?.value;
   // Don't await the fetch, pass the Promise to the context provider
@@ -46,7 +49,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
         <CartProvider cartPromise={cart}>
           <Navbar />
-          <main>
+          <main className={urbanist.className}>
             {children}
             <Toaster closeButton />
             <WelcomeToast />

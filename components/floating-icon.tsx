@@ -14,10 +14,11 @@ const FloatingIcon = ({
     <div className={clsx('absolute', className)}>
       <Image
         className={'custom-float object-contain'}
-        src={imageURL ?? '/static/capsule.png'}
+        src={imageURL ?? '/static/capsule-bright-0.png'}
         width={size}
         height={size}
         alt="Softgel Capsule image"
+        style={{ clipPath: 'inset(-2px)' }}
       />
     </div>
   );
