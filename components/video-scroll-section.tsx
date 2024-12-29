@@ -131,7 +131,7 @@ const VideoScrollSection = () => {
           title="Hamp Seed Oil"
           color="bg-teal-50 md:top-[16%] top-[36%]"
         />
-        <VideoScrollCard title="Vegan Capsule" color="bg-gray-50 md:top-[30%] top-[38%]" />
+        <VideoScrollCard title="Vegan Capsule" color="bg-gray-50 md:top-[16%] top-[38%]" />
       </div>
     </section>
   );
