@@ -3,7 +3,7 @@ export function TextRevealDemo() {
   return (
     <div
       className="z-10 flex min-h-64 items-center justify-center rounded-lg dark:bg-black"
-      style={{ background: '#F2F9FF' }}
+      style={{ background: '#F6F6F6' }}
     >
       <TextRevealByWord text="We feed your brain so you could feed your family and your boss." />
     </div>

@@ -1,5 +1,6 @@
 'use client';
 import { useScroll } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import VideoScrollCard from './video-scroll-card';
 
@@ -79,10 +80,17 @@ const VideoScrollSection = () => {
           __html: JSON.stringify(videoJson)
         }}
       />
-      <div className="mx-auto flex max-w-screen-xl justify-center px-4">
-        <h2 className="mb-4 max-w-2xl text-3xl font-bold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
-          What is Tadm
+      <div className="mx-auto flex h-full max-w-screen-xl items-baseline overflow-hidden px-5">
+        <h2 className="mb-4 mr-3 max-w-2xl text-3xl font-bold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
+          Inside the
         </h2>
+        <Image
+          src="/static/logo-hd.webp"
+          alt="logo"
+          width={200}
+          height={200}
+          style={{ clipPath: 'inset(-2px)' }}
+        ></Image>
       </div>
       {/* Video */}
       <div className="sticky top-0 mr-auto h-[100vh] w-full overflow-hidden">

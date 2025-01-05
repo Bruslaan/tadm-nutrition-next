@@ -88,7 +88,7 @@ const FAQ = () => {
       <Card className="mx-auto w-full max-w-6xl">
         <CardContent>
           <div className="mb-8 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+            <h2 className="mb-4 text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
             <p className="text-gray-600">
               Find answers to common questions about our services and processes
             </p>

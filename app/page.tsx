@@ -20,7 +20,10 @@ export default function HomePage() {
     <>
       <HeroSection />
       <TextRevealDemo />
-      <ThreeItemGrid />
+      <div style={{ background: '#F6F6F6' }}>
+        <ThreeItemGrid />
+      </div>
+
       <FeatureSection imageUrl="/static/section1.png" />
       <VideoScrollSection />
       <br />
