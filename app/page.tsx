@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <main>
       <HeroSection />
       <TextRevealDemo />
       <div style={{ background: '#F6F6F6' }}>
@@ -32,8 +32,10 @@ export default function HomePage() {
       <MarqueeDemo />
       <CallToActionBanner />
       <br />
+      <br />
       <FaqPage />
+
       <Footer />
-    </>
+    </main>
   );
 }

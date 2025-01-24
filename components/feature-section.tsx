@@ -13,14 +13,14 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
         <br />
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
           <ul className="grid max-w-2xl grid-cols-1 text-xl sm:gap-2 lg:max-w-none">
-            <li className="flex flex-col">
+            <li className="mb-3 flex flex-col">
               <img
                 src="static/package_mini.png"
                 alt=""
                 className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
               />
               <h2 className="mb-4 text-2xl font-semibold">Your brain enhancer</h2>
-              <p className="text-lg text-gray-500">
+              <p className="text-xl text-gray-500">
                 Rich in omega-3 it powers up your brain with most integral nutrition. keep your
                 brain healthy.
               </p>
@@ -32,7 +32,7 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
                 className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
               />
               <h2 className="mb-4 text-2xl font-semibold">Immune booster</h2>
-              <p className="text-lg text-gray-500">
+              <p className="text-xl text-gray-500">
                 Rich in omega-3 it powers up your brain with most integral nutrition. keep your
                 brain healthy.
               </p>
@@ -44,7 +44,7 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
                 className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
               />
               <h2 className="mb-4 text-2xl font-semibold">Focus macher</h2>
-              <p className="text-lg text-gray-500">
+              <p className="text-xl text-gray-500">
                 Rich in omega-3 it powers up your brain with most integral nutrition. keep your
                 brain healthy. Healthy brain is a guarantee to a stable and healthy life.
               </p>
@@ -76,11 +76,12 @@ export const FeatureSection2 = ({ imageUrl }: { imageUrl: string }) => {
         <h2 className="mb-6 inline-block text-4xl font-bold text-neutral-900 md:mb-10 md:text-6xl lg:mb-12">
           Production with the highest standards in German certified fascilities
         </h2>
+        <br />
         {/* Component */}
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
           {/* Item */}
           <div className="">
-            <p className="text-lg text-gray-500">
+            <p className="px-3 text-xl text-gray-700">
               Our production was done in specialized areas because we are so good and cool at
               developing nutrition products
             </p>
@@ -105,7 +106,7 @@ export const FeatureSection2 = ({ imageUrl }: { imageUrl: string }) => {
             />
           </div>
           {/* Item */}
-          <div className="h-full w-full max-w-xl overflow-hidden rounded-xl">
+          <div className="h-full max-h-[70vh] w-full max-w-xl overflow-hidden rounded-xl">
             <Image
               width={500}
               height={500}

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import FloatingIcon from './floating-icon';
+import Link from 'next/link';
 
 const HeroSection = () => {
   return (
@@ -9,7 +10,7 @@ const HeroSection = () => {
     >
       <div className="m-auto flex h-full w-full max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
         <div className="mr-auto flex-1 place-self-center lg:col-span-7">
-          <h1 className="mb-4 max-w-2xl text-4xl font-bold leading-none tracking-tight dark:text-white md:text-6xl">
+          <h1 className="mb-4 max-w-2xl text-4xl font-bold leading-none tracking-tight dark:text-white md:text-7xl">
             Healthy, Organic Brain Nutrition
           </h1>
           <br />
@@ -18,9 +19,9 @@ const HeroSection = () => {
           </p>
           <br />
 
-          <a
-            href="/product/tadm-black"
-            className="hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 mt-5 inline-flex items-center justify-center rounded-lg bg-black px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
+          <Link
+            href="/product/first-product"
+            className="focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 mt-5 inline-flex min-w-36 items-center justify-center rounded-lg border bg-black px-5 py-3 text-center text-base font-medium text-white transition-colors duration-300 hover:bg-white hover:text-black focus:ring-4"
           >
             Shop Now
             {/* <svg
@@ -35,10 +36,10 @@ const HeroSection = () => {
                 clipRule="evenodd"
               ></path>
             </svg> */}
-          </a>
+          </Link>
           <a
             href="#inside-tadm"
-            className="inline-flex items-center justify-center rounded-lg border border-gray-900 px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+            className="inline-flex items-center justify-center rounded-lg border border-gray-900 bg-white px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
           >
             Was ist tadm?
           </a>
@@ -63,16 +64,8 @@ const HeroSection = () => {
             <FloatingIcon className="-left-32 top-32 -rotate-45" size={90} />
 
             <Image
-              className="custom-float absolute -top-12 right-0 z-10 h-20 w-auto object-cover lg:h-32"
-              src="/static/cap.png"
-              width={100}
-              height={100}
-              alt="cap image"
-            />
-
-            <Image
               className="custom-float bottom-0 h-52 w-auto object-cover lg:h-96"
-              src="/static/hero-rotated.png"
+              src="/static/products-with-shadow.webp"
               width={200}
               height={200}
               alt="hero image"

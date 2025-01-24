@@ -66,7 +66,7 @@ const ReviewCard = ({
   return (
     <figure
       className={clsx(
-        'relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4',
+        'relative w-96 cursor-pointer overflow-hidden rounded-xl border p-4',
         // light styles
         'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
         // dark styles
@@ -76,15 +76,15 @@ const ReviewCard = ({
       <div className="flex flex-row items-center gap-2">
         {/* <img className="rounded-full" width="32" height="32" alt="" src={img} /> */}
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">{name}</figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          <figcaption className="text-lg font-medium dark:text-white">{name}</figcaption>
+          <p className="text-lg font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
       <div className="-ml-1 mt-2">
         <StarRating />
       </div>
 
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-2 text-lg">{body}</blockquote>
     </figure>
   );
 };
