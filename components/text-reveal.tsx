@@ -1,10 +1,7 @@
 'use client';
 export function TextRevealDemo() {
   return (
-    <div
-      className="z-10 flex min-h-64 items-center justify-center rounded-lg dark:bg-black"
-      style={{ background: '#F6F6F6' }}
-    >
+    <div className="z-10 flex min-h-64 w-full items-center justify-center rounded-lg dark:bg-black">
       <TextRevealByWord text="We feed your brain so you could feed your family and your boss." />
     </div>
   );
@@ -32,24 +29,32 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className })
   return (
     <div ref={targetRef} className={cn('relative z-0 h-[200vh]', className)}>
       <div
-        className={
-          'sticky top-0 mx-auto flex h-[50%] max-w-6xl items-center bg-transparent px-[1rem]'
-        }
+        className={'sticky top-0 h-[50%] w-full'}
+        style={{
+          background: "url('/static/line1.svg'), url('/static/line2.svg')",
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover' // or "contain" depending on your desired scaling
+        }}
       >
-        <p
-          ref={targetRef}
-          className={'flex flex-wrap p-5 text-4xl font-bold dark:text-white/20 md:p-8 md:text-6xl'}
-        >
-          {words.map((word, i) => {
-            const start = i / words.length;
-            const end = start + 1 / words.length;
-            return (
-              <Word key={i} progress={scrollYProgress} range={[start, end]}>
-                {word}
-              </Word>
-            );
-          })}
-        </p>
+        <div className={'mx-auto flex h-full items-center bg-transparent px-[1rem]'}>
+          <p
+            ref={targetRef}
+            className={
+              'flex flex-wrap p-10 text-4xl font-bold dark:text-white/20 md:p-8 md:text-8xl'
+            }
+          >
+            {words.map((word, i) => {
+              const start = i / words.length;
+              const end = start + 1 / words.length;
+              return (
+                <Word key={i} progress={scrollYProgress} range={[start, end]}>
+                  {word}
+                </Word>
+              );
+            })}
+          </p>
+        </div>
       </div>
     </div>
   );

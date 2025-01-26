@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import FloatingIcon from './floating-icon';
 import Link from 'next/link';
+import * as url from 'node:url';
 
 const HeroSection = () => {
   return (
     <section
-      className="flex min-h-screen flex-col overflow-hidden dark:bg-gray-900"
-      style={{ background: '#F6F6F6' }}
+      className="relative flex min-h-screen flex-col overflow-hidden dark:bg-gray-900"
+      style={{
+        background: "url('/static/line1.svg'), url('/static/line2.svg')",
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover' // or "contain" depending on your desired scaling
+      }}
     >
       <div className="m-auto flex h-full w-full max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
         <div className="mr-auto flex-1 place-self-center lg:col-span-7">

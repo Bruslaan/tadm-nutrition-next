@@ -20,7 +20,7 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <TextRevealDemo />
-      <div style={{ background: '#F6F6F6' }}>
+      <div>
         <ThreeItemGrid />
       </div>
 
