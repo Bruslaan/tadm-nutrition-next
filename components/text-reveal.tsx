@@ -1,8 +1,12 @@
 'use client';
+import FloatingIcon from './floating-icon';
+
 export function TextRevealDemo() {
   return (
-    <div className="z-10 flex min-h-64 w-full items-center justify-center rounded-lg dark:bg-black">
-      <TextRevealByWord text="We feed your brain so you could feed your family and your boss." />
+    <div className="relative z-10 flex min-h-64 w-full items-center justify-center rounded-lg dark:bg-black">
+      <TextRevealByWord text="Empowering the brightest minds to unlock their ultimate potential" />
+      <FloatingIcon className="bottom-10 right-10 w-14 -rotate-45 blur-sm" size={60} />
+      <FloatingIcon className="bottom-10-10 left-10 w-36 rotate-45" size={130} />
     </div>
   );
 }
@@ -41,7 +45,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className })
           <p
             ref={targetRef}
             className={
-              'flex flex-wrap p-10 text-4xl font-bold dark:text-white/20 md:p-8 md:text-8xl'
+              'flex flex-wrap justify-center p-10 text-4xl font-bold dark:text-white/20 md:p-8 md:text-8xl'
             }
           >
             {words.map((word, i) => {

@@ -20,28 +20,27 @@ const VideoScrollCard = ({
         marginBlock: '30vh'
       }}
     >
-      <Link className="p-10" href={urlTo ?? ''}>
+      <Link className="group block p-10" href={urlTo ?? ''}>
         <h1 className={clsx('text-3xl font-semibold md:mt-10')}>{title}</h1>
         <br />
-        <p className="text-xl font-light text-neutral-700">
+        <p className="text-xl font-light">
           Here we have the most powerful brian liquid oil that revolutionizes your memory. Here we
           have the most powerful brian liquid oil that revolutionizes your memory. Here we have the
           most powerful brian liquid oil that revolutionizes your memory.{' '}
         </p>
 
         <div className="mt-10">
-          <span className="rounded-3xl bg-white p-2 px-5 text-2xl"> Omega-3</span>
+          <span className="rounded-3xl bg-white p-2 px-5 text-2xl text-gray-700">Omega-3</span>
         </div>
+
+        {urlTo && (
+          <div className="absolute right-2 top-2">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white pt-1 text-3xl text-gray-400 transition-transform duration-300 group-hover:-rotate-45 group-hover:scale-125 group-hover:text-gray-900">
+              ➜
+            </div>
+          </div>
+        )}
       </Link>
-      {/*{urlTo && (*/}
-      {/*    <div className="absolute right-2 top-2">*/}
-      {/*      <Link href={urlTo} className="">*/}
-      {/*        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white pt-1 text-3xl">*/}
-      {/*          ↗*/}
-      {/*        </div>*/}
-      {/*      </Link>*/}
-      {/*    </div>*/}
-      {/*)}*/}
     </div>
   );
 };
