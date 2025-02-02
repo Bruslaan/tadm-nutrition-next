@@ -3,9 +3,9 @@ import Image from 'next/image';
 const AlgaeHeroSection = () => {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden text-center">
-      <h1 className="max-w-5xl text-5xl font-bold uppercase text-green-200 lg:text-9xl">
+      <h2 className="max-w-5xl text-5xl font-bold uppercase text-green-200 lg:text-9xl">
         ALGAE OIL
-      </h1>
+      </h2>
       <div className="relative -mt-20">
         {/* svg */}
 

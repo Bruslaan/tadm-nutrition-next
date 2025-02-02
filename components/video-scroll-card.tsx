@@ -21,7 +21,7 @@ const VideoScrollCard = ({
       }}
     >
       <Link className="group block p-10" href={urlTo ?? ''}>
-        <h1 className={clsx('text-3xl font-semibold md:mt-10')}>{title}</h1>
+        <h2 className={clsx('text-3xl font-semibold md:mt-10')}>{title}</h2>
         <br />
         <p className="text-xl font-light">
           Here we have the most powerful brian liquid oil that revolutionizes your memory. Here we

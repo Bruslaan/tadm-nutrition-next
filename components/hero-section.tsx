@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import FloatingIcon from './floating-icon';
 import Link from 'next/link';
-import * as url from 'node:url';
 
 const HeroSection = () => {
   return (
@@ -16,9 +15,9 @@ const HeroSection = () => {
     >
       <div className="m-auto flex h-full w-full max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
         <div className="mr-auto flex-1 place-self-center lg:col-span-7">
-          <h1 className="mb-4 max-w-2xl text-4xl font-bold leading-none tracking-tight dark:text-white md:text-7xl">
+          <h2 className="mb-4 max-w-2xl text-4xl font-bold leading-none tracking-tight dark:text-white md:text-7xl">
             Healthy, Organic Brain Nutrition
-          </h1>
+          </h2>
           <br />
           <p className="mb-6 max-w-2xl text-2xl font-light text-gray-500 dark:text-gray-400 lg:mb-8">
             tadm is a supplement that supports your ability to focus, mental speed & memory.

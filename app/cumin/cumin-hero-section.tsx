@@ -3,9 +3,9 @@ import Image from 'next/image';
 const CuminHeroSection = () => {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden text-center">
-      <h1 className="max-w-5xl text-5xl font-bold uppercase text-blue-200 lg:text-9xl">
+      <h2 className="max-w-5xl text-5xl font-bold uppercase text-blue-200 lg:text-9xl">
         Black Cumin Seed Oil
-      </h1>
+      </h2>
       <div className="relative -mt-20">
         {/* svg */}
         <div className="absolute right-0 top-0">

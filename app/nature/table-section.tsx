@@ -3,7 +3,7 @@ const TableSection = () => {
     <div className="w-full bg-yellow-100 p-5">
       <div className="mx-auto grid max-w-7xl gap-10 py-10 lg:grid-cols-2">
         <div className="">
-          <h1 className="text-5xl font-semibold">Recycle and reuse.</h1>
+          <h2 className="text-5xl font-semibold">Recycle and reuse.</h2>
           <br />
           <br />
 

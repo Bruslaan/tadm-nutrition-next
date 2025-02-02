@@ -3,7 +3,7 @@ const NatureHeroSection = () => {
   return (
     <section className="flex min-h-screen w-full items-center justify-center bg-green-100">
       <div className="absolute z-10 p-5 text-center">
-        <h1 className="text-4xl text-white lg:text-8xl">With nature in mind</h1>
+        <h2 className="text-4xl text-white lg:text-8xl">With nature in mind</h2>
       </div>
 
       <Image
