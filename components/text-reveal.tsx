@@ -5,8 +5,6 @@ export function TextRevealDemo() {
   return (
     <div className="relative z-10 flex min-h-64 w-full items-center justify-center rounded-lg dark:bg-black">
       <TextRevealByWord text="Empowering the brightest minds to unlock their ultimate potential" />
-      <FloatingIcon className="bottom-10 right-10 w-14 -rotate-45 blur-sm" size={60} />
-      <FloatingIcon className="bottom-10-10 left-10 w-36 rotate-45" size={130} />
     </div>
   );
 }

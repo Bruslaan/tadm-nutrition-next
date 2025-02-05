@@ -20,7 +20,7 @@ const VideoScrollCard = ({
         marginBlock: '30vh'
       }}
     >
-      <Link className="group block p-10" href={urlTo ?? ''}>
+      <Link className="group block p-10" href={urlTo ?? '/nature'}>
         <h2 className={clsx('text-3xl font-semibold md:mt-10')}>{title}</h2>
         <br />
         <p className="text-xl font-light">
