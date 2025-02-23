@@ -10,13 +10,13 @@ export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
   const mockedMenu = [
     {
-      path: '/#inside-tadm',
+      path: '/#feature',
       title: 'Inside the tadm'
     },
-    {
-      path: '/nature',
-      title: 'Nature'
-    },
+    // {
+    //   path: '/nature',
+    //   title: 'Nature'
+    // },
     {
       path: '/#faq',
       title: 'Faq'

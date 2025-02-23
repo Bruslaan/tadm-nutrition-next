@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { FAQItem } from './faq-page';
 const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
   return (
-    <section style={{ background: '#F6F6F6' }}>
+    <section id="feature" style={{ background: '#F6F6F6' }}>
       {/* Container */}
       <div className="mx-auto w-full max-w-7xl px-5 py-12 md:py-20">
         {/* Component */}

@@ -17,8 +17,24 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="text-center">
-      <h1>COMING SOON</h1>
+    <main className="">
+      <HeroSection />
+      <TextRevealDemo />
+      <div>
+        <ThreeItemGrid />
+      </div>
+
+      <FeatureSection imageUrl="/static/Hand.jpg" />
+      <VideoScrollSection />
+      <br />
+      <br />
+      <FeatureSection2 imageUrl="/static/doctor.png" />
+      <MarqueeDemo />
+      <CallToActionBanner />
+      <br />
+      <br />
+      <FaqPage />
+      <Footer />
     </main>
   );
 }

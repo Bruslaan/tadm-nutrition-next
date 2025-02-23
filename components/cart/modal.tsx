@@ -214,7 +214,7 @@ function CheckoutButton() {
 
   return (
     <button
-      className="relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white"
+      className="relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white outline-none"
       type="submit"
       disabled={pending}
     >

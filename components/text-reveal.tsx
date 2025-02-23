@@ -30,15 +30,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className })
 
   return (
     <div ref={targetRef} className={cn('relative z-0 h-[200vh]', className)}>
-      <div
-        className={'sticky top-0 h-[50%] w-full'}
-        style={{
-          background: "url('/static/line1.svg'), url('/static/line2.svg')",
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover' // or "contain" depending on your desired scaling
-        }}
-      >
+      <div className={'sticky top-0 h-[50%] w-full'}>
         <div className={'mx-auto flex h-full items-center bg-transparent px-[1rem]'}>
           <p
             ref={targetRef}

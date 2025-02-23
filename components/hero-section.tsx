@@ -4,15 +4,7 @@ import Link from 'next/link';
 
 const HeroSection = () => {
   return (
-    <section
-      className="relative flex min-h-screen flex-col overflow-hidden dark:bg-gray-900"
-      style={{
-        background: "url('/static/line1.svg'), url('/static/line2.svg')",
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover' // or "contain" depending on your desired scaling
-      }}
-    >
+    <section className="relative flex min-h-screen flex-col overflow-hidden dark:bg-gray-900">
       <div className="m-auto flex h-full w-full max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
         <div className="mr-auto flex-1 place-self-center lg:col-span-7">
           <h2 className="mb-4 max-w-2xl text-4xl font-bold leading-none tracking-tight dark:text-white md:text-7xl">
