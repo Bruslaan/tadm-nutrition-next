@@ -68,13 +68,15 @@ const HeroSection = () => {
             <FloatingIcon className="-right-32 top-20 -rotate-45" size={70} />
             <FloatingIcon className="-left-32 top-32 -rotate-45" size={90} />
 
-            <Image
-              className="bottom-0 h-52 w-auto object-cover lg:h-96"
-              src="/static/test1.png"
-              width={500}
-              height={500}
-              alt="hero image"
-            />
+            <div className="overflow-hidden rounded rounded-3xl">
+              <Image
+                className="bottom-0 h-52 w-auto object-cover lg:h-96"
+                src="/static/test2.jpg"
+                width={500}
+                height={500}
+                alt="hero image"
+              />
+            </div>
           </div>
         </div>
       </div>
