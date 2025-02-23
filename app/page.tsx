@@ -24,7 +24,7 @@ export default function HomePage() {
         <ThreeItemGrid />
       </div>
 
-      <FeatureSection imageUrl="/static/section1.png" />
+      <FeatureSection imageUrl="/static/Hand.jpg" />
       <VideoScrollSection />
       <br />
       <br />
@@ -34,7 +34,6 @@ export default function HomePage() {
       <br />
       <br />
       <FaqPage />
-
       <Footer />
     </main>
   );
