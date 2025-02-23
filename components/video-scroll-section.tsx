@@ -82,8 +82,7 @@ const VideoScrollSection = () => {
         if (!card) return;
 
         const scale = cardScale.get();
-        console.log(scale);
-        card.style.transform = `scale(${1 - scale + index * 0.04})`;
+        card.style.transform = `scale(${0.9 - scale + index * 0.04})`;
         card.style.willChange = 'transform';
       });
     });
@@ -93,7 +92,7 @@ const VideoScrollSection = () => {
     <section
       ref={containerRef}
       id="inside-tadm"
-      className="relative min-h-[600vh] bg-white pt-10 lg:min-h-[500vh]"
+      className="relative m-auto min-h-[600vh] bg-white pt-10 lg:min-h-[500vh]"
     >
       <script
         type="application/ld+json"
@@ -134,7 +133,7 @@ const VideoScrollSection = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="absolute top-0 h-full w-full px-5 pt-80 md:right-0 md:max-w-[40%]">
+      <div className="absolute right-0 top-0 h-full w-full px-5 pt-80 md:max-w-[40%]">
         {cardsConfig.map((config, index) => (
           <VideoScrollCard
             key={config.title}

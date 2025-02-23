@@ -4,7 +4,15 @@ import Link from 'next/link';
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden dark:bg-gray-900">
+    <section
+      className="relative flex min-h-screen flex-col overflow-hidden dark:bg-gray-900"
+      style={{
+        background: "url('/static/line1.svg'), url('/static/line2.svg')",
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain'
+      }}
+    >
       <div className="m-auto flex h-full w-full max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
         <div className="mr-auto flex-1 place-self-center lg:col-span-7">
           <h2 className="mb-4 max-w-2xl text-4xl font-bold leading-none tracking-tight dark:text-white md:text-7xl">
@@ -35,10 +43,10 @@ const HeroSection = () => {
             </svg> */}
           </Link>
           <a
-            href="#inside-tadm"
+            href="#feature"
             className="inline-flex items-center justify-center rounded-lg border border-gray-900 bg-white px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
           >
-            Was ist tadm?
+            What is tadm?
           </a>
           <br />
           <br />
