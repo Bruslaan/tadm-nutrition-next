@@ -69,10 +69,10 @@ const HeroSection = () => {
             <FloatingIcon className="-left-32 top-32 -rotate-45" size={90} />
 
             <Image
-              className="custom-float bottom-0 h-52 w-auto object-cover lg:h-96"
-              src="/static/products-with-shadow.webp"
-              width={200}
-              height={200}
+              className="bottom-0 h-52 w-auto object-cover lg:h-96"
+              src="/static/test1.png"
+              width={500}
+              height={500}
               alt="hero image"
             />
           </div>
