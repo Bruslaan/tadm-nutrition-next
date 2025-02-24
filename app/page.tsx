@@ -28,12 +28,12 @@ export default function HomePage() {
       <VideoScrollSection />
       <br />
       <br />
-      <FeatureSection2 imageUrl="/static/doctor.png" />
+      <FeatureSection2 imageUrl="/static/bottle-on-table.jpg" />
       <MarqueeDemo />
-      <CallToActionBanner />
-      <br />
-      <br />
       <FaqPage />
+      <br />
+      <br />
+      <CallToActionBanner />
       <Footer />
     </main>
   );

@@ -15,9 +15,9 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
           <ul className="grid max-w-2xl grid-cols-1 text-xl sm:gap-2 lg:max-w-none">
             <li className="mb-3 flex flex-col">
               <img
-                src="static/package_mini.png"
+                src="static/capsule.png"
                 alt=""
-                className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
+                className="mb-4 inline-block h-10 w-10 object-contain"
               />
               <h2 className="mb-4 text-2xl font-semibold">Your brain enhancer</h2>
               <p className="text-xl text-gray-500">
@@ -27,9 +27,9 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
             </li>
             <li className="flex flex-col">
               <img
-                src="static/package_mini.png"
+                src="static/capsule.png"
                 alt=""
-                className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
+                className="mb-4 inline-block h-10 w-10 object-contain"
               />
               <h2 className="mb-4 text-2xl font-semibold">Immune booster</h2>
               <p className="text-xl text-gray-500">
@@ -39,9 +39,9 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
             </li>
             <li className="flex flex-col py-5">
               <img
-                src="static/package_mini.png"
+                src="static/capsule.png"
                 alt=""
-                className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
+                className="mb-4 inline-block h-10 w-10 object-contain"
               />
               <h2 className="mb-4 text-2xl font-semibold">Focus macher</h2>
               <p className="text-xl text-gray-500">

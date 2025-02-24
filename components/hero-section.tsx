@@ -25,7 +25,7 @@ const HeroSection = () => {
           <br />
 
           <Link
-            href="/product/first-product"
+            href="/product/tadm-max-pack"
             className="focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 mt-5 inline-flex min-w-36 items-center justify-center rounded-lg border bg-black px-5 py-3 text-center text-base font-medium text-white transition-colors duration-300 hover:bg-white hover:text-black focus:ring-4"
           >
             Shop Now
@@ -68,12 +68,12 @@ const HeroSection = () => {
             <FloatingIcon className="-right-32 top-20 -rotate-45" size={70} />
             <FloatingIcon className="-left-32 top-32 -rotate-45" size={90} />
 
-            <div className="overflow-hidden rounded rounded-3xl">
+            <div className="overflow-hidden">
               <Image
-                className="bottom-0 h-52 w-auto object-cover lg:h-96"
-                src="/static/test2.jpg"
-                width={500}
-                height={500}
+                className="bottom-0 h-[600px] w-auto object-cover"
+                src="/static/hero2.png"
+                width={400}
+                height={400}
                 alt="hero image"
               />
             </div>

@@ -82,7 +82,8 @@ const VideoScrollSection = () => {
         if (!card) return;
 
         const scale = cardScale.get();
-        card.style.transform = `scale(${0.9 - scale + index * 0.04})`;
+        const scaleNew = 0.9 - scale + index * 0.04;
+        card.style.transform = `scale(${scaleNew > 1 ? 1 : scaleNew})`;
         card.style.willChange = 'transform';
       });
     });
@@ -100,8 +101,8 @@ const VideoScrollSection = () => {
       />
 
       {/* Header Section */}
-      <div className="mx-auto flex h-full max-w-screen-xl items-baseline overflow-hidden px-5">
-        <h2 className="mb-4 mr-3 max-w-2xl text-3xl font-bold leading-none tracking-tight md:text-4xl xl:text-5xl">
+      <div className="z-50 mx-auto flex h-full max-w-screen-xl items-baseline overflow-hidden py-5">
+        <h2 className="mb-4 mr-3 max-w-2xl text-3xl font-bold leading-none tracking-tight md:text-6xl">
           Inside the
         </h2>
         <Image
@@ -116,7 +117,7 @@ const VideoScrollSection = () => {
 
       {/* Video Section */}
       <div className="sticky top-0 h-[100vh] w-full overflow-hidden">
-        <div className="w-[160%] md:-translate-x-36 lg:w-[110%]">
+        <div className="relative w-[160%] md:-translate-x-36 lg:w-[110%]">
           <video
             ref={videoRef}
             playsInline
