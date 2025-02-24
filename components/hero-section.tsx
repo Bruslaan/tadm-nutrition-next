@@ -69,8 +69,8 @@ const HeroSection = () => {
             <FloatingIcon className="-left-32 top-32 -rotate-45" size={90} />
 
             <Image
-              className="relative z-10 h-auto w-full max-w-40 object-cover lg:max-w-lg xl:max-w-xl"
-              src="/static/hero2.png"
+              className="relative h-auto w-full max-w-40 object-cover shadow-orange-200 brightness-110 drop-shadow-xl lg:max-w-lg xl:max-w-xl"
+              src="/static/hero5.png"
               width={400}
               height={400}
               alt="hero image"

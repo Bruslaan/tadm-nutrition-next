@@ -4,8 +4,8 @@ export function DynamicImage({ image }: { image: ImageType }) {
   return (
     <Image
       className="h-full w-full object-cover"
-      height={500}
-      width={500}
+      height={1200}
+      width={1200}
       alt={image?.altText as string}
       src={image?.url as string}
       priority={true}
