@@ -18,8 +18,8 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
 
   return (
     <div className="grild-cols-1 grid w-full overflow-hidden md:grid-cols-2">
-      <div className="hidden h-screen object-cover md:block">
-        {initialImage && <DynamicImage image={initialImage} />}
+      <div className="hidden h-screen items-center justify-center bg-orange-200 object-cover md:flex">
+        <div className="h-[500px]">{initialImage && <DynamicImage image={initialImage} />}</div>
       </div>
       <div className="mx-auto flex h-full w-full max-w-xl flex-col items-center justify-center p-10 py-20">
         <h2 className="font-manrope mb-2 bg-clip-text text-center text-4xl font-bold capitalize leading-10">

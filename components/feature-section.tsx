@@ -11,38 +11,38 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
         </h2>
         <br />
         <br />
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-9">
           <ul className="grid max-w-2xl grid-cols-1 text-xl sm:gap-2 lg:max-w-none">
-            <li className="mb-3 flex flex-col">
-              <img
-                src="static/capsule.png"
-                alt=""
-                className="mb-4 inline-block h-10 w-10 object-contain"
-              />
+            <li className="flex flex-col rounded-2xl bg-white p-4">
+              {/*<img*/}
+              {/*  src="static/capsule.png"*/}
+              {/*  alt=""*/}
+              {/*  className="mb-4 inline-block h-10 w-10 object-contain"*/}
+              {/*/>*/}
               <h2 className="mb-4 text-2xl font-semibold">Your brain enhancer</h2>
               <p className="text-xl text-gray-500">
                 Rich in omega-3 it powers up your brain with most integral nutrition. keep your
                 brain healthy.
               </p>
             </li>
-            <li className="flex flex-col">
-              <img
-                src="static/capsule.png"
-                alt=""
-                className="mb-4 inline-block h-10 w-10 object-contain"
-              />
+            <li className="flex flex-col rounded-2xl bg-white p-4">
+              {/*<img*/}
+              {/*  src="static/capsule.png"*/}
+              {/*  alt=""*/}
+              {/*  className="mb-4 inline-block h-10 w-10 object-contain"*/}
+              {/*/>*/}
               <h2 className="mb-4 text-2xl font-semibold">Immune booster</h2>
               <p className="text-xl text-gray-500">
                 Rich in omega-3 it powers up your brain with most integral nutrition. keep your
                 brain healthy.
               </p>
             </li>
-            <li className="flex flex-col py-5">
-              <img
-                src="static/capsule.png"
-                alt=""
-                className="mb-4 inline-block h-10 w-10 object-contain"
-              />
+            <li className="flex flex-col rounded-2xl bg-white p-4">
+              {/*<img*/}
+              {/*  src="static/capsule.png"*/}
+              {/*  alt=""*/}
+              {/*  className="mb-4 inline-block h-10 w-10 object-contain"*/}
+              {/*/>*/}
               <h2 className="mb-4 text-2xl font-semibold">Focus macher</h2>
               <p className="text-xl text-gray-500">
                 Rich in omega-3 it powers up your brain with most integral nutrition. keep your
@@ -51,7 +51,7 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
             </li>
           </ul>
 
-          <div className="h-full w-full max-w-xl overflow-hidden rounded-xl">
+          <div className="h-full w-full max-w-xl overflow-hidden rounded-3xl">
             <Image
               width={500}
               height={500}
@@ -106,7 +106,7 @@ export const FeatureSection2 = ({ imageUrl }: { imageUrl: string }) => {
             />
           </div>
           {/* Item */}
-          <div className="h-full max-h-[70vh] w-full max-w-xl overflow-hidden rounded-xl">
+          <div className="h-full max-h-[70vh] w-full max-w-xl overflow-hidden rounded-3xl">
             <Image
               width={500}
               height={500}
