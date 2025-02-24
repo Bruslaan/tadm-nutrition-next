@@ -78,7 +78,7 @@ export const FeatureSection2 = ({ imageUrl }: { imageUrl: string }) => {
         </h2>
         <br />
         {/* Component */}
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-20">
           {/* Item */}
           <div className="">
             <p className="px-3 text-xl text-gray-700">
@@ -106,7 +106,7 @@ export const FeatureSection2 = ({ imageUrl }: { imageUrl: string }) => {
             />
           </div>
           {/* Item */}
-          <div className="h-full max-h-[70vh] w-full max-w-xl overflow-hidden rounded-3xl">
+          <div className="h-full max-h-[50vh] w-full max-w-xl overflow-hidden rounded-3xl">
             <Image
               width={500}
               height={500}

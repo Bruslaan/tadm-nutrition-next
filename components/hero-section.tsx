@@ -68,15 +68,14 @@ const HeroSection = () => {
             <FloatingIcon className="-right-32 top-20 -rotate-45" size={70} />
             <FloatingIcon className="-left-32 top-32 -rotate-45" size={90} />
 
-            <div className="relative">
-              <Image
-                className="relative z-10 h-[500px] w-auto object-cover"
-                src="/static/hero2.png"
-                width={400}
-                height={400}
-                alt="hero image"
-              />
-            </div>
+            <Image
+              className="relative z-10 h-auto w-full max-w-40 object-cover lg:max-w-lg xl:max-w-xl"
+              src="/static/hero2.png"
+              width={400}
+              height={400}
+              alt="hero image"
+              priority
+            />
           </div>
         </div>
       </div>
