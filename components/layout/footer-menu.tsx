@@ -19,7 +19,7 @@ export function FooterMenuItem({ item }: { item: Menu }) {
       <Link
         href={item.path}
         className={clsx(
-          'block p-2 text-lg underline-offset-4 hover:text-black hover:underline dark:hover:text-neutral-300 md:inline-block md:text-sm',
+          'block text-lg underline-offset-4 hover:text-black hover:underline dark:hover:text-neutral-300 md:inline-block md:text-sm',
           {
             'text-black dark:text-neutral-300': active
           }
@@ -35,8 +35,8 @@ export default function FooterMenu({ menu }: { menu: Menu[] }) {
   if (!menu.length) return null;
 
   return (
-    <nav>
-      <ul>
+    <nav className="w-full uppercase">
+      <ul className="mt-3 flex w-full gap-3">
         {menu.map((item: Menu) => {
           return <FooterMenuItem key={item.title} item={item} />;
         })}
