@@ -2,6 +2,15 @@ import Image from 'next/image';
 import FloatingIcon from './floating-icon';
 import Link from 'next/link';
 
+const HeroIcon = ({ title, icon }: { title: string; icon: string }) => {
+  return (
+    <div className="flex gap-1">
+      <Image className="object-contain" src={icon} width={20} height={20} alt="vegan icon" />
+      <p className="font-bold uppercase"> {title}</p>
+    </div>
+  );
+};
+
 const HeroSection = () => {
   return (
     <section
@@ -52,13 +61,11 @@ const HeroSection = () => {
           <br />
           <br />
 
-          <Image
-            className="object-contain"
-            src="/static/vegan.png"
-            width={150}
-            height={20}
-            alt="vegan icon"
-          />
+          <div className="flex gap-4">
+            <HeroIcon title="100% Vegan" icon="static/vegan-icon.svg" />
+            <HeroIcon title="No Animals Harmed" icon="static/noanimals-icon.svg" />
+            <HeroIcon title="Green Earth" icon="static/earth-icon.svg" />
+          </div>
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="relative p-10">

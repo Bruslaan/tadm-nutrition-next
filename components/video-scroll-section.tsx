@@ -101,22 +101,22 @@ const VideoScrollSection = () => {
       />
 
       {/* Header Section */}
-      <div className="z-50 mx-auto flex h-full max-w-screen-xl items-baseline overflow-hidden py-5">
-        <h2 className="mb-4 mr-3 max-w-2xl text-3xl font-bold leading-none tracking-tight md:text-6xl">
-          Inside the
-        </h2>
-        <Image
-          src="/static/logo-hd.webp"
-          alt="logo"
-          width={200}
-          height={200}
-          className="[clip-path:inset(-2px)]"
-          priority
-        />
-      </div>
 
       {/* Video Section */}
       <div className="sticky top-0 h-[100vh] w-full overflow-hidden">
+        <div className="absolute top-0 z-50 mx-auto ml-4 flex items-baseline overflow-hidden py-5">
+          <h2 className="mb-4 mr-3 max-w-2xl text-3xl font-bold leading-none tracking-tight md:text-6xl">
+            Inside the
+          </h2>
+          <Image
+            src="/static/logo-hd.webp"
+            alt="logo"
+            width={150}
+            height={150}
+            className="[clip-path:inset(-2px)]"
+            priority
+          />
+        </div>
         <div className="relative w-[160%] md:-translate-x-36 lg:w-[110%]">
           <video
             ref={videoRef}

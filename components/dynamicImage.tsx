@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { Image as ImageType } from 'lib/shopify/types';
-export function DynamicImage({ image }: { image: ImageType }) {
+export function DynamicImage({ image, customImage }: { image: ImageType; customImage?: string }) {
   return (
     <Image
       className="h-full w-full object-cover"
-      height={1200}
-      width={1200}
+      height={20000}
+      width={20000}
       alt={image?.altText as string}
-      src={image?.url as string}
+      src={customImage ? `/static/${customImage.split(' ')[0]}.jpg` : (image?.url as string)}
       priority={true}
     />
   );

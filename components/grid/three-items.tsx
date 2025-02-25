@@ -17,7 +17,7 @@ function ThreeItemGridItem({
       className={size === 'full' ? 'md:col-span-4 md:row-span-2' : 'md:col-span-2 md:row-span-1'}
     >
       <Link
-        className="block aspect-square h-full w-full overflow-hidden hover:shadow-xl"
+        className="block aspect-square h-full w-full overflow-hidden"
         href={`/product/${item.handle}`}
         prefetch={true}
       >

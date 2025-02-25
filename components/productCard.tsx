@@ -8,8 +8,8 @@ export const ProductCard = ({ product, selected }: { product: Product; selected:
   return (
     <div
       className={clsx(
-        'relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl border',
-        selected && 'border-gray-800'
+        'relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl border transition-shadow',
+        selected && 'border-2 border-gray-800'
       )}
     >
       <div className="h-full md:hidden">
