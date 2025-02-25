@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-import Label from '../label';
 
 export function GridTileImage({
   isInteractive = true,
@@ -17,11 +16,10 @@ export function GridTileImage({
     position?: 'bottom' | 'center';
   };
 } & React.ComponentProps<typeof Image>) {
-  console.log(props);
   return (
     <div
       className={clsx(
-        'group flex h-full w-full items-center justify-center overflow-hidden rounded-3xl border bg-gradient-to-b from-orange-100 to-orange-200 hover:border-gray-500 dark:bg-black',
+        'relative flex h-full w-full items-center justify-center overflow-hidden rounded-3xl bg-orange-200',
         {
           relative: label,
           'border-2 border-gray-500': active,
@@ -31,13 +29,11 @@ export function GridTileImage({
     >
       {props.src ? (
         <Image
-          className={clsx(
-            'relative aspect-square h-full min-h-32 w-full object-cover drop-shadow-xl',
-            {
-              'transition duration-300 ease-in-out group-hover:scale-105': isInteractive
-            }
-          )}
+          className={clsx('relative h-full w-full object-cover', {
+            'transition duration-300 ease-in-out hover:scale-105': isInteractive
+          })}
           {...props}
+          alt={props.title || ''}
         />
       ) : null}
       {label ? (

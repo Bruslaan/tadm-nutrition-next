@@ -11,18 +11,18 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
         </h2>
         <br />
         <br />
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-9">
-          <ul className="grid max-w-2xl grid-cols-1 text-xl sm:gap-2 lg:max-w-none">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
+          <ul className="grid max-w-2xl grid-cols-1 text-xl sm:gap-6 lg:max-w-none">
             <li className="flex flex-col rounded-2xl bg-white p-4">
               {/*<img*/}
               {/*  src="static/capsule.png"*/}
               {/*  alt=""*/}
               {/*  className="mb-4 inline-block h-10 w-10 object-contain"*/}
               {/*/>*/}
-              <h2 className="mb-4 text-2xl font-semibold">Your brain enhancer</h2>
+              <h2 className="mb-4 text-2xl font-semibold">Enhancement of Cognitive Abilities</h2>
               <p className="text-xl text-gray-500">
-                Rich in omega-3 it powers up your brain with most integral nutrition. keep your
-                brain healthy.
+                Our synergistic formula provides your brain with essential fatty acids that are
+                crucial for mental clarity and focus.
               </p>
             </li>
             <li className="flex flex-col rounded-2xl bg-white p-4">
@@ -31,10 +31,10 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
               {/*  alt=""*/}
               {/*  className="mb-4 inline-block h-10 w-10 object-contain"*/}
               {/*/>*/}
-              <h2 className="mb-4 text-2xl font-semibold">Immune booster</h2>
+              <h2 className="mb-4 text-2xl font-semibold">Support for Holistic Health</h2>
               <p className="text-xl text-gray-500">
-                Rich in omega-3 it powers up your brain with most integral nutrition. keep your
-                brain healthy.
+                tadm Brain not only supports your brain but also strengthens your overall health.
+                Body and mind work hand in hand – only in harmony can you reach your full potential.
               </p>
             </li>
             <li className="flex flex-col rounded-2xl bg-white p-4">
@@ -43,10 +43,11 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
               {/*  alt=""*/}
               {/*  className="mb-4 inline-block h-10 w-10 object-contain"*/}
               {/*/>*/}
-              <h2 className="mb-4 text-2xl font-semibold">Focus macher</h2>
+              <h2 className="mb-4 text-2xl font-semibold">Easy Integration into Daily Life</h2>
               <p className="text-xl text-gray-500">
-                Rich in omega-3 it powers up your brain with most integral nutrition. keep your
-                brain healthy. Healthy brain is a guarantee to a stable and healthy life.
+                Consistent success is built on a reliable routine. With its easy-to-take, vegan
+                capsules, tadm Brain seamlessly fits into your daily life, providing sustainable
+                support for body and mind every day.
               </p>
             </li>
           </ul>

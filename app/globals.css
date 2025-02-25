@@ -21,6 +21,12 @@
   background-color: #f8fcee;
 }
 
+@layer utilities {
+  .whaaaat {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+}
+
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading='lazy'] {
     clip-path: inset(0.6px);
