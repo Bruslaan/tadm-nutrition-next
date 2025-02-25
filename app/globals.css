@@ -10,6 +10,8 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+
+
 @layer base {
   *,
   ::after,
@@ -44,6 +46,15 @@
     background-color: #f8fcee;
   }
 }
+
+.custom-container{
+  max-width: 1200px !important;
+}
+
+.product_card :hover{
+  background: rgba(253, 217, 170, 0.5)
+}
+
 
 @layer utilities {
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {

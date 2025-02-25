@@ -24,7 +24,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
         {initialImage && <DynamicImage image={initialImage} customImage={rightSideImage} />}
       </div>
       <div className="mx-auto flex h-full w-full max-w-xl flex-col items-center justify-center p-10 py-20">
-        <h2 className="font-manrope mb-2 bg-clip-text text-center text-4xl font-bold capitalize leading-10">
+        <h2 className="font-manrope mb-2 bg-clip-text text-center text-4xl leading-10 font-bold capitalize">
           Hol dir dein TADM
         </h2>
         <ReviewStars />
@@ -32,7 +32,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
 
         <div className="flex w-full flex-col items-center justify-center gap-5">
           {allProducts.map((product) => (
-            <div
+            <button
               key={product.id}
               className="w-full"
               onClick={() => {
@@ -43,7 +43,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
               }}
             >
               <ProductCard selected={currentProduct?.id === product.id} product={product} />
-            </div>
+            </button>
           ))}
 
           <div className="mt-10 w-full">
