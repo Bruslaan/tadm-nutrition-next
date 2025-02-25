@@ -45,8 +45,8 @@ const CuminHeroSection = () => {
             width={500}
             className="w-60 lg:w-96"
           ></Image>
-          <FloatingIcon className="right-0 top-0 w-14 blur-sm" size={70} />
-          <FloatingIcon className="bottom-0 left-0 z-10 blur-sm" size={150} />
+          <FloatingIcon className="right-0 top-0 w-14 blur-xs" size={70} />
+          <FloatingIcon className="bottom-0 left-0 z-10 blur-xs" size={150} />
           <FloatingIcon className="left-0" size={50} />
           <FloatingIcon className="-right-32 top-20 -rotate-45" size={80} />
         </div>

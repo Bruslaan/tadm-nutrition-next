@@ -1,77 +1,97 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: light;
-    font-family: Urbanist;
+@config '../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
-.animate-carousel:hover {
-  animation-play-state: paused;
-}
-
-.animate-carousel_reverse:hover {
-  animation-play-state: paused;
-}
-
-.nature_green {
-  background-color: #f8fcee;
+@utility whaaaat {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 @layer utilities {
-  .whaaaat {
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: light;
+      font-family: Urbanist;
+    }
+  }
+
+  .animate-carousel:hover {
+    animation-play-state: paused;
+  }
+
+  .animate-carousel_reverse:hover {
+    animation-play-state: paused;
+  }
+
+  .nature_green {
+    background-color: #f8fcee;
   }
 }
 
-@supports (font: -apple-system-body) and (-webkit-appearance: none) {
-  img[loading='lazy'] {
-    clip-path: inset(0.6px);
-  }
-}
-
-a,
-input,
-button {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-neutral-900;
-}
-
-.custom-float {
-  animation: float 5s infinite;
-}
-
-.custom-breath {
-  animation: breath 5s infinite;
-}
-
-@keyframes breath {
-  0% {
-    scale: 0.98;
+@layer utilities {
+  @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+    img[loading='lazy'] {
+      clip-path: inset(0.6px);
+    }
   }
 
-  50% {
-    scale: 1;
+  a,
+  input,
+  button {
+    @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-neutral-900;
   }
 
-  100% {
-    scale: 0.98;
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translatey(0px);
+  .custom-float {
+    animation: float 5s infinite;
   }
 
-  50% {
-    transform: translatey(-20px);
+  .custom-breath {
+    animation: breath 5s infinite;
   }
 
-  100% {
-    transform: translatey(0px);
+  @keyframes breath {
+    0% {
+      scale: 0.98;
+    }
+
+    50% {
+      scale: 1;
+    }
+
+    100% {
+      scale: 0.98;
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+
+    50% {
+      transform: translatey(-20px);
+    }
+
+    100% {
+      transform: translatey(0px);
+    }
   }
 }
 

@@ -89,7 +89,7 @@ export default function CartModal() {
                 </div>
               ) : (
                 <div className="flex h-full flex-col justify-between overflow-hidden p-1">
-                  <ul className="flex-grow overflow-auto py-4">
+                  <ul className="grow overflow-auto py-4">
                     {cart.lines
                       .sort((a, b) =>
                         a.merchandise.product.title.localeCompare(b.merchandise.product.title)
@@ -214,7 +214,7 @@ function CheckoutButton() {
 
   return (
     <button
-      className="relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white outline-none"
+      className="relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white outline-hidden"
       type="submit"
       disabled={pending}
     >

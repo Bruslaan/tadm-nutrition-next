@@ -92,7 +92,7 @@ const ReviewCard = ({
 export function MarqueeDemo() {
   return (
     <section className="min-h-screen w-full pt-10">
-      <div className="mx-auto flex max-w-screen-xl justify-center px-4">
+      <div className="mx-auto flex max-w-(--breakpoint-xl) justify-center px-4">
         <h2 className="mb-4 max-w-2xl text-3xl font-bold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
           What our Customers think
         </h2>
@@ -112,8 +112,8 @@ export function MarqueeDemo() {
             </div>
           </div>
         </div>
-        <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white"></div>
-        <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white"></div>
+        <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-linear-to-r from-white"></div>
+        <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-linear-to-l from-white"></div>
       </div>
     </section>
   );

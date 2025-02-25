@@ -16,11 +16,11 @@ const NaturePage = () => {
       <NatureHeroSection />
       <br />
       <br />
-      <div className="mx-auto max-w-screen-xl p-5">
+      <div className="mx-auto max-w-(--breakpoint-xl) p-5">
         <h2 className="text-4xl font-bold text-gray-200 md:text-9xl">Production</h2>
       </div>
       <ImageLeftSection imageURL="/static/footprint.png" />
-      <div className="mx-auto max-w-screen-xl p-5">
+      <div className="mx-auto max-w-(--breakpoint-xl) p-5">
         <h2 className="text-4xl font-bold text-gray-200 md:text-9xl">Recycle</h2>
       </div>
       <RecycleSection />

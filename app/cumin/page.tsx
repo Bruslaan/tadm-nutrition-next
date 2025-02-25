@@ -9,7 +9,7 @@ const CuminPage = () => {
   return (
     <>
       <CuminHeroSection />
-      <div className="mx-auto max-w-screen-xl p-5 lg:min-h-screen">
+      <div className="mx-auto max-w-(--breakpoint-xl) p-5 lg:min-h-screen">
         <h2 className="text-6xl font-bold text-gray-300 md:max-w-[50%] md:text-9xl">
           <span className="font-normal">What is</span> Black Cumin?
         </h2>
@@ -28,7 +28,7 @@ const CuminPage = () => {
           <Image src="/static/cumin-left.png" alt="cumin flower" width={600} height={600}></Image>
         </div>
 
-        <div className="mx-auto w-full max-w-screen-xl p-5 text-right">
+        <div className="mx-auto w-full max-w-(--breakpoint-xl) p-5 text-right">
           <h2 className="ml-auto text-6xl font-bold text-gray-300 md:max-w-[50%] lg:text-9xl">
             <span className="font-normal">What it</span> Does?
           </h2>
@@ -43,7 +43,7 @@ const CuminPage = () => {
 
       <ImageLeftSection imageURL="/static/footprint.png" />
 
-      <div className="mx-auto max-w-screen-xl p-5 lg:min-h-screen">
+      <div className="mx-auto max-w-(--breakpoint-xl) p-5 lg:min-h-screen">
         <h2 className="text-6xl font-bold text-gray-300 md:max-w-[50%] md:text-9xl">
           <span className="font-normal">In unique</span> Mix
         </h2>

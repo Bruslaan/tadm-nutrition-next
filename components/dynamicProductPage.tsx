@@ -20,7 +20,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
 
   return (
     <div className="grild-cols-1 grid w-full overflow-hidden md:grid-cols-2">
-      <div className="hidden h-screen items-center justify-center bg-gradient-to-b from-orange-100 to-orange-200 object-cover md:flex">
+      <div className="hidden h-screen items-center justify-center bg-linear-to-b from-orange-100 to-orange-200 object-cover md:flex">
         {initialImage && <DynamicImage image={initialImage} customImage={rightSideImage} />}
       </div>
       <div className="mx-auto flex h-full w-full max-w-xl flex-col items-center justify-center p-10 py-20">

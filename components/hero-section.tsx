@@ -22,7 +22,7 @@ const HeroSection = () => {
         backgroundSize: 'contain'
       }}
     >
-      <div className="m-auto flex h-full w-full max-w-screen-xl flex-col-reverse gap-4 p-5 lg:flex-row">
+      <div className="m-auto flex h-full w-full max-w-(--breakpoint-xl) flex-col-reverse gap-4 p-5 lg:flex-row">
         <div className="mr-auto flex-1 place-self-center lg:col-span-7">
           <h2 className="mb-4 max-w-2xl text-4xl font-bold leading-none tracking-tight dark:text-white md:text-7xl">
             Healthy, Organic Brain Nutrition
@@ -69,8 +69,8 @@ const HeroSection = () => {
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="relative p-10">
-            <FloatingIcon className="right-0 top-0 w-14 blur-sm" size={60} />
-            <FloatingIcon className="bottom-0 left-0 z-10 blur-sm" size={130} />
+            <FloatingIcon className="right-0 top-0 w-14 blur-xs" size={60} />
+            <FloatingIcon className="bottom-0 left-0 z-10 blur-xs" size={130} />
             <FloatingIcon className="left-0" size={30} />
             <FloatingIcon className="-right-32 top-20 -rotate-45" size={70} />
             <FloatingIcon className="-left-32 top-32 -rotate-45" size={90} />
