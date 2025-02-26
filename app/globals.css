@@ -47,6 +47,11 @@
   }
 }
 
+.orange-custom{
+  background-color: rgb(250, 209, 148);
+  background: radial-gradient(#ffe4bb, #fdb252);
+}
+
 .custom-container{
   max-width: 1200px !important;
 }

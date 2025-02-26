@@ -31,9 +31,6 @@ export default function HomePage() {
       <FeatureSection2 imageUrl="/static/bottle-on-table.jpg" />
       <MarqueeDemo />
       <FaqPage />
-      <br />
-      <br />
-      <CallToActionBanner />
       <Footer />
     </main>
   );

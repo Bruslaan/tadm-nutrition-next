@@ -2,11 +2,21 @@ import Image from 'next/image';
 import FloatingIcon from './floating-icon';
 import Link from 'next/link';
 
-const HeroIcon = ({ title, icon }: { title: string; icon: string }) => {
+const HeroIcon = ({ title, subtitle, icon }: { title: string; subtitle: string; icon: string }) => {
   return (
-    <div className="flex gap-1">
-      <Image className="object-contain" src={icon} width={20} height={20} alt="vegan icon" />
-      <p className="font-bold uppercase"> {title}</p>
+    <div className="flex w-32 flex-col items-center justify-center gap-1 text-center text-xs font-bold uppercase">
+      <Image
+        style={{ height: '30px' }}
+        className="w-auto object-contain"
+        src={icon}
+        width={30}
+        height={30}
+        alt="vegan icon"
+      />
+      <div>
+        <p> {title}</p>
+        <p>{subtitle}</p>
+      </div>
     </div>
   );
 };
@@ -14,78 +24,36 @@ const HeroIcon = ({ title, icon }: { title: string; icon: string }) => {
 const HeroSection = () => {
   return (
     <section
-      className="relative flex min-h-screen flex-col overflow-hidden dark:bg-gray-900"
+      className="relative flex min-h-screen flex-col overflow-hidden pt-10 dark:bg-gray-900"
       style={{
-        background: "url('/static/line1.svg'), url('/static/line2.svg')",
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain'
       }}
     >
-      <div className="m-auto flex h-full w-full max-w-7xl flex-col-reverse gap-4 p-5 lg:flex-row">
-        <div className="mr-auto flex-1 place-self-center lg:col-span-7">
-          <h2 className="mb-4 max-w-2xl text-4xl leading-none font-bold tracking-tight md:text-7xl dark:text-white">
-            Healthy, Organic Brain Nutrition
-          </h2>
-          <br />
-          <p className="mb-6 max-w-2xl text-2xl font-light text-gray-500 lg:mb-8 dark:text-gray-400">
-            tadm is a supplement that supports your ability to focus, mental speed & memory.
-          </p>
-          <br />
-
-          <Link
-            href="/product/tadm-max-pack"
-            className="focus:ring-primary-300 dark:focus:ring-primary-900 mt-5 mr-3 inline-flex min-w-36 items-center justify-center rounded-lg border bg-black px-5 py-3 text-center text-base font-medium text-white transition-colors duration-300 hover:bg-white hover:text-black focus:ring-4"
-          >
-            Shop Now
-            {/* <svg
-              className="-mr-1 ml-2 h-5 w-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              ></path>
-            </svg> */}
-          </Link>
-          <a
-            href="#feature"
-            className="inline-flex items-center justify-center rounded-lg border border-gray-900 bg-white px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-          >
-            What is tadm?
-          </a>
-          <br />
-          <br />
-          <br />
-
-          <div className="flex gap-4">
-            <HeroIcon title="100% Vegan" icon="static/vegan-icon.svg" />
-            <HeroIcon title="No Animals Harmed" icon="static/noanimals-icon.svg" />
-            <HeroIcon title="Green Earth" icon="static/earth-icon.svg" />
-          </div>
-        </div>
-        <div className="flex flex-1 items-center justify-center">
-          <div className="relative p-10">
-            <FloatingIcon className="top-0 right-0 w-14 blur-xs" size={60} />
-            <FloatingIcon className="bottom-0 left-0 z-10 blur-xs" size={130} />
-            <FloatingIcon className="left-0" size={30} />
-            <FloatingIcon className="top-20 -right-32 -rotate-45" size={70} />
-            <FloatingIcon className="top-32 -left-32 -rotate-45" size={90} />
-
-            <Image
-              className="relative h-auto w-full max-w-40 object-cover shadow-orange-200 brightness-110 drop-shadow-xl lg:max-w-lg xl:max-w-xl"
-              src="/static/hero5.png"
-              width={400}
-              height={400}
-              alt="hero image"
-              priority
-            />
-          </div>
-        </div>
+      <div className="mt-14 block p-5">
+        <h2 className="mb-4 text-center text-4xl leading-none font-bold tracking-tight md:text-7xl dark:text-white">
+          Healthy, Organic Brain Nutrition
+        </h2>
+        <p className="text-md mb-6 text-center font-light text-gray-500 md:text-2xl lg:mb-8 dark:text-gray-400">
+          tadm is a supplement that supports your ability to focus, mental speed & memory.
+        </p>
       </div>
+
+      <Image
+        src="/static/herobg.webp"
+        width={1200}
+        height={1200}
+        style={{ zIndex: '-10' }}
+        alt="hero image"
+        className="absolute inset-0 h-full w-full object-cover object-bottom"
+        priority
+      />
+      <FloatingIcon className="top-0 right-0 w-14 blur-xs" size={60} />
+      <FloatingIcon className="bottom-0 left-0 z-10 blur-xs" size={130} />
+      <FloatingIcon className="left-0" size={30} />
+      <FloatingIcon className="right-0 bottom-0 -rotate-45" size={70} />
+      <FloatingIcon className="top-32 left-32 -rotate-45" size={90} />
     </section>
   );
 };

@@ -104,19 +104,12 @@ const VideoScrollSection = () => {
 
       {/* Video Section */}
       <div className="sticky top-0 h-[100vh] w-full overflow-hidden">
-        <div className="absolute top-0 z-50 mx-auto ml-4 flex items-baseline overflow-hidden py-5">
-          <h2 className="mb-4 mr-3 max-w-2xl text-3xl font-bold leading-none tracking-tight md:text-6xl">
-            Inside the
+        <div className="absolute inset-x-0 top-0 z-50 mt-10 flex w-full items-center justify-center">
+          <h2 className="mx-auto text-center text-3xl leading-none font-bold md:text-6xl">
+            Inside the Tadm
           </h2>
-          <Image
-            src="/static/logo-hd.webp"
-            alt="logo"
-            width={150}
-            height={150}
-            className="[clip-path:inset(-2px)]"
-            priority
-          />
         </div>
+
         <div className="relative w-[160%] md:-translate-x-36 lg:w-[110%]">
           <video
             ref={videoRef}
@@ -134,7 +127,7 @@ const VideoScrollSection = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="absolute right-0 top-0 h-full w-full px-5 pt-80 md:max-w-[40%]">
+      <div className="absolute top-0 right-0 h-full w-full px-5 pt-80 md:max-w-[40%]">
         {cardsConfig.map((config, index) => (
           <VideoScrollCard
             key={config.title}
