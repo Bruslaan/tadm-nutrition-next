@@ -100,8 +100,6 @@ const VideoScrollSection = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJson) }}
       />
 
-      {/* Header Section */}
-
       {/* Video Section */}
       <div className="sticky top-0 h-[100vh] w-full overflow-hidden">
         <div className="absolute inset-x-0 top-0 z-50 mt-10 flex w-full items-center justify-center">

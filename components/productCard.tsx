@@ -8,7 +8,7 @@ export const ProductCard = ({ product, selected }: { product: Product; selected:
   return (
     <div
       className={clsx(
-        'relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl border transition-shadow',
+        'hover relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl border transition-shadow hover:border-gray-700 hover:bg-orange-100',
         selected && 'border-2 border-gray-800'
       )}
     >

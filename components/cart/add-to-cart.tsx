@@ -35,7 +35,7 @@ function SubmitButton({
         disabled
         className={clsx(buttonClasses, disabledClasses)}
       >
-        <div className="absolute left-0 ml-4">
+        <div className="absolute left-0 ml-4 cursor-pointer">
           <PlusIcon className="h-5" />
         </div>
         Add To Cart

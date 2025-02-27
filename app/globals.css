@@ -22,15 +22,14 @@
   }
 }
 
-@utility whaaaat {
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
+button {
+  cursor: pointer !important;
 }
 
 @layer utilities {
   @media (prefers-color-scheme: dark) {
     html {
       color-scheme: light;
-      font-family: Urbanist;
     }
   }
 
@@ -74,6 +73,15 @@
     @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-neutral-900;
   }
 
+  .even_shadow{
+    -webkit-box-shadow: 0px 10px  1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+  }
+
+  .shop_now_button{
+    background: #222222;
+    color: white;
+  }
   .custom-float {
     animation: float 5s infinite;
   }

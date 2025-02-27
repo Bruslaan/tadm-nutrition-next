@@ -38,7 +38,7 @@ export async function Navbar() {
         <Link
           href="/"
           prefetch={true}
-          className="flex w-full items-center justify-center md:w-auto"
+          className="ml-10 flex w-full items-center justify-center md:ml-0 md:w-auto"
         >
           <LogoSquare />
         </Link>
