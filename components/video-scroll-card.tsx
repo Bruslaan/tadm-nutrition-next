@@ -20,7 +20,7 @@ const VideoScrollCard = ({
         marginBlock: '30vh'
       }}
     >
-      <Link className="group overflow-hidden p-10" href={urlTo ?? '/nature'}>
+      <Link prefetch={true} className="group overflow-hidden p-10" href={urlTo ?? '/nature'}>
         <h2 className={clsx('text-3xl font-semibold md:mt-10')}>{title}</h2>
         <br />
         <p className="p-1 text-xl font-light">
@@ -34,7 +34,7 @@ const VideoScrollCard = ({
         </div>
 
         {urlTo && (
-          <div className="absolute right-2 top-2 overflow-hidden">
+          <div className="absolute top-2 right-2 overflow-hidden">
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white pt-1 text-3xl text-gray-400 transition-transform duration-300 group-hover:-rotate-45 group-hover:text-gray-900">
               ➜
             </div>

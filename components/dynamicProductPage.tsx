@@ -23,7 +23,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
       <div className="hidden h-screen items-center justify-center bg-linear-to-b from-orange-100 to-orange-200 object-cover md:flex">
         {initialImage && <DynamicImage image={initialImage} customImage={rightSideImage} />}
       </div>
-      <div className="mx-auto flex h-full w-full max-w-xl flex-col items-center justify-center p-10 py-20">
+      <div className="mx-auto flex h-full w-full max-w-xl flex-col items-center justify-center p-10 py-32">
         <h2 className="font-manrope mb-2 bg-clip-text text-center text-4xl leading-10 font-bold capitalize">
           Hol dir dein TADM
         </h2>
