@@ -30,7 +30,7 @@ export default async function Page(props: { params: Promise<{ page: string }> })
   if (!page) return notFound();
 
   return (
-    <section className="mx-auto max-w-7xl py-10">
+    <section className="mx-auto max-w-7xl p-5 py-5">
       <h1 className="mb-8 text-center text-5xl font-bold">{page.title}</h1>
       <Prose className="mb-8" html={page.body as string} />
       <p className="text-sm italic">

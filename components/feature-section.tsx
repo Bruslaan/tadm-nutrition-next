@@ -12,7 +12,7 @@ const FeatureSection = ({ imageUrl }: { imageUrl: string }) => {
         <br />
         <br />
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
-          <ul className="grid max-w-2xl grid-cols-1 text-xl sm:gap-6 lg:max-w-none">
+          <ul className="grid max-w-2xl grid-cols-1 gap-6 text-xl lg:max-w-none">
             <li className="flex flex-col rounded-2xl bg-white p-4">
               {/*<img*/}
               {/*  src="static/capsule.png"*/}

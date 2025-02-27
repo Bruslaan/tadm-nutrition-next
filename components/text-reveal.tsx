@@ -2,9 +2,12 @@
 
 export function TextRevealDemo() {
   return (
-    <div className="relative z-10 flex min-h-64 w-full items-center justify-center rounded-lg dark:bg-black">
+    <section
+      id="text-reveal"
+      className="relative z-10 flex min-h-64 w-full items-center justify-center rounded-lg dark:bg-black"
+    >
       <TextRevealByWord text="Empowering the brightest minds to unlock their ultimate potential" />
-    </div>
+    </section>
   );
 }
 
@@ -42,7 +45,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className })
           <p
             ref={targetRef}
             className={
-              'flex flex-wrap justify-center p-10 text-4xl font-bold dark:text-white/20 md:p-8 md:text-8xl'
+              'flex flex-wrap justify-center p-10 text-4xl font-bold md:p-8 md:text-8xl dark:text-white/20'
             }
           >
             {words.map((word, i) => {
