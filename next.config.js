@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const path = require('path');
 module.exports = {
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -9,6 +8,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'cdn.shopify.com',
         pathname: '/s/files/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com'
       }
     ]
   }

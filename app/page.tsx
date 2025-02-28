@@ -1,4 +1,3 @@
-import CallToActionBanner from 'components/call-to-action-banner';
 import FaqPage from 'components/faq-page';
 import FeatureSection, { FeatureSection2 } from 'components/feature-section';
 import { ThreeItemGrid } from 'components/grid/three-items';
@@ -7,7 +6,7 @@ import Footer from 'components/layout/footer';
 import { MarqueeDemo } from 'components/testimonals';
 import { TextRevealDemo } from 'components/text-reveal';
 import VideoScrollSection from 'components/video-scroll-section';
-
+import { AnimatedTestimonialsDemo } from '../components/AnimatedTestimonials';
 export const metadata = {
   description: 'healthy brain nutrition supplement',
   openGraph: {
@@ -29,6 +28,7 @@ export default function HomePage() {
       <br />
       <br />
       <FeatureSection2 imageUrl="/static/bottle-on-table.jpg" />
+      <AnimatedTestimonialsDemo />
       <MarqueeDemo />
       <FaqPage />
       <Footer />
