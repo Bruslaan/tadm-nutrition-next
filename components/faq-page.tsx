@@ -1,6 +1,6 @@
 'use client';
 import { ChevronDown } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 
 const Card = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return <div className={` ${className}`}>{children}</div>;
@@ -17,7 +17,13 @@ const CardContent = ({
 };
 
 // @ts-ignore
-export const FAQItem = ({ question, answer }: { question?: string; answer: string }) => {
+export const FAQItem = ({
+  question,
+  answer
+}: {
+  question?: string;
+  answer: string | ReactNode;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

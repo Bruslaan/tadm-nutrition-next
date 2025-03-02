@@ -51,7 +51,7 @@ export const AnimatedTestimonials = ({
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
-                  key={testimonial.src}
+                  key={testimonial.name}
                   initial={{
                     opacity: 0,
                     scale: 0.9,
@@ -121,7 +121,7 @@ export const AnimatedTestimonials = ({
               ”{testimonials[active]?.quote}„
             </blockquote>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="mt-4 flex gap-4 pt-12 md:pt-0">
             <button
               onClick={handlePrev}
               className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"

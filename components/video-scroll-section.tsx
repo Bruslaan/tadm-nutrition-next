@@ -1,7 +1,7 @@
 'use client';
 import { useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { useCallback, useRef } from 'react';
+import { ReactNode, useCallback, useRef } from 'react';
 import VideoScrollCard from './video-scroll-card';
 
 type CardConfig = {
@@ -9,6 +9,7 @@ type CardConfig = {
   title: string;
   color: string;
   topPosition: string;
+  text: string | ReactNode;
 };
 
 const videoJson = {
@@ -32,27 +33,155 @@ const VideoScrollSection = () => {
       title: 'Black seed oil',
       color: 'bg-blue-50',
       topPosition: 'md:top-[10%] top-[30%]',
-      urlTo: '/cumin'
+      urlTo: '/cumin',
+      text: (
+        <div className="flex flex-col gap-2">
+          <p>
+            Wir verwenden ausschließlich Schwarzkümmelöl in Bio-Qualität mit einem hohen
+            Thymochinon-Gehalt, um die Wirkungskraft für deine Gesundheit zu maximieren. Aktuelle
+            Studien belegen die entzündungshemmenden Eigenschaften sowie die immunstärkende Wirkung
+            von Thymochinon.
+          </p>
+
+          <ul className="list-disc pl-4">
+            <li>
+              <strong>Antibakteriell und antiviral</strong>
+            </li>
+            <li>
+              <strong>Entzündungshemmend</strong>
+            </li>
+            <li>
+              <strong>Reich an essenziellen Fettsäuren</strong>
+            </li>
+          </ul>
+        </div>
+      )
     },
     {
       title: 'Algae Oil',
       color: 'bg-green-50',
       topPosition: 'md:top-[12%] top-[32%]',
-      urlTo: '/algae'
+      urlTo: '/algae',
+      text: (
+        <div className="flex flex-col gap-2">
+          <p>
+            Unser Algenöl ist die ursprüngliche, vegane Quelle der lebenswichtigen
+            Omega-3-Fettsäuren DHA und EPA. Es stärkt die Zellstrukturen, unterstützt das
+            Immunsystem und trägt maßgeblich zu einer gesunden Gehirn- und Augengesundheit bei. Zum
+            Wohl von Mensch, Tier und Umwelt wird unser Öl nachhaltig aus kultivierten Mikroalgen
+            gewonnen – schadstofffrei und nicht nur eine Alternative, sondern die überlegene Wahl
+            gegenüber Fischöl!
+          </p>
+          <ul className="list-disc pl-4">
+            <li>
+              <strong>Vegane Omega-3-Quelle (DHA & EPA)</strong>
+            </li>
+            <li>
+              <strong>Fördert Gehirn- und Augengesundheit</strong>
+            </li>
+            <li>
+              <strong>Stärkt das Immunsystem</strong>
+            </li>
+          </ul>
+        </div>
+      )
     },
     {
       title: 'Walnut oil',
       color: 'bg-orange-50',
       topPosition: 'md:top-[14%] top-[34%]',
-      urlTo: '/walnut'
+      urlTo: '/walnut',
+      text: (
+        <div className="flex flex-col gap-2">
+          <p>
+            Our premium-quality walnut oil is rich in valuable Omega-3 fatty acids and Vitamin E –
+            perfectly blended to holistically support your health. With its cholesterol-lowering
+            properties, walnut oil significantly contributes to heart health while also promoting
+            optimal eye health.
+          </p>
+          <ul className="list-disc pl-4">
+            <li>
+              <strong>Supports heart health</strong>
+            </li>
+            <li>
+              <strong>Anti-inflammatory properties</strong>
+            </li>
+            <li>
+              <strong>Promotes brain and eye health</strong>
+            </li>
+            <li>
+              <strong>High in essential Omega-3 fatty acids</strong>
+            </li>
+            <li>
+              <strong>Rich in Vitamin E</strong>
+            </li>
+          </ul>
+        </div>
+      )
     },
     {
       title: 'Hamp Seed Oil',
       color: 'bg-teal-50',
       topPosition: 'md:top-[16%] top-[36%]',
-      urlTo: '/cannabis'
+      urlTo: '/cannabis',
+      text: (
+        <div className="flex flex-col gap-2">
+          <p>
+            We exclusively use hemp oil with an ideal ratio of Omega-3 to Omega-6 fatty acids (3:1)
+            and anti-inflammatory gamma-linolenic acid (GLA). In our unique formulation, it
+            strengthens skin and immune health while supporting cognitive functions. Thanks to
+            resource-efficient cultivation and gentle cold pressing, the valuable nutrients are
+            optimally preserved. This makes our hemp oil a sustainable and premium choice for a
+            health-conscious lifestyle.
+          </p>
+          <ul className="list-disc pl-4">
+            <li>
+              <strong>Rich in Omega-3 and Omega-6 fatty acids</strong>
+            </li>
+            <li>
+              <strong>Anti-inflammatory benefits</strong>
+            </li>
+            <li>
+              <strong>Supports skin and immune health</strong>
+            </li>
+            <li>
+              <strong>Enhances mental clarity and focus</strong>
+            </li>
+          </ul>
+        </div>
+      )
     },
-    { title: 'Vegan Capsule', color: 'bg-gray-50', topPosition: 'md:top-[16%] top-[38%]' }
+    {
+      title: 'Vegan Capsule',
+      color: 'bg-gray-50',
+      topPosition: 'md:top-[16%] top-[38%]',
+      text: (
+        <div className="flex flex-col gap-2">
+          <p>
+            Our 100% vegan softgels are manufactured under the highest quality standards in a
+            certified facility in Germany. With high bioavailability and a controlled release
+            profile, they ensure optimal absorption of essential nutrients – delivering maximum
+            effectiveness.
+          </p>
+          <p>
+            To make your health routine as simple as possible, we’ve designed our softcaps to be
+            soft and easy to swallow. Odorless and tasteless, they seamlessly fit into your daily
+            routine – nothing stands in the way of your success!
+          </p>
+          <ul className="list-disc pl-4">
+            <li>
+              <strong>Vegan</strong>
+            </li>
+            <li>
+              <strong>High bioavailability</strong>
+            </li>
+            <li>
+              <strong>Easy to consume</strong>
+            </li>
+          </ul>
+        </div>
+      )
+    }
   ];
 
   // Smooth video scrubbing
@@ -133,6 +262,7 @@ const VideoScrollSection = () => {
             urlTo={config.urlTo}
             title={config.title}
             color={`${config.color} ${config.topPosition}`}
+            text={config.text}
           />
         ))}
       </div>

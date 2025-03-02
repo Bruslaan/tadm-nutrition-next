@@ -91,8 +91,26 @@ export const FeatureSection2 = ({ imageUrl }: { imageUrl: string }) => {
             <br />
             <FAQItem
               key={1}
-              question="Professional fascilities and laboratories"
-              answer="asdasdasd"
+              question="Quality and Precision – Made in Germany"
+              answer={
+                <div>
+                  <ul className="flex flex-col gap-2">
+                    <li>
+                      - Our production takes place under the highest quality assurance standards in
+                      a GMP-certified facility in Germany.
+                    </li>
+                    <li>
+                      - In addition to meeting EU and US regulations, our production also complies
+                      with DIN EN ISO 9001 and HACCP quality standards and is carefully monitored
+                      and controlled by skilled personnel.
+                    </li>
+                    <li>
+                      - We use state-of-the-art technology and machinery to meet the highest quality
+                      standards and fulfill the expectations of our customers.
+                    </li>
+                  </ul>
+                </div>
+              }
             />
             <FAQItem key={2} question="Laboratory analysis and tests" answer="asdasdasd" />
             <FAQItem key={3} question="Research-based production" answer="asdasdasd" />

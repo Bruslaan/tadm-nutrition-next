@@ -1,16 +1,19 @@
 import clsx from 'clsx';
 import Link from 'next/link';
+import { ReactNode } from 'react';
 
 const VideoScrollCard = ({
   title,
   color,
   urlTo,
-  ref
+  ref,
+  text
 }: {
   title: string;
   color: string;
   urlTo?: string;
   ref?: any;
+  text?: string | ReactNode;
 }) => {
   return (
     <div
@@ -20,18 +23,10 @@ const VideoScrollCard = ({
         marginBlock: '30vh'
       }}
     >
-      <Link prefetch={true} className="group overflow-hidden p-10" href={urlTo ?? '/nature'}>
-        <h2 className={clsx('text-3xl font-semibold md:mt-10')}>{title}</h2>
+      <Link prefetch={true} className="group overflow-hidden p-8" href={urlTo ?? '/nature'}>
+        <h2 className={clsx('text-3xl font-semibold')}>{title}</h2>
         <br />
-        <p className="p-1 text-xl font-light">
-          Here we have the most powerful brian liquid oil that revolutionizes your memory. Here we
-          have the most powerful brian liquid oil that revolutionizes your memory. Here we have the
-          most powerful brian liquid oil that revolutionizes your memory.{' '}
-        </p>
-
-        <div className="mt-10">
-          <span className="rounded-3xl bg-white p-2 px-5 text-2xl text-gray-700">Omega-3</span>
-        </div>
+        <div className="p-1 text-xl text-gray-700 dark:text-neutral-300">{text}</div>
 
         {urlTo && (
           <div className="absolute top-2 right-2 overflow-hidden">
