@@ -30,7 +30,7 @@ export const FAQItem = ({
     <div className="mb-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between rounded-lg bg-white p-4 text-left transition-colors duration-200 hover:bg-gray-50"
+        className="flex w-full items-center justify-between rounded-lg bg-gray-50 p-4 text-left transition-colors duration-200 hover:bg-gray-50"
       >
         <span className="text-lg font-medium text-gray-900">{question}</span>
         <ChevronDown
@@ -90,7 +90,7 @@ const FAQ = () => {
   const rightColumnFAQs = faqData.slice(midPoint);
 
   return (
-    <section id="faq">
+    <section id="faq" className="min-h-screen">
       <Card className="mx-auto w-full max-w-6xl">
         <CardContent>
           <div className="mb-16 text-center">

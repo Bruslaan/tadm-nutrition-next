@@ -27,6 +27,18 @@ const VideoScrollSection = () => {
     offset: ['start start', 'end end']
   });
 
+  const Chip = ({ children }: { children: ReactNode }) => {
+    return (
+      <div className="inline-flex rounded-full bg-gray-900 px-3 py-1 text-base text-white">
+        {children}
+      </div>
+    );
+  };
+
+  const ChipList = ({ children }: { children: ReactNode }) => {
+    return <ul className="flex flex-wrap gap-4 pt-4">{children}</ul>;
+  };
+
   // Configure cards in a more maintainable way
   const cardsConfig: CardConfig[] = [
     {
@@ -35,22 +47,25 @@ const VideoScrollSection = () => {
       topPosition: 'md:top-[10%] top-[30%]',
       urlTo: '/cumin',
       text: (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
           <p>
             We use only organic black cumin oil with a high thymoquinone content to maximize its
             powerful benefits for your health. Recent studies highlight its anti-inflammatory
             properties and immune-boosting effects.
           </p>
 
-          <ul className="list-disc pl-4">
+          <ul className="flex flex-wrap gap-4 pt-4">
             <li>
-              <strong>Antibakteriell und antiviral</strong>
+              <Chip>Antibakteriell</Chip>
             </li>
             <li>
-              <strong>Entzündungshemmend</strong>
+              <Chip>Antiviral</Chip>
             </li>
             <li>
-              <strong>Reich an essenziellen Fettsäuren</strong>
+              <Chip>Entzündungshemmend</Chip>
+            </li>
+            <li>
+              <Chip>Essenziellen Fettsäuren</Chip>
             </li>
           </ul>
         </div>
@@ -62,26 +77,30 @@ const VideoScrollSection = () => {
       topPosition: 'md:top-[12%] top-[32%]',
       urlTo: '/algae',
       text: (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
           <p>
             Unser Algenöl ist die ursprüngliche, vegane Quelle der lebenswichtigen
             Omega-3-Fettsäuren DHA und EPA. Es stärkt die Zellstrukturen, unterstützt das
-            Immunsystem und trägt maßgeblich zu einer gesunden Gehirn- und Augengesundheit bei. Zum
-            Wohl von Mensch, Tier und Umwelt wird unser Öl nachhaltig aus kultivierten Mikroalgen
-            gewonnen – schadstofffrei und nicht nur eine Alternative, sondern die überlegene Wahl
-            gegenüber Fischöl!
+            Immunsystem und trägt maßgeblich zu einer gesunden Gehirn- und Augengesundheit bei.
           </p>
-          <ul className="list-disc pl-4">
+
+          <ChipList>
             <li>
-              <strong>Vegane Omega-3-Quelle (DHA & EPA)</strong>
+              <Chip>Vegane</Chip>
             </li>
             <li>
-              <strong>Fördert Gehirn- und Augengesundheit</strong>
+              <Chip>Omega-3 (DHA & EPA)</Chip>
             </li>
             <li>
-              <strong>Stärkt das Immunsystem</strong>
+              <Chip>Augengesundheit</Chip>
             </li>
-          </ul>
+            <li>
+              <Chip>Gehirn Leistung </Chip>
+            </li>
+            <li>
+              <Chip>Immunsystem</Chip>
+            </li>
+          </ChipList>
         </div>
       )
     },
@@ -91,30 +110,30 @@ const VideoScrollSection = () => {
       topPosition: 'md:top-[14%] top-[34%]',
       urlTo: '/walnut',
       text: (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
           <p>
             Our premium-quality walnut oil is rich in valuable Omega-3 fatty acids and Vitamin E –
             perfectly blended to holistically support your health. With its cholesterol-lowering
             properties, walnut oil significantly contributes to heart health while also promoting
             optimal eye health.
           </p>
-          <ul className="list-disc pl-4">
+          <ChipList>
             <li>
-              <strong>Supports heart health</strong>
+              <Chip>Supports heart health</Chip>
             </li>
             <li>
-              <strong>Anti-inflammatory properties</strong>
+              <Chip>Anti-inflammatory properties</Chip>
             </li>
             <li>
-              <strong>Promotes brain and eye health</strong>
+              <Chip>Promotes brain and eye health</Chip>
             </li>
             <li>
-              <strong>High in essential Omega-3 fatty acids</strong>
+              <Chip>High in essential Omega-3 fatty acids</Chip>
             </li>
             <li>
-              <strong>Rich in Vitamin E</strong>
+              <Chip>Rich in Vitamin E</Chip>
             </li>
-          </ul>
+          </ChipList>
         </div>
       )
     },
@@ -124,29 +143,26 @@ const VideoScrollSection = () => {
       topPosition: 'md:top-[16%] top-[36%]',
       urlTo: '/cannabis',
       text: (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
           <p>
             We exclusively use hemp oil with an ideal ratio of Omega-3 to Omega-6 fatty acids (3:1)
             and anti-inflammatory gamma-linolenic acid (GLA). In our unique formulation, it
-            strengthens skin and immune health while supporting cognitive functions. Thanks to
-            resource-efficient cultivation and gentle cold pressing, the valuable nutrients are
-            optimally preserved. This makes our hemp oil a sustainable and premium choice for a
-            health-conscious lifestyle.
+            strengthens skin and immune health while supporting cognitive functions.
           </p>
-          <ul className="list-disc pl-4">
+          <ChipList>
             <li>
-              <strong>Rich in Omega-3 and Omega-6 fatty acids</strong>
+              <Chip>Rich in Omega-3 and Omega-6 fatty acids</Chip>
             </li>
             <li>
-              <strong>Anti-inflammatory benefits</strong>
+              <Chip>Anti-inflammatory benefits</Chip>
             </li>
             <li>
-              <strong>Supports skin and immune health</strong>
+              <Chip>Supports skin and immune health</Chip>
             </li>
             <li>
-              <strong>Enhances mental clarity and focus</strong>
+              <Chip>Enhances mental clarity and focus</Chip>
             </li>
-          </ul>
+          </ChipList>
         </div>
       )
     },
@@ -155,7 +171,7 @@ const VideoScrollSection = () => {
       color: 'bg-gray-50',
       topPosition: 'md:top-[16%] top-[38%]',
       text: (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
           <p>
             Our 100% vegan softgels are manufactured under the highest quality standards in a
             certified facility in Germany. With high bioavailability and a controlled release
@@ -167,17 +183,17 @@ const VideoScrollSection = () => {
             soft and easy to swallow. Odorless and tasteless, they seamlessly fit into your daily
             routine – nothing stands in the way of your success!
           </p>
-          <ul className="list-disc pl-4">
+          <ChipList>
             <li>
-              <strong>Vegan</strong>
+              <Chip>Vegan</Chip>
             </li>
             <li>
-              <strong>High bioavailability</strong>
+              <Chip>High bioavailability</Chip>
             </li>
             <li>
-              <strong>Easy to consume</strong>
+              <Chip>Easy to consume</Chip>
             </li>
-          </ul>
+          </ChipList>
         </div>
       )
     }
@@ -228,11 +244,15 @@ const VideoScrollSection = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJson) }}
       />
 
+      <div className="top-0 right-0 z-50 mt-3 flex w-full items-end justify-center md:mt-10 md:hidden md:max-w-[40%]">
+        <h2 className="text-center text-3xl leading-none font-bold md:text-6xl">Inside the tadm</h2>
+      </div>
+
       {/* Video Section */}
       <div className="sticky top-0 h-[100vh] w-full overflow-hidden">
-        <div className="absolute inset-x-0 top-0 z-50 mt-10 flex w-full items-center justify-center">
-          <h2 className="mx-auto text-center text-3xl leading-none font-bold md:text-6xl">
-            Inside the Tadm
+        <div className="absolute top-0 right-0 z-50 mt-3 hidden w-full items-end justify-center md:mt-10 md:flex md:max-w-[40%]">
+          <h2 className="text-center text-3xl leading-none font-bold md:text-4xl lg:text-6xl">
+            Inside the tadm
           </h2>
         </div>
 

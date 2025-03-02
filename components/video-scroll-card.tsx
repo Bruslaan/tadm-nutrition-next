@@ -18,24 +18,33 @@ const VideoScrollCard = ({
   return (
     <div
       ref={ref}
-      className={clsx('sticky flex flex-col gap-3 overflow-hidden rounded-[50px]', color)}
+      className={clsx('sticky flex flex-col gap-3 overflow-hidden rounded-3xl', color)}
       style={{
         marginBlock: '30vh'
       }}
     >
-      <Link
-        prefetch={true}
-        className="group overflow-hidden px-10 py-8 text-justify"
-        href={urlTo ?? '/nature'}
-      >
+      <Link prefetch={true} className="group overflow-hidden p-7" href={urlTo ?? '/nature'}>
         <h2 className={clsx('text-3xl font-semibold')}>{title}</h2>
         <br />
-        <div className="p-1 text-xl text-gray-700 dark:text-neutral-300">{text}</div>
+        <div className="p-1 text-base text-gray-700 dark:text-neutral-300">{text}</div>
 
         {urlTo && (
-          <div className="absolute top-2 right-2 overflow-hidden">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white pt-1 text-3xl text-gray-400 transition-transform duration-300 group-hover:-rotate-45 group-hover:text-gray-900">
-              ➜
+          <div className="absolute top-3 right-3 overflow-hidden">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white pt-1 text-3xl text-gray-600 group-hover:text-gray-900">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10 transition-transform duration-300 group-hover:-rotate-45"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
             </div>
           </div>
         )}

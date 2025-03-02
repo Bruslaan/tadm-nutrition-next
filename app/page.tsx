@@ -27,7 +27,7 @@ export default function HomePage() {
       <VideoScrollSection />
       <br />
       <br />
-      <FeatureSection2 imageUrl="/static/bottle-on-table.jpg" />
+      <FeatureSection2 imageUrl="/static/doctor.png" />
       <AnimatedTestimonialsDemo />
       <MarqueeDemo />
       <FaqPage />

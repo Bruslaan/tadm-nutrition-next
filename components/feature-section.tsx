@@ -120,7 +120,7 @@ export const FeatureSection2 = ({ imageUrl }: { imageUrl: string }) => {
             />
           </div>
           {/* Item */}
-          <div className="h-full max-h-[50vh] w-full max-w-xl overflow-hidden rounded-3xl">
+          <div className="h-[50vh] w-full max-w-xl overflow-hidden rounded-3xl">
             <Image
               width={500}
               height={500}
