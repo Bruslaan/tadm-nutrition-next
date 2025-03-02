@@ -24,8 +24,8 @@ const HeroIcon = ({ title, subtitle, icon }: { title: string; subtitle: string; 
 const HeroSection = () => {
   return (
     <section className="relative flex min-h-screen flex-col overflow-hidden pt-10 dark:bg-gray-900">
-      <div className="mt-14 block p-5">
-        <h2 className="mb-4 text-center text-4xl leading-none font-bold tracking-tight text-gray-900 md:text-7xl dark:text-white">
+      <div className="mt-24 block p-5 md:mt-20">
+        <h2 className="mb-4 text-center text-4xl leading-none font-bold tracking-tight text-gray-900 md:text-6xl dark:text-white">
           Healthy, Organic Brain Nutrition
         </h2>
         <p className="text-md mb-6 text-center font-light text-gray-800 md:text-xl lg:mb-8 dark:text-gray-400">
@@ -48,7 +48,7 @@ const HeroSection = () => {
         height={1200}
         style={{ zIndex: '-10' }}
         alt="hero image"
-        className="absolute inset-0 h-full w-full object-cover object-bottom"
+        className="absolute inset-0 h-full w-full object-cover object-[50%_75%]"
         priority
       />
       <div className="hidden md:flex">

@@ -32,20 +32,22 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className })
 
   return (
     <div ref={targetRef} className={cn('relative z-0 h-[200vh]', className)}>
-      <div
-        className={'sticky top-0 h-[50%] w-full'}
-        style={{
-          background: "url('/static/line1.svg'), url('/static/line2.svg')",
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'contain' // or "contain" depending on your desired scaling
-        }}
-      >
+      <div className={'sticky top-0 h-[50%] w-full'}>
+        <img
+          src="/static/line1.svg"
+          alt=""
+          className="absolute inset-x-0 h-full w-full object-cover opacity-55"
+        />
+        <img
+          src="/static/line2.svg"
+          alt=""
+          className="absolute inset-x-0 h-full w-full object-cover opacity-55"
+        />
         <div className={'mx-auto flex h-full items-center bg-transparent px-[1rem]'}>
           <p
             ref={targetRef}
             className={
-              'flex flex-wrap justify-center p-10 text-4xl font-bold text-gray-500 md:p-8 md:text-8xl dark:text-white/20'
+              'flex flex-wrap justify-center p-1 text-4xl font-bold md:p-8 md:text-8xl dark:text-white/20'
             }
           >
             {words.map((word, i) => {
@@ -74,11 +76,11 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span className="xl:lg-3 relative mx-1 lg:mx-2.5">
-      <span className={'absolute opacity-30'}>{children}</span>
+      <span className={'absolute opacity-10'}>{children}</span>
       <motion.span
         style={{ opacity: opacity }}
         // @ts-ignores
-        className={'text-black dark:text-white'}
+        className={'text-gray-900 dark:text-white'}
       >
         {children}
       </motion.span>

@@ -1,3 +1,14 @@
 <svg width="1922" height="797" viewBox="0 0 1922 797" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 796L494.285 680.941L968.52 777.778L1173.05 498.2L1259.78 680.941L1921 1" stroke="#C3D7E8"/>
+    <defs>
+        <!-- Define the Linear Gradient -->
+        <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF7F50"/>  <!-- Coral -->
+            <stop offset="50%" stop-color="#FFA500"/>  <!-- Orange -->
+            <stop offset="100%" stop-color="#FFD700"/> <!-- Gold -->
+        </linearGradient>
+    </defs>
+
+    <!-- Apply the Gradient Stroke to the Path -->
+    <path d="M1 796L494.285 680.941L968.52 777.778L1173.05 498.2L1259.78 680.941L1921 1"
+          stroke="url(#gradientStroke)" stroke-width="1" fill="none"/>
 </svg>

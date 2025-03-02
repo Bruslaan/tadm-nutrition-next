@@ -37,10 +37,9 @@ const VideoScrollSection = () => {
       text: (
         <div className="flex flex-col gap-2">
           <p>
-            Wir verwenden ausschließlich Schwarzkümmelöl in Bio-Qualität mit einem hohen
-            Thymochinon-Gehalt, um die Wirkungskraft für deine Gesundheit zu maximieren. Aktuelle
-            Studien belegen die entzündungshemmenden Eigenschaften sowie die immunstärkende Wirkung
-            von Thymochinon.
+            We use only organic black cumin oil with a high thymoquinone content to maximize its
+            powerful benefits for your health. Recent studies highlight its anti-inflammatory
+            properties and immune-boosting effects.
           </p>
 
           <ul className="list-disc pl-4">

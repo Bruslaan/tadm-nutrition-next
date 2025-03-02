@@ -23,7 +23,11 @@ const VideoScrollCard = ({
         marginBlock: '30vh'
       }}
     >
-      <Link prefetch={true} className="group overflow-hidden p-8" href={urlTo ?? '/nature'}>
+      <Link
+        prefetch={true}
+        className="group overflow-hidden px-10 py-8 text-justify"
+        href={urlTo ?? '/nature'}
+      >
         <h2 className={clsx('text-3xl font-semibold')}>{title}</h2>
         <br />
         <div className="p-1 text-xl text-gray-700 dark:text-neutral-300">{text}</div>
