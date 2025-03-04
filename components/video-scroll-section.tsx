@@ -44,7 +44,7 @@ const VideoScrollSection = () => {
     {
       title: 'Black seed oil',
       color: 'bg-blue-50',
-      topPosition: 'md:top-[18%] top-[30%]',
+      topPosition: 'md:top-[18%] top-[25%]',
       urlTo: '/cumin',
       text: (
         <div className="flex flex-col gap-3">
@@ -54,7 +54,7 @@ const VideoScrollSection = () => {
             properties and immune-boosting effects.
           </p>
 
-          <ul className="flex flex-wrap gap-4 pt-4">
+          <ul className="flex h-full flex-wrap items-center gap-4 pt-4">
             <li>
               <Chip>Antibakteriell</Chip>
             </li>
@@ -74,7 +74,7 @@ const VideoScrollSection = () => {
     {
       title: 'Algae Oil',
       color: 'bg-green-50',
-      topPosition: 'md:top-[20%] top-[32%]',
+      topPosition: 'md:top-[20%] top-[27%]',
       urlTo: '/algae',
       text: (
         <div className="flex flex-col gap-3">
@@ -107,7 +107,7 @@ const VideoScrollSection = () => {
     {
       title: 'Walnut oil',
       color: 'bg-orange-50',
-      topPosition: 'md:top-[22%] top-[34%]',
+      topPosition: 'md:top-[22%] top-[29%]',
       urlTo: '/walnut',
       text: (
         <div className="flex flex-col gap-3">
@@ -140,7 +140,7 @@ const VideoScrollSection = () => {
     {
       title: 'Hamp Seed Oil',
       color: 'bg-teal-50',
-      topPosition: 'md:top-[24%] top-[36%]',
+      topPosition: 'md:top-[24%] top-[31%]',
       urlTo: '/cannabis',
       text: (
         <div className="flex flex-col gap-3">
@@ -169,7 +169,7 @@ const VideoScrollSection = () => {
     {
       title: 'Vegan Capsule',
       color: 'bg-gray-50',
-      topPosition: 'md:top-[26%] top-[38%]',
+      topPosition: 'md:top-[26%] top-[33%]',
       text: (
         <div className="flex flex-col gap-3">
           <p>
@@ -178,11 +178,7 @@ const VideoScrollSection = () => {
             profile, they ensure optimal absorption of essential nutrients – delivering maximum
             effectiveness.
           </p>
-          <p>
-            To make your health routine as simple as possible, we’ve designed our softcaps to be
-            soft and easy to swallow. Odorless and tasteless, they seamlessly fit into your daily
-            routine – nothing stands in the way of your success!
-          </p>
+          <p></p>
           <ChipList>
             <li>
               <Chip>Vegan</Chip>

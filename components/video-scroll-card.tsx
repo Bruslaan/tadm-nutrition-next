@@ -18,7 +18,10 @@ const VideoScrollCard = ({
   return (
     <div
       ref={ref}
-      className={clsx('sticky flex flex-col overflow-hidden rounded-3xl shadow shadow-2xl', color)}
+      className={clsx(
+        'sticky flex h-[70vh] flex-col overflow-hidden rounded-3xl shadow-xl shadow-gray-100 md:aspect-3/2 md:h-auto',
+        color
+      )}
       style={{
         marginBlock: '30vh'
       }}
