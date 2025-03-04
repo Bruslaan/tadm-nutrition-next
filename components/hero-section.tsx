@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import FloatingIcon from './floating-icon';
 import Link from 'next/link';
+import { getDictionary } from '../app/[lang]/dictionaries';
 
 const HeroIcon = ({ title, subtitle, icon }: { title: string; subtitle: string; icon: string }) => {
   return (
@@ -21,15 +22,16 @@ const HeroIcon = ({ title, subtitle, icon }: { title: string; subtitle: string; 
   );
 };
 
-const HeroSection = () => {
+const HeroSection = async ({ langauge }: { langauge: 'en' | 'de' }) => {
+  const dict = (await getDictionary(langauge)) ?? 'en';
   return (
     <section className="relative flex min-h-screen flex-col overflow-hidden pt-10 dark:bg-gray-900">
       <div className="mt-24 block p-5 md:mt-20">
         <h2 className="mb-4 text-center text-4xl leading-none font-bold tracking-tight text-gray-900 md:text-6xl dark:text-white">
-          Healthy, Organic Brain Nutrition
+          {dict.hero.title}
         </h2>
         <p className="text-md mb-6 text-center font-light text-gray-800 md:text-xl lg:mb-8 dark:text-gray-400">
-          tadm is a supplement that supports your ability to focus, mental speed & memory.
+          {dict.hero.title}
         </p>
       </div>
       <div className="absolute inset-x-0 bottom-10 z-10 flex flex-col items-center justify-center gap-3 text-black">

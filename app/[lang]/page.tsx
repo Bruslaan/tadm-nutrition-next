@@ -14,10 +14,11 @@ export const metadata = {
   }
 };
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) {
+  const { lang } = await params;
   return (
     <main>
-      <HeroSection />
+      <HeroSection langauge={lang} />
       <TextRevealDemo />
       <div>
         <ThreeItemGrid />
