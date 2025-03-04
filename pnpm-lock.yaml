@@ -30,9 +30,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      dictionaries:
-        specifier: link:@/dictionaries
-        version: link:@/dictionaries
       framer-motion:
         specifier: ^12.4.7
         version: 12.4.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
