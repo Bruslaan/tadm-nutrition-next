@@ -1,13 +1,12 @@
-import { CartProvider } from 'components/cart/cart-context';
-import { Navbar } from 'components/layout/navbar';
+import { CartProvider } from '../components/cart/cart-context';
+import { Navbar } from '../components/layout/navbar';
 import { GeistSans } from 'geist/font/sans';
-import { getCart } from 'lib/shopify';
-import { ensureStartsWith } from 'lib/utils';
+import { getCart } from '../lib/shopify';
+import { ensureStartsWith } from '../lib/utils';
 import { Urbanist } from 'next/font/google';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
 import './globals.css';
-import Footer from '../components/layout/footer';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
