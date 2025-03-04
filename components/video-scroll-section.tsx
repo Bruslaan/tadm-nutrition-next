@@ -44,7 +44,7 @@ const VideoScrollSection = () => {
     {
       title: 'Black seed oil',
       color: 'bg-blue-50',
-      topPosition: 'md:top-[10%] top-[30%]',
+      topPosition: 'md:top-[18%] top-[30%]',
       urlTo: '/cumin',
       text: (
         <div className="flex flex-col gap-3">
@@ -74,7 +74,7 @@ const VideoScrollSection = () => {
     {
       title: 'Algae Oil',
       color: 'bg-green-50',
-      topPosition: 'md:top-[12%] top-[32%]',
+      topPosition: 'md:top-[20%] top-[32%]',
       urlTo: '/algae',
       text: (
         <div className="flex flex-col gap-3">
@@ -107,7 +107,7 @@ const VideoScrollSection = () => {
     {
       title: 'Walnut oil',
       color: 'bg-orange-50',
-      topPosition: 'md:top-[14%] top-[34%]',
+      topPosition: 'md:top-[22%] top-[34%]',
       urlTo: '/walnut',
       text: (
         <div className="flex flex-col gap-3">
@@ -140,7 +140,7 @@ const VideoScrollSection = () => {
     {
       title: 'Hamp Seed Oil',
       color: 'bg-teal-50',
-      topPosition: 'md:top-[16%] top-[36%]',
+      topPosition: 'md:top-[24%] top-[36%]',
       urlTo: '/cannabis',
       text: (
         <div className="flex flex-col gap-3">
@@ -169,7 +169,7 @@ const VideoScrollSection = () => {
     {
       title: 'Vegan Capsule',
       color: 'bg-gray-50',
-      topPosition: 'md:top-[16%] top-[38%]',
+      topPosition: 'md:top-[26%] top-[38%]',
       text: (
         <div className="flex flex-col gap-3">
           <p>
@@ -256,7 +256,7 @@ const VideoScrollSection = () => {
           </h2>
         </div>
 
-        <div className="relative w-[160%] md:-translate-x-36 lg:w-[110%]">
+        <div className="relative -mt-8 w-[160%] md:-translate-x-36 lg:w-[110%]">
           <video
             ref={videoRef}
             playsInline
@@ -273,7 +273,7 @@ const VideoScrollSection = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="absolute top-0 right-0 h-full w-full px-5 pt-80 md:max-w-[40%]">
+      <div className="absolute top-0 right-0 h-full w-full px-1 pt-80 md:max-w-[40%]">
         {cardsConfig.map((config, index) => (
           <VideoScrollCard
             key={config.title}

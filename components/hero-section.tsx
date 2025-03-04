@@ -31,7 +31,7 @@ const HeroSection = async ({ langauge }: { langauge: 'en' | 'de' }) => {
           {dict.hero.title}
         </h2>
         <p className="text-md mb-6 text-center font-light text-gray-800 md:text-xl lg:mb-8 dark:text-gray-400">
-          {dict.hero.title}
+          {dict.hero.subtitle}
         </p>
       </div>
       <div className="absolute inset-x-0 bottom-10 z-10 flex flex-col items-center justify-center gap-3 text-black">

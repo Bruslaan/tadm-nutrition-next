@@ -6,7 +6,7 @@ import Footer from '../../components/layout/footer';
 import { MarqueeDemo } from '../../components/testimonals';
 import { TextRevealDemo } from '../../components/text-reveal';
 import VideoScrollSection from '../../components/video-scroll-section';
-import { AnimatedTestimonialsDemo } from '../../components/AnimatedTestimonials';
+import ExpertsCarusell from '@/components/ui/experts-carusell';
 export const metadata = {
   description: 'healthy brain nutrition supplement',
   openGraph: {
@@ -29,7 +29,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
       <br />
       <br />
       <FeatureSection2 imageUrl="/static/doctor.png" />
-      <AnimatedTestimonialsDemo />
+      <ExpertsCarusell />
       <MarqueeDemo />
       <FaqPage />
       <Footer />
