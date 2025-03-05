@@ -19,7 +19,7 @@ const VideoScrollCard = ({
     <div
       ref={ref}
       className={clsx(
-        'sticky flex h-[70vh] flex-col overflow-hidden rounded-3xl shadow-xl shadow-gray-100 md:aspect-3/2 md:h-auto',
+        'sticky flex h-[60vh] flex-col overflow-hidden rounded-3xl shadow-xl shadow-gray-100 md:aspect-3/3 md:h-auto lg:aspect-5/3',
         color
       )}
       style={{
