@@ -42,7 +42,7 @@ const ExpertsCarousel = ({
   };
 
   return (
-    <section className="relative flex min-h-screen w-full flex-col items-center justify-evenly overflow-x-hidden pt-10">
+    <section className="relative flex min-h-screen w-full flex-col items-center justify-evenly overflow-x-hidden">
       <div className="mx-auto flex max-w-(--breakpoint-xl) justify-center px-4">
         <h2 className="max-w-2xl text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
           {title}
