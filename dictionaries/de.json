@@ -112,6 +112,17 @@
         "designation": "Geschäftsführer Eichenseer Umzüge München",
         "quote": "Als Perfektionist mit höchsten Ansprüchen an mich selbst und alles, was ich konsumiere, führe ich eines der führenden Münchner Umzugsunternehmen. Mein Arbeitsstil, meine Denkweise und meine Erwartungen sind stets auf höchste Standards ausgerichtet. Deshalb war für mich klar: Um täglich maximale Leistung zu erbringen, ist eine gezielte Supplementierung in der heutigen Zeit unerlässlich. Ich suchte nach einem Produkt, das ausschließlich in Deutschland hergestellt, qualitativ hochwertig und frei von Schadstoffen ist. Mit tadm habe ich genau das gefunden – und mehr.",
         "src": ""
+      },
+      {
+        "name": "Ahmad Dudarov",
+        "designation": "Ringer der deutschen Nationalmannschaft",
+        "quote": "Profisportler auf Weltniveau vertrete ich Deutschland. Um 100 Prozent Leistung abzurufen, braucht mein Körper mehr als hartes Training – eine starke Immunabwehr und volle mentale Klarheit. Mit tadm bleibe ich gesund, fühle mich kraftvoller und fokussierter auf der Matte.\n\nFrüher war es eine Herausforderung, meinen Körper konstant mit essenziellen Fettsäuren zu versorgen. Jetzt geht es einfach: tadm ist immer dabei – handlich, minimalistisch und unverzichtbar auf meinem Weg zu neuen Medaillen. ✈\uFE0F\uD83C\uDFC5"
+      },
+      {
+        "name": "Marko",
+        "designation": "World-Class BJJ Athlete (BJJ & Judo Black Belt – World Championship Medalist)",
+        "quote": "For over a decade, I’ve been at the top of BJJ in Finland, competing against the strongest fighters in Europe and around the world. BJJ is often compared to chess—every move must be calculated, every grip strategically placed. Peak performance requires more than just strength and technique—my body and mind must be sharp at all times.\n\n**tadm Brain is an essential part of my daily routine. It provides my brain and immune system with vital nutrients that keep me focused, resilient, and ready to perform. In a sport where every millisecond matters and precision determines victory or defeat, this support is indispensable.\n\nNo matter where in the world I train or compete—tadm Brain is always with me.",
+        "src": ""
       }
     ]
   },
@@ -129,6 +140,87 @@
       {
         "title": "Title hier",
         "content": "Unsere präzise abgestimmte Formulierung in 100 % veganen Softgels maximiert die Bioverfügbarkeit und gewährleistet eine optimale Nährstoffaufnahme, damit du deine Erfolgsroutine mühelos umsetzen kannst."
+      }
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "list": [
+      {
+        "question": "Was ist tadm Brain und für wen ist es geeignet?",
+        "answer": "tadm Brain ist ein hochwertiges, veganes Nahrungsergänzungsmittel, das eine synergistische Kombination aus Schwarzkümmelöl, DHA-reichem Algenöl, Walnussöl und Hanföl enthält. Es wurde entwickelt, um die kognitive Leistungsfähigkeit, mentale Klarheit und ganzheitliche Gesundheit zu unterstützen. tadm Brain ist für Erwachsene geeignet, die ihre geistige und körperliche Leistungsfähigkeit nachhaltig verbessern möchten."
+      },
+      {
+        "question": "Welche Inhaltsstoffe sind in tadm Brain enthalten?",
+        "answer": "tadm Brain enthält eine durchdachte Kombination aus vier kaltgepressten Ölen: **Schwarzkümmelöl (Nigella sativa)** – bekannt für seine immunstärkenden und entzündungshemmenden Eigenschaften. **DHA-reiches Algenöl (Schizochytrium sp.)** – eine vegane Quelle von Omega-3-Fettsäuren (DHA & EPA) zur Unterstützung von Gehirn und Nervensystem. **Walnussöl (Juglans regia)** – reich an Omega-3 und Antioxidantien wie Vitamin E, fördert es die Herz- und Gehirngesundheit. **Hanföl (Cannabis sativa)** – mit einem idealen Verhältnis von Omega-6 zu Omega-3 (3:1) sowie Gamma-Linolensäure (GLA) zur Unterstützung des Immunsystems und der Hautgesundheit. Die Softgel-Hülle besteht aus Wasser, modifizierter Stärke und Glycerin und ist 100 % vegan."
+      },
+      {
+        "question": "Welche gesundheitlichen Vorteile bietet tadm Brain?",
+        "answer": "Die Inhaltsstoffe von tadm Brain wurden gezielt ausgewählt, um: ✅ Die **mentale Leistungsfähigkeit und Konzentration** zu unterstützen ✅ Die **Gehirn- und Nervenzellen** mit essenziellen Omega-3-Fettsäuren zu versorgen ✅ Das **Immunsystem zu stärken** und Entzündungen im Körper zu regulieren ✅ Die **Herzgesundheit** durch Omega-3-Fettsäuren aus Algen- und Walnussöl zu fördern ✅ Die **Hautgesundheit und Zellregeneration** durch Hanföl und Antioxidantien zu unterstützen"
+      },
+      {
+        "question": "Warum kombiniert tadm Brain verschiedene Öle in einer Formel?",
+        "answer": "Unsere synergetische Kombination maximiert die Bioverfügbarkeit und Wirkung der einzelnen Inhaltsstoffe. Die Öle ergänzen sich gegenseitig in ihrer Wirkung und sorgen für eine optimale Versorgung mit essenziellen Fettsäuren, Antioxidantien und entzündungshemmenden Wirkstoffen."
+      },
+      {
+        "question": "Wie nehme ich tadm Brain ein?",
+        "answer": "Die empfohlene Tagesdosis beträgt **4 Softgels pro Tag**, aufgeteilt auf zwei Einnahmen (jeweils 2 Softgels zu den Mahlzeiten) mit ausreichend Flüssigkeit."
+      },
+      {
+        "question": "Wie lange sollte ich tadm Brain einnehmen, um Ergebnisse zu sehen?",
+        "answer": "Nahrungsergänzungsmittel wirken langfristig. Erste positive Effekte können sich nach wenigen Wochen bemerkbar machen, eine optimale Unterstützung des Körpers erfolgt jedoch über einen längeren Zeitraum. Für nachhaltige Resultate empfehlen wir eine kontinuierliche Einnahme über mehrere Monate."
+      },
+      {
+        "question": "Ist tadm Brain für Veganer und Vegetarier geeignet?",
+        "answer": "Ja! tadm Brain ist **100 % vegan**. Es enthält ausschließlich pflanzliche Inhaltsstoffe, einschließlich der Softgel-Hülle."
+      },
+      {
+        "question": "Enthält tadm Brain Allergene?",
+        "answer": "Das Produkt enthält **Walnussöl** und kann Spuren von Walnüssen enthalten. Personen mit einer Nussallergie sollten vor der Einnahme ihren Arzt konsultieren."
+      },
+      {
+        "question": "Gibt es Nebenwirkungen bei der Einnahme von tadm Brain?",
+        "answer": "tadm Brain ist ein natürliches Produkt ohne künstliche Zusatzstoffe. In seltenen Fällen können bei empfindlichen Personen Magenbeschwerden auftreten. Personen, die blutverdünnende Medikamente einnehmen oder unter Vorerkrankungen leiden, sollten vor der Einnahme einen Arzt konsultieren."
+      },
+      {
+        "question": "Warum setzt tadm Brain auf Algenöl statt auf Fischöl?",
+        "answer": "Algenöl ist die ursprüngliche Quelle von Omega-3-Fettsäuren und enthält DHA und EPA in hoher Konzentration. Im Gegensatz zu Fischöl ist Algenöl: ✅ **Vegan & nachhaltig** – keine Überfischung oder Belastung der Meere ✅ **Schadstofffrei** – frei von Schwermetallen, Mikroplastik oder Umweltgiften ✅ **Effizienter** – direkt aus der Quelle gewonnen, ohne Umweg über den Fisch"
+      },
+      {
+        "question": "Wo wird tadm Brain hergestellt?",
+        "answer": "tadm Brain wird in einer **GMP-zertifizierten Produktionsstätte in Deutschland** unter höchsten Qualitätsstandards hergestellt. Es erfüllt die Anforderungen der **DIN EN ISO 9001**, HACCP sowie weiterer strenger Lebensmittelvorschriften."
+      },
+      {
+        "question": "Wie sollte ich tadm Brain aufbewahren?",
+        "answer": "Lagern Sie das Produkt **ungeöffnet, kühl, trocken und außerhalb direkter Sonneneinstrahlung**. Bewahren Sie es außerhalb der Reichweite von Kindern auf."
+      },
+      {
+        "question": "Kann ich tadm Brain während der Schwangerschaft oder Stillzeit einnehmen?",
+        "answer": "Schwangere und stillende Frauen sollten vor der Einnahme von tadm Brain ihren Arzt konsultieren."
+      },
+      {
+        "question": "Ist eine Rückgabe von tadm Brain möglich?",
+        "answer": "Gemäß § 312g Abs. 2 Nr. 3 BGB ist eine Rückgabe ausgeschlossen, wenn die **Versiegelung der Verpackung nach der Lieferung entfernt wurde**, da es sich um ein hygienisch sensibles Produkt handelt."
+      },
+      {
+        "question": "Kann ich tadm Brain mit anderen Nahrungsergänzungsmitteln kombinieren?",
+        "answer": "Ja, tadm Brain kann mit anderen Nahrungsergänzungsmitteln kombiniert werden. Achten Sie jedoch darauf, die empfohlene tägliche Menge an Omega-3-Fettsäuren nicht zu überschreiten. Falls Sie bereits andere Omega-3- oder Vitamin-E-Präparate einnehmen, ist eine Absprache mit Ihrem Arzt sinnvoll."
+      },
+      {
+        "question": "Was unterscheidet tadm Brain von anderen Omega-3-Produkten?",
+        "answer": "tadm Brain ist keine einfache Omega-3-Kapsel – es kombiniert vier hochwertige, kaltgepresste Öle in einer einzigartigen Formel, die gezielt auf kognitive Leistungsfähigkeit und ganzheitliche Gesundheit abgestimmt ist. Im Gegensatz zu herkömmlichen Omega-3-Präparaten bietet tadm Brain: ✅ **Eine synergetische Kombination aus Schwarzkümmelöl, DHA-reichem Algenöl, Walnussöl und Hanföl** ✅ **Eine 100 % vegane, schadstofffreie und nachhaltige Quelle für Omega-3, Omega-6 und Omega-9** ✅ **Höchste Qualität – hergestellt in Deutschland unter GMP- und ISO-Standards**"
+      },
+      {
+        "question": "Welche Rolle spielt Vitamin E in tadm Brain?",
+        "answer": "Vitamin E (D-Alpha-Tocopherol) wird als natürliches Antioxidationsmittel eingesetzt, um die empfindlichen Fettsäuren vor Oxidation zu schützen. Zudem trägt es selbst zur Zellerhaltung bei, indem es oxidativen Stress reduziert und die Zellmembranen stabilisiert."
+      },
+      {
+        "question": "Kann tadm Brain meine Gedächtnisleistung verbessern?",
+        "answer": "Ja, die enthaltenen Fettsäuren, insbesondere DHA aus Algenöl, spielen eine entscheidende Rolle für die Gehirnfunktion. DHA ist ein Hauptbestandteil der Gehirnzellen und trägt zur Erhaltung der normalen kognitiven Funktion bei. Langfristige DHA-Zufuhr kann die Gedächtnisleistung, Konzentration und mentale Klarheit positiv beeinflussen."
+      },
+      {
+        "question": "Warum enthält tadm Brain sowohl Omega-3 als auch Omega-6-Fettsäuren?",
+        "answer": "Nicht alle Omega-6-Fettsäuren sind gleich. Während herkömmliche westliche Ernährungsweisen oft ein unausgewogenes Verhältnis von Omega-6 zu Omega-3 enthalten, setzt **tadm Brain ausschließlich auf hochwertiges, entzündungsregulierendes Omega-6**, das größtenteils aus **Schwarzkümmelöl** stammt. **Warum ist das wichtig?** - Schwarzkümmelöl enthält **Thymochinon**, das nachweislich **entzündungshemmende Eigenschaften** hat und das Immunsystem unterstützt. - Omega-6-Fettsäuren aus natürlichen Quellen wie Schwarzkümmelöl und Hanföl spielen eine wichtige Rolle bei der **Zellregeneration und Hormonproduktion**, ohne die negativen Effekte von raffiniertem Omega-6 aus industriell verarbeiteten Lebensmitteln. - Das sorgfältig abgestimmte Verhältnis von Omega-3 und Omega-6 in **tadm Brain fördert eine gesunde Balance im Körper**, indem es Entzündungen gezielt reguliert statt zu fördern. Mit **tadm Brain** nehmen Sie also nur hochwertiges Omega-6 auf, das Ihren Körper gezielt unterstützt – ohne das Risiko eines unausgewogenen Fettsäureverhältnisses."
       }
     ]
   }
