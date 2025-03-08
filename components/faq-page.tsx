@@ -108,8 +108,7 @@ const FAQSection = ({
       <Card className="mx-auto w-full max-w-6xl">
         <CardContent>
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">{title}</p>
+            <h2 className="mb-4 text-4xl font-bold text-gray-900">{title}</h2>
           </div>
 
           {/* Mobile view: Single column */}

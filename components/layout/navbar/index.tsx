@@ -5,6 +5,7 @@ import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
+import LanguageSwitcher from '../../LanguageSwitcher';
 
 export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
@@ -20,6 +21,14 @@ export async function Navbar() {
     {
       path: '/#faq',
       title: 'Faq'
+    },
+    {
+      path: '/en',
+      title: 'English'
+    },
+    {
+      path: '/de',
+      title: 'Deutsch'
     },
     {
       path: 'https://blog.tadm-nutrition.com/de/blog',
@@ -55,8 +64,12 @@ export async function Navbar() {
                 </Link>
               </li>
             ))}
+            <li>
+              <LanguageSwitcher />
+            </li>
           </ul>
         ) : null}
+
         <CartModal />
       </div>
     </nav>
