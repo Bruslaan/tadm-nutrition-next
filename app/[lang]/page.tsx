@@ -5,8 +5,9 @@ import HeroSection from '../../components/hero-section';
 import Footer from '../../components/layout/footer';
 import { MarqueeDemo } from '../../components/testimonals';
 import { TextRevealDemo } from '../../components/text-reveal';
-import VideoScrollSection from '../../components/video-scroll-section';
+import VideoScrollSection, { InsideTadm } from '../../components/video-scroll-section';
 import ExpertsCarusell from '@/components/ui/experts-carusell';
+import { getDictionary } from './dictionaries';
 export const metadata = {
   description: 'healthy brain nutrition supplement',
   openGraph: {
@@ -16,22 +17,29 @@ export const metadata = {
 
 export default async function HomePage({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) {
   const { lang } = await params;
+  const dict = (await getDictionary(lang)) ?? 'en';
   return (
     <main>
-      <HeroSection langauge={lang} />
-      <TextRevealDemo />
-      <div>
-        <ThreeItemGrid />
-      </div>
+      <HeroSection title={dict.hero.title} subtitle={dict.hero.subtitle} />
+      <TextRevealDemo text={dict.textReveal} />
+      <ThreeItemGrid title={dict.products.title} />
 
-      <FeatureSection imageUrl="/static/Hand.jpg" />
-      <VideoScrollSection />
-      <br />
-      <br />
-      <FeatureSection2 imageUrl="/static/doctor.png" />
-      <ExpertsCarusell />
-      <MarqueeDemo />
-      <FaqPage />
+      <FeatureSection
+        sectionTitle={dict.bulletPoints.title}
+        items={dict.bulletPoints.list}
+        imageUrl="/static/Hand.jpg"
+      />
+      <VideoScrollSection title={dict.insideTadm.title} items={dict.insideTadm as InsideTadm} />
+      {/*<br />*/}
+      {/*<br />*/}
+      <FeatureSection2
+        title={dict.facility.title}
+        accordionContent={dict.facility.list}
+        imageUrl="/static/doctor.png"
+      />
+      <ExpertsCarusell title={dict.experts.title} testimonials={dict.experts.list} />
+      {/*<MarqueeDemo />*/}
+      {/*<FaqPage />*/}
       <Footer />
     </main>
   );

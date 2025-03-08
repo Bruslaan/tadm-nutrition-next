@@ -19,17 +19,19 @@ const VideoScrollCard = ({
     <div
       ref={ref}
       className={clsx(
-        'sticky flex h-[60vh] flex-col overflow-hidden rounded-3xl shadow-xl shadow-gray-100 md:aspect-3/3 md:h-auto lg:aspect-5/3',
+        'sticky flex h-[60vh] flex-col overflow-hidden rounded-3xl shadow-xl shadow-gray-100 md:h-96',
         color
       )}
       style={{
         marginBlock: '30vh'
       }}
     >
-      <Link prefetch={true} className="group overflow-hidden p-7" href={urlTo ?? '/nature'}>
+      <Link prefetch={true} className="group h-full overflow-hidden p-7" href={urlTo ?? '/nature'}>
         <h2 className={clsx('text-3xl font-semibold')}>{title}</h2>
         <br />
-        <div className="p-1 text-base text-gray-700 dark:text-neutral-300">{text}</div>
+        <div className="p-1 text-base text-gray-700 xl:text-xl 2xl:text-2xl dark:text-neutral-300">
+          {text}
+        </div>
 
         {urlTo && (
           <div className="absolute top-3 right-3 overflow-hidden">

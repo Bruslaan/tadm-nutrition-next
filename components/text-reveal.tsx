@@ -1,12 +1,12 @@
 'use client';
 
-export function TextRevealDemo() {
+export function TextRevealDemo({ text }: { text: string }) {
   return (
     <section
       id="text-reveal"
       className="relative z-10 flex min-h-64 w-full items-center justify-center rounded-lg dark:bg-black"
     >
-      <TextRevealByWord text="Empowering the brightest minds to unlock their ultimate potential" />
+      <TextRevealByWord text={text} />
     </section>
   );
 }

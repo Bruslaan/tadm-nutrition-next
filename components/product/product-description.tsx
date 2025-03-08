@@ -7,7 +7,7 @@ export function ProductDescription({ product }: { product: Product }) {
       <h2 className="text-2xl font-medium">{product.title}</h2>
       {/*<VariantSelector options={product.options} variants={product.variants} />*/}
       {product.descriptionHtml ? (
-        <p className="text-sm leading-tight text-gray-500 dark:text-white/[60%]">
+        <p className="text-sm leading-tight text-gray-700 dark:text-white/[60%]">
           {product.description}
         </p>
       ) : null}

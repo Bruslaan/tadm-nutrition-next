@@ -22,16 +22,15 @@ const HeroIcon = ({ title, subtitle, icon }: { title: string; subtitle: string; 
   );
 };
 
-const HeroSection = async ({ langauge }: { langauge: 'en' | 'de' }) => {
-  const dict = (await getDictionary(langauge)) ?? 'en';
+const HeroSection = async ({ title, subtitle }: { title: string; subtitle: string }) => {
   return (
     <section className="relative flex min-h-screen flex-col overflow-hidden pt-10 dark:bg-gray-900">
-      <div className="mt-24 block p-5 md:mt-20">
+      <div className="mx-auto mt-24 block p-5 md:mt-20">
         <h2 className="mb-4 text-center text-4xl leading-none font-bold tracking-tight text-gray-900 md:text-6xl dark:text-white">
-          {dict.hero.title}
+          {title}
         </h2>
         <p className="text-md mb-6 text-center font-light text-gray-800 md:text-xl lg:mb-8 dark:text-gray-400">
-          {dict.hero.subtitle}
+          {subtitle}
         </p>
       </div>
       <div className="absolute inset-x-0 bottom-10 z-10 flex flex-col items-center justify-center gap-3 text-black">

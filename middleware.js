@@ -6,9 +6,17 @@ const locales = ['en', 'de'];
 const defaultLocale = 'en';
 
 function getLocale(request) {
+  // First, try to get locale from URL path
+  const { pathname } = request.nextUrl;
+  const pathLocale = locales.find(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  );
+
+  if (pathLocale) return pathLocale;
+
+  // Fall back to accept-language header
   const headers = { 'accept-language': request.headers.get('accept-language') || 'en,en;q=0.5' };
   const languages = new Negotiator({ headers }).languages();
-
   return match(languages, locales, defaultLocale);
 }
 
@@ -31,7 +39,7 @@ export function middleware(request) {
   // If pathname already has a locale, continue without modification
   if (pathnameHasLocale) return NextResponse.next();
 
-  // Get the preferred locale
+  // Get the preferred locale, prioritizing URL path over accept-language
   const locale = getLocale(request);
 
   // Redirect to localized path

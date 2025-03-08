@@ -67,20 +67,17 @@ const ReviewCard = ({
     <figure
       className={clsx(
         'relative w-96 cursor-pointer overflow-hidden rounded-xl border p-4',
-        // light styles
         'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
-        // dark styles
         'dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]'
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        {/* <img className="rounded-full" width="32" height="32" alt="" src={img} /> */}
         <div className="flex flex-col">
           <figcaption className="text-lg font-medium dark:text-white">{name}</figcaption>
           <p className="text-lg font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
-      <div className="-ml-1 mt-2">
+      <div className="mt-2 -ml-1">
         <StarRating />
       </div>
 
@@ -89,23 +86,23 @@ const ReviewCard = ({
   );
 };
 
-export function MarqueeDemo() {
+export function MarqueeDemo({ title }: { title: string }) {
   return (
     <section className="min-h-screen w-full pt-10">
       <div className="mx-auto flex max-w-(--breakpoint-xl) justify-center px-4">
-        <h2 className="mb-4 max-w-2xl text-3xl font-bold leading-none tracking-tight dark:text-white md:text-4xl xl:text-5xl">
-          What our Customers think
+        <h2 className="mb-4 max-w-2xl text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
+          {title}
         </h2>
       </div>
       <div className="relative w-full">
         <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-scroll">
           <div className="flex flex-col items-center justify-center gap-4 py-7">
-            <div className="flex animate-carousel gap-4">
+            <div className="animate-carousel flex gap-4">
               {firstRowRepeat.map((review, index) => (
                 <ReviewCard key={'first-row-' + index} {...review} />
               ))}
             </div>
-            <div className="flex animate-carousel_reverse gap-4">
+            <div className="animate-carousel_reverse flex gap-4">
               {firstRowRepeat.map((review, index) => (
                 <ReviewCard key={'second-row' + index} {...review} />
               ))}

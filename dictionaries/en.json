@@ -2,5 +2,133 @@
   "hero": {
     "title": "Healthy, Organic Brain Nutrition",
     "subtitle": "tadm is a supplement that supports your ability to focus, mental speed & memory."
+  },
+  "textReveal": "Empowering the brightest minds to unlock their ultimate potential",
+  "products": {
+    "title": "Order your tadm Brain"
+  },
+  "bulletPoints": {
+    "title": "Why tadm Brain",
+    "list": [
+      {
+        "title": "tadm provides your brain with essential fatty acids that strengthen cognitive function and enhance mental performance.",
+        "content": "DHA reinforces brain structure, improves neuronal communication, and boosts concentration and memory. GLA has anti-inflammatory properties and promotes mental well-being."
+      },
+      {
+        "title": "Mental clarity and overall health are closely connected—our synergistic formulation supports both while strengthening your immune system.",
+        "content": "Thymoquinone and GLA reduce inflammation, support the immune system, and contribute to vision health."
+      },
+      {
+        "title": "Precisely balanced formulation in 100% vegan softgels for optimal nutrient absorption.",
+        "content": "Our precisely balanced formulation, delivered in 100% vegan softgels, maximizes bioavailability and ensures optimal nutrient absorption, making it easy to integrate into your daily success routine."
+      }
+    ]
+  },
+  "insideTadm": {
+    "title": "Inside tadm",
+    "cumin": {
+      "title": "Black seed oil",
+      "content": "Black seed oil provides thymoquinone, a powerful antioxidant, along with omega-6 fatty acids. In our unique formulation, it delivers antibacterial and antiviral effects, protects cells from oxidative stress, strengthens the immune system, and supports brain function.",
+      "list": [
+        "Protects brain cells",
+        "Anti-inflammatory",
+        "Antibacterial & antiviral",
+        "Thymoquinone"
+      ]
+    },
+    "algae_oil": {
+      "title": "Algae Oil",
+      "content": "Our algae oil is the original vegan source of the essential omega-3 fatty acids docosahexaenoic acid (DHA) and eicosapentaenoic acid (EPA). It supports cell structures, the immune system, and the health of the brain and eyes – sustainably sourced and free from contaminants.",
+      "list": [
+        "DHA & EPA",
+        "Vital brain health",
+        "Vital heart health",
+        "Essential eye health"
+      ]
+    },
+    "hemp_oil": {
+      "title": "Hemp Oil",
+      "content": "Hemp oil is a natural source of omega-3 and omega-6 fatty acids. In our unique combination, it delivers anti-inflammatory gamma-linolenic acid (GLA). It supports brain function, strengthens the immune system, and promotes skin health.",
+      "list": [
+        "Omega-3",
+        "Omega-6",
+        "Immune system",
+        "Anti-inflammatory"
+      ]
+    },
+    "walnut_oil": {
+      "title": "Walnut Oil",
+      "content": "Walnut oil is a natural source of omega-3 fatty acids and vitamin E. It supports brain function, protects cells from oxidative stress, promotes cardiovascular health, helps regulate cholesterol levels, and supports eye health.",
+      "list": [
+        "Brain health",
+        "Heart health",
+        "Omega-3",
+        "Vitamin E"
+      ]
+    },
+    "softgels": {
+      "title": "tadm Brain Softgels",
+      "content": "tadm Brain relies on 100% vegan softgels produced under GMP-certified EU & US standards. The controlled release maximizes bioavailability, while vitamin E stabilizes the oils. Soft, easy to swallow, tasteless, and perfect for your routine.",
+      "list": [
+        "100% vegan",
+        "GMP-certified",
+        "High bioavailability",
+        "Tasteless"
+      ]
+    }
+  },
+  "experts": {
+    "title": "What our experts say",
+    "list":  [
+      {
+        "name": "Mergim Tahiri",
+        "designation": "CEO of Tahiri Garden and Landscaping",
+        "quote": "As a CEO, I need to perform at my best—both physically and mentally—every single day. Long working hours often drained my energy and focus until I discovered tadm Brain. With its essential fatty acids, tadm Brain helps me stay energized throughout the day and remain sharp even in the evening. An investment in my health that pays off every day!",
+        "src": "As a business owner, I bear full responsibility for my company, my employees, and my clients. My daily routine consists of physically demanding labor on construction sites and critical strategic decision-making in the office. This dual responsibility requires unwavering focus, endurance, and energy—day in and day out. Over time, I noticed that long working hours were taking a toll on my energy levels and concentration. By the end of the day, mental fatigue made it difficult to stay sharp and perform at my best. I searched for a solution that could support both my mental and physical performance. However, given my hectic schedule and frequent work-related travel, it was nearly impossible to maintain a diet that provided all the essential nutrients my body and mind needed—until I discovered tadm Brain. tadm Brain delivers the essential fatty acids that I would otherwise struggle to get in sufficient amounts through my diet. Since incorporating it into my routine, I've noticed a significant difference—I start my day full of energy and stay focused well into the evening, even after demanding hours on the construction site and in the office. No matter how intense my workload is, I can always give 100%. An investment in my health that continues to pay off every single day!"
+      },
+      {
+        "name": "Mark Oliver Eichenseer",
+        "designation": "CEO of Eichenseer Moving Services Munich",
+        "quote": "As a perfectionist with the highest standards for myself and everything I consume, I lead one of Munich's top moving companies. My work ethic, mindset, and expectations are always set to the highest level. That's why it was clear to me: in today's world, targeted supplementation is essential for maintaining peak performance. I was searching for a product that is exclusively manufactured in Germany, of the highest quality, and free from harmful substances. With tadm, I found exactly that – and more.",
+        "src": ""
+      }
+    ]
+  },
+  "facility": {
+    "title": "Highest Standards in Production & Quality Assurance",
+    "list": [
+      {
+        "questions": "Quality and Precision – Made in Germany",
+        "content": [
+          "Our production takes place under the highest quality assurance standards in a GMP-certified facility in Germany.",
+          "In addition to meeting EU and US regulations, our production also complies with DIN EN ISO 9001 and HACCP quality standards and is carefully monitored and controlled by skilled personnel.",
+          "We use state-of-the-art technology and machinery to meet the highest quality standards and fulfill the expectations of our customers."
+        ]
+      },
+      {
+        "questions": "Careful Selection of Premium Raw Materials",
+        "content": [
+          "Our raw materials are carefully selected and sourced exclusively from trusted suppliers to ensure the highest quality and purity of our products.",
+          "All oils used are cold-pressed to retain their nutrients as effectively as possible.",
+          "By using high-quality raw materials and ideal blending ratios, we ensure that our products provide optimal bioavailability of active ingredients for maximum effectiveness."
+        ]
+      },
+      {
+        "questions": "Research-Based Production",
+        "content": [
+          "In collaboration with leading laboratories and scientists in Munich, we have developed a combination of premium essential fatty acids with ingredients that support each other synergistically.",
+          "Our 100% vegan softgels feature a controlled release profile that allows optimal absorption of the active ingredients.",
+          "Our team of experts and scientists stays at the forefront of research while also relying on proven, scientifically validated ingredients."
+        ]
+      },
+      {
+        "questions": "Sustainability",
+        "content": [
+          "Our products are 100% vegan – out of responsibility for people and the planet.",
+          "We use glass and recyclable materials for our packaging to conserve resources.",
+          "We promote sustainable production processes and responsibly source our raw materials to keep our ecological footprint as small as possible."
+        ]
+      }
+    ]
   }
 }

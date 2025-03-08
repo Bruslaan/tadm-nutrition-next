@@ -38,7 +38,7 @@ export function GridTileImage({
       ) : null}
       {label ? (
         <>
-          <div className="absolute top-4 left-4 rounded-xl bg-orange-50 px-4 py-2 text-xl font-bold text-gray-800">
+          <div className="absolute top-4 left-4 rounded-xl bg-orange-50 px-4 py-2 text-xl font-bold text-gray-800 transition duration-300">
             <h2>{label.title}</h2>
           </div>
           <div className="absolute right-4 bottom-4 inline-flex transform">

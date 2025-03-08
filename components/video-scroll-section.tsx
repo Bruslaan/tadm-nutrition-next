@@ -11,12 +11,22 @@ type CardConfig = {
   topPosition: string;
   text: string | ReactNode;
 };
+interface Product {
+  title: string;
+  content: string;
+  list: string[];
+}
 
-const videoJson = {
-  /* ... keep existing JSON ... */
-};
+export interface InsideTadm {
+  title: string;
+  cumin: Product;
+  algae_oil: Product;
+  hemp_oil: Product;
+  walnut_oil: Product;
+  softgels: Product;
+}
 
-const VideoScrollSection = () => {
+const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm }) => {
   const containerRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -29,9 +39,9 @@ const VideoScrollSection = () => {
 
   const Chip = ({ children }: { children: ReactNode }) => {
     return (
-      <div className="inline-flex rounded-full bg-gray-900 px-3 py-1 text-base text-white">
+      <li className="inline-flex rounded-full bg-gray-900 px-3 py-1 text-base text-white">
         {children}
-      </div>
+      </li>
     );
   };
 
@@ -42,153 +52,80 @@ const VideoScrollSection = () => {
   // Configure cards in a more maintainable way
   const cardsConfig: CardConfig[] = [
     {
-      title: 'Black seed oil',
+      title: items.cumin.title,
       color: 'bg-blue-50',
       topPosition: 'md:top-[18%] top-[25%]',
       urlTo: '/cumin',
       text: (
         <div className="flex flex-col gap-3">
-          <p>
-            We use only organic black cumin oil with a high thymoquinone content to maximize its
-            powerful benefits for your health. Recent studies highlight its anti-inflammatory
-            properties and immune-boosting effects.
-          </p>
-
-          <ul className="flex h-full flex-wrap items-center gap-4 pt-4">
-            <li>
-              <Chip>Antibakteriell</Chip>
-            </li>
-            <li>
-              <Chip>Antiviral</Chip>
-            </li>
-            <li>
-              <Chip>Entzündungshemmend</Chip>
-            </li>
-            <li>
-              <Chip>Essenziellen Fettsäuren</Chip>
-            </li>
-          </ul>
+          <p>{items.cumin.content}</p>
+          <ChipList>
+            {items.cumin.list.map((item, index) => {
+              return <Chip key={index}>{item}</Chip>;
+            })}
+          </ChipList>
         </div>
       )
     },
     {
-      title: 'Algae Oil',
+      title: items.algae_oil.title,
       color: 'bg-green-50',
       topPosition: 'md:top-[20%] top-[27%]',
       urlTo: '/algae',
       text: (
         <div className="flex flex-col gap-3">
-          <p>
-            Unser Algenöl ist die ursprüngliche, vegane Quelle der lebenswichtigen
-            Omega-3-Fettsäuren DHA und EPA. Es stärkt die Zellstrukturen, unterstützt das
-            Immunsystem und trägt maßgeblich zu einer gesunden Gehirn- und Augengesundheit bei.
-          </p>
-
+          <p>{items.algae_oil.content}</p>
           <ChipList>
-            <li>
-              <Chip>Vegane</Chip>
-            </li>
-            <li>
-              <Chip>Omega-3 (DHA & EPA)</Chip>
-            </li>
-            <li>
-              <Chip>Augengesundheit</Chip>
-            </li>
-            <li>
-              <Chip>Gehirn Leistung </Chip>
-            </li>
-            <li>
-              <Chip>Immunsystem</Chip>
-            </li>
+            {items.algae_oil.list.map((item, index) => {
+              return <Chip key={index}>{item}</Chip>;
+            })}
           </ChipList>
         </div>
       )
     },
     {
-      title: 'Walnut oil',
+      title: items.walnut_oil.title,
       color: 'bg-orange-50',
       topPosition: 'md:top-[22%] top-[29%]',
       urlTo: '/walnut',
       text: (
         <div className="flex flex-col gap-3">
-          <p>
-            Our premium-quality walnut oil is rich in valuable Omega-3 fatty acids and Vitamin E –
-            perfectly blended to holistically support your health. With its cholesterol-lowering
-            properties, walnut oil significantly contributes to heart health while also promoting
-            optimal eye health.
-          </p>
+          <p>{items.walnut_oil.content}</p>
           <ChipList>
-            <li>
-              <Chip>Supports heart health</Chip>
-            </li>
-            <li>
-              <Chip>Anti-inflammatory properties</Chip>
-            </li>
-            <li>
-              <Chip>Promotes brain and eye health</Chip>
-            </li>
-            <li>
-              <Chip>High in essential Omega-3 fatty acids</Chip>
-            </li>
-            <li>
-              <Chip>Rich in Vitamin E</Chip>
-            </li>
+            {items.walnut_oil.list.map((item, index) => {
+              return <Chip key={index}>{item}</Chip>;
+            })}
           </ChipList>
         </div>
       )
     },
     {
-      title: 'Hamp Seed Oil',
+      title: items.hemp_oil.title,
       color: 'bg-teal-50',
       topPosition: 'md:top-[24%] top-[31%]',
       urlTo: '/cannabis',
       text: (
         <div className="flex flex-col gap-3">
-          <p>
-            We exclusively use hemp oil with an ideal ratio of Omega-3 to Omega-6 fatty acids (3:1)
-            and anti-inflammatory gamma-linolenic acid (GLA). In our unique formulation, it
-            strengthens skin and immune health while supporting cognitive functions.
-          </p>
+          <p>{items.hemp_oil.content}</p>
           <ChipList>
-            <li>
-              <Chip>Rich in Omega-3 and Omega-6 fatty acids</Chip>
-            </li>
-            <li>
-              <Chip>Anti-inflammatory benefits</Chip>
-            </li>
-            <li>
-              <Chip>Supports skin and immune health</Chip>
-            </li>
-            <li>
-              <Chip>Enhances mental clarity and focus</Chip>
-            </li>
+            {items.hemp_oil.list.map((item, index) => {
+              return <Chip key={index}>{item}</Chip>;
+            })}
           </ChipList>
         </div>
       )
     },
     {
-      title: 'Vegan Capsule',
+      title: items.softgels.title,
       color: 'bg-gray-50',
       topPosition: 'md:top-[26%] top-[33%]',
       text: (
         <div className="flex flex-col gap-3">
-          <p>
-            Our 100% vegan softgels are manufactured under the highest quality standards in a
-            certified facility in Germany. With high bioavailability and a controlled release
-            profile, they ensure optimal absorption of essential nutrients – delivering maximum
-            effectiveness.
-          </p>
-          <p></p>
+          <p>{items.softgels.content}</p>
           <ChipList>
-            <li>
-              <Chip>Vegan</Chip>
-            </li>
-            <li>
-              <Chip>High bioavailability</Chip>
-            </li>
-            <li>
-              <Chip>Easy to consume</Chip>
-            </li>
+            {items.softgels.list.map((item, index) => {
+              return <Chip key={index}>{item}</Chip>;
+            })}
           </ChipList>
         </div>
       )
@@ -235,20 +172,15 @@ const VideoScrollSection = () => {
       id="inside-tadm"
       className="relative m-auto min-h-[600vh] bg-white pt-10 lg:min-h-[500vh]"
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJson) }}
-      />
-
       <div className="top-0 right-0 z-50 mt-3 flex w-full items-end justify-center md:mt-10 md:hidden md:max-w-[40%]">
-        <h2 className="text-center text-3xl leading-none font-bold md:text-6xl">Inside the tadm</h2>
+        <h2 className="text-center text-3xl leading-none font-bold md:text-6xl">{title}</h2>
       </div>
 
       {/* Video Section */}
       <div className="sticky top-0 h-[100vh] w-full overflow-hidden">
         <div className="absolute top-0 right-0 z-50 mt-3 hidden w-full items-end justify-center md:mt-10 md:flex md:max-w-[40%]">
           <h2 className="text-center text-3xl leading-none font-bold md:text-4xl lg:text-6xl">
-            Inside the tadm
+            {title}
           </h2>
         </div>
 
@@ -269,7 +201,7 @@ const VideoScrollSection = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="absolute top-0 right-0 h-full w-full px-1 pt-80 md:max-w-[50%]">
+      <div className="absolute top-0 right-0 h-full w-full px-1 pt-80 md:max-w-[50%] 2xl:max-w-[35%]">
         {cardsConfig.map((config, index) => (
           <VideoScrollCard
             key={config.title}

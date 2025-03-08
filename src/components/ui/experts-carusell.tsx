@@ -53,7 +53,13 @@ const testimonials: Testimonial[] = [
     src: 'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   }
 ];
-const ExpertsCarousel = () => {
+const ExpertsCarousel = ({
+  title,
+  testimonials
+}: {
+  title: string;
+  testimonials: Testimonial[];
+}) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -82,7 +88,7 @@ const ExpertsCarousel = () => {
     <section className="flex min-h-screen w-full flex-col items-center justify-evenly overflow-x-hidden pt-10">
       <div className="mx-auto flex max-w-(--breakpoint-xl) justify-center px-4">
         <h2 className="max-w-2xl text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
-          What our Experts think
+          {title}
         </h2>
       </div>
 
@@ -100,7 +106,9 @@ const ExpertsCarousel = () => {
               <div>
                 <div className="mb-6 flex items-center gap-4">
                   <Image
-                    src={testimonial.src}
+                    src={
+                      'https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                    }
                     alt={testimonial.name}
                     width={56}
                     height={56}

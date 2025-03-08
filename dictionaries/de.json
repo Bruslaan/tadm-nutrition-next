@@ -1,6 +1,135 @@
 {
   "hero": {
-    "title": "Deutscher Titel hier",
-    "subtitle": "tadm is a supplement that supports your ability to focus, mental speed & memory."
+    "title": "Lebenswichtige Nährstoffe für dein Gehirn",
+    "subtitle": "Bringe mit tadm deine metal Leistungsfähigkeit auf das nächste Level"
+  },
+  "textReveal": "Entfalte dein volles Potenzial und erreiche maximale mentale Leistungsfähigkeit",
+  "products": {
+    "title": "Bestelle dein tadm Brain"
+  },
+  "insideTadm": {
+    "title": "Inside tadm",
+    "cumin": {
+      "title": "Schwarzkümmelöl",
+      "content": "Schwarzkümmelöl liefert Thymoquinon, ein starkes Antioxidans, sowie Omega-6-Fettsäuren. In unserer einzigartigen Formulierung entfaltet es seine antibakterielle und antivirale Wirkung, schützt Zellen vor oxidativem Stress, stärkt das Immunsystem und unterstützt die Gehirnfunktion.",
+      "list": [
+        "Schützt Gehirnzellen",
+        "Entzündungshemmend",
+        "Antibakteriell & Antiviral",
+        "Thymoquinon"
+      ]
+    },
+    "algae_oil": {
+      "title": "Algenöl",
+      "content": "Unser Algenöl ist die ursprüngliche, vegane Quelle der essenziellen Omega-3-Fettsäuren Docosahexaensäure (DHA) und Eicosapentaensäure (EPA). Es unterstützt Zellstrukturen, das Immunsystem sowie die Gesundheit von Gehirn und Augen – nachhaltig gewonnen und frei von Schadstoffen.",
+      "list": [
+        "EPA & DHA",
+        "Lebenswichtig für Gehirn",
+        "Lebenswichtig für Herz",
+        "Essenziel für Netzhaut"
+      ]
+    },
+    "hemp_oil": {
+      "title": "Hanföl",
+      "content": "Hanföl ist eine natürliche Quelle von Omega-3- und Omega-6-Fettsäuren. In unserer einzigartigen Kombination liefert es entzündungshemmende Gamma-Linolensäure (GLA). Es unterstützt die Gehirnfunktion, stärkt das Immunsystem und trägt zur Hautgesundheit bei.",
+      "list": [
+        "Omega-3",
+        "Omega-6",
+        "Immunssystem",
+        "Entzündungshemmend"
+      ]
+    },
+    "walnut_oil": {
+      "title": "Walnussöl",
+      "content": "Walnussöl ist eine natürliche Quelle von Omega-3-Fettsäuren und Vitamin E. Es unterstützt die Gehirnfunktion, schützt Zellen vor oxidativem Stress, trägt zur Herz-Kreislauf-Gesundheit bei, reguliert den Cholesterinspiegel und fördert die Augengesundheit.",
+      "list": [
+        "Gehirngesundheit",
+        "Herzgesundheit",
+        "Vitamin E",
+        "Omega-3"
+      ]
+    },
+    "softgels": {
+      "title": "tadm Brain Softgels",
+      "content": "tadm Brain setzt auf 100 % vegane Softgels mit GMP-zertifizierter Produktion nach EU- & US-Standards. Die kontrollierte Freisetzung maximiert die Bioverfügbarkeit, während Vitamin E die Öle stabilisiert. Weich, leicht zu schlucken, geschmacksneutral und perfekt für deine Routine.",
+      "list": [
+        "100 % vegan",
+        "GMP-zertifiziert",
+        "Hohe Bioverfügbarkeit",
+        "Geschmacksneutral"
+      ]
+    }
+  },
+  "facility": {
+    "title": "Höchste Standards in Produktion & Qualitätssicherung",
+    "list": [
+      {
+        "questions": "Qualität und Präzision – Made in Germany",
+        "content": [
+          "Unsere Herstellung erfolgt unter höchsten Qualitätssicherungsmaßnahmen in einer GMP-zertifizierten Produktionsstätte in Deutschland.",
+          "Zusätzlich zur Einhaltung von EU- und US-Vorschriften erfüllt die Produktion auch die Qualitätsstandards DIN EN ISO 9001 und HACCP und wird von sachkundigem Personal überwacht und kontrolliert.",
+          "Für höchste Qualitätsstandards setzen wir modernste Technologie und Maschinen ein, die unseren Ansprüchen und denen unserer Kunden gerecht werden."
+        ]
+      },
+      {
+        "questions": "Sorgfältige Auswahl hochwertiger Rohstoffe",
+        "content": [
+          "Unsere Rohstoffe werden sorgfältig ausgewählt und stammen ausschließlich von vertrauenswürdigen Lieferanten, um die höchste Qualität und Reinheit unserer Produkte sicherzustellen.",
+          "Alle verwendeten Öle stammen stets aus schonender Kaltpressung, um die Nährstoffe bestmöglich zu erhalten.",
+          "Durch die Verwendung hochwertiger Rohstoffe und idealer Mischverhältnisse stellen wir sicher, dass unsere Produkte eine optimale Bioverfügbarkeit der Inhaltsstoffe bieten und so die bestmögliche Wirkung erzielen."
+        ]
+      },
+      {
+        "questions": "Forschungsbasierte Produktion",
+        "content": [
+          "In Zusammenarbeit mit führenden Laboratorien und Wissenschaftlern aus München haben wir eine Kombination hochwertiger, essenzieller Fettsäuren entwickelt, deren Inhaltsstoffe sich synergetisch unterstützen.",
+          "Unsere 100 % veganen Softgels ermöglichen durch ihr kontrolliertes Freisetzungsprofil eine optimale Absorptionsrate der Inhaltsstoffe.",
+          "Unser Team aus Experten und Wissenschaftlern bleibt immer auf dem neuesten Stand der Forschung und setzt zugleich auf bewährte, wissenschaftlich geprüfte Inhaltsstoffe."
+        ]
+      },
+      {
+        "questions": "Nachhaltigkeit",
+        "content": [
+          "Unsere Produkte sind zu 100 % vegan – aus Verantwortung gegenüber Mensch und Umwelt.",
+          "Bei der Verpackung setzen wir auf Glas und recycelbare Materialien, um Ressourcen zu schonen.",
+          "Wir fördern nachhaltige Produktionsprozesse und beziehen unsere Rohstoffe verantwortungsbewusst, um unseren ökologischen Fußabdruck so gering wie möglich zu halten."
+        ]
+      }
+    ]
+  },
+
+  "experts": {
+    "title": "Was experten sagen",
+    "list": [
+      {
+        "name": "Mergim Tahiri",
+        "designation": "Geschäftsführer der Tahiri Garten- und Landschaftsbau",
+        "quote": "Als Geschäftsführer muss ich täglich körperlich und geistig Höchstleistung erbringen. Lange Arbeitstage haben oft an meiner Energie und Konzentration gezehrt – bis ich auf tadm Brain gestoßen bin. Dank der essenziellen Fettsäuren in tadm Brain starte ich voller Energie in den Tag und bleibe auch abends noch fokussiert. Eine Investition in meine Gesundheit, die sich jeden Tag auszahlt!",
+        "src": ""
+      },
+      {
+        "name": "Mark Oliver Eichenseer",
+        "designation": "Geschäftsführer Eichenseer Umzüge München",
+        "quote": "Als Perfektionist mit höchsten Ansprüchen an mich selbst und alles, was ich konsumiere, führe ich eines der führenden Münchner Umzugsunternehmen. Mein Arbeitsstil, meine Denkweise und meine Erwartungen sind stets auf höchste Standards ausgerichtet. Deshalb war für mich klar: Um täglich maximale Leistung zu erbringen, ist eine gezielte Supplementierung in der heutigen Zeit unerlässlich. Ich suchte nach einem Produkt, das ausschließlich in Deutschland hergestellt, qualitativ hochwertig und frei von Schadstoffen ist. Mit tadm habe ich genau das gefunden – und mehr.",
+        "src": ""
+      }
+    ]
+  },
+  "bulletPoints": {
+    "title": "Wichtigste auf einen Blick",
+    "list": [
+      {
+        "title": "tadm versorgt dein Gehirn mit essenziellen Fettsäuren, die kognitive Funktionen stärken und die mentale Leistungsfähigkeit steigern.",
+        "content": "DHA stärkt die Gehirnstruktur, verbessert die neuronale Kommunikation und steigert Konzentration sowie Gedächtnis. GLA wirkt entzündungshemmend und trägt zum geistigen Wohlbefinden bei."
+      },
+      {
+        "title": "Mentale Klarheit und Gesundheit sind eng verbunden – deshalb wirkt unsere Formulierung synergetisch und unterstützt zugleich dein Immunsystem",
+        "content": "Thymoquinon und GLA senken Entzündungsprozesse, stärken das Immunsystem und unterstützen die Sehkraft."
+      },
+      {
+        "title": "Title hier",
+        "content": "Unsere präzise abgestimmte Formulierung in 100 % veganen Softgels maximiert die Bioverfügbarkeit und gewährleistet eine optimale Nährstoffaufnahme, damit du deine Erfolgsroutine mühelos umsetzen kannst."
+      }
+    ]
   }
 }
