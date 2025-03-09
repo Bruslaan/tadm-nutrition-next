@@ -3,6 +3,74 @@
     "title": "Healthy, Organic Brain Nutrition",
     "subtitle": "tadm is a supplement that supports your ability to focus, mental speed & memory."
   },
+  "walnut": {
+    "sectionTitle": "Walnut Oil",
+    "items": [
+      {
+        "title": "What is Walnut Oil?",
+        "content": "Walnut oil is extracted from the ripe nuts of the Juglans regia tree and has been valued for centuries. Modern research confirms its benefits for the cardiovascular system, cognitive function, and eye health.\n\nRich in Omega-3 fatty acids and Vitamin E, walnut oil has anti-inflammatory properties, promotes brain function, and strengthens the cardiovascular system. Additionally, it may reduce the risk of chronic eye diseases."
+      },
+      {
+        "title": "Where Does Our Walnut Oil Come From?",
+        "content": "Our high-quality walnut oil comes from sustainably managed farms, where walnuts are carefully selected and gently cold-pressed to preserve all valuable nutrients. The production follows the highest international quality standards and complies with current EU food safety regulations. Its environmentally friendly extraction supports sustainability and conserves natural resources."
+      },
+      {
+        "title": "Why Walnut Oil?",
+        "content": "Rich in Omega-3 fatty acids and antioxidants, walnut oil supports the cardiovascular system, reduces inflammation, and enhances cognitive function.\n\nIts unique fatty acid profile and sustainable extraction make walnut oil the optimal choice for holistic well-being.\n\nOur carefully balanced formulation combines walnut oil with other valuable ingredients to enhance mental performance, ensure cellular protection, and support eye health."
+      }
+    ]
+  },
+  "hemp": {
+    "sectionTitle": "Hemp Oil",
+    "items": [
+      {
+        "title": "What is Hemp Oil?",
+        "content": "Hemp oil is extracted from the seeds of the hemp plant (*Cannabis sativa*) and is a rich source of essential Omega-3 and Omega-6 fatty acids. Since the body cannot produce these on its own, they are vital for a balanced diet.\n\nParticularly, gamma-linolenic acid (GLA), a rare anti-inflammatory Omega-6 fatty acid, supports the nervous system, brain function, and skin health.\n\nThanks to its optimal Omega-6 to Omega-3 ratio of approximately 3:1, hemp oil contributes to overall health."
+      },
+      {
+        "title": "Where Does Our Hemp Oil Come From?",
+        "content": "Our high-quality hemp oil is extracted from carefully selected hemp seeds using gentle cold pressing to preserve all valuable nutrients.\n\nHemp plants grow quickly, require minimal water, and thrive without pesticides – a natural advantage for both people and the environment. Our production meets the highest international quality standards and complies with the latest EU food safety regulations."
+      },
+      {
+        "title": "Why We Choose Hemp Oil",
+        "content": "Rich in Omega fatty acids and gamma-linolenic acid (GLA), hemp oil supports the nervous system, cognitive function, and immune system.\n\nIts balanced fatty acid profile and sustainable production make hemp oil the optimal choice for holistic well-being and peak mental performance.\n\nOur precisely balanced formula combines hemp oil with other valuable nutrients to enhance mental clarity, support neural processes, and promote overall well-being."
+      }
+    ]
+  },
+  "algenoel": {
+    "sectionTitle": "Algae Oil",
+    "items": [
+      {
+        "title": "What is Algae Oil?",
+        "content": "Algae are the original source of Omega-3 fatty acids and the only vegan source of Docosahexaenoic Acid (DHA) and Eicosapentaenoic Acid (EPA). Since the body cannot synthesize DHA and EPA on its own, they must be obtained through diet. As essential components of cell membranes, they are indispensable for the function of the brain, inflammatory metabolism, immune system, and nervous system."
+      },
+      {
+        "title": "Where Does Our Algae Oil Come From?",
+        "content": "Our high-quality algae oil is derived from the microalgae Schizochytrium and produced in a Swiss facility following the highest international standards – in compliance with EU and US food regulations.\n\nBy cultivating it in artificial seawater, the oil remains free from heavy metals and microplastics. Fermentation increases the Omega-3 content, and the fatty acids are then purified through gentle centrifugation and advanced filtration, ensuring the highest purity and bioavailability."
+      },
+      {
+        "title": "Why Algae Oil?",
+        "content": "Algae oil provides high-quality, long-chain Omega-3 fatty acids (DHA & EPA), which are essential for the brain, nerve cells, and cell regeneration. DHA is a key structural component of brain, nerve, and retinal cells. It enhances membrane fluidity and signal transmission, which is crucial for cognitive function, vision, and cardiovascular health.\n\nEPA helps regulate inflammatory processes and supports a balanced immune function. This fatty acid plays a role in the production of signaling molecules that reduce inflammation and contribute to immune system stability.\n\nInstead of obtaining Omega-3 through fish, we source it directly from algae, preserving marine resources and avoiding contaminants like heavy metals. Our innovative and carefully balanced formulation combines algae oil with valuable nutrients to support long-term mental performance and overall well-being."
+      }
+    ]
+  },
+  "cumin": {
+    "sectionTitle": "Black Cumin",
+    "items": [
+      {
+        "title": "What is Black Cumin?",
+        "content": "For over 2,000 years, black seed oil, extracted from the seeds of Nigella sativa, has been valued as a medicinal plant. Modern research confirms its numerous benefits, particularly for the immune system and brain function. Its key active compound, thymoquinone, has anti-inflammatory, antibacterial, and antiviral properties. Studies show that it supports the immune system, protects brain cells from oxidative stress, and enhances neuronal function.\n\nSustainable Cultivation: Black seed thrives in arid climates with minimal water consumption, making it a particularly environmentally friendly crop."
+      },
+      {
+        "title": "Where Does Our Black Seed Oil Come From?",
+        "content": "Our organic black seed oil is sourced from Egypt and undergoes gentle cold extraction in Germany. It then undergoes bland filtration, which removes unwanted particles while preserving its valuable bioactive compounds. The production meets international quality standards and complies with the latest EU and US food safety regulations."
+      },
+      {
+        "title": "Why We Use Black Seed Oil",
+        "content": "Rich in Omega-6 fatty acids (linoleic acid) and antioxidants (thymoquinone), black seed oil offers anti-inflammatory, antibacterial, and antiviral benefits, strengthens the immune system, and supports brain health.\n\nIn our unique formulation, black seed oil works in synergy with other high-quality ingredients to enhance cognitive performance, promote mental clarity, and support overall well-being."
+      }
+    ]
+  },
   "textReveal": "Empowering the brightest minds to unlock their ultimate potential",
   "products": {
     "title": "Order your tadm Brain"
@@ -87,6 +155,12 @@
         "src": "As a business owner, I bear full responsibility for my company, my employees, and my clients. My daily routine consists of physically demanding labor on construction sites and critical strategic decision-making in the office. This dual responsibility requires unwavering focus, endurance, and energy—day in and day out. Over time, I noticed that long working hours were taking a toll on my energy levels and concentration. By the end of the day, mental fatigue made it difficult to stay sharp and perform at my best. I searched for a solution that could support both my mental and physical performance. However, given my hectic schedule and frequent work-related travel, it was nearly impossible to maintain a diet that provided all the essential nutrients my body and mind needed—until I discovered tadm Brain. tadm Brain delivers the essential fatty acids that I would otherwise struggle to get in sufficient amounts through my diet. Since incorporating it into my routine, I've noticed a significant difference—I start my day full of energy and stay focused well into the evening, even after demanding hours on the construction site and in the office. No matter how intense my workload is, I can always give 100%. An investment in my health that continues to pay off every single day!"
       },
       {
+        "name": "Dr. med. Emil Noschajew",
+        "designation": "Specialist in Orthopedics and Surgery – Klinikum Rechts der Isar, Munich",
+        "quote": "As a specialist in a hospital, I work under constant pressure. Long shifts, emergencies, and quick decisions demand full concentration—exhaustion is not an option. Yet, in a stressful daily routine, there is little time for a balanced diet that supports focus and resilience. tadm Brain helps me bridge this gap. Essential fatty acids and anti-inflammatory ingredients provide my body with targeted support. Since taking it daily, I feel more alert, focused, and balanced—a noticeable advantage in my demanding profession.",
+        "src": ""
+      },
+      {
         "name": "Mark Oliver Eichenseer",
         "designation": "CEO of Eichenseer Moving Services Munich",
         "quote": "As a perfectionist with the highest standards for myself and everything I consume, I lead one of Munich's top moving companies. My work ethic, mindset, and expectations are always set to the highest level. That's why it was clear to me: in today's world, targeted supplementation is essential for maintaining peak performance. I was searching for a product that is exclusively manufactured in Germany, of the highest quality, and free from harmful substances. With tadm, I found exactly that – and more.",
@@ -95,12 +169,12 @@
       {
         "name": "Ahmad Dudarov",
         "designation": "Ringer der deutschen Nationalmannschaft",
-        "quote": "Profisportler auf Weltniveau vertrete ich Deutschland. Um 100 Prozent Leistung abzurufen, braucht mein Körper mehr als hartes Training – eine starke Immunabwehr und volle mentale Klarheit. Mit tadm bleibe ich gesund, fühle mich kraftvoller und fokussierter auf der Matte.\n\nFrüher war es eine Herausforderung, meinen Körper konstant mit essenziellen Fettsäuren zu versorgen. Jetzt geht es einfach: tadm ist immer dabei – handlich, minimalistisch und unverzichtbar auf meinem Weg zu neuen Medaillen. ✈\uFE0F\uD83C\uDFC5"
+        "quote": "Profisportler auf Weltniveau vertrete ich Deutschland. Um 100 Prozent Leistung abzurufen, braucht mein Körper mehr als hartes Training – eine starke Immunabwehr und volle mentale Klarheit. Mit tadm bleibe ich gesund, fühle mich kraftvoller und fokussierter auf der Matte. Früher war es eine Herausforderung, meinen Körper konstant mit essenziellen Fettsäuren zu versorgen. Jetzt geht es einfach: tadm ist immer dabei – handlich, minimalistisch und unverzichtbar auf meinem Weg zu neuen Medaillen. ✈\uFE0F\uD83C\uDFC5"
       },
       {
-        "name": "Marko",
+        "name": "Marko Oikarainen",
         "designation": "World-Class BJJ Athlete (BJJ & Judo Black Belt – World Championship Medalist)",
-        "quote": "For over a decade, I’ve been at the top of BJJ in Finland, competing against the strongest fighters in Europe and around the world. BJJ is often compared to chess—every move must be calculated, every grip strategically placed. Peak performance requires more than just strength and technique—my body and mind must be sharp at all times.\n\n**tadm Brain is an essential part of my daily routine. It provides my brain and immune system with vital nutrients that keep me focused, resilient, and ready to perform. In a sport where every millisecond matters and precision determines victory or defeat, this support is indispensable.\n\nNo matter where in the world I train or compete—tadm Brain is always with me.",
+        "quote": "For over a decade, I’ve been at the top of Brazilian Jiu-Jitsu in Finland, competing successfully against the strongest fighters in Europe and around the world. In this sport, strength and technique alone aren’t enough — every move must be precise and strategic. Like chess, foresight determines victory or defeat.\n\nThat’s why tadm Brain is an essential part of my routine. Its essential nutrients support my brain and immune system, keeping me focused, resilient, and ready to perform at the highest level. In a sport where milliseconds make the difference, this support is indispensable.\n\nNo matter where I train or compete — tadm Brain is always with me.",
         "src": ""
       }
     ]

@@ -39,10 +39,10 @@ const CuminHeroSection = () => {
 
         <div className="relative">
           <Image
-            src="/static/CuminFlower.png"
+            src="/static/CuminFlowerMin.png"
             alt="cumin flower"
-            height={500}
-            width={500}
+            height={200}
+            width={200}
             className="w-60 lg:w-96"
           ></Image>
           <FloatingIcon className="top-0 right-0 w-14 blur-xs" size={70} />

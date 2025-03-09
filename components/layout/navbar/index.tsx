@@ -23,14 +23,6 @@ export async function Navbar() {
       title: 'Faq'
     },
     {
-      path: '/en',
-      title: 'English'
-    },
-    {
-      path: '/de',
-      title: 'Deutsch'
-    },
-    {
       path: 'https://blog.tadm-nutrition.com/de/blog',
       title: 'Knowledge Hub'
     }

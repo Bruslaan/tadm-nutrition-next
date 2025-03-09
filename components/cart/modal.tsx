@@ -89,7 +89,7 @@ export default function CartModal() {
           >
             <Dialog.Panel className="fixed top-0 right-0 bottom-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl md:w-[390px] dark:border-neutral-700 dark:bg-black/80 dark:text-white">
               <div className="flex items-center justify-between">
-                <p className="text-lg font-semibold">My Cart</p>
+                <p className="text-lg font-semibold">My tadm</p>
                 <button aria-label="Close cart" onClick={closeCart}>
                   <CloseCart />
                 </button>

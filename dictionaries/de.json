@@ -3,6 +3,74 @@
     "title": "Lebenswichtige Nährstoffe für dein Gehirn",
     "subtitle": "Bringe mit tadm deine metal Leistungsfähigkeit auf das nächste Level"
   },
+  "walnut": {
+    "sectionTitle": "Walnussöl",
+    "items": [
+      {
+        "title": "Was ist Walnussöl?",
+        "content": "Walnussöl wird aus den reifen Nüssen des Juglans regia-Baumes gewonnen und seit Jahrhunderten geschätzt. Moderne Forschung bestätigt seine Wirkung auf das Herz-Kreislauf-System, die kognitive Funktion und die Augengesundheit.\n\nReich an Omega-3-Fettsäuren und Vitamin E, wirkt Walnussöl entzündungshemmend, fördert die Gehirnfunktion und stärkt das Herz-Kreislauf-System. Zudem kann es das Risiko für chronische Augenkrankheiten senken."
+      },
+      {
+        "title": "Woher stammt unser Walnussöl?",
+        "content": "Unser hochwertiges Walnussöl stammt aus nachhaltig bewirtschafteten Anbaugebieten, wo die Walnüsse sorgfältig ausgewählt und schonend kaltgepresst werden. So bleiben alle wertvollen Nährstoffe erhalten.\n\nDie Produktion erfolgt nach höchsten internationalen Qualitätsstandards und entspricht den aktuellen EU-Richtlinien für Lebensmittelsicherheit. Die umweltschonende Gewinnung trägt zur Nachhaltigkeit bei und bewahrt natürliche Ressourcen."
+      },
+      {
+        "title": "Deshalb setzen wir auf Walnussöl",
+        "content": "Reich an Omega-3-Fettsäuren und Antioxidantien, unterstützt Walnussöl das Herz-Kreislauf-System, reduziert Entzündungen und fördert die kognitive Funktion.\n\nSein besonderes Fettsäureprofil und die nachhaltige Gewinnung machen Walnussöl zur optimalen Wahl für ganzheitliches Wohlbefinden.\n\nUnsere präzise abgestimmte Formulierung kombiniert Walnussöl mit weiteren wertvollen Inhaltsstoffen, um die mentale Leistungsfähigkeit zu steigern, Zellschutz zu gewährleisten und die Augengesundheit zu fördern."
+      }
+    ]
+  },
+  "hemp": {
+    "sectionTitle": "Hanföl",
+    "items": [
+      {
+        "title": "Was ist Hanföl?",
+        "content": "Hanföl wird aus den Samen der Hanfpflanze (Cannabis sativa) gewonnen und ist eine wertvolle Quelle essentieller Omega-3- und Omega-6-Fettsäuren. Da der Körper diese nicht selbst produziert, sind sie unverzichtbar für eine ausgewogene Ernährung.\n\nBesonders Gamma-Linolensäure (GLA), eine seltene, entzündungshemmende Omega-6-Fettsäure, unterstützt das Nervensystem, die Gehirnfunktion und die Hautgesundheit.\n\nDank seines optimalen Omega-6- zu Omega-3-Verhältnisses von etwa 3:1 trägt Hanföl zur allgemeinen Gesundheit bei."
+      },
+      {
+        "title": "Woher stammt unser Hanföl?",
+        "content": "Unser hochwertiges Hanföl wird aus sorgfältig ausgewählten Hanfsamen durch schonende Kaltpressung extrahiert, um alle wertvollen Nährstoffe zu bewahren.\n\nHanfpflanzen wachsen schnell, benötigen wenig Wasser und kommen ohne Pestizide aus – ein natürlicher Vorteil für Mensch und Umwelt. Unsere Produktion entspricht höchsten internationalen Qualitätsstandards und den aktuellen EU-Richtlinien für Lebensmittelsicherheit."
+      },
+      {
+        "title": "Deshalb setzen wir auf Hanföl",
+        "content": "Reich an Omega-Fettsäuren und Gamma-Linolensäure (GLA), unterstützt Hanföl das Nervensystem, die kognitive Funktion und das Immunsystem.\n\nSein ausgewogenes Fettsäureprofil und die nachhaltige Gewinnung machen Hanföl zur optimalen Wahl für ganzheitliches Wohlbefinden und geistige Höchstleistung.\n\nUnsere präzise abgestimmte Rezeptur kombiniert Hanföl mit weiteren wertvollen Inhaltsstoffen, um mentale Klarheit zu fördern, neuronale Prozesse zu unterstützen und das Wohlbefinden zu optimieren."
+      }
+    ]
+  },
+  "algenoel": {
+    "sectionTitle": "Algenöl",
+    "items": [
+      {
+        "title": "Was ist Algenöl?",
+        "content": "Algen sind die ursprüngliche Quelle von Omega-3-Fettsäuren und die einzige vegane Quelle für Docosahexaensäure (DHA) und Eicosapentaensäure (EPA). Da der Körper DHA und EPA nicht selbst synthetisieren kann, müssen sie zwingend über die Nahrung aufgenommen werden. Als lebenswichtige Bestandteile der Zellmembranen sind sie unverzichtbar für die Funktion von Gehirn, Entzündungsstoffwechsel, Immunsystem und Nervensystem."
+      },
+      {
+        "title": "Woher stammt unser Algenöl?",
+        "content": "Unser hochwertiges Algenöl wird aus der Mikroalge Schizochytrium gewonnen und in einer Schweizer Einrichtung nach höchsten internationalen Standards produziert – unter Einhaltung der EU- und US-Lebensmittelvorschriften.\n\nDurch die Kultivierung in künstlichem Meerwasser bleibt das Öl frei von Schwermetallen und Mikroplastik. Die Fermentation erhöht den Omega-3-Gehalt, bevor die Fettsäuren durch schonende Zentrifugation und fortschrittliche Filtration gereinigt werden, um die höchste Reinheit und Bioverfügbarkeit sicherzustellen."
+      },
+      {
+        "title": "Warum Algenöl?",
+        "content": "Algenöl liefert hochwertige, langkettige Omega-3-Fettsäuren (DHA & EPA), die für Gehirn, Nervenzellen und Zellregeneration essenziell sind. DHA ist ein zentraler Bestandteil von Gehirn-, Nerven- und Netzhautzellen. Es verbessert die Membranfluidität und Signalübertragung, was für kognitive Funktionen, Sehvermögen und eine stabile Herz-Kreislauf-Gesundheit entscheidend ist.\n\nEPA trägt zur Regulation von Entzündungsprozessen bei und unterstützt eine ausgeglichene Immunfunktion. Diese Fettsäure ist an der Produktion von Botenstoffen beteiligt, die Entzündungen senken und zur Stabilität des Immunsystems beitragen.\n\nStatt über Fische gewinnen wir Omega-3 direkt aus Algen, wodurch Meeresressourcen geschützt und Schadstoffe wie Schwermetalle vermieden werden. Unsere abgestimmte Formulierung kombiniert Algenöl mit wertvollen Nährstoffen, um mentale Leistungsfähigkeit langfristig zu unterstützen und das allgemeine Wohlbefinden zu fördern."
+      }
+    ]
+  },
+  "cumin": {
+    "sectionTitle": "Schwarzkümmel",
+    "items": [
+      {
+        "title": "Was ist Schwarzkümmelöl?",
+        "content": "Seit über 2.000 Jahren wird Schwarzkümmelöl aus den Samen der Nigella sativa gewonnen und als Heilpflanze geschätzt. Moderne Forschung bestätigt seine zahlreichen Vorteile, insbesondere für das Immunsystem und die Gehirnfunktion. Der Hauptwirkstoff Thymoquinon besitzt starke entzündungshemmende, antibakterielle und antivirale Eigenschaften. Studien belegen seine immunstärkende Wirkung und zeigen, dass er die Gehirnzellen vor oxidativem Stress schützt und die neuronale Funktion fördert.\n\nNachhaltiger Anbau: Schwarzkümmel wächst in trockenen Klimazonen mit minimalem Wasserverbrauch und ist dadurch eine besonders ressourcenschonende Pflanze."
+      },
+      {
+        "title": "Woher stammt unser Schwarzkümmelöl?",
+        "content": "Unser biologisches Schwarzkümmelöl stammt aus Ägypten und wird in Deutschland durch schonende Kaltextraktion gewonnen. Anschließend erfolgt eine blande Filtration, bei der unerwünschte Schwebstoffe entfernt werden, während die wertvollen bioaktiven Inhaltsstoffe erhalten bleiben. Die Produktion erfüllt internationale Qualitätsstandards und entspricht den neuesten EU- und US-Richtlinien für Lebensmittelsicherheit."
+      },
+      {
+        "title": "Deshalb setzen wir auf Schwarzkümmelöl",
+        "content": "Reich an Omega-6-Fettsäuren (Linolsäure) und Antioxidantien (Thymoquinon), entfaltet Schwarzkümmelöl eine entzündungshemmende, antibakterielle und antivirale Wirkung, stärkt das Immunsystem und unterstützt die Gehirngesundheit.\n\nIn unserer einzigartigen Formulierung entfaltet Schwarzkümmelöl im Zusammenspiel mit weiteren hochwertigen Inhaltsstoffen einen synergetischen Effekt, um die kognitive Leistungsfähigkeit zu steigern, mentale Klarheit zu fördern und ganzheitliches Wohlbefinden zu unterstützen."
+      }
+    ]
+  },
   "textReveal": "Entfalte dein volles Potenzial und erreiche maximale mentale Leistungsfähigkeit",
   "products": {
     "title": "Bestelle dein tadm Brain"
@@ -108,6 +176,12 @@
         "src": ""
       },
       {
+        "name": "Dr. med. Emil Noschajew",
+        "designation": "Facharzt für Orthopädie und Chirurgie Klinikum Rechts der Isar, München",
+        "quote": "Als Facharzt im Klinikum stehe ich täglich unter Druck. Lange Schichten, Notfälle und schnelle Entscheidungen erfordern volle Konzentration – Erschöpfung ist keine Option. Doch im stressigen Alltag bleibt wenig Zeit für eine ausgewogene Ernährung, die Fokus und Belastbarkeit unterstützt.\n\n tadm Brain hilft mir, diese Lücke zu schließen. Essenzielle Fettsäuren und antiinflammatorische Inhaltsstoffe versorgen meinen Körper gezielt. Seit der täglichen Einnahme fühle ich mich wacher, konzentrierter und ausgeglichener – ein spürbarer Vorteil in meinem anspruchsvollen Berufsalltag.",
+        "src": ""
+      },
+      {
         "name": "Mark Oliver Eichenseer",
         "designation": "Geschäftsführer Eichenseer Umzüge München",
         "quote": "Als Perfektionist mit höchsten Ansprüchen an mich selbst und alles, was ich konsumiere, führe ich eines der führenden Münchner Umzugsunternehmen. Mein Arbeitsstil, meine Denkweise und meine Erwartungen sind stets auf höchste Standards ausgerichtet. Deshalb war für mich klar: Um täglich maximale Leistung zu erbringen, ist eine gezielte Supplementierung in der heutigen Zeit unerlässlich. Ich suchte nach einem Produkt, das ausschließlich in Deutschland hergestellt, qualitativ hochwertig und frei von Schadstoffen ist. Mit tadm habe ich genau das gefunden – und mehr.",
@@ -119,9 +193,9 @@
         "quote": "Profisportler auf Weltniveau vertrete ich Deutschland. Um 100 Prozent Leistung abzurufen, braucht mein Körper mehr als hartes Training – eine starke Immunabwehr und volle mentale Klarheit. Mit tadm bleibe ich gesund, fühle mich kraftvoller und fokussierter auf der Matte.\n\nFrüher war es eine Herausforderung, meinen Körper konstant mit essenziellen Fettsäuren zu versorgen. Jetzt geht es einfach: tadm ist immer dabei – handlich, minimalistisch und unverzichtbar auf meinem Weg zu neuen Medaillen. ✈\uFE0F\uD83C\uDFC5"
       },
       {
-        "name": "Marko",
-        "designation": "World-Class BJJ Athlete (BJJ & Judo Black Belt – World Championship Medalist)",
-        "quote": "For over a decade, I’ve been at the top of BJJ in Finland, competing against the strongest fighters in Europe and around the world. BJJ is often compared to chess—every move must be calculated, every grip strategically placed. Peak performance requires more than just strength and technique—my body and mind must be sharp at all times.\n\n**tadm Brain is an essential part of my daily routine. It provides my brain and immune system with vital nutrients that keep me focused, resilient, and ready to perform. In a sport where every millisecond matters and precision determines victory or defeat, this support is indispensable.\n\nNo matter where in the world I train or compete—tadm Brain is always with me.",
+        "name": "Marko Oikarainen",
+        "designation": "(BJJ & Judo Schwarzgurt – IBJJF- & AJP-Weltmeisterschafts-Medaillengewinner)",
+        "quote": "Seit über einem Jahrzehnt stehe ich an der Spitze des Brazilian Jiu-Jitsu in Finnland und trete erfolgreich gegen die stärksten Kämpfer in Europa und weltweit an. In diesem Sport zählen nicht nur Kraft und Technik – jede Bewegung muss präzise und strategisch sein. Wie beim Schach entscheidet vorausschauendes Handeln über Sieg oder Niederlage.\n\nGerade deshalb ist tadm Brain ein fester Bestandteil meiner Routine. Die essenziellen Nährstoffe unterstützen mein Gehirn und Immunsystem, halten mich fokussiert, widerstandsfähig und bereit, jederzeit auf höchstem Niveau zu performen. In einem Sport, in dem Millisekunden den Unterschied machen, ist diese Unterstützung unverzichtbar.\n\nEgal, wo ich trainiere oder kämpfe — tadm Brain ist immer dabei.",
         "src": ""
       }
     ]
