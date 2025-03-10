@@ -167,7 +167,7 @@
   },
 
   "experts": {
-    "title": "Was experten sagen",
+    "title": "Top-Performer & Spitzensportler setzen auf tadm Brain",
     "list": [
       {
         "name": "Mergim Tahiri",
@@ -182,15 +182,9 @@
         "src": ""
       },
       {
-        "name": "Mark Oliver Eichenseer",
-        "designation": "Geschäftsführer Eichenseer Umzüge München",
-        "quote": "Als Perfektionist mit höchsten Ansprüchen an mich selbst und alles, was ich konsumiere, führe ich eines der führenden Münchner Umzugsunternehmen. Mein Arbeitsstil, meine Denkweise und meine Erwartungen sind stets auf höchste Standards ausgerichtet. Deshalb war für mich klar: Um täglich maximale Leistung zu erbringen, ist eine gezielte Supplementierung in der heutigen Zeit unerlässlich. Ich suchte nach einem Produkt, das ausschließlich in Deutschland hergestellt, qualitativ hochwertig und frei von Schadstoffen ist. Mit tadm habe ich genau das gefunden – und mehr.",
-        "src": ""
-      },
-      {
         "name": "Ahmad Dudarov",
         "designation": "Ringer der deutschen Nationalmannschaft",
-        "quote": "Profisportler auf Weltniveau vertrete ich Deutschland. Um 100 Prozent Leistung abzurufen, braucht mein Körper mehr als hartes Training – eine starke Immunabwehr und volle mentale Klarheit. Mit tadm bleibe ich gesund, fühle mich kraftvoller und fokussierter auf der Matte.\n\nFrüher war es eine Herausforderung, meinen Körper konstant mit essenziellen Fettsäuren zu versorgen. Jetzt geht es einfach: tadm ist immer dabei – handlich, minimalistisch und unverzichtbar auf meinem Weg zu neuen Medaillen. ✈\uFE0F\uD83C\uDFC5"
+        "quote": "Profisportler auf Weltniveau vertrete ich Deutschland. Um 100 Prozent Leistung abzurufen, braucht mein Körper mehr als hartes Training – eine starke Immunabwehr und volle mentale Klarheit. Mit tadm bleibe ich gesund, fühle mich kraftvoller und fokussierter auf der Matte.\n\nFrüher war es eine Herausforderung, meinen Körper konstant mit essenziellen Fettsäuren zu versorgen. Jetzt geht es einfach: tadm ist immer dabei – handlich, minimalistisch und unverzichtbar auf meinem Weg zu neuen Medaillen."
       },
       {
         "name": "Marko Oikarainen",
@@ -201,19 +195,19 @@
     ]
   },
   "bulletPoints": {
-    "title": "Wichtigste auf einen Blick",
+    "title": "Warum tadm Brain?",
     "list": [
       {
-        "title": "tadm versorgt dein Gehirn mit essenziellen Fettsäuren, die kognitive Funktionen stärken und die mentale Leistungsfähigkeit steigern.",
+        "title": "Steigerung kognitiver Fähigkeiten und mentaler Leistungsfähigkeit",
         "content": "DHA stärkt die Gehirnstruktur, verbessert die neuronale Kommunikation und steigert Konzentration sowie Gedächtnis. GLA wirkt entzündungshemmend und trägt zum geistigen Wohlbefinden bei."
       },
       {
-        "title": "Mentale Klarheit und Gesundheit sind eng verbunden – deshalb wirkt unsere Formulierung synergetisch und unterstützt zugleich dein Immunsystem",
-        "content": "Thymoquinon und GLA senken Entzündungsprozesse, stärken das Immunsystem und unterstützen die Sehkraft."
+        "title": "Stärkung des Immunsystems für körperliche und mentale Widerstandskraft",
+        "content": "Thymoquinon und GLA senken Entzündungen und fördern die ganzheitliche Widerstandskraft – körperlich und mental durch ihren synergetischen Effekt."
       },
       {
-        "title": "Title hier",
-        "content": "Unsere präzise abgestimmte Formulierung in 100 % veganen Softgels maximiert die Bioverfügbarkeit und gewährleistet eine optimale Nährstoffaufnahme, damit du deine Erfolgsroutine mühelos umsetzen kannst."
+        "title": "Optimale Wirkung durch maximale Bioverfügbarkeit",
+        "content": "Unsere 100 % veganen Softgels gewährleisten eine gezielte Nährstoffaufnahme durch kontrollierte Freisetzung – für anhaltende mentale Leistungsfähigkeit."
       }
     ]
   },
