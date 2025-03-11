@@ -91,7 +91,7 @@ const ExpertsCarousel = ({
 
       <div
         ref={carouselRef}
-        className="no-scrollbar carousel-slides relative -mb-10 flex w-full snap-x snap-mandatory justify-center gap-6 overflow-x-auto scroll-smooth px-2 pt-2 pb-12"
+        className="no-scrollbar carousel-slides relative -mb-10 flex w-full snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-2 pt-2 pb-12"
       >
         {testimonials.map((testimonial, index) => (
           <div
