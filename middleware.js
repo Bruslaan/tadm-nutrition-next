@@ -43,7 +43,7 @@ export function middleware(request) {
   const locale = getLocale(request);
 
   // Redirect to localized path
-  request.nextUrl.pathname = `/${locale}${pathname}`;
+  request.nextUrl.pathname = `/${locale}/site/${pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }
 

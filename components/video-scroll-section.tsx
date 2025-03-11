@@ -55,7 +55,7 @@ const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm
       title: items.cumin.title,
       color: 'bg-blue-50',
       topPosition: 'md:top-[18%] top-[25%]',
-      urlTo: '/cumin',
+      urlTo: 'site/cumin',
       text: (
         <div className="flex flex-col gap-3">
           <p>{items.cumin.content}</p>
@@ -71,7 +71,7 @@ const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm
       title: items.algae_oil.title,
       color: 'bg-green-50',
       topPosition: 'md:top-[20%] top-[27%]',
-      urlTo: '/algae',
+      urlTo: 'site/algae',
       text: (
         <div className="flex flex-col gap-3">
           <p>{items.algae_oil.content}</p>
@@ -87,7 +87,7 @@ const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm
       title: items.walnut_oil.title,
       color: 'bg-orange-50',
       topPosition: 'md:top-[22%] top-[29%]',
-      urlTo: '/walnut',
+      urlTo: 'site/walnut',
       text: (
         <div className="flex flex-col gap-3">
           <p>{items.walnut_oil.content}</p>
@@ -103,7 +103,7 @@ const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm
       title: items.hemp_oil.title,
       color: 'bg-teal-50',
       topPosition: 'md:top-[24%] top-[31%]',
-      urlTo: '/cannabis',
+      urlTo: 'site/cannabis',
       text: (
         <div className="flex flex-col gap-3">
           <p>{items.hemp_oil.content}</p>
@@ -119,7 +119,7 @@ const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm
       title: items.softgels.title,
       color: 'bg-gray-50',
       topPosition: 'md:top-[26%] top-[33%]',
-      urlTo: '/softgel',
+      urlTo: 'site/softgel',
       text: (
         <div className="flex flex-col gap-3">
           <p>{items.softgels.content}</p>

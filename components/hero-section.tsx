@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import FloatingIcon from './floating-icon';
 import Link from 'next/link';
-import { getDictionary } from '../app/[lang]/dictionaries';
+import { getDictionary } from '../app/[lang]/site/dictionaries';
 
 const HeroIcon = ({ title, subtitle, icon }: { title: string; subtitle: string; icon: string }) => {
   return (
