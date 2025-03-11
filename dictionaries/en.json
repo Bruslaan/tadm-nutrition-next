@@ -3,6 +3,31 @@
     "title": "Healthy, Organic Brain Nutrition",
     "subtitle": "tadm is a supplement that supports your ability to focus, mental speed & memory."
   },
+  "mix": {
+    "title": "With unique mix",
+    "items": [
+      {
+        "title": "Targeted Nutrients for Optimal Mental Performance",
+        "content": "Mental and physical health are closely connected. That’s why tadm Brain combines carefully selected ingredients to ensure optimal nutrient absorption. Omega-3 fatty acids like DHA and EPA are essential for neuronal communication and the structural integrity of brain cells. Antioxidants such as vitamin E protect cells from oxidative stress, while anti-inflammatory compounds contribute to long-term cognitive performance."
+      },
+      {
+        "title": "Structure and Function of Brain Cells",
+        "content": "Omega-3 fatty acids (DHA & EPA) from algae oil – Building blocks of cell membranes, improve signal transmission between neurons, and enhance neuronal function. Omega-9 fatty acids from walnut and black seed oil – Promote oxygen supply to the brain and energy production in neurons. Phytosterols from walnut and hemp oil – Support cell membrane stability and facilitate efficient nutrient absorption. Thymoquinone & Omega-6 fatty acids (GLA) – Enhance effective neuronal communication."
+      },
+      {
+        "title": "Protection and Regeneration of the Nervous System",
+        "content": "Vitamin E (D-Alpha-Tocopherol) – Protects brain cells from oxidative stress and helps maintain cognitive function. Polyphenols and antioxidants from black seed and walnut oil – Reduce oxidative damage in brain cells and support neuronal regeneration. Thymoquinone from black seed oil – Promotes cell regeneration, stabilizes neurons, and strengthens the immune system. Omega-6 fatty acids (Gamma-Linolenic Acid, GLA) from hemp oil – Reduce inflammation in the brain and support the structural integrity of nerve cells."
+      },
+      {
+        "title": "Immune System, Anti-Inflammatory Action, and Neuronal Communication",
+        "content": "Thymoquinone from black seed oil – Reduces inflammation and supports the body's immune defense. Omega-6 fatty acids (GLA) from hemp oil – Regulate immune responses and help reduce inflammation throughout the body. Vitamin E and polyphenols – Protect immune cells from oxidative stress and contribute to overall cellular health. Phytosterols from walnut and hemp oil – Promote synaptic plasticity and enhance the brain's adaptability."
+      },
+      {
+        "title": "Optimal Nutrient Absorption for Maximum Mental Performance",
+        "content": "All oils are gently cold-pressed to preserve their valuable nutrients and ensure high bioavailability. Taste- and odor-neutral, the vegan softgels integrate effortlessly into daily routines. With high bioavailability, the essential nutrients reach the brain, immune system, and cells precisely where they are needed. tadm Brain provides your brain with essential fatty acids, antioxidants, and anti-inflammatory nutrients to support neuronal function, mental clarity, and long-term immune health."
+      }
+    ]
+  },
   "walnut": {
     "sectionTitle": "Walnut Oil",
     "items": [

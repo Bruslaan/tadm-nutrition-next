@@ -40,7 +40,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
         title={dict.experts.title}
         testimonials={dict.experts.list as Testimonial[]}
       />
-      <MarqueeDemo title={'Rezensionen'} />
+      {/*<MarqueeDemo title={'Rezensionen'} />*/}
       <FaqPage title={dict.faq.title} items={dict.faq.list} />
       <CallToActionBanner />
       <Footer />

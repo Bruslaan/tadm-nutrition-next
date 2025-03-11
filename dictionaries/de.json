@@ -71,6 +71,35 @@
       }
     ]
   },
+  "mix": {
+    "title": "Mix",
+    "items": [
+      {
+        "title": "Die perfekte Kombination für mentale und körperliche Gesundheit",
+        "content": "Wissenschaft und Innovation stehen im Mittelpunkt von tadm Brain. In München haben wir gemeinsam mit führenden Wissenschaftlern und Laboratorien eine synergetische Formulierung entwickelt, die in Deutschland unter höchsten Qualitätsstandards produziert wird. Unser Ziel: Eine präzise abgestimmte Kombination aus essenziellen Fettsäuren, Antioxidantien und entzündungshemmenden Nährstoffen, die Konzentration, Gedächtnisleistung, neuronale Regeneration und das Immunsystem gezielt unterstützt."
+      },
+      {
+        "title": "Gezielte Nährstoffe für optimale mentale Leistung",
+        "content": "Mentale und körperliche Gesundheit sind eng miteinander verbunden. Deshalb kombiniert tadm Brain sorgfältig abgestimmte Inhaltsstoffe, die eine optimale Nährstoffaufnahme ermöglichen. Omega-3-Fettsäuren wie DHA und EPA sind essenziell für die neuronale Kommunikation und die strukturelle Integrität der Gehirnzellen. Antioxidantien wie Vitamin E schützen die Zellen vor oxidativem Stress, während entzündungshemmende Stoffe zur langfristigen Erhaltung kognitiver Leistungsfähigkeit beitragen."
+      },
+      {
+        "title": "Struktur und Funktion der Gehirnzellen",
+        "content": "Omega-3-Fettsäuren (DHA & EPA) aus Algenöl – Bausteine der Zellmembranen, verbessern die Signalübertragung zwischen Neuronen und fördern die neuronale Funktion. Omega-9-Fettsäuren aus Walnuss- und Schwarzkümmelöl – Fördern die Sauerstoffversorgung des Gehirns und die Energieproduktion in Nervenzellen. Phytosterole aus Walnuss- und Hanföl – Unterstützen die Zellmembranstabilität und tragen zur effizienten Nährstoffaufnahme bei. Thymoquinon & Omega-6-Fettsäuren (GLA) – Fördern eine effektive neuronale Kommunikation."
+      },
+      {
+        "title": "Schutz und Regeneration des Nervensystems",
+        "content": "Vitamin E (D-Alpha-Tocopherol) – Schützt Gehirnzellen vor oxidativem Stress und trägt zur Erhaltung kognitiver Funktionen bei. Polyphenole und Antioxidantien aus Schwarzkümmel- und Walnussöl – Reduzieren oxidative Schäden an Gehirnzellen und fördern die neuronale Regeneration. Thymoquinon aus Schwarzkümmelöl – Fördert die Zellregeneration, stabilisiert Nervenzellen und stärkt das Immunsystem. Omega-6-Fettsäuren (Gamma-Linolensäure, GLA) aus Hanföl – Hemmen entzündliche Prozesse im Gehirn und unterstützen die strukturelle Integrität der Nervenzellen."
+      },
+      {
+        "title": "Immunsystem, Entzündungshemmung und neuronale Kommunikation",
+        "content": "Thymoquinon aus Schwarzkümmelöl – Senkt entzündliche Prozesse und unterstützt die körpereigene Immunabwehr. Omega-6-Fettsäuren (GLA) aus Hanföl – Regulieren Immunreaktionen und tragen zur Entzündungshemmung im gesamten Körper bei. Vitamin E und Polyphenole – Schützen Immunzellen vor oxidativem Stress und tragen zur allgemeinen Zellgesundheit bei. Phytosterole aus Walnuss- und Hanföl – Fördern die synaptische Plastizität und unterstützen die Anpassungsfähigkeit des Gehirns."
+      },
+      {
+        "title": "Optimale Nährstoffaufnahme für maximale mentale Leistung",
+        "content": "Alle enthaltenen Öle sind schonend kaltgepresst, um ihre wertvollen Inhaltsstoffe zu bewahren und eine hohe Bioverfügbarkeit zu gewährleisten. Geschmacks- und geruchsneutral, lassen sich die veganen Softgels mühelos in den Alltag integrieren. Durch die hohe Bioverfügbarkeit stehen die essenziellen Nährstoffe dem Gehirn, dem Immunsystem und den Zellen genau dort zur Verfügung, wo sie gebraucht werden. tadm Brain versorgt dein Gehirn gezielt mit essenziellen Fettsäuren, Antioxidantien und entzündungshemmenden Nährstoffen, um neuronale Funktion, mentale Klarheit und das Immunsystem langfristig zu stärken."
+      }
+    ]
+  },
   "textReveal": "Entfalte dein volles Potenzial und erreiche maximale mentale Leistungsfähigkeit",
   "products": {
     "title": "Bestelle dein tadm Brain"

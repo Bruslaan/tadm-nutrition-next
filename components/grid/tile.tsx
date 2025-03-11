@@ -40,7 +40,9 @@ export function GridTileImage({
         <>
           <div className="absolute top-4 left-4 rounded-xl bg-orange-50 px-4 py-2 text-xl font-bold text-gray-800 transition duration-300">
             <h2>{label.title}</h2>
+            <p className="text-sm">120 vegan softgels, tadm glass bottle</p>
           </div>
+
           <div className="absolute right-4 bottom-4 inline-flex transform">
             <div className="relative flex items-center rounded-full bg-white px-3 py-1 font-bold text-gray-900 shadow-md">
               <div className="absolute -left-2 rounded-full bg-white p-1">

@@ -97,7 +97,7 @@ const ExpertsCarousel = ({
           <div
             key={index}
             id={index.toString()}
-            className="relative w-full shrink-0 snap-center snap-always overflow-hidden rounded-xl border bg-white p-4 md:max-w-lg"
+            className="relative w-full shrink-0 snap-center snap-always overflow-hidden rounded-xl border bg-white p-6 md:max-w-lg"
           >
             <div className="flex w-full flex-col justify-between">
               <div>
