@@ -88,7 +88,7 @@ const ReviewCard = ({
 
 export function MarqueeDemo({ title }: { title: string }) {
   return (
-    <section className="min-h-screen w-full pt-10 text-xs">
+    <section className="w-full pt-10 text-xs">
       <div className="mx-auto flex max-w-(--breakpoint-xl) justify-center px-4">
         <h2 className="mb-4 max-w-2xl text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
           {title}

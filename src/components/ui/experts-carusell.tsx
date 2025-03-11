@@ -82,7 +82,7 @@ const ExpertsCarousel = ({
   return (
     <section className="relative flex min-h-screen w-full flex-col items-center justify-evenly overflow-x-hidden">
       <div className="mx-auto flex max-w-(--breakpoint-xl) justify-center px-4">
-        <h2 className="max-w-2xl text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
+        <h2 className="max-w-2xl text-center text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
           {title}
         </h2>
       </div>
@@ -91,7 +91,7 @@ const ExpertsCarousel = ({
 
       <div
         ref={carouselRef}
-        className="no-scrollbar carousel-slides relative -mb-10 flex w-full snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-2 pt-2 pb-12"
+        className="no-scrollbar carousel-slides relative -mb-10 flex w-full snap-x snap-mandatory justify-center gap-6 overflow-x-auto scroll-smooth px-2 pt-2 pb-12"
       >
         {testimonials.map((testimonial, index) => (
           <div

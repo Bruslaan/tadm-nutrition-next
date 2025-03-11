@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Lebenswichtige Nährstoffe für dein Gehirn",
-    "subtitle": "Bringe mit tadm deine metal Leistungsfähigkeit auf das nächste Level"
+    "subtitle": "Bringe mit tadm deine mentale Leistungsfähigkeit auf das nächste Level"
   },
   "walnut": {
     "sectionTitle": "Walnussöl",
@@ -178,18 +178,19 @@
         "name": "Dr. med. Emil Noschajew",
         "designation": "Facharzt für Orthopädie und Chirurgie Klinikum Rechts der Isar, München",
         "quote": "Als Facharzt im Klinikum stehe ich täglich unter Druck. Lange Schichten, Notfälle und schnelle Entscheidungen erfordern volle Konzentration – Erschöpfung ist keine Option. Doch im stressigen Alltag bleibt wenig Zeit für eine ausgewogene Ernährung, die Fokus und Belastbarkeit unterstützt.\n\n tadm Brain hilft mir, diese Lücke zu schließen. Essenzielle Fettsäuren und antiinflammatorische Inhaltsstoffe versorgen meinen Körper gezielt. Seit der täglichen Einnahme fühle ich mich wacher, konzentrierter und ausgeglichener – ein spürbarer Vorteil in meinem anspruchsvollen Berufsalltag.",
-        "src": ""
+        "src": "/static/emil.jpeg"
       },
       {
         "name": "Ahmad Dudarov",
         "designation": "Ringer der deutschen Nationalmannschaft",
+        "src": "/static/ahmad.webp",
         "quote": "Profisportler auf Weltniveau vertrete ich Deutschland. Um 100 Prozent Leistung abzurufen, braucht mein Körper mehr als hartes Training – eine starke Immunabwehr und volle mentale Klarheit. Mit tadm bleibe ich gesund, fühle mich kraftvoller und fokussierter auf der Matte.\n\nFrüher war es eine Herausforderung, meinen Körper konstant mit essenziellen Fettsäuren zu versorgen. Jetzt geht es einfach: tadm ist immer dabei – handlich, minimalistisch und unverzichtbar auf meinem Weg zu neuen Medaillen."
       },
       {
         "name": "Mergim Tahiri",
         "designation": "Geschäftsführer der Tahiri Garten- und Landschaftsbau",
         "quote": "Als Geschäftsführer muss ich täglich körperlich und geistig Höchstleistung erbringen. Lange Arbeitstage haben oft an meiner Energie und Konzentration gezehrt – bis ich auf tadm Brain gestoßen bin. Dank der essenziellen Fettsäuren in tadm Brain starte ich voller Energie in den Tag und bleibe auch abends noch fokussiert. Eine Investition in meine Gesundheit, die sich jeden Tag auszahlt!",
-        "src": ""
+        "src": "/static/mergim.jpeg"
       }
     ]
   },
@@ -206,7 +207,7 @@
       },
       {
         "title": "Maximale Bioverfügbarkeit",
-        "content": "Unsere 100 % veganen Softgels ermöglichen eine gezielte Nährstoffaufnahme durch kontrollierte Freisetzung – für anhaltende mentale Leistungsfähigkeit."
+        "content": "Unsere 100 % veganen Softgels gewährleisten eine gezielte Nährstoffaufnahme durch kontrollierte Freisetzung und unterstützen so dauerhaft die mentale Leistungsfähigkeit."
       }
     ]
   },

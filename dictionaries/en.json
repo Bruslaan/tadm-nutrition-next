@@ -88,7 +88,7 @@
       },
       {
         "title": "Maximum Bioavailability",
-        "content": "Our 100% vegan softgels enable targeted nutrient absorption through controlled release—for sustained mental performance."
+        "content": "Our 100% vegan softgels ensure targeted nutrient absorption through controlled release, supporting sustained mental performance."
       }
     ]
   },
@@ -158,18 +158,19 @@
         "name": "Dr. med. Emil Noschajew",
         "designation": "Specialist in Orthopedics and Surgery – Klinikum Rechts der Isar, Munich",
         "quote": "As a specialist in a hospital, I work under constant pressure. Long shifts, emergencies, and quick decisions demand full concentration—exhaustion is not an option. Yet, in a stressful daily routine, there is little time for a balanced diet that supports focus and resilience. tadm Brain helps me bridge this gap. Essential fatty acids and anti-inflammatory ingredients provide my body with targeted support. Since taking it daily, I feel more alert, focused, and balanced—a noticeable advantage in my demanding profession.",
-        "src": ""
+        "src": "/static/emil.jpeg"
       },
       {
         "name": "Ahmad Dudarov",
         "designation": "Ringer der deutschen Nationalmannschaft",
+        "src": "/static/ahmad.webp",
         "quote": "Profisportler auf Weltniveau vertrete ich Deutschland. Um 100 Prozent Leistung abzurufen, braucht mein Körper mehr als hartes Training – eine starke Immunabwehr und volle mentale Klarheit. Mit tadm bleibe ich gesund, fühle mich kraftvoller und fokussierter auf der Matte. Früher war es eine Herausforderung, meinen Körper konstant mit essenziellen Fettsäuren zu versorgen. Jetzt geht es einfach: tadm ist immer dabei – handlich, minimalistisch und unverzichtbar auf meinem Weg zu neuen Medaillen."
       },
       {
         "name": "Mergim Tahiri",
         "designation": "CEO of Tahiri Garden and Landscaping",
         "quote": "As a CEO, I need to perform at my best—both physically and mentally—every single day. Long working hours often drained my energy and focus until I discovered tadm Brain. With its essential fatty acids, tadm Brain helps me stay energized throughout the day and remain sharp even in the evening. An investment in my health that pays off every day!",
-        "src": ""
+        "src": "/static/mergim.jpeg"
       }
     ]
   },
