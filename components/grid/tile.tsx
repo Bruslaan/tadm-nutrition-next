@@ -14,12 +14,13 @@ export function GridTileImage({
     amount: string;
     currencyCode: string;
     position?: 'bottom' | 'center';
+    description?: string;
   };
 } & React.ComponentProps<typeof Image>) {
   return (
     <div
       className={clsx(
-        'relative flex h-full w-full items-center justify-center overflow-hidden rounded-3xl bg-orange-200',
+        'group relative flex h-full w-full items-center justify-center overflow-hidden rounded-3xl bg-orange-200',
         {
           relative: label,
           'border-2 border-gray-500': active,
@@ -40,10 +41,13 @@ export function GridTileImage({
         <>
           <div className="absolute top-4 left-4 rounded-xl bg-orange-50 px-4 py-2 text-xl font-bold text-gray-800 transition duration-300">
             <h2>{label.title}</h2>
-            <p className="text-sm">120 vegan softgels, tadm glass bottle</p>
           </div>
 
-          <div className="absolute right-4 bottom-4 inline-flex transform">
+          <div className="absolute inset-x-0 bottom-0 translate-y-20 transform bg-black/80 px-4 py-4 text-xl font-bold text-white transition duration-300 group-hover:translate-y-0">
+            <p className="text-sm">{label.description}</p>
+          </div>
+
+          <div className="absolute right-4 bottom-8 inline-flex transform">
             <div className="relative flex items-center rounded-full bg-white px-3 py-1 font-bold text-gray-900 shadow-md">
               <div className="absolute -left-2 rounded-full bg-white p-1">
                 <div className="h-2 w-2 rounded-full bg-black"></div>
@@ -54,13 +58,7 @@ export function GridTileImage({
             </div>
           </div>
         </>
-      ) : // <Label
-      //   title={label.title}
-      //   amount={label.amount}
-      //   currencyCode={label.currencyCode}
-      //   position={label.position}
-      // />
-      null}
+      ) : null}
     </div>
   );
 }
