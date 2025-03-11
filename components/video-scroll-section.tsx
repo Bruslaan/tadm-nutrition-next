@@ -201,7 +201,7 @@ const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm
       </div>
 
       {/* Cards Section */}
-      <div className="absolute top-0 right-0 h-full w-full px-1 pt-80 md:max-w-[50%] 2xl:max-w-[35%]">
+      <div className="absolute top-0 right-0 h-full w-full px-1 pt-80 md:max-w-[50%]">
         {cardsConfig.map((config, index) => (
           <VideoScrollCard
             key={config.title}
