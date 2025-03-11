@@ -71,6 +71,28 @@
       }
     ]
   },
+
+  "softgel": {
+    "title": "tadm Brain Softgels",
+      "items": [
+        {
+          "title": "tadm Brain Softgels",
+          "content": "tadm Brain setzt auf 100 % vegane Softgels mit GMP-zertifizierter Produktion nach EU- & US-Standards. Die kontrollierte Freisetzung maximiert die Bioverfügbarkeit, während Vitamin E die Öle stabilisiert. Weich, leicht zu schlucken, geschmacksneutral und perfekt für deine Routine.\n\n- 100 % vegan\n- GMP-zertifiziert\n- Hohe Bioverfügbarkeit\n- Geschmacksneutral"
+        },
+        {
+          "title": "Effektive Softcaps für eine einfache Routine",
+          "content": "tadm Brain setzt auf 100 % vegane Softcaps, die unter strengsten Qualitätsstandards in einer GMP-zertifizierten Einrichtung in Deutschland hergestellt werden. Die Produktion erfolgt nach EU- und US-Richtlinien und unter ständiger Kontrolle sachkundiger Experten. Zertifizierungen wie DIN EN ISO 9001 & HACCP garantieren höchste Reinheit und Sicherheit in jeder Produktionsphase.\n\nDank eines kontrollierten Freisetzungsprofils ermöglichen die Softcaps eine maximale Bioverfügbarkeit, sodass dein Körper die wertvollen Inhaltsstoffe optimal aufnimmt. Zusätzlich stabilisiert Vitamin E die hochwertigen Öle, schützt sie vor Oxidation und trägt als starkes Antioxidans zum Zellschutz bei.\n\nFür langfristige Erfolge zählt Konsistenz – deshalb haben wir tadm Brain Softcaps bewusst so entwickelt, dass sie weich, leicht zu schlucken sowie geruchs- und geschmacksneutral sind. So kannst du sie mühelos in deinen Alltag integrieren."
+        },
+        {
+          "title": "Höchste Qualität durch modernste Technologie",
+          "content": "Wir setzen auf modernste Technologie und Präzisionsmaschinen, um eine gleichbleibend hohe Qualität zu gewährleisten. Bereits bei der sorgfältigen Auswahl der Rohstoffe legen wir höchsten Wert auf Reinheit und Effektivität. Ein strenges Kontrollverfahren sorgt dafür, dass jedes Softgel den höchsten Ansprüchen entspricht – für ein Produkt, dem du vertrauen kannst."
+        },
+        {
+          "title": "Deine Vorteile auf einen Blick",
+          "content": "- 100 % vegan & leicht zu schlucken\n- Hergestellt in einer GMP-zertifizierten Einrichtung\n- Einhaltung aller EU- und US-Richtlinien\n- DIN EN ISO 9001 & HACCP zertifiziert\n- Hohe Bioverfügbarkeit & kontrollierte Nährstofffreisetzung\n- Geruchs- und geschmacksneutral für eine mühelose Einnahme"
+        }
+      ]
+  },
   "mix": {
     "title": "Mix",
     "items": [

@@ -28,6 +28,27 @@
       }
     ]
   },
+  "softgel": {
+    "title": "tadm Brain Softgels",
+    "items": [
+      {
+        "title": "tadm Brain Softgels",
+        "content": "tadm Brain uses 100% vegan softgels, produced under GMP-certified conditions according to EU and US standards. Controlled release maximizes bioavailability, while vitamin E stabilizes the oils. Soft, easy to swallow, flavorless, and perfect for your success routine.\n\n- 100% vegan\n- GMP-certified\n- High bioavailability\n- Flavorless"
+      },
+      {
+        "title": "Effective Softcaps for an Effortless Routine",
+        "content": "tadm Brain utilizes 100% vegan softcaps, manufactured under the strictest quality standards in a GMP-certified facility in Germany. Production adheres to EU and US regulations and is continuously monitored by qualified experts. Certifications such as DIN EN ISO 9001 & HACCP ensure the highest purity and safety at every stage of production.\n\nWith a controlled release profile, these softcaps maximize bioavailability, allowing your body to absorb essential nutrients efficiently. Additionally, Vitamin E stabilizes the high-quality oils, prevents oxidation, and acts as a potent antioxidant for cellular protection.\n\nConsistency is key to long-term success. That’s why tadm Brain softcaps are designed to be soft, easy to swallow, and completely odorless and tasteless—ensuring effortless integration into your daily routine."
+      },
+      {
+        "title": "Uncompromising Quality Through Advanced Technology",
+        "content": "We leverage cutting-edge technology and precision machinery to maintain consistent, high-quality standards. From the careful selection of raw materials to a rigorously controlled manufacturing process, we prioritize purity and effectiveness—delivering a product you can trust."
+      },
+      {
+        "title": "Your Benefits at a Glance",
+        "content": "- 100% vegan & easy to swallow\n- Manufactured in a GMP-certified facility\n- Compliant with all EU & US regulations\n- DIN EN ISO 9001 & HACCP certified\n- High bioavailability & controlled nutrient release\n- Odorless & tasteless for seamless daily use"
+      }
+    ]
+  },
   "walnut": {
     "sectionTitle": "Walnut Oil",
     "items": [

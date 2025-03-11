@@ -41,6 +41,13 @@ const FeatureSection = ({
             {items.map((item, index) => (
               <ImportantPoint key={index} title={item.title} text={item.content} />
             ))}
+            <Image
+              className="object-contain"
+              src="/static/vegan.png"
+              width={150}
+              height={20}
+              alt="vegan icon"
+            />
           </ul>
 
           <div className="h-full w-full max-w-xl overflow-hidden rounded-3xl">
@@ -127,13 +134,6 @@ export const FeatureSection2 = ({
           <div className="">
             <Accordions accordionContent={accordionContent} />
             <br />
-            <Image
-              className="object-contain"
-              src="/static/vegan.png"
-              width={150}
-              height={20}
-              alt="vegan icon"
-            />
           </div>
           {/* Item */}
           <div className="h-[50vh] w-full max-w-xl overflow-hidden rounded-3xl">

@@ -119,7 +119,7 @@ const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm
       title: items.softgels.title,
       color: 'bg-gray-50',
       topPosition: 'md:top-[26%] top-[33%]',
-      urlTo: '/mix',
+      urlTo: '/softgel',
       text: (
         <div className="flex flex-col gap-3">
           <p>{items.softgels.content}</p>
