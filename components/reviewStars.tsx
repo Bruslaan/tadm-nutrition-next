@@ -98,7 +98,7 @@ export function ReviewStars() {
           </defs>
         </svg>
       </div>
-      <span className="pl-2 text-sm font-normal leading-7 text-gray-500">1624 review</span>
+      {/*<span className="pl-2 text-sm font-normal leading-7 text-gray-500">1624 review</span>*/}
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { TextRevealDemo } from '../../components/text-reveal';
 import VideoScrollSection, { InsideTadm } from '../../components/video-scroll-section';
 import ExpertsCarusell, { Testimonial } from '@/components/ui/experts-carusell';
 import { getDictionary } from './dictionaries';
+import CallToActionBanner from '../../components/call-to-action-banner';
 export const metadata = {
   description: 'healthy brain nutrition supplement',
   openGraph: {
@@ -41,6 +42,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
       />
       <MarqueeDemo title={'Rezensionen'} />
       <FaqPage title={dict.faq.title} items={dict.faq.list} />
+      <CallToActionBanner />
       <Footer />
     </main>
   );

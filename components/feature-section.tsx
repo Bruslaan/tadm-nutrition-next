@@ -37,7 +37,7 @@ const FeatureSection = ({
         <br />
         <br />
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
-          <ul className="grid max-w-2xl grid-cols-1 gap-6 text-xl lg:max-w-none">
+          <ul className="text-md grid max-w-2xl grid-cols-1 gap-6 lg:max-w-none">
             {items.map((item, index) => (
               <ImportantPoint key={index} title={item.title} text={item.content} />
             ))}
@@ -118,7 +118,7 @@ export const FeatureSection2 = ({
   return (
     <section>
       {/* Container */}
-      <div className="mx-auto w-full max-w-7xl px-5 py-12 md:px-10 md:py-20">
+      <div className="mx-auto w-full max-w-7xl px-5 pb-12 md:px-10 md:pb-20">
         <h2 className="mb-6 inline-block text-4xl font-bold text-neutral-900 md:mb-10 md:text-6xl lg:mb-12">
           {title}
         </h2>

@@ -26,17 +26,55 @@ const ExpertsCarousel = ({
     const carousel = carouselRef.current;
     const slides = Array.from(carousel.children);
 
-    let newSlideIndex =
-      direction === 'next'
-        ? Math.min(currentSlide + 1, slides.length - 1)
-        : Math.max(currentSlide - 1, 0);
+    // Calculate new slide index with wrap-around logic
+    let newSlideIndex;
+    if (direction === 'next') {
+      // If at the last slide, wrap to the first slide
+      newSlideIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+    } else {
+      // If at the first slide, wrap to the last slide
+      newSlideIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+    }
 
     const targetSlide = slides[newSlideIndex] as HTMLElement;
 
-    carousel.scrollTo({
-      left: targetSlide.offsetLeft - carousel.offsetLeft,
-      behavior: 'smooth'
-    });
+    // For smooth wrapping when going from last to first slide
+    if (direction === 'next' && currentSlide === slides.length - 1) {
+      // First scroll to the beginning without animation
+      carousel.scrollTo({
+        left: 0,
+        behavior: 'auto'
+      });
+      // Small timeout to ensure the scroll happened
+      setTimeout(() => {
+        carousel.scrollTo({
+          left: targetSlide.offsetLeft - carousel.offsetLeft,
+          behavior: 'smooth'
+        });
+      }, 10);
+    }
+    // For smooth wrapping when going from first to last slide
+    else if (direction === 'prev' && currentSlide === 0) {
+      // First scroll to the end without animation
+      carousel.scrollTo({
+        left: carousel.scrollWidth,
+        behavior: 'auto'
+      });
+      // Small timeout to ensure the scroll happened
+      setTimeout(() => {
+        carousel.scrollTo({
+          left: targetSlide.offsetLeft - carousel.offsetLeft,
+          behavior: 'smooth'
+        });
+      }, 10);
+    }
+    // Normal scrolling for non-wrapping cases
+    else {
+      carousel.scrollTo({
+        left: targetSlide.offsetLeft - carousel.offsetLeft,
+        behavior: 'smooth'
+      });
+    }
 
     setCurrentSlide(newSlideIndex);
   };
@@ -59,20 +97,18 @@ const ExpertsCarousel = ({
           <div
             key={index}
             id={index.toString()}
-            className="relative w-full shrink-0 snap-center snap-always overflow-hidden rounded-lg p-4 md:max-w-lg"
+            className="relative w-full shrink-0 snap-center snap-always overflow-hidden rounded-xl border bg-white p-4 md:max-w-lg"
           >
             <div className="flex w-full flex-col justify-between">
               <div>
                 <div className="mb-6 flex items-center gap-4">
                   <Image
-                    src={
-                      'https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    }
+                    src={testimonial.src ? testimonial.src : '/static/wallnut.png'}
                     alt={testimonial.name}
                     width={56}
                     height={56}
                     draggable={false}
-                    className="h-14 w-14 rounded-xl object-cover object-center"
+                    className="aspect-square h-20 w-20 rounded-md object-cover object-top"
                   />
                   <div>
                     <h3 className="text-xl font-bold text-black dark:text-white">
@@ -96,16 +132,14 @@ const ExpertsCarousel = ({
       <div className="flex gap-6 md:pt-0">
         <button
           onClick={() => scrollToSlide('prev')}
-          disabled={currentSlide === 0}
-          className="group/button flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50 dark:bg-neutral-800"
+          className="group/button flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
         >
           <IconArrowLeft className="h-8 w-8 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
         </button>
 
         <button
           onClick={() => scrollToSlide('next')}
-          disabled={currentSlide === testimonials.length - 1}
-          className="group/button flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50 dark:bg-neutral-800"
+          className="group/button flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
         >
           <IconArrowRight className="h-8 w-8 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
         </button>
