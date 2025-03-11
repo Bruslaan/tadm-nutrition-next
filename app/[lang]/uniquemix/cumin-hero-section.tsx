@@ -41,8 +41,8 @@ const CuminHeroSection = () => {
           <Image
             src="/static/CuminFlowerMin.png"
             alt="cumin flower"
-            height={100}
-            width={100}
+            height={200}
+            width={200}
             className="w-60 lg:w-96"
           ></Image>
           <FloatingIcon className="top-0 right-0 w-14 blur-xs" size={70} />

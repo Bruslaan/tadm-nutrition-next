@@ -13,8 +13,8 @@ const AlgaeHeroSection = () => {
           <Image
             src="/static/algae-icon.png"
             alt="cumin flower"
-            height={300}
-            width={300}
+            height={100}
+            width={100}
             className="w-60 lg:w-96"
           ></Image>
           <FloatingIcon className="top-0 right-0 w-14 blur-xs" size={70} />
