@@ -4,7 +4,7 @@ export function DynamicImage({ image, customImage }: { image: ImageType; customI
   return (
     <Image
       className="h-full w-full object-cover"
-      height={20000}
+      height={2000}
       width={20000}
       alt={image?.altText as string}
       src={customImage ? `/static/${customImage.split(' ')[0]}.jpg` : (image?.url as string)}

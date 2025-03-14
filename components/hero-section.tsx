@@ -45,8 +45,8 @@ const HeroSection = async ({ title, subtitle }: { title: string; subtitle: strin
 
       <Image
         src="/static/herobg.webp"
-        width={1200}
-        height={1200}
+        width={2200}
+        height={2200}
         style={{ zIndex: '-10' }}
         alt="hero image"
         className="absolute inset-0 h-full w-full object-cover object-[50%_75%]"
