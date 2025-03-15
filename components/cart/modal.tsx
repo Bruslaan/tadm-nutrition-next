@@ -53,7 +53,7 @@ export default function CartModal() {
     return (
       <Link
         className="shop_now_button block flex-nowrap rounded-md px-4 py-3 text-nowrap hover:bg-gray-500"
-        href="site/product/tadm-max-pack"
+        href="/product/tadm-max-pack"
       >
         Shop Now
       </Link>
