@@ -1,6 +1,7 @@
 {
   "cartTitle": "Shopping Cart",
   "shopNow": "Shop Now",
+  "taxes": "Taxes",
   "addToCart": "Add To Cart",
   "productPageTitle": "Get your tadm",
   "toCheckout": "Proceed to Checkout",
@@ -8,6 +9,8 @@
     "title": "Vital Brain Nutrition",
     "subtitle": "Take your mental performance to the next level with tadm."
   },
+  "shipping": "Shipping",
+  "calculatedText": "Calculated at checkout",
   "mix": {
     "title": "With unique mix",
     "items": [
@@ -184,12 +187,12 @@
     },
     "softgels": {
       "title": "tadm Brain Softgels",
-      "content": "tadm Brain relies on 100% vegan softgels produced under GMP-certified EU & US standards. The controlled release maximizes bioavailability, while vitamin E stabilizes the oils. Soft, easy to swallow, tasteless, and perfect for your routine.",
+      "content": "tadm Brain uses 100% vegan softgels, produced under GMP-certified conditions according to EU and US standards. Controlled release maximizes bioavailability, while vitamin E stabilizes the oils. Soft, easy to swallow, flavorless, and perfect for your success routine.",
       "list": [
         "100% vegan",
         "GMP-certified",
         "High bioavailability",
-        "Tasteless"
+        "Flavourless"
       ]
     }
   },
@@ -223,7 +226,7 @@
     ]
   },
   "facility": {
-    "title": "Highest Standards in Production & Quality Assurance",
+    "title": "Highest Standards in Production & Quality",
     "list": [
       {
         "questions": "Quality and Precision – Made in Germany",

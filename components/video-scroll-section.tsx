@@ -185,13 +185,13 @@ const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm
           </h2>
         </div>
 
-        <div className="relative -mt-8 w-[160%] md:-translate-x-36 lg:w-[110%]">
+        <div className="relative -mt-8 w-[160%] bg-white md:-translate-x-36 lg:w-[110%]">
           <video
             ref={videoRef}
             playsInline
             muted
             preload="metadata"
-            className="h-full w-full object-cover object-center"
+            className="h-full w-full bg-white object-cover object-center"
           >
             <source
               src="https://res.cloudinary.com/dtvtmykeg/video/upload/v1718573595/tadm_skbkly.mp4"

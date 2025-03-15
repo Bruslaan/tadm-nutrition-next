@@ -7,6 +7,8 @@
     "title": "Lebenswichtige Nährstoffe für dein Gehirn",
     "subtitle": "Bringe mit tadm deine metal Leistungsfähigkeit auf das nächste Level"
   },
+  "calculatedText": "Wird im nächsten Schritt berechnet",
+  "shipping": "Versand",
   "walnut": {
     "sectionTitle": "Walnussöl",
     "items": [
@@ -76,6 +78,7 @@
     ]
   },
   "toCheckout": "Weiter zur Kasse",
+  "taxes": "inkl. MwSt.",
 
   "softgel": {
     "title": "tadm Brain Softgels",

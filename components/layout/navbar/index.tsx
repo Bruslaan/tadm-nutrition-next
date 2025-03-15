@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
 import LanguageSwitcher from '../../LanguageSwitcher';
+import { useDictionary } from '../../../app/DictProvider';
 
 export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
