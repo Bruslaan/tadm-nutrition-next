@@ -1,7 +1,12 @@
 {
+  "cartTitle": "Shopping Cart",
+  "shopNow": "Shop Now",
+  "addToCart": "Add To Cart",
+  "productPageTitle": "Get your tadm",
+  "toCheckout": "Proceed to Checkout",
   "hero": {
-    "title": "Healthy, Organic Brain Nutrition",
-    "subtitle": "tadm is a supplement that supports your ability to focus, mental speed & memory."
+    "title": "Vital Brain Nutrition",
+    "subtitle": "Take your mental performance to the next level with tadm."
   },
   "mix": {
     "title": "With unique mix",

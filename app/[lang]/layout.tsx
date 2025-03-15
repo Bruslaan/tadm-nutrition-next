@@ -1,12 +1,14 @@
-import { CartProvider } from '../components/cart/cart-context';
-import { Navbar } from '../components/layout/navbar';
+import { CartProvider } from '../../components/cart/cart-context';
+import { Navbar } from '../../components/layout/navbar';
 import { GeistSans } from 'geist/font/sans';
-import { getCart } from '../lib/shopify';
-import { ensureStartsWith } from '../lib/utils';
+import { getCart } from '../../lib/shopify';
+import { ensureStartsWith } from '../../lib/utils';
 import { Urbanist } from 'next/font/google';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
-import './globals.css';
+import '../globals.css';
+import { DictionaryProvider } from '../DictProvider';
+import { getDictionary } from './site/dictionaries';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -37,22 +39,32 @@ export const metadata = {
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+export default async function Layout({
+  children,
+  params
+}: {
+  children: ReactNode;
+  params: Promise<{ lang: 'en' | 'de' }>;
+}) {
   const cartId = (await cookies()).get('cartId')?.value;
   // Don't await the fetch, pass the Promise to the context provider
   const cart = getCart(cartId);
 
+  const { lang } = await params;
+
+  console.log(await params);
+
+  const dict = await getDictionary(lang ?? 'en');
+
   return (
     <html lang="en" className={GeistSans.variable}>
       <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
-        <CartProvider cartPromise={cart}>
-          <Navbar />
-          <main className={urbanist.className}>
-            {children}
-            {/*<Toaster closeButton />*/}
-            {/*<WelcomeToast />*/}
-          </main>
-        </CartProvider>
+        <DictionaryProvider dictionary={dict} lang={lang}>
+          <CartProvider cartPromise={cart}>
+            <Navbar />
+            <main className={urbanist.className}>{children}</main>
+          </CartProvider>
+        </DictionaryProvider>
       </body>
     </html>
   );

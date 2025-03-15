@@ -7,6 +7,7 @@ import { useProduct } from 'components/product/product-context';
 import { Product, ProductVariant } from 'lib/shopify/types';
 import { useCart } from './cart-context';
 import { useActionState } from 'react';
+import { useDictionary } from '../../app/DictProvider';
 
 function SubmitButton({
   availableForSale,
@@ -15,6 +16,7 @@ function SubmitButton({
   availableForSale: boolean;
   selectedVariantId: string | undefined;
 }) {
+  const { dictionary } = useDictionary();
   const buttonClasses =
     'relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white';
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
@@ -27,7 +29,6 @@ function SubmitButton({
     );
   }
 
-  console.log(selectedVariantId);
   if (!selectedVariantId) {
     return (
       <button
@@ -38,7 +39,7 @@ function SubmitButton({
         <div className="absolute left-0 ml-4 cursor-pointer">
           <PlusIcon className="h-5" />
         </div>
-        Add To Cart
+        {dictionary.addToCart as string}
       </button>
     );
   }
@@ -53,7 +54,7 @@ function SubmitButton({
       <div className="absolute left-0 ml-4">
         <PlusIcon className="h-5" />
       </div>
-      Add To Cart
+      {dictionary.addToCart as string}
     </button>
   );
 }
@@ -62,7 +63,6 @@ export function AddToCart({ product }: { product: Product }) {
   const { variants, availableForSale } = product;
   const { addCartItem } = useCart();
   const { state } = useProduct();
-  console.log(state);
   const [message, formAction] = useActionState(addItem, null);
 
   const variant = variants.find((variant: ProductVariant) =>

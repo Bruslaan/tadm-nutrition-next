@@ -6,17 +6,17 @@ import { AddToCart } from './cart/add-to-cart';
 import { Product } from 'lib/shopify/types';
 import { useProduct, useUpdateURL } from './product/product-context';
 import { startTransition } from 'react';
+import { useDictionary } from '../app/DictProvider';
 
 export default function DynamicProductPage({ allProducts }: { allProducts: Product[] }) {
   const context = useProduct();
+  const { dictionary } = useDictionary();
   const currentProduct = context.state.product
     ? allProducts.find((p) => p.id === context.state.product)
     : allProducts[0];
   const initialImage = currentProduct?.images[0] ?? allProducts[0]?.images[0];
   const rightSideImage = currentProduct?.title.toLowerCase();
-  console.log({ rightSideImage });
   const updateURL = useUpdateURL();
-  console.log('Current Product', currentProduct);
 
   return (
     <div className="grild-cols-1 grid w-full overflow-hidden md:grid-cols-2">
@@ -25,7 +25,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
       </div>
       <div className="mx-auto flex h-full w-full max-w-xl flex-col items-center justify-center p-10 pt-32">
         <h2 className="font-manrope mb-2 bg-clip-text text-center text-4xl leading-10 font-bold capitalize">
-          Hol dir dein tadm
+          {dictionary.productPageTitle as string}
         </h2>
         <ReviewStars />
         <br />

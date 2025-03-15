@@ -17,12 +17,15 @@ import { DeleteItemButton } from './delete-item-button';
 import { EditItemQuantityButton } from './edit-item-quantity-button';
 import OpenCart from './open-cart';
 import { usePathname } from 'next/navigation';
+import { useDictionary } from '../../app/DictProvider';
 
 type MerchandiseSearchParams = {
   [key: string]: string;
 };
 
 export default function CartModal() {
+  const { dictionary, lang } = useDictionary();
+
   const { cart, updateCartItem } = useCart();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -53,9 +56,9 @@ export default function CartModal() {
     return (
       <Link
         className="shop_now_button block flex-nowrap rounded-md px-4 py-3 text-nowrap hover:bg-gray-500"
-        href="/product/tadm-max-pack"
+        href={`/${lang}/site/product/tadm-max-pack`}
       >
-        Shop Now
+        {dictionary.shopNow as string}
       </Link>
     );
   }
@@ -89,7 +92,7 @@ export default function CartModal() {
           >
             <Dialog.Panel className="fixed top-0 right-0 bottom-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl md:w-[390px] dark:border-neutral-700 dark:bg-black/80 dark:text-white">
               <div className="flex items-center justify-between">
-                <p className="text-lg font-semibold">My tadm</p>
+                <p className="text-lg font-semibold">{dictionary.cartTitle}</p>
                 <button aria-label="Close cart" onClick={closeCart}>
                   <CloseCart />
                 </button>
@@ -224,6 +227,9 @@ export default function CartModal() {
 
 function CheckoutButton() {
   const { pending } = useFormStatus();
+  const { dictionary } = useDictionary();
+
+  const text = dictionary.toCheckout as string;
 
   return (
     <button
@@ -231,7 +237,7 @@ function CheckoutButton() {
       type="submit"
       disabled={pending}
     >
-      {pending ? <LoadingDots className="bg-white" /> : 'Proceed to Checkout'}
+      {pending ? <LoadingDots className="bg-white" /> : text}
     </button>
   );
 }

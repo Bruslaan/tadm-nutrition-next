@@ -1,7 +1,11 @@
 {
+  "cartTitle": "Warenkorb",
+  "shopNow": "Jetzt bestellen",
+  "addToCart": "In den Warenkorb",
+  "productPageTitle": "Hol dir dein tadm",
   "hero": {
     "title": "Lebenswichtige Nährstoffe für dein Gehirn",
-    "subtitle": "Bringe mit tadm deine mentale Leistungsfähigkeit auf das nächste Level"
+    "subtitle": "Bringe mit tadm deine metal Leistungsfähigkeit auf das nächste Level"
   },
   "walnut": {
     "sectionTitle": "Walnussöl",
@@ -71,6 +75,7 @@
       }
     ]
   },
+  "toCheckout": "Weiter zur Kasse",
 
   "softgel": {
     "title": "tadm Brain Softgels",
