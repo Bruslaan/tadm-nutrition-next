@@ -1,6 +1,5 @@
 import { CartProvider } from '../../components/cart/cart-context';
 import { Navbar } from '../../components/layout/navbar';
-import { GeistSans } from 'geist/font/sans';
 import { getCart } from '../../lib/shopify';
 import { ensureStartsWith } from '../../lib/utils';
 import { Urbanist } from 'next/font/google';
@@ -52,20 +51,16 @@ export default async function Layout({
 
   const { lang } = await params;
 
-  console.log(await params);
-
   const dict = await getDictionary(lang ?? 'en');
 
   return (
-    <html lang="en" className={GeistSans.variable}>
-      <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
-        <DictionaryProvider dictionary={dict} lang={lang}>
-          <CartProvider cartPromise={cart}>
-            <Navbar />
-            <main className={urbanist.className}>{children}</main>
-          </CartProvider>
-        </DictionaryProvider>
-      </body>
-    </html>
+    <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+      <DictionaryProvider dictionary={dict} lang={lang}>
+        <CartProvider cartPromise={cart}>
+          <Navbar />
+          <main className={urbanist.className}>{children}</main>
+        </CartProvider>
+      </DictionaryProvider>
+    </body>
   );
 }
