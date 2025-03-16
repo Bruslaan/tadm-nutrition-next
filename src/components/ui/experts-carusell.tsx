@@ -10,6 +10,47 @@ export type Testimonial = {
   src: string;
 };
 
+export const TestimonialGrid = ({
+  title,
+  testimonials
+}: {
+  title: string;
+  testimonials: Testimonial[];
+}) => {
+  return (
+    <div className="w-full max-w-6xl rounded-lg bg-white">
+      <div className="grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-2 md:divide-x md:divide-y-0">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className={`p-8 md:p-12 ${index < testimonials.length - 2 ? 'border-b border-gray-200' : ''}`}
+          >
+            <blockquote className="mb-8 text-lg text-gray-600">"{testimonial.quote}"</blockquote>
+            <div className="flex items-center">
+              <div className="mr-4 h-14 w-14 overflow-hidden rounded-md border border-gray-200">
+                {testimonial.src ? (
+                  <Image
+                    width={100}
+                    height={100}
+                    src={testimonial.src}
+                    alt={`${testimonial.name} avatar`}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <div className="h-full w-full bg-gray-200"></div>
+                )}
+              </div>
+              <div>
+                <p className="text-xl font-bold text-gray-800">{testimonial.name}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const ExpertsCarousel = ({
   title,
   testimonials
@@ -97,7 +138,7 @@ const ExpertsCarousel = ({
           <div
             key={index}
             id={index.toString()}
-            className="relative w-full shrink-0 snap-center snap-always overflow-hidden rounded-xl border bg-white p-6 md:max-w-lg"
+            className="relative w-full shrink-0 snap-center snap-always overflow-hidden rounded-2xl border bg-white p-6 md:max-w-lg"
           >
             <div className="flex w-full flex-col justify-between">
               <div>
@@ -105,8 +146,8 @@ const ExpertsCarousel = ({
                   <Image
                     src={testimonial.src ? testimonial.src : '/static/wallnut.png'}
                     alt={testimonial.name}
-                    width={56}
-                    height={56}
+                    width={200}
+                    height={200}
                     draggable={false}
                     className="aspect-square h-20 w-20 rounded-md object-cover object-top"
                   />

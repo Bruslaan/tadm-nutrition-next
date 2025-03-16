@@ -94,12 +94,14 @@
         },
         {
           "title": "Deine Vorteile auf einen Blick",
-          "content": "- 100 % vegan & leicht zu schlucken\n- Hergestellt in einer GMP-zertifizierten Einrichtung\n- Einhaltung aller EU- und US-Richtlinien\n- DIN EN ISO 9001 & HACCP zertifiziert\n- Hohe Bioverfügbarkeit & kontrollierte Nährstofffreisetzung\n- Geruchs- und geschmacksneutral für eine mühelose Einnahme"
+          "content": "",
+          "items": ["100 % vegan & leicht zu schlucken",  "Hergestellt in einer GMP-zertifizierten Einrichtung","Einhaltung aller EU- und US-Richtlinien", "DIN EN ISO 9001 & HACCP zertifiziert\n- Hohe Bioverfügbarkeit & kontrollierte Nährstofffreisetzung", "Geruchs- und geschmacksneutral für eine mühelose Einnahme"]
         }
       ]
   },
   "mix": {
-    "title": "Mix",
+    "title": "Kombination",
+    "linkTitle": "Lern mehr über die Kombination",
     "items": [
       {
         "title": "Die perfekte Kombination für mentale und körperliche Gesundheit",

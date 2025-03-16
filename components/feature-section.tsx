@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { AccordionContent, Accordions, FAQItem } from './faq-page';
 import TrustItem from './TrustItem';
+import Link from 'next/link';
 const FeatureSection = ({
   sectionTitle,
   items,
@@ -66,9 +67,17 @@ export const FeatureSectionNoImage = ({
   items
 }: {
   sectionTitle: string;
-  items: { title: string; content: string }[];
+  items: { title: string; content: string; items?: string[] }[];
 }) => {
-  const ImportantPoint = ({ title, text }: { title: string; text: string }) => {
+  const ImportantPoint = ({
+    title,
+    text,
+    items
+  }: {
+    title: string;
+    text: string;
+    items: string[];
+  }) => {
     return (
       <li className="flex-col py-4">
         {/*<img*/}
@@ -79,8 +88,15 @@ export const FeatureSectionNoImage = ({
         <h2 className="mb-4 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 text-lg font-semibold md:text-xl">
           {title}
         </h2>
-
-        <p className="pl-2 text-xl text-gray-700">{text}</p>
+        {items ? (
+          <ul className="flex list-disc flex-col gap-3 pl-8">
+            {items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="pl-2 text-xl text-gray-700">{text}</p>
+        )}
       </li>
     );
   };
@@ -97,7 +113,12 @@ export const FeatureSectionNoImage = ({
         <br />
         <ul className="grid max-w-2xl grid-cols-1 gap-6 text-xl lg:max-w-none">
           {items.map((item, index) => (
-            <ImportantPoint key={index} title={item.title} text={item.content} />
+            <ImportantPoint
+              key={index}
+              title={item.title}
+              text={item.content}
+              items={item.items!}
+            />
           ))}
         </ul>
       </div>

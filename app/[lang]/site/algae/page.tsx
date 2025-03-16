@@ -3,6 +3,7 @@ import Footer from '../../../../components/layout/footer';
 import CuminHeroSection from './algae-hero-section';
 import { FeatureSectionNoImage } from '../../../../components/feature-section';
 import { getDictionary } from '../dictionaries';
+import LinkToMix from '../../../../components/LinkToMix';
 
 const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) => {
   const { lang } = await params;
@@ -14,6 +15,9 @@ const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> })
         sectionTitle={dict.algenoel.sectionTitle}
         items={dict.algenoel.items}
       />
+
+      <LinkToMix title={dict.mix.title} />
+
       <CallToActionBanner />
       <Footer></Footer>
     </>

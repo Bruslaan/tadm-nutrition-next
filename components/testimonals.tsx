@@ -3,40 +3,44 @@ import StarRating from './star-rating';
 
 const reviews = [
   {
-    name: 'Sarah',
-    username: '@sarah',
-    body: 'I was skeptical at first, but after using this for a few weeks, I definitely feel more focused. The fact that it has algae-based Omega-3 and cumin oil makes it a unique combination. I’m happy with the results.',
-    img: 'https://avatar.vercel.sh/sarah'
+    name: 'Maria G.',
+    body: "I received tadm Brain as a gift from my sister and I'm absolutely thrilled with this vegan alternative for Omega-3. Living in Norway, I know how important Omega-3 is, but most people here rely on fish oil. tadm Brain is a far better choice. plant based, high quality, and exactly what I was looking for!"
   },
   {
-    name: 'David',
-    username: '@david',
-    body: 'I’ve tried a lot of supplements, but this one really stands out. I feel more mentally clear and less foggy. The algae oil is a nice touch compared to fish oil.',
-    img: 'https://avatar.vercel.sh/david'
+    name: 'Lisa M.',
+    body: 'I started taking tadm a few months ago, and I can truly feel the difference. My ability to focus has improved, and I retain information much better. Whether at work or during my studies, I feel mentally sharper and more alert throughout the day.'
   },
   {
-    name: 'Emma',
-    username: '@emma',
-    body: 'This brain nutrition product has made a noticeable difference in my concentration levels. The combination of Omega-3 from algae oil and cumin oil works wonders.',
-    img: 'https://avatar.vercel.sh/emma'
+    name: 'Eva G.',
+    body: 'Seit sechs Monaten nehme ich gemeinsam mit meinen Kindern (7 und 2 Jahre) tadm Brain und merke, wie wir insgesamt widerstandsfähiger gegen Erkältungen und Krankheiten sind. Besonders freut mich, dass meine Kinder es gerne einnehmen – mein Kleiner kaut sogar mit Begeisterung auf den veganen Softgels. Eine einfache und effektive Ergänzung für unsere Gesundheit!'
   },
   {
-    name: 'Michael',
-    username: '@michael',
-    body: 'I love how natural this supplement is. I can feel the difference when I’m working or studying. My focus has definitely improved since I started taking it.',
-    img: 'https://avatar.vercel.sh/michael'
+    name: 'Armin E.',
+    body: 'Ich habe tadm für meinen Vater gekauft, da er Schwarzkümmelöl und andere wertvolle Öle wie Omega-3 nicht in flüssiger Form zu sich nehmen kann. Die Softgels sind die perfekte Lösung. Sie sind geschmacksneutral und leicht zu schlucken. Er nimmt sie jetzt täglich ohne Probleme und mit Freude ein. Eine klare Empfehlung für alle, die nach einer einfachen und effektiven Alternative suchen!'
   },
   {
-    name: 'Lily',
-    username: '@lily',
-    body: 'This product is amazing! It has improved my cognitive function and I no longer feel sluggish throughout the day. The algae oil is a game changer.',
-    img: 'https://avatar.vercel.sh/lily'
+    name: 'Medina E.',
+    body: 'Bei Nahrungsergänzungsmitteln achte ich besonders auf das Herstellungsland und die Qualität der Produktion. Für mich ist es essenziell, dass sie nicht nur vegan sind, sondern auch höchsten Qualitätsstandards entsprechen. Bei tadm habe ich genau das gefunden und vor allem gespürt.'
   },
   {
-    name: 'Ethan',
-    username: '@ethan',
-    body: 'I didn’t expect such fast results. After just a week, I noticed that I was thinking more clearly and had more energy. The combination of algae oil and cumin oil is perfect. Highly recommend!',
-    img: 'https://avatar.vercel.sh/ethan'
+    name: 'Luisa D.',
+    body: 'Хочу дать отзыв продукту Tadm. Месяц как начала принимать этот продукт. К своему удивлению заметила,что мне намного лучше. Прошла усталость,сонливость,. Стала бодрой и головная боль прошла. Твёрдо решила буду принимать дальше'
+  },
+  {
+    name: 'Sara K.',
+    body: 'Ich habe angefangen Tadm zu nehmen, da ich ständig mit Müdigkeit zu kämpfen hatte. Schon nach der ersten Woche habe ich gemerkt, dass ich mehr Energie und Konzentration im Alltag habe. Ich bin positiv überrascht und werde das Produkt auf jeden Fall weiter nehmen und kann es nur jedem empfehlen.'
+  },
+  {
+    name: 'Andy W.',
+    body: 'Ich nehme Tadm seit etwa 2-3 Monaten. Mein Gedächtnisvermögen hat sich deutlich verbessert und kann mir zum Beispiel beim lernen in der Uni viel besser den Stoff merken. Irgendwie fühl ich mich seit der Einnahme auch besser gelaunt.'
+  },
+  {
+    name: 'Marc G.',
+    body: 'Ich habe ein Produkt gesucht welches mein Omega 3 bedarf deckt ohne, dass ich zu Fischöl kapseln greifen muss was meist auch geschmacklich schwierig einzunehmen war. Mit den Kapseln von Tadm ist neben dem Omega 3 auch das Omega 3 zu 6 Verhältnis optimal was ich durch meine verbesserte Konzentration auch merke.'
+  },
+  {
+    name: 'Nadine P.',
+    body: 'Ich bin mit Tadm sehr glücklich. Die Leute in der Arbeit fragen mich was ich da immer einnehme und sind wegen der schönen Flasche sehr neugierig. Ich kann das Produkt jedem empfehlen!'
   }
 ];
 
@@ -58,15 +62,14 @@ const ReviewCard = ({
   username,
   body
 }: {
-  img: string;
   name: string;
-  username: string;
+  username?: string;
   body: string;
 }) => {
   return (
     <figure
       className={clsx(
-        'relative w-96 cursor-pointer overflow-hidden rounded-xl border p-4',
+        'relative w-56 cursor-pointer overflow-hidden rounded-xl border p-4 md:w-96',
         'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
         'dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]'
       )}
@@ -74,21 +77,21 @@ const ReviewCard = ({
       <div className="flex flex-row items-center gap-2">
         <div className="flex flex-col">
           <figcaption className="text-lg font-medium dark:text-white">{name}</figcaption>
-          <p className="text-lg font-medium dark:text-white/40">{username}</p>
+          {username && <p className="text-lg font-medium dark:text-white/40">{username}</p>}
         </div>
       </div>
       <div className="mt-2 -ml-1">
         <StarRating />
       </div>
 
-      <blockquote className="mt-2 text-lg">{body}</blockquote>
+      <blockquote className="md:text-md mt-2 text-xs">{body}</blockquote>
     </figure>
   );
 };
 
 export function MarqueeDemo({ title }: { title: string }) {
   return (
-    <section className="w-full pt-10 text-xs">
+    <section className="w-full pt-10 md:text-xs">
       <div className="mx-auto flex max-w-(--breakpoint-xl) justify-center px-4">
         <h2 className="mb-4 max-w-2xl text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
           {title}
