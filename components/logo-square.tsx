@@ -10,7 +10,7 @@ export default function LogoSquare({ size }: { size?: 'sm' | undefined }) {
     <Link
       href={`/${lang}/site`}
       prefetch={true}
-      className="ml-10 flex w-full items-center justify-center md:ml-0 md:w-auto"
+      className="flex w-full items-center justify-center md:ml-0 md:w-auto"
     >
       <div
         className={clsx('flex flex-none items-center justify-center', {
