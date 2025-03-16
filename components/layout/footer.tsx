@@ -19,9 +19,7 @@ export default async function Footer() {
     <footer className="text-sm text-neutral-500 dark:text-neutral-400">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-6 px-6 py-12 text-sm min-[1320px]:px-0 md:flex-row md:gap-12 md:px-4">
         <div>
-          <Link className="flex items-center gap-2 text-black md:pt-1 dark:text-white" href="/">
-            <LogoSquare />
-          </Link>
+          <LogoSquare />
         </div>
         <Suspense
           fallback={

@@ -37,13 +37,8 @@ export async function Navbar() {
             <MobileMenu menu={mockedMenu} />
           </Suspense>
         </div>
-        <Link
-          href="/"
-          prefetch={true}
-          className="ml-10 flex w-full items-center justify-center md:ml-0 md:w-auto"
-        >
-          <LogoSquare />
-        </Link>
+
+        <LogoSquare />
         {mockedMenu.length ? (
           <ul className="hidden justify-between gap-6 text-sm md:flex md:items-center">
             {mockedMenu.map((item: Menu) => (
