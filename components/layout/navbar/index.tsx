@@ -1,12 +1,10 @@
 import CartModal from 'components/cart/modal';
 import LogoSquare from 'components/logo-square';
-import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
 import LanguageSwitcher from '../../LanguageSwitcher';
-import { useDictionary } from '../../../app/DictProvider';
 
 export async function Navbar() {
   const mockedMenu = [
@@ -37,7 +35,10 @@ export async function Navbar() {
           </Suspense>
         </div>
 
-        <LogoSquare />
+        <div className="ml-12">
+          <LogoSquare />
+        </div>
+
         {mockedMenu.length ? (
           <ul className="hidden justify-between gap-6 text-sm md:flex md:items-center">
             {mockedMenu.map((item: Menu) => (
