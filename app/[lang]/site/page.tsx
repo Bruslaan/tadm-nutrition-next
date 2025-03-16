@@ -34,10 +34,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
           alt="vegan icon"
         />
 
-        <div className="flex w-full shrink-0 flex-col flex-wrap items-start gap-4 rounded-lg bg-gray-100 p-4 px-10 text-nowrap md:w-auto md:flex-row md:gap-6 md:rounded-full md:py-3">
-          <TrustItem iconName="/static/vegan-icon.svg" text={'100% Vegan'} />
-          <TrustItem iconName="/static/earth-icon.svg" text={'non-Gmo, 100% Natural'} />
-          <TrustItem iconName="/static/noanimals-icon.svg" text={'No animals harmed'} />
+        <div className="flex w-full justify-center rounded-lg bg-gray-100 md:w-auto md:rounded-full">
+          <div className="flex shrink-0 flex-col flex-wrap items-start gap-4 rounded-lg bg-gray-100 p-4 px-10 text-nowrap md:w-auto md:flex-row md:gap-6 md:rounded-full md:py-3">
+            <TrustItem iconName="/static/vegan-icon.svg" text={'100% Vegan'} />
+            <TrustItem iconName="/static/earth-icon.svg" text={'non-Gmo, 100% Natural'} />
+            <TrustItem iconName="/static/noanimals-icon.svg" text={'No animals harmed'} />
+          </div>
         </div>
       </section>
       <TextRevealDemo text={dict.textReveal} />

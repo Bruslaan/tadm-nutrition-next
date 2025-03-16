@@ -3,7 +3,6 @@ import Footer from '../../../../components/layout/footer';
 import CuminHeroSection from './cumin-hero-section';
 import { FeatureSectionNoImage } from '../../../../components/feature-section';
 import { getDictionary } from '../dictionaries';
-import Link from 'next/link';
 import LinkToMix from '../../../../components/LinkToMix';
 
 const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) => {
@@ -12,7 +11,9 @@ const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> })
   return (
     <>
       <CuminHeroSection />
-      <FeatureSectionNoImage sectionTitle={dict.cumin.sectionTitle} items={dict.cumin.items} />
+      <section id="cumin-section">
+        <FeatureSectionNoImage sectionTitle={dict.cumin.sectionTitle} items={dict.cumin.items} />
+      </section>
       <LinkToMix title={dict.mix.linkTitle} />
 
       <CallToActionBanner />

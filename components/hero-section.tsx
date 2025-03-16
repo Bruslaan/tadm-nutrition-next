@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import FloatingIcon from './floating-icon';
-import Link from 'next/link';
-import { getDictionary } from '../app/[lang]/site/dictionaries';
+import Discoverbutton from './Discoverbutton';
 
 const HeroIcon = ({ title, subtitle, icon }: { title: string; subtitle: string; icon: string }) => {
   return (
@@ -33,15 +32,7 @@ const HeroSection = async ({ title, subtitle }: { title: string; subtitle: strin
           {subtitle}
         </p>
       </div>
-      <div className="absolute inset-x-0 bottom-10 z-10 flex flex-col items-center justify-center gap-3 text-black">
-        <span className="uppercase">Discover</span>
-        <Link
-          href="#text-reveal"
-          className="flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-black text-xl text-white"
-        >
-          ↓
-        </Link>
-      </div>
+      <Discoverbutton href={'#text-reveal'} />
 
       <Image
         src="/static/herobg.webp"

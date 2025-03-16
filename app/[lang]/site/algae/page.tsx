@@ -11,10 +11,12 @@ const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> })
   return (
     <>
       <CuminHeroSection />
-      <FeatureSectionNoImage
-        sectionTitle={dict.algenoel.sectionTitle}
-        items={dict.algenoel.items}
-      />
+      <section id="algae-section">
+        <FeatureSectionNoImage
+          sectionTitle={dict.algenoel.sectionTitle}
+          items={dict.algenoel.items}
+        />
+      </section>
 
       <LinkToMix title={dict.mix.title} />
 

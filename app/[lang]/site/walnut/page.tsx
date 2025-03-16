@@ -11,7 +11,9 @@ const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> })
   return (
     <>
       <CuminHeroSection />
-      <FeatureSectionNoImage sectionTitle={dict.walnut.sectionTitle} items={dict.walnut.items} />
+      <section id="walnut-section">
+        <FeatureSectionNoImage sectionTitle={dict.walnut.sectionTitle} items={dict.walnut.items} />
+      </section>
       <LinkToMix title={dict.mix.linkTitle} />
 
       <CallToActionBanner />
