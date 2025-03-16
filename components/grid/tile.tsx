@@ -43,8 +43,8 @@ export function GridTileImage({
             <h2>{label.title}</h2>
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 translate-y-20 transform bg-black/80 px-4 py-4 text-xl font-bold text-white transition duration-300 group-hover:translate-y-0">
-            <p className="text-sm">{label.description}</p>
+          <div className="absolute inset-x-0 bottom-0 translate-y-20 transform bg-orange-200/90 px-4 py-4 text-xl font-bold text-neutral-800 transition duration-300 group-hover:translate-y-0">
+            <p className="text-center text-sm">{label.description}</p>
           </div>
 
           <div className="absolute right-4 bottom-8 inline-flex transform">
