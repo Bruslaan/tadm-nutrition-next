@@ -9,10 +9,9 @@ import LanguageSwitcher from '../../LanguageSwitcher';
 import { useDictionary } from '../../../app/DictProvider';
 
 export async function Navbar() {
-  const menu = await getMenu('next-js-frontend-header-menu');
   const mockedMenu = [
     {
-      path: '#feature',
+      path: '/#feature',
       title: 'Inside the tadm'
     },
     // {
@@ -20,7 +19,7 @@ export async function Navbar() {
     //   title: 'Nature'
     // },
     {
-      path: '#faq',
+      path: '/#faq',
       title: 'Faq'
     },
     {
