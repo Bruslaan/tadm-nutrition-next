@@ -1,8 +1,8 @@
-'use client';
 import { Product } from '../lib/shopify/types';
 import clsx from 'clsx';
 import { ProductDescription } from './product/product-description';
 import Image from 'next/image';
+import { useDictionary } from '../app/DictProvider';
 
 export const ProductCard = ({ product, selected }: { product: Product; selected: boolean }) => {
   return (
