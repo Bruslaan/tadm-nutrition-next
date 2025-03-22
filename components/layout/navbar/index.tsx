@@ -35,7 +35,7 @@ export async function Navbar() {
           </Suspense>
         </div>
 
-        <div className="ml-12">
+        <div className="hidden md:block">
           <LogoSquare />
         </div>
 

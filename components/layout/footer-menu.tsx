@@ -17,7 +17,7 @@ export function FooterMenuItem({ item }: { item: Menu }) {
   return (
     <li>
       <Link
-        href={item.path}
+        href={`/${item.path.split('/')[item.path.split('/').length - 1]}`}
         className={clsx(
           'block text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm dark:hover:text-neutral-300',
           {
