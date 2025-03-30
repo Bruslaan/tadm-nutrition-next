@@ -16,6 +16,7 @@
     "@formatjs/intl-localematcher": "^0.6.0",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@shopify/hydrogen-react": "^2025.1.3",
     "@tabler/icons-react": "^3.30.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

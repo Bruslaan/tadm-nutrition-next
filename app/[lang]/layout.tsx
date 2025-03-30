@@ -4,10 +4,11 @@ import { getCart } from '../../lib/shopify';
 import { ensureStartsWith } from '../../lib/utils';
 import { Urbanist } from 'next/font/google';
 import { cookies } from 'next/headers';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import '../globals.css';
 import { DictionaryProvider } from '../DictProvider';
 import { getDictionary } from './site/dictionaries';
+import ShopifyAnalytics from '../../lib/shopify/shopify-analytics';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -54,13 +55,17 @@ export default async function Layout({
   const dict = await getDictionary(lang ?? 'en');
 
   return (
-    <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
-      <DictionaryProvider dictionary={dict} lang={lang}>
-        <CartProvider cartPromise={cart}>
-          <Navbar />
-          <main className={urbanist.className}>{children}</main>
-        </CartProvider>
-      </DictionaryProvider>
-    </body>
+    <>
+      <ShopifyAnalytics />
+
+      <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+        <DictionaryProvider dictionary={dict} lang={lang}>
+          <CartProvider cartPromise={cart}>
+            <Navbar />
+            <main className={urbanist.className}>{children}</main>
+          </CartProvider>
+        </DictionaryProvider>
+      </body>
+    </>
   );
 }

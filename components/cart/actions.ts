@@ -6,18 +6,44 @@ import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-export async function addItem(prevState: any, selectedVariantId: string | undefined) {
+type AddItemResponse = {
+  cartId?: string;
+  success: boolean;
+  message?: string;
+};
+
+export async function addItem(
+  prevState: any,
+  selectedVariantId: string | undefined
+): Promise<AddItemResponse> {
   let cartId = (await cookies()).get('cartId')?.value;
 
-  if (!cartId || !selectedVariantId) {
-    return 'Error adding item to cart';
+  let cart;
+
+  if (cartId) {
+    cart = await getCart(cartId);
+  }
+
+  if (!cartId || !cart) {
+    cart = await createCart();
+    cartId = cart.id!;
+    (await cookies()).set('cartId', cartId);
+  }
+
+  if (!selectedVariantId) {
+    return { success: false, message: 'Missing variant ID' };
+  }
+
+  if (!cartId) {
+    return { success: false, message: 'Error adding item to cart' };
   }
 
   try {
     await addToCart(cartId, [{ merchandiseId: selectedVariantId, quantity: 1 }]);
     revalidateTag(TAGS.cart);
+    return { success: true, cartId };
   } catch (e) {
-    return 'Error adding item to cart';
+    return { success: false, message: 'Error adding item to cart' };
   }
 }
 
