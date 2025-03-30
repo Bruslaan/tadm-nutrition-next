@@ -82,7 +82,7 @@ export function AddToCart({ product }: { product: Product }) {
     >
       <SubmitButton availableForSale={availableForSale} selectedVariantId={selectedVariantId} />
       <p aria-live="polite" className="sr-only" role="status">
-        {message}
+        {message?.message ?? ''}
       </p>
     </form>
   );
