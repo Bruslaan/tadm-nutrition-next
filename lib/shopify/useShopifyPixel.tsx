@@ -13,7 +13,7 @@ import {
 
 const currency = 'EUR';
 const defaultLanguage = 'DE';
-const SHOP_ID = process.env.NEXT_PUBLIC_SHOPIFY_SHOP_ID!;
+const SHOP_ID = '88760648014';
 
 type SendPageViewPayload = {
   pageType?: string;
