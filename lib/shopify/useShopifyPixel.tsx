@@ -32,7 +32,6 @@ type SendAddToCartPayload = {
 
 export function useShopifyAnalytics() {
   const pathname = usePathname();
-  console.log('Sending shop analytics for pathname: ', SHOP_ID);
   // Send page view event
   const sendPageView = (
     eventName: keyof typeof AnalyticsEventName,
