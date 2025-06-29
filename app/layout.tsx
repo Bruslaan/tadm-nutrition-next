@@ -1,38 +1,32 @@
 import { ReactNode } from 'react';
-import ShopifyAnalytics from '../lib/shopify/shopify-analytics';
-import { cookies } from 'next/headers';
-import { getCart } from '../lib/shopify';
-import { getDictionary } from './[lang]/site/dictionaries';
+
+const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   : 'http://localhost:3000';
 
-export default async function Layout({
-  children,
-  params
-}: {
-  children: ReactNode;
-  params: Promise<{ lang: 'en' | 'de' }>;
-}) {
-  const cartId = (await cookies()).get('cartId')?.value;
-  // Don't await the fetch, pass the Promise to the context provider
-  const cart = getCart(cartId);
+export const metadata = {
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: SITE_NAME || 'TADM Nutrition',
+    template: `%s | ${SITE_NAME || 'TADM Nutrition'}`
+  },
+  robots: {
+    follow: true,
+    index: true
+  }
+};
 
-  const { lang } = await params;
-  const dict = await getDictionary(lang ?? 'en');
-
+export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang={lang} dir="ltr">
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href={`${baseUrl}/${lang}/site/`} />
-        <link rel="alternate" href={`${baseUrl}/en/site/`} hrefLang="en" />
-        <link rel="alternate" href={`${baseUrl}/de/site/`} hrefLang="de" />
-        <link rel="alternate" href={`${baseUrl}/en/site/`} hrefLang="x-default" />
-        <ShopifyAnalytics />
       </head>
-      <body>{children}</body>
+      <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+        {children}
+      </body>
     </html>
   );
 }

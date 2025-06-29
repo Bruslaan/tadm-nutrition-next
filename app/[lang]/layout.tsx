@@ -17,28 +17,40 @@ const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
 const twitterCreator = TWITTER_CREATOR ? ensureStartsWith(TWITTER_CREATOR, '@') : undefined;
 const twitterSite = TWITTER_SITE ? ensureStartsWith(TWITTER_SITE, 'https://') : undefined;
 
-export const metadata = {
-  metadataBase: new URL(baseUrl),
-  title: {
-    default: SITE_NAME!,
-    template: `%s | ${SITE_NAME}`
-  },
-  robots: {
-    follow: true,
-    index: true
-  },
-  other: {
-    'google-site-verification': 'your-verification-code-here'
-  },
-  ...(twitterCreator &&
-    twitterSite && {
-      twitter: {
-        card: 'summary_large_image',
-        creator: twitterCreator,
-        site: twitterSite
+export async function generateMetadata({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) {
+  const { lang } = await params;
+  
+  return {
+    metadataBase: new URL(baseUrl),
+    title: {
+      default: SITE_NAME!,
+      template: `%s | ${SITE_NAME}`
+    },
+    robots: {
+      follow: true,
+      index: true
+    },
+    alternates: {
+      canonical: `${baseUrl}/${lang}/site/`,
+      languages: {
+        'en': `${baseUrl}/en/site/`,
+        'de': `${baseUrl}/de/site/`,
+        'x-default': `${baseUrl}/en/site/`
       }
-    })
-};
+    },
+    other: {
+      'google-site-verification': 'your-verification-code-here'
+    },
+    ...(twitterCreator &&
+      twitterSite && {
+        twitter: {
+          card: 'summary_large_image',
+          creator: twitterCreator,
+          site: twitterSite
+        }
+      })
+  };
+}
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
@@ -70,13 +82,14 @@ export default async function Layout({
   const dict = await getDictionary(lang ?? 'en');
 
   return (
-    <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+    <>
+      <ShopifyAnalytics />
       <DictionaryProvider dictionary={dict} lang={lang}>
         <CartProvider cartPromise={cart}>
           <Navbar />
           <main className={urbanist.className}>{children}</main>
         </CartProvider>
       </DictionaryProvider>
-    </body>
+    </>
   );
 }
