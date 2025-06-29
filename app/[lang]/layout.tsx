@@ -27,6 +27,9 @@ export const metadata = {
     follow: true,
     index: true
   },
+  other: {
+    'google-site-verification': 'your-verification-code-here'
+  },
   ...(twitterCreator &&
     twitterSite && {
       twitter: {
@@ -38,6 +41,19 @@ export const metadata = {
 };
 
 const urbanist = Urbanist({ subsets: ['latin'] });
+
+function generateAlternateLanguages(currentLang: 'en' | 'de', pathname: string) {
+  const languages = ['en', 'de'];
+  const alternates: { [key: string]: string } = {};
+
+  languages.forEach((lang) => {
+    if (lang !== currentLang) {
+      alternates[lang] = `${baseUrl}/${lang}/site${pathname}`;
+    }
+  });
+
+  return alternates;
+}
 
 export default async function Layout({
   children,
@@ -51,21 +67,16 @@ export default async function Layout({
   const cart = getCart(cartId);
 
   const { lang } = await params;
-
   const dict = await getDictionary(lang ?? 'en');
 
   return (
-    <>
-      <ShopifyAnalytics />
-
-      <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
-        <DictionaryProvider dictionary={dict} lang={lang}>
-          <CartProvider cartPromise={cart}>
-            <Navbar />
-            <main className={urbanist.className}>{children}</main>
-          </CartProvider>
-        </DictionaryProvider>
-      </body>
-    </>
+    <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+      <DictionaryProvider dictionary={dict} lang={lang}>
+        <CartProvider cartPromise={cart}>
+          <Navbar />
+          <main className={urbanist.className}>{children}</main>
+        </CartProvider>
+      </DictionaryProvider>
+    </body>
   );
 }

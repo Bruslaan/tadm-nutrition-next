@@ -51,8 +51,9 @@ const FeatureSection = ({
                 width={550}
                 height={500}
                 src={imageUrl}
-                alt=""
+                alt="TADM Nutrition premium supplements benefits and features"
                 className="mx-auto inline-block aspect-video h-full w-full object-cover"
+                loading="lazy"
               />
             )}
           </div>

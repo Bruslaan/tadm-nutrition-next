@@ -13,17 +13,61 @@ import Image from 'next/image';
 import TrustItem from '../../../components/TrustItem';
 
 export const metadata = {
-  description: 'healthy brain nutrition supplement',
+  title: 'TADM Nutrition - Premium Brain Health Supplements | Vegan & Natural',
+  description: 'Discover TADM Nutrition\'s premium brain health supplements. 100% vegan, natural ingredients including algae, cumin, and walnut for optimal cognitive function. Made in Germany.',
+  keywords: 'brain health supplements, nootropics, vegan supplements, cognitive enhancement, natural brain nutrition, algae supplements, cumin extract, walnut oil, German quality supplements',
   openGraph: {
-    type: 'website'
+    type: 'website',
+    title: 'TADM Nutrition - Premium Brain Health Supplements',
+    description: 'Premium vegan brain health supplements made in Germany. Natural ingredients for optimal cognitive function.',
+    images: [
+      {
+        url: '/static/hero-img.png',
+        width: 1200,
+        height: 630,
+        alt: 'TADM Nutrition Premium Brain Health Supplements'
+      }
+    ]
+  },
+  alternates: {
+    canonical: 'https://tadm-nutrition.com',
+    languages: {
+      'en': 'https://tadm-nutrition.com/en',
+      'de': 'https://tadm-nutrition.com/de'
+    }
   }
 };
 
 export default async function HomePage({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) {
   const { lang } = await params;
   const dict = (await getDictionary(lang)) ?? 'en';
+  
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'TADM Nutrition',
+    url: 'https://tadm-nutrition.com',
+    logo: 'https://tadm-nutrition.com/static/tadm-logo.png',
+    description: 'Premium vegan brain health supplements made in Germany with natural ingredients for optimal cognitive function.',
+    foundingDate: '2020',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'DE'
+    },
+    sameAs: [
+      'https://www.instagram.com/tadm_nutrition',
+      'https://www.facebook.com/tadmnutrition'
+    ]
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationJsonLd)
+        }}
+      />
       <HeroSection title={dict.hero.title} subtitle={dict.hero.subtitle} />
       <section className="mt-14 flex flex-col items-center justify-evenly gap-9 px-4">
         <Image
@@ -31,7 +75,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
           src={'/static/madeingermany.svg'}
           width={200}
           height={80}
-          alt="vegan icon"
+          alt="Made in Germany - Premium quality supplement manufacturing"
+          loading="lazy"
         />
 
         <div className="flex w-full justify-center rounded-lg bg-gray-100 md:w-auto md:rounded-full">

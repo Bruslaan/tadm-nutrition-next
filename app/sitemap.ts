@@ -16,30 +16,64 @@ export const dynamic = 'force-dynamic';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   validateEnvironmentVariables();
 
-  const routesMap = [''].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString()
-  }));
+  const routesMap = [
+    // Main pages for both languages
+    { url: `${baseUrl}/en/site/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/site/`, lastModified: new Date().toISOString() },
+    // Product pages
+    { url: `${baseUrl}/en/site/algae/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/site/algae/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/site/cannabis/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/site/cannabis/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/site/cumin/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/site/cumin/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/site/mix/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/site/mix/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/site/nature/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/site/nature/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/site/softgel/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/site/softgel/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/site/walnut/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/site/walnut/`, lastModified: new Date().toISOString() }
+  ];
 
   const collectionsPromise = getCollections().then((collections) =>
-    collections.map((collection) => ({
-      url: `${baseUrl}${collection.path}`,
-      lastModified: collection.updatedAt
-    }))
+    collections.flatMap((collection) => [
+      {
+        url: `${baseUrl}/en/site${collection.path}`,
+        lastModified: collection.updatedAt
+      },
+      {
+        url: `${baseUrl}/de/site${collection.path}`,
+        lastModified: collection.updatedAt
+      }
+    ])
   );
 
   const productsPromise = getProducts({}).then((products) =>
-    products.map((product) => ({
-      url: `${baseUrl}/product/${product.handle}`,
-      lastModified: product.updatedAt
-    }))
+    products.flatMap((product) => [
+      {
+        url: `${baseUrl}/en/site/product/${product.handle}`,
+        lastModified: product.updatedAt
+      },
+      {
+        url: `${baseUrl}/de/site/product/${product.handle}`,
+        lastModified: product.updatedAt
+      }
+    ])
   );
 
   const pagesPromise = getPages().then((pages) =>
-    pages.map((page) => ({
-      url: `${baseUrl}/${page.handle}`,
-      lastModified: page.updatedAt
-    }))
+    pages.flatMap((page) => [
+      {
+        url: `${baseUrl}/en/site/${page.handle}`,
+        lastModified: page.updatedAt
+      },
+      {
+        url: `${baseUrl}/de/site/${page.handle}`,
+        lastModified: page.updatedAt
+      }
+    ])
   );
 
   let fetchedRoutes: Route[] = [];
