@@ -10,6 +10,5 @@ export default function ShopifyAnalytics() {
     sendPageView(AnalyticsEventName.PAGE_VIEW);
   }, [pathname, sendPageView]);
 
-  useShopifyCookies();
   return null;
 }
