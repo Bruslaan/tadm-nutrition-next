@@ -320,9 +320,9 @@ export function useShopifyAnalytics() {
   // Set up cookies for Shopify analytics & enable user consent (all cookies enabled)
   useShopifyCookies({
     hasUserConsent: true,
-    domain: typeof window !== 'undefined' ? window.location.hostname : undefined,
+    domain: 'tadm-nutrition.com',
     // Enable all tracking cookies by default
-    checkoutDomain: typeof window !== 'undefined' ? window.location.hostname : undefined
+    checkoutDomain: 'shop.tadm-nutrition.com'
   });
 
   return {
