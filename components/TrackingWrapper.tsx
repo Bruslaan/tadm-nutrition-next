@@ -29,7 +29,7 @@ export default function TrackingWrapper({
 
     // Call original onClick if it exists
     if (props.onClick) {
-      props.onClick(e);
+      props.onClick(e as React.MouseEvent<HTMLDivElement>);
     }
   };
 
