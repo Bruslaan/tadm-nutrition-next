@@ -55,21 +55,39 @@ function getReferralInfo() {
   if (referrer) {
     const referrerDomain = new URL(referrer).hostname;
 
-    // Social media detection
-    if (referrerDomain.includes('facebook.com') || referrerDomain.includes('fb.com')) {
+    // Social media detection (enhanced)
+    if (referrerDomain.includes('facebook.com') || referrerDomain.includes('fb.com') || referrerDomain.includes('m.facebook.com')) {
       source = 'facebook';
       medium = 'social';
-    } else if (referrerDomain.includes('instagram.com')) {
+    } else if (referrerDomain.includes('instagram.com') || referrerDomain.includes('ig.me')) {
       source = 'instagram';
       medium = 'social';
-    } else if (referrerDomain.includes('twitter.com') || referrerDomain.includes('t.co')) {
+    } else if (referrerDomain.includes('tiktok.com') || referrerDomain.includes('vm.tiktok.com')) {
+      source = 'tiktok';
+      medium = 'social';
+    } else if (referrerDomain.includes('twitter.com') || referrerDomain.includes('t.co') || referrerDomain.includes('x.com')) {
       source = 'twitter';
       medium = 'social';
-    } else if (referrerDomain.includes('linkedin.com')) {
+    } else if (referrerDomain.includes('linkedin.com') || referrerDomain.includes('lnkd.in')) {
       source = 'linkedin';
       medium = 'social';
-    } else if (referrerDomain.includes('tiktok.com')) {
-      source = 'tiktok';
+    } else if (referrerDomain.includes('youtube.com') || referrerDomain.includes('youtu.be')) {
+      source = 'youtube';
+      medium = 'social';
+    } else if (referrerDomain.includes('snapchat.com')) {
+      source = 'snapchat';
+      medium = 'social';
+    } else if (referrerDomain.includes('pinterest.com') || referrerDomain.includes('pin.it')) {
+      source = 'pinterest';
+      medium = 'social';
+    } else if (referrerDomain.includes('reddit.com') || referrerDomain.includes('redd.it')) {
+      source = 'reddit';
+      medium = 'social';
+    } else if (referrerDomain.includes('whatsapp.com') || referrerDomain.includes('wa.me')) {
+      source = 'whatsapp';
+      medium = 'social';
+    } else if (referrerDomain.includes('telegram.org') || referrerDomain.includes('t.me')) {
+      source = 'telegram';
       medium = 'social';
     }
     // Search engines
@@ -94,15 +112,38 @@ function getReferralInfo() {
   if (urlParams.get('utm_source')) source = urlParams.get('utm_source')!;
   if (urlParams.get('utm_medium')) medium = urlParams.get('utm_medium')!;
 
+  // Detect social media app referrals (when apps don't send referrer)
+  const socialAppDetection = () => {
+    if (source === 'direct' && campaign === '') {
+      // Check for social media app indicators in user agent
+      const userAgent = navigator.userAgent.toLowerCase();
+      if (userAgent.includes('instagram') || urlParams.get('igshid')) {
+        return { source: 'instagram', medium: 'social_app' };
+      }
+      if (userAgent.includes('tiktok') || urlParams.get('_t')) {
+        return { source: 'tiktok', medium: 'social_app' };
+      }
+      if (userAgent.includes('facebook') || userAgent.includes('fban')) {
+        return { source: 'facebook', medium: 'social_app' };
+      }
+    }
+    return { source, medium };
+  };
+
+  const { source: finalSource, medium: finalMedium } = socialAppDetection();
+
   return {
     referrer,
-    source,
-    medium,
+    source: finalSource,
+    medium: finalMedium,
     campaign,
     term: urlParams.get('utm_term') || '',
     content: urlParams.get('utm_content') || '',
     gclid: urlParams.get('gclid') || '', // Google Ads
-    fbclid: urlParams.get('fbclid') || '' // Facebook Ads
+    fbclid: urlParams.get('fbclid') || '', // Facebook Ads
+    ttclid: urlParams.get('ttclid') || '', // TikTok Ads
+    igshid: urlParams.get('igshid') || '', // Instagram share ID
+    socialAppReferral: finalMedium === 'social_app'
   };
 }
 
