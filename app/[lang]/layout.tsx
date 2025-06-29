@@ -9,6 +9,7 @@ import '../globals.css';
 import { DictionaryProvider } from '../DictProvider';
 import { getDictionary } from './site/dictionaries';
 import ShopifyAnalytics from '../../lib/shopify/shopify-analytics';
+import RealTimeAnalytics from '../../components/RealTimeAnalytics';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -84,6 +85,7 @@ export default async function Layout({
   return (
     <>
       <ShopifyAnalytics />
+      <RealTimeAnalytics />
       <DictionaryProvider dictionary={dict} lang={lang}>
         <CartProvider cartPromise={cart}>
           <Navbar />
