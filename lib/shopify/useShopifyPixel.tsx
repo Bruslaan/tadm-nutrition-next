@@ -56,7 +56,11 @@ function getReferralInfo() {
     const referrerDomain = new URL(referrer).hostname;
 
     // Social media detection (enhanced)
-    if (referrerDomain.includes('facebook.com') || referrerDomain.includes('fb.com') || referrerDomain.includes('m.facebook.com')) {
+    if (
+      referrerDomain.includes('facebook.com') ||
+      referrerDomain.includes('fb.com') ||
+      referrerDomain.includes('m.facebook.com')
+    ) {
       source = 'facebook';
       medium = 'social';
     } else if (referrerDomain.includes('instagram.com') || referrerDomain.includes('ig.me')) {
@@ -65,7 +69,11 @@ function getReferralInfo() {
     } else if (referrerDomain.includes('tiktok.com') || referrerDomain.includes('vm.tiktok.com')) {
       source = 'tiktok';
       medium = 'social';
-    } else if (referrerDomain.includes('twitter.com') || referrerDomain.includes('t.co') || referrerDomain.includes('x.com')) {
+    } else if (
+      referrerDomain.includes('twitter.com') ||
+      referrerDomain.includes('t.co') ||
+      referrerDomain.includes('x.com')
+    ) {
       source = 'twitter';
       medium = 'social';
     } else if (referrerDomain.includes('linkedin.com') || referrerDomain.includes('lnkd.in')) {
@@ -207,6 +215,13 @@ export function useShopifyAnalytics() {
     const enhancedPayload = {
       ...getClientBrowserParameters(),
       hasUserConsent: true,
+      // Enhanced cookie consent for maximum tracking
+      consentSettings: {
+        analytics: true,
+        marketing: true,
+        preferences: true,
+        necessary: true
+      },
       shopifySalesChannel: ShopifySalesChannel.headless,
       shopId: `gid://shopify/Shop/${SHOP_ID}`,
       currency,
@@ -251,6 +266,7 @@ export function useShopifyAnalytics() {
       payload: {
         ...getClientBrowserParameters(),
         hasUserConsent: true,
+        // Enhanced cookie consent for maximum tracking
         shopifySalesChannel: ShopifySalesChannel.headless,
         shopId: `gid://shopify/Shop/${SHOP_ID}`,
         cartId: 'custom',
@@ -301,9 +317,12 @@ export function useShopifyAnalytics() {
     }
   }, [initialized]);
 
-  // Set up cookies for Shopify analytics & enable user consent
+  // Set up cookies for Shopify analytics & enable user consent (all cookies enabled)
   useShopifyCookies({
-    hasUserConsent: true
+    hasUserConsent: true,
+    domain: typeof window !== 'undefined' ? window.location.hostname : undefined,
+    // Enable all tracking cookies by default
+    checkoutDomain: typeof window !== 'undefined' ? window.location.hostname : undefined
   });
 
   return {
