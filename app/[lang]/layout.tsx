@@ -13,11 +13,7 @@ import RealTimeAnalytics from '../../components/RealTimeAnalytics';
 import CookieConsent from '../../components/CookieConsent';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? process.env.NEXT_PUBLIC_SITE_URL
-  : process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : 'https://www.tadm-nutrition.com';
+const baseUrl = 'https://www.tadm-nutrition.com';
 const twitterCreator = TWITTER_CREATOR ? ensureStartsWith(TWITTER_CREATOR, '@') : undefined;
 const twitterSite = TWITTER_SITE ? ensureStartsWith(TWITTER_SITE, 'https://') : undefined;
 
