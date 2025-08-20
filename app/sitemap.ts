@@ -12,8 +12,7 @@ const baseUrl = 'https://www.tadm-nutrition.com';
 export const dynamic = 'force-dynamic';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  validateEnvironmentVariables();
-
+  // Basic static routes that don't require Shopify API
   const routesMap = [
     // Main pages for both languages
     { url: `${baseUrl}/en/site/`, lastModified: new Date().toISOString() },
@@ -76,10 +75,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   let fetchedRoutes: Route[] = [];
 
+  // Only try to fetch Shopify data if environment variables are available
   try {
+    validateEnvironmentVariables();
     fetchedRoutes = (await Promise.all([collectionsPromise, productsPromise, pagesPromise])).flat();
   } catch (error) {
-    throw JSON.stringify(error, null, 2);
+    // Log error but don't fail - return static routes only
+    console.warn('Shopify API not available for sitemap generation:', error);
+    fetchedRoutes = [];
   }
 
   return [...routesMap, ...fetchedRoutes];

@@ -43,10 +43,17 @@ function ThreeItemGridItem({
 }
 
 export async function ThreeItemGrid({ title }: { title: string }) {
-  // Collections that start with `hidden-*` are hidden from the search page.
-  const homepageItems = await getCollectionProducts({
-    collection: 'tadm-products'
-  });
+  let homepageItems: Product[] = [];
+  
+  try {
+    // Collections that start with `hidden-*` are hidden from the search page.
+    homepageItems = await getCollectionProducts({
+      collection: 'tadm-products'
+    });
+  } catch (error) {
+    console.warn('Failed to fetch homepage products:', error);
+    // Return empty grid or fallback content when Shopify API is unavailable
+  }
 
   return (
     <section className="relative mx-auto h-full min-h-[80vh] max-w-7xl overflow-hidden p-4">
@@ -54,11 +61,17 @@ export async function ThreeItemGrid({ title }: { title: string }) {
       <h2 className="mb-4 max-w-2xl text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
         {title}
       </h2>
-      <div className="mx-auto mt-10 grid gap-4 pb-4 md:grid-cols-6">
-        {homepageItems.map((item, index) => (
-          <ThreeItemGridItem key={index} size="half" item={item} priority={true} />
-        ))}
-      </div>
+      {homepageItems.length > 0 ? (
+        <div className="mx-auto mt-10 grid gap-4 pb-4 md:grid-cols-6">
+          {homepageItems.map((item, index) => (
+            <ThreeItemGridItem key={index} size="half" item={item} priority={true} />
+          ))}
+        </div>
+      ) : (
+        <div className="mx-auto mt-10 text-center text-gray-500">
+          <p>Products will be displayed when the store is connected.</p>
+        </div>
+      )}
     </section>
   );
 }
