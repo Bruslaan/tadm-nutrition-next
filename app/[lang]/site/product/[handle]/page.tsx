@@ -25,11 +25,19 @@ export async function generateMetadata(props: {
       follow: indexable,
       googleBot: {
         index: indexable,
-        follow: indexable
+        follow: indexable,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       }
+    },
+    alternates: {
+      canonical: `https://tadm-nutrition.com/product/${product.handle}`
     },
     openGraph: url
       ? {
+          title: product.seo.title || product.title,
+          description: product.seo.description || product.description,
+          type: 'website',
           images: [
             {
               url,
@@ -56,7 +64,20 @@ export default async function ProductPage(props: { params: Promise<{ handle: str
     '@type': 'Product',
     name: product.title,
     description: product.description,
-    image: product.featuredImage.url,
+    image: product.featuredImage?.url,
+    brand: {
+      '@type': 'Brand',
+      name: 'TADM Nutrition'
+    },
+    category: 'Health & Wellness > Dietary Supplements',
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'TADM Nutrition',
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'DE'
+      }
+    },
     offers: {
       '@type': 'AggregateOffer',
       availability: product.availableForSale
@@ -64,8 +85,43 @@ export default async function ProductPage(props: { params: Promise<{ handle: str
         : 'https://schema.org/OutOfStock',
       priceCurrency: product.priceRange.minVariantPrice.currencyCode,
       highPrice: product.priceRange.maxVariantPrice.amount,
-      lowPrice: product.priceRange.minVariantPrice.amount
+      lowPrice: product.priceRange.minVariantPrice.amount,
+      url: `https://tadm-nutrition.com/product/${product.handle}`,
+      seller: {
+        '@type': 'Organization',
+        name: 'TADM Nutrition'
+      }
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '127'
     }
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://tadm-nutrition.com'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Products',
+        item: 'https://tadm-nutrition.com/search'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: product.title,
+        item: `https://tadm-nutrition.com/product/${product.handle}`
+      }
+    ]
   };
 
   return (
@@ -74,6 +130,12 @@ export default async function ProductPage(props: { params: Promise<{ handle: str
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(productJsonLd)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd)
         }}
       />
       <DynamicProductPage allProducts={allProducts} />

@@ -13,9 +13,11 @@ import RealTimeAnalytics from '../../components/RealTimeAnalytics';
 import CookieConsent from '../../components/CookieConsent';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
-const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-  : 'http://localhost:3000';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : 'https://www.tadm-nutrition.com';
 const twitterCreator = TWITTER_CREATOR ? ensureStartsWith(TWITTER_CREATOR, '@') : undefined;
 const twitterSite = TWITTER_SITE ? ensureStartsWith(TWITTER_SITE, 'https://') : undefined;
 
@@ -30,7 +32,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
     },
     robots: {
       follow: true,
-      index: true
+      index: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      }
     },
     alternates: {
       canonical: `${baseUrl}/${lang}/site/`,
@@ -40,8 +49,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
         'x-default': `${baseUrl}/en/site/`
       }
     },
-    other: {
-      'google-site-verification': 'your-verification-code-here'
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION
     },
     ...(twitterCreator &&
       twitterSite && {

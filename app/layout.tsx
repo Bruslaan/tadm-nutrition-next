@@ -1,9 +1,11 @@
 import { ReactNode } from 'react';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
-const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-  : 'http://localhost:3000';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : 'https://www.tadm-nutrition.com';
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
@@ -13,7 +15,17 @@ export const metadata = {
   },
   robots: {
     follow: true,
-    index: true
+    index: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    }
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION
   }
 };
 

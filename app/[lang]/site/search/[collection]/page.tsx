@@ -17,7 +17,25 @@ export async function generateMetadata(props: {
   return {
     title: collection.seo?.title || collection.title,
     description:
-      collection.seo?.description || collection.description || `${collection.title} products`
+      collection.seo?.description || collection.description || `${collection.title} products`,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      }
+    },
+    alternates: {
+      canonical: `https://tadm-nutrition.com/search/${params.collection}`
+    },
+    openGraph: {
+      title: collection.seo?.title || collection.title,
+      description: collection.seo?.description || collection.description || `${collection.title} products`,
+      type: 'website'
+    }
   };
 }
 

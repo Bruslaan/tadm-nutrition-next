@@ -23,9 +23,9 @@ function getLocale(request) {
 export function middleware(request) {
   const { pathname } = request.nextUrl;
 
-  // Exclude static files, public assets, and Next.js internal routes
+  // Exclude static files, public assets, Next.js internal routes, and SEO files
   const staticFileRegex = /\.(jpg|jpeg|png|gif|svg|ico|css|js|json)$/i;
-  const excludePathRegex = /^\/(_next|static|favicon\.ico)/;
+  const excludePathRegex = /^\/(_next|static|favicon\.ico|sitemap\.xml|robots\.txt|api)/;
 
   if (staticFileRegex.test(pathname) || excludePathRegex.test(pathname)) {
     return NextResponse.next();
@@ -38,6 +38,11 @@ export function middleware(request) {
 
   // If pathname already has a locale, continue without modification
   if (pathnameHasLocale) return NextResponse.next();
+
+  // Prevent redirecting root-level SEO files to localized paths
+  if (pathname === '/sitemap.xml' || pathname === '/robots.txt') {
+    return NextResponse.next();
+  }
 
   // Get the preferred locale, prioritizing URL path over accept-language
   const locale = getLocale(request);
