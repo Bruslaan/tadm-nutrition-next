@@ -14,15 +14,18 @@ import TrustItem from '../../../components/TrustItem';
 
 export const metadata = {
   title: 'TADM Nutrition - Premium Brain Health Supplements | Vegan & Natural',
-  description: 'Discover TADM Nutrition\'s premium brain health supplements. 100% vegan, natural ingredients including algae, cumin, and walnut for optimal cognitive function. Made in Germany.',
-  keywords: 'brain health supplements, nootropics, vegan supplements, cognitive enhancement, natural brain nutrition, algae supplements, cumin extract, walnut oil, German quality supplements',
+  description:
+    "Discover TADM Nutrition's premium brain health supplements. 100% vegan, natural ingredients including algae, cumin, and walnut for optimal cognitive function. Made in Germany.",
+  keywords:
+    'brain health supplements, nootropics, vegan supplements, cognitive enhancement, natural brain nutrition, algae supplements, cumin extract, walnut oil, German quality supplements',
   openGraph: {
     type: 'website',
     title: 'TADM Nutrition - Premium Brain Health Supplements',
-    description: 'Premium vegan brain health supplements made in Germany. Natural ingredients for optimal cognitive function.',
+    description:
+      'Premium vegan brain health supplements made in Germany. Natural ingredients for optimal cognitive function.',
     images: [
       {
-        url: '/static/hero-img.png',
+        url: '/static/combo.jpg',
         width: 1200,
         height: 630,
         alt: 'TADM Nutrition Premium Brain Health Supplements'
@@ -32,8 +35,8 @@ export const metadata = {
   alternates: {
     canonical: 'https://tadm-nutrition.com',
     languages: {
-      'en': 'https://tadm-nutrition.com/en',
-      'de': 'https://tadm-nutrition.com/de'
+      en: 'https://tadm-nutrition.com/en',
+      de: 'https://tadm-nutrition.com/de'
     }
   }
 };
@@ -41,23 +44,21 @@ export const metadata = {
 export default async function HomePage({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) {
   const { lang } = await params;
   const dict = (await getDictionary(lang)) ?? 'en';
-  
+
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'TADM Nutrition',
     url: 'https://tadm-nutrition.com',
     logo: 'https://tadm-nutrition.com/static/tadm-logo.png',
-    description: 'Premium vegan brain health supplements made in Germany with natural ingredients for optimal cognitive function.',
+    description:
+      'Premium vegan brain health supplements made in Germany with natural ingredients for optimal cognitive function.',
     foundingDate: '2020',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'DE'
     },
-    sameAs: [
-      'https://www.instagram.com/tadm_nutrition',
-      'https://www.facebook.com/tadmnutrition'
-    ]
+    sameAs: ['https://www.instagram.com/tadm_nutrition', 'https://www.facebook.com/tadmnutrition']
   };
 
   const websiteJsonLd = {
