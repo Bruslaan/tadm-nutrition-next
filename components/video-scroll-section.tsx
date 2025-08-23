@@ -151,10 +151,10 @@ const VideoScrollSection = ({ title, items }: { title: string; items: InsideTadm
   // Optimized card scaling with useTransform
   const cardScale = useTransform(scrollYProgress, [0, 1], [0, 0.2]);
   useTransform(scrollYProgress, (progress) => {
-    if (!requestAnimationFrame) {
+    if (typeof window === 'undefined' || !window.requestAnimationFrame) {
       return;
     }
-    requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
       updateVideoTime(progress);
       cardsRef.current.forEach((card, index) => {
         if (!card) return;
