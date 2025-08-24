@@ -36,7 +36,7 @@ const reviews = [
   },
   {
     name: 'Marc G.',
-    body: 'Ich habe ein Produkt gesucht welches mein Omega 3 bedarf deckt ohne, dass ich zu Fischöl kapseln greifen muss was meist auch geschmacklich schwierig einzunehmen war. Mit den Kapseln von Tadm ist neben dem Omega 3 auch das Omega 3 zu 6 Verhältnis optimal was ich durch meine verbesserte Konzentration auch merke.'
+    body: 'Ich habe ein Produkt gesucht welches mein Omega 3 bedarf deckt ohne, dass ich zu Fischöl kapseln greifen muss was meist auch geschmacklich schwierig einzunehmen war. Mit den Kapseln von tadm ist neben dem Omega 3 auch das Omega 3 zu 6 Verhältnis optimal was ich durch meine verbesserte Konzentration auch merke.'
   },
   {
     name: 'Nadine P.',

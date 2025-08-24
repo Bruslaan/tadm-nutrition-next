@@ -40,7 +40,7 @@ const HeroSection = async ({ title, subtitle }: { title: string; subtitle: strin
         width={2200}
         height={2200}
         style={{ zIndex: '-10' }}
-        alt="TADM Nutrition premium brain health supplements hero background"
+        alt="tadm Nutrition premium brain health supplements hero background"
         className="absolute inset-0 h-full w-full object-cover object-[50%_75%]"
         priority
       />

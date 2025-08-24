@@ -6,8 +6,13 @@ const baseUrl = 'https://www.tadm-nutrition.com';
 export const metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: SITE_NAME || 'TADM Nutrition',
-    template: `%s | ${SITE_NAME || 'TADM Nutrition'}`
+    default: SITE_NAME || 'tadm Nutrition',
+    template: `%s | ${SITE_NAME || 'tadm Nutrition'}`
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico'
   },
   robots: {
     follow: true,
@@ -17,7 +22,7 @@ export const metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
+      'max-snippet': -1
     }
   },
   verification: {

@@ -14,18 +14,18 @@ import TrustItem from '../../../components/TrustItem';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) {
   const { lang } = await params;
-  
+
   return {
-    title: 'TADM Nutrition - Premium Brain Health Supplements | Vegan & Natural',
+    title: 'tadm Nutrition - Premium Brain Health Supplements | Vegan & Natural',
     description:
-      "Discover TADM Nutrition's premium brain health supplements. 100% vegan, natural ingredients including algae, cumin, and walnut for optimal cognitive function. Made in Germany.",
+      "Discover tadm Nutrition's premium brain health supplements. 100% vegan, natural ingredients including algae, cumin, and walnut for optimal cognitive function. Made in Germany.",
     keywords:
       'brain health supplements, nootropics, vegan supplements, cognitive enhancement, natural brain nutrition, algae supplements, cumin extract, walnut oil, German quality supplements',
     openGraph: {
       type: 'website',
       url: `https://tadm-nutrition.com/${lang}/site`,
-      siteName: 'TADM Nutrition',
-      title: 'TADM Nutrition - Premium Brain Health Supplements',
+      siteName: 'tadm Nutrition',
+      title: 'tadm Nutrition - Premium Brain Health Supplements',
       description:
         'Premium vegan brain health supplements made in Germany. Natural ingredients for optimal cognitive function.',
       locale: lang === 'de' ? 'de_DE' : 'en_US',
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
           url: 'https://tadm-nutrition.com/static/combo.jpg',
           width: 1200,
           height: 630,
-          alt: 'TADM Nutrition Premium Brain Health Supplements',
+          alt: 'tadm Nutrition Premium Brain Health Supplements',
           type: 'image/jpeg'
         }
       ]
@@ -43,12 +43,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
       card: 'summary_large_image',
       site: '@tadm_nutrition',
       creator: '@tadm_nutrition',
-      title: 'TADM Nutrition - Premium Brain Health Supplements',
-      description: 'Premium vegan brain health supplements made in Germany. Natural ingredients for optimal cognitive function.',
+      title: 'tadm Nutrition - Premium Brain Health Supplements',
+      description:
+        'Premium vegan brain health supplements made in Germany. Natural ingredients for optimal cognitive function.',
       images: ['https://tadm-nutrition.com/static/combo.jpg']
     },
-    authors: [{ name: 'TADM Nutrition' }],
-    publisher: 'TADM Nutrition',
+    authors: [{ name: 'tadm Nutrition' }],
+    publisher: 'tadm Nutrition',
     robots: {
       index: true,
       follow: true,
@@ -57,8 +58,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
         follow: true,
         'max-video-preview': -1,
         'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
+        'max-snippet': -1
+      }
     },
     alternates: {
       canonical: `https://tadm-nutrition.com/${lang}/site`,
@@ -77,7 +78,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'TADM Nutrition',
+    name: 'tadm Nutrition',
     url: 'https://tadm-nutrition.com',
     logo: 'https://tadm-nutrition.com/static/tadm-logo.png',
     description:
@@ -93,7 +94,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'TADM Nutrition',
+    name: 'tadm Nutrition',
     url: 'https://tadm-nutrition.com',
     description: 'Premium vegan brain health supplements made in Germany',
     inLanguage: [lang],

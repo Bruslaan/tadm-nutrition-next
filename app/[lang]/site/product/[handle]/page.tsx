@@ -27,7 +27,7 @@ export async function generateMetadata(props: {
         index: indexable,
         follow: indexable,
         'max-image-preview': 'large',
-        'max-snippet': -1,
+        'max-snippet': -1
       }
     },
     alternates: {
@@ -67,12 +67,12 @@ export default async function ProductPage(props: { params: Promise<{ handle: str
     image: product.featuredImage?.url,
     brand: {
       '@type': 'Brand',
-      name: 'TADM Nutrition'
+      name: 'tadm Nutrition'
     },
     category: 'Health & Wellness > Dietary Supplements',
     manufacturer: {
       '@type': 'Organization',
-      name: 'TADM Nutrition',
+      name: 'tadm Nutrition',
       address: {
         '@type': 'PostalAddress',
         addressCountry: 'DE'
@@ -89,7 +89,7 @@ export default async function ProductPage(props: { params: Promise<{ handle: str
       url: `https://tadm-nutrition.com/product/${product.handle}`,
       seller: {
         '@type': 'Organization',
-        name: 'TADM Nutrition'
+        name: 'tadm Nutrition'
       }
     },
     aggregateRating: {
