@@ -131,7 +131,7 @@
   },
   "textReveal": "Entfalte dein volles Potenzial und erreiche maximale mentale Leistungsfähigkeit",
   "products": {
-    "title": "Bestelle dein tadm Brain"
+    "title": "Bestelle dein tadm Brain und entfalte dein volles Potential"
   },
   "insideTadm": {
     "title": "Inside tadm",
@@ -231,6 +231,13 @@
         "designation": "(BJJ & Judo Schwarzgurt – IBJJF- & AJP-Weltmeisterschafts-Medaillengewinner)",
         "quote": "Seit über einem Jahrzehnt stehe ich an der Spitze des Brazilian Jiu-Jitsu in Finnland und trete erfolgreich gegen die stärksten Kämpfer in Europa und weltweit an. In diesem Sport zählen nicht nur Kraft und Technik – jede Bewegung muss präzise und strategisch sein. Wie beim Schach entscheidet vorausschauendes Handeln über Sieg oder Niederlage.\n\nGerade deshalb ist tadm Brain ein fester Bestandteil meiner Routine. Die essenziellen Nährstoffe unterstützen mein Gehirn und Immunsystem, halten mich fokussiert, widerstandsfähig und bereit, jederzeit auf höchstem Niveau zu performen. In einem Sport, in dem Millisekunden den Unterschied machen, ist diese Unterstützung unverzichtbar.\n\nEgal, wo ich trainiere oder kämpfe — tadm Brain ist immer dabei.",
         "src": "/static/marko.webp"
+      },
+
+      {
+        "name": "Rustem Akishbekov",
+        "designation": "Gründer von Robo Wunderkind, ausgezeichnet als Forbes 30 Under 30",
+        "quote": "Viele glauben, eine erfolgreiche Firma zu gründen bedeutet, einmal eine brillante Idee zu haben und Kapital aufzutreiben. In Wahrheit sind es endlose Arbeitstage, kurze Nächte und konsequenter Fokus, während andere an dir zweifeln. Mit Robo Wunderkind habe ich etwas aufgebaut, das heute in über 50 Ländern genutzt wird. Um Tag für Tag meinen Fokus zu behalten, setze ich auf tadm Brain. Es gibt mir die Klarheit, Energie und Ausdauer, die ich brauche, um dauerhaft auf höchstem Niveau zu performen. Für mich ist es mehr als ein Supplement, es ist ein fester Bestandteil meiner täglichen Routine.",
+        "src": "/static/rustem.jpeg"
       },
       {
         "name": "Dr. med. Emil Noschajew",
