@@ -99,7 +99,7 @@ export function MarqueeDemo({ title }: { title: string }) {
         </h2>
       </div>
       <div className="relative w-full">
-        <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-scroll">
+        <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-hidden">
           <div className="flex flex-col items-center justify-center gap-4 py-7">
             <div className="animate-carousel flex gap-4">
               {firstRowRepeat.map((review, index) => (
