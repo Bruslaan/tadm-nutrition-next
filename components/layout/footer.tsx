@@ -1,8 +1,7 @@
-import Link from 'next/link';
-
 import FooterMenu from 'components/layout/footer-menu';
 import LogoSquare from 'components/logo-square';
 import { getMenu } from 'lib/shopify';
+import { Menu } from 'lib/shopify/types';
 import { Suspense } from 'react';
 
 const { COMPANY_NAME, SITE_NAME } = process.env;
@@ -12,6 +11,25 @@ export default async function Footer() {
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
   const skeleton = 'w-full h-6 animate-pulse rounded bg-neutral-200 dark:bg-neutral-700';
   const menu = await getMenu('next-js-frontend-footer-menu');
+  const mockedMenu: Menu[] = [
+    { path: '/', title: 'Home' },
+    {
+      path: '/#feature',
+      title: 'Inside the tadm'
+    },
+    // {
+    //   path: '/nature',
+    //   title: 'Nature'
+    // },
+    {
+      path: '/#faq',
+      title: 'Faq'
+    },
+    {
+      path: 'https://blog.tadm-nutrition.com/de/blog',
+      title: 'Knowledge Hub'
+    }
+  ];
   const copyrightName = COMPANY_NAME || SITE_NAME || '';
 
   console.log('Footer menu', menu);
@@ -35,7 +53,7 @@ export default async function Footer() {
             </div>
           }
         >
-          <FooterMenu menu={menu} />
+          <FooterMenu menu={[...mockedMenu, ...menu]} />
         </Suspense>
         {/* <div className="md:ml-auto">
           <a
@@ -60,7 +78,7 @@ export default async function Footer() {
             <a href="https://github.com/vercel/commerce">View the source</a>
           </p> */}
           <p className="md:ml-auto">
-            <a href="https://vercel.com" className="text-black dark:text-white">
+            <a href="https://www.tadm-nutrition.com/" className="text-black dark:text-white">
               Created by tadm Nutrition Gmbh
             </a>
           </p>

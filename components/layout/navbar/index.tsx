@@ -3,11 +3,12 @@ import LogoSquare from 'components/logo-square';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import MobileMenu from './mobile-menu';
 import LanguageSwitcher from '../../LanguageSwitcher';
+import MobileMenu from './mobile-menu';
 
 export async function Navbar() {
   const mockedMenu = [
+    { path: '/', title: 'Home' },
     {
       path: '/#feature',
       title: 'Inside the tadm'
