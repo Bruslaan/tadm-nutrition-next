@@ -1,16 +1,17 @@
+import ExpertsCarusell, { Testimonial } from '@/components/ui/experts-carusell';
+import Image from 'next/image';
+import TrustItem from '../../../components/TrustItem';
+import CallToActionBanner from '../../../components/call-to-action-banner';
 import FaqPage from '../../../components/faq-page';
 import FeatureSection, { FeatureSection2 } from '../../../components/feature-section';
 import { ThreeItemGrid } from '../../../components/grid/three-items';
 import HeroSection from '../../../components/hero-section';
 import Footer from '../../../components/layout/footer';
+import MixHighlightSection from '../../../components/mix-highlight-section';
 import { MarqueeDemo } from '../../../components/testimonals';
 import { TextRevealDemo } from '../../../components/text-reveal';
 import VideoScrollSection, { InsideTadm } from '../../../components/video-scroll-section';
-import ExpertsCarusell, { Testimonial, TestimonialGrid } from '@/components/ui/experts-carusell';
 import { getDictionary } from './dictionaries';
-import CallToActionBanner from '../../../components/call-to-action-banner';
-import Image from 'next/image';
-import TrustItem from '../../../components/TrustItem';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) {
   const { lang } = await params;
@@ -169,6 +170,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
         imageUrl="/static/Hand.jpg"
       />
       <VideoScrollSection title={dict.insideTadm.title} items={dict.insideTadm as InsideTadm} />
+      <MixHighlightSection
+        title={dict.mix.title}
+        description={dict.mix.items[0]?.content || ''}
+        linkText={dict.mix.linkTitle}
+        linkHref={`/${lang}/site/mix`}
+        lang={lang}
+      />
+
+      <br />
+      <br />
       <FeatureSection2
         title={dict.facility.title}
         accordionContent={dict.facility.list}
