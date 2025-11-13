@@ -36,7 +36,7 @@ export default function FooterMenu({ menu }: { menu: Menu[] }) {
 
   return (
     <nav className="w-full uppercase">
-      <ul className="mt-5 flex w-full gap-3">
+      <ul className="mt-5 flex w-full flex-wrap gap-2 sm:gap-3 sm:max-w-sm">
         {menu.map((item: Menu) => {
           return <FooterMenuItem key={item.title} item={item} />;
         })}

@@ -16,6 +16,13 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
 
+  const ingredientsMenu = [
+    { path: '/algae', title: 'Algae Oil' },
+    { path: '/cannabis', title: 'Hemp Oil' },
+    { path: '/cumin', title: 'Black Cumin' },
+    { path: '/walnut', title: 'Walnut Oil' }
+  ];
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -88,6 +95,19 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                         </Link>
                       </li>
                     ))}
+
+                    {/* Ingredients Menu Items */}
+                    {ingredientsMenu.map((item) => (
+                      <li
+                        className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"
+                        key={item.title}
+                      >
+                        <Link href={item.path} prefetch={true} onClick={closeMobileMenu}>
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))}
+
                     <li>
                       <LanguageSwitcher />
                     </li>

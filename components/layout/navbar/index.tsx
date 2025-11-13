@@ -1,12 +1,16 @@
+'use client';
+
 import CartModal from 'components/cart/modal';
 import LogoSquare from 'components/logo-square';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import LanguageSwitcher from '../../LanguageSwitcher';
 import MobileMenu from './mobile-menu';
 
-export async function Navbar() {
+export function Navbar() {
+  const [isIngredientsOpen, setIsIngredientsOpen] = useState(false);
+
   const mockedMenu = [
     { path: '/', title: 'Home' },
     {
@@ -25,6 +29,13 @@ export async function Navbar() {
       path: 'https://blog.tadm-nutrition.com/de/blog',
       title: 'Knowledge Hub'
     }
+  ];
+
+  const ingredientsMenu = [
+    { path: '/algae', title: 'Algae Oil' },
+    { path: '/cannabis', title: 'Hemp Oil' },
+    { path: '/cumin', title: 'Black Cumin' },
+    { path: '/walnut', title: 'Walnut Oil' }
   ];
 
   return (
@@ -53,6 +64,37 @@ export async function Navbar() {
                 </Link>
               </li>
             ))}
+
+            {/* Ingredients Dropdown */}
+            <li
+              className="relative"
+              onMouseEnter={() => setIsIngredientsOpen(true)}
+              onMouseLeave={() => setIsIngredientsOpen(false)}
+            >
+              <button className="font-semibold text-black uppercase underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300">
+                Ingredients
+              </button>
+
+              {isIngredientsOpen && (
+                <div className="absolute top-full left-0 pt-2">
+                  <div className="w-48 bg-white shadow-lg rounded-md overflow-hidden dark:bg-neutral-900">
+                    <ul className="py-2">
+                      {ingredientsMenu.map((item) => (
+                        <li key={item.title}>
+                          <Link
+                            href={item.path}
+                            className="block px-4 py-2 text-sm text-black hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-800"
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </li>
+
             <li>
               <LanguageSwitcher />
             </li>
