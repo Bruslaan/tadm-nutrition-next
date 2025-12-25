@@ -15,6 +15,7 @@ export function GridTileImage({
     currencyCode: string;
     position?: 'bottom' | 'center';
     description?: string;
+    oldPrice?: number;
   };
 } & React.ComponentProps<typeof Image>) {
   return (
@@ -47,7 +48,14 @@ export function GridTileImage({
             <p className="text-center text-sm">{label.description}</p>
           </div>
 
-          <div className="absolute right-4 bottom-8 inline-flex transform">
+          <div className="absolute right-4 bottom-8 inline-flex transform flex-col items-end gap-1">
+            {label.oldPrice && (
+              <div className="relative flex items-center rounded-full bg-red-500 px-3 py-0.5 text-white shadow-md">
+                <span className="text-sm line-through">
+                  {label.oldPrice} {label.currencyCode}
+                </span>
+              </div>
+            )}
             <div className="relative flex items-center rounded-full bg-white px-3 py-1 font-bold text-gray-900 shadow-md">
               <div className="absolute -left-2 rounded-full bg-white p-1">
                 <div className="h-2 w-2 rounded-full bg-black"></div>

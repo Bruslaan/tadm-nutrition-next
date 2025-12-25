@@ -6,11 +6,13 @@ import Link from 'next/link';
 function ThreeItemGridItem({
   item,
   size,
-  priority
+  priority,
+  oldPrice
 }: {
   item: Product;
   size: 'full' | 'half';
   priority?: boolean;
+  oldPrice?: number;
 }) {
   return (
     <div
@@ -34,7 +36,8 @@ function ThreeItemGridItem({
             title: item.title as string,
             amount: item.priceRange.maxVariantPrice.amount,
             currencyCode: item.priceRange.maxVariantPrice.currencyCode,
-            description: item.description
+            description: item.description,
+            oldPrice
           }}
         />
       </Link>
@@ -44,16 +47,21 @@ function ThreeItemGridItem({
 
 export async function ThreeItemGrid({ title }: { title: string }) {
   let homepageItems: Product[] = [];
-  
+
   try {
     // Collections that start with `hidden-*` are hidden from the search page.
     homepageItems = await getCollectionProducts({
       collection: 'tadm-products'
     });
+
+    console.log('Fetched homepage products:', homepageItems);
   } catch (error) {
     console.warn('Failed to fetch homepage products:', error);
     // Return empty grid or fallback content when Shopify API is unavailable
   }
+
+  // Hardcoded old prices for special offer display
+  const oldPrices = [39, 99, 74];
 
   return (
     <section className="relative mx-auto h-full min-h-[80vh] max-w-7xl overflow-hidden p-4">
@@ -64,7 +72,13 @@ export async function ThreeItemGrid({ title }: { title: string }) {
       {homepageItems.length > 0 ? (
         <div className="mx-auto mt-10 grid gap-4 pb-4 md:grid-cols-6">
           {homepageItems.map((item, index) => (
-            <ThreeItemGridItem key={index} size="half" item={item} priority={true} />
+            <ThreeItemGridItem
+              key={index}
+              size="half"
+              item={item}
+              priority={true}
+              oldPrice={oldPrices[index]}
+            />
           ))}
         </div>
       ) : (
