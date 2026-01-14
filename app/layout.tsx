@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Script from 'next/script';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = 'https://www.tadm-nutrition.com';
@@ -39,6 +40,12 @@ export default function Layout({ children }: { children: ReactNode }) {
       </head>
       <body className="text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
         {children}
+        <Script
+          defer
+          src="https://analyticsvibe-production.up.railway.app/tracker.js"
+          data-website-id="3c2515d0-6388-4428-b7f3-22c58db8c563"
+          data-domain="https://www.tadm-nutrition.com/"
+        />
       </body>
     </html>
   );
