@@ -231,9 +231,17 @@ function CheckoutButton() {
 
   const text = dictionary.toCheckout as string;
 
+  const handleClick = () => {
+    // Manually trigger analytics before form submission/navigation
+    if (typeof window !== 'undefined' && (window as any).analytics?.track) {
+      (window as any).analytics.track('begin_checkout');
+    }
+  };
+
   return (
     <button
       data-goal="begin_checkout"
+      onClick={handleClick}
       className="relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white outline-hidden"
       type="submit"
       disabled={pending}
