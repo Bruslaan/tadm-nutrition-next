@@ -65,7 +65,7 @@ export default function CartModal() {
 
   return (
     <>
-      <button aria-label="Open cart" onClick={openCart}>
+      <button data-goal="open_cart" aria-label="Open cart" onClick={openCart}>
         <OpenCart quantity={cart?.totalQuantity} />
       </button>
       <Transition show={isOpen}>
@@ -233,6 +233,7 @@ function CheckoutButton() {
 
   return (
     <button
+      data-goal="begin_checkout"
       className="relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white outline-hidden"
       type="submit"
       disabled={pending}
