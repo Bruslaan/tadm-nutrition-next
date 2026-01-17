@@ -17,7 +17,7 @@ const baseUrl = 'https://www.tadm-nutrition.com';
 const twitterCreator = TWITTER_CREATOR ? ensureStartsWith(TWITTER_CREATOR, '@') : undefined;
 const twitterSite = TWITTER_SITE ? ensureStartsWith(TWITTER_SITE, 'https://') : undefined;
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   
   return {
@@ -79,14 +79,15 @@ export default async function Layout({
   params
 }: {
   children: ReactNode;
-  params: Promise<{ lang: 'en' | 'de' }>;
+  params: Promise<{ lang: string }>;
 }) {
   const cartId = (await cookies()).get('cartId')?.value;
   // Don't await the fetch, pass the Promise to the context provider
   const cart = getCart(cartId);
 
-  const { lang } = await params;
-  const dict = await getDictionary(lang ?? 'en');
+  const { lang: langParam } = await params;
+  const lang = (langParam === 'en' || langParam === 'de' ? langParam : 'en') as 'en' | 'de';
+  const dict = await getDictionary(lang);
 
   return (
     <>

@@ -449,9 +449,9 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   //   return NextResponse.json({ status: 200 });
   // }
 
-  revalidateTag(TAGS.collections);
+  revalidateTag(TAGS.collections, 'max');
 
-  revalidateTag(TAGS.products);
+  revalidateTag(TAGS.products, 'max');
 
   return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
 }

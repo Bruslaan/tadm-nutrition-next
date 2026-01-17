@@ -40,7 +40,7 @@ export async function addItem(
 
   try {
     await addToCart(cartId, [{ merchandiseId: selectedVariantId, quantity: 1 }]);
-    revalidateTag(TAGS.cart);
+    revalidateTag(TAGS.cart, 'max');
     return { success: true, cartId };
   } catch (e) {
     return { success: false, message: 'Error adding item to cart' };
@@ -65,7 +65,7 @@ export async function removeItem(prevState: any, merchandiseId: string) {
 
     if (lineItem && lineItem.id) {
       await removeFromCart(cartId, [lineItem.id]);
-      revalidateTag(TAGS.cart);
+      revalidateTag(TAGS.cart, 'max');
     } else {
       return 'Item not found in cart';
     }
@@ -115,24 +115,24 @@ export async function updateItemQuantity(
       await addToCart(cartId, [{ merchandiseId, quantity }]);
     }
 
-    revalidateTag(TAGS.cart);
+    revalidateTag(TAGS.cart, 'max');
   } catch (e) {
     console.error(e);
     return 'Error updating item quantity';
   }
 }
 
-export async function redirectToCheckout() {
-  let cartId = (await cookies()).get('cartId')?.value;
+export async function redirectToCheckout(): Promise<void> {
+  const cartId = (await cookies()).get('cartId')?.value;
 
   if (!cartId) {
-    return 'Missing cart ID';
+    throw new Error('Missing cart ID');
   }
 
-  let cart = await getCart(cartId);
+  const cart = await getCart(cartId);
 
   if (!cart) {
-    return 'Error fetching cart';
+    throw new Error('Error fetching cart');
   }
 
   redirect(cart.checkoutUrl);
