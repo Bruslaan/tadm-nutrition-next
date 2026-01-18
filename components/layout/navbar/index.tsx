@@ -4,12 +4,22 @@ import CartModal from 'components/cart/modal';
 import LogoSquare from 'components/logo-square';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import LanguageSwitcher from '../../LanguageSwitcher';
 import MobileMenu from './mobile-menu';
 
 export function Navbar() {
   const [isIngredientsOpen, setIsIngredientsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const mockedMenu = [
     { path: '/', title: 'Home' },
@@ -39,8 +49,12 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="absolute top-0 right-0 left-0 z-10">
-      <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
+    <nav
+      className={`top-0 right-0 left-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'fixed bg-white/10 shadow-md backdrop-blur-md dark:bg-black/90' : 'absolute'
+      }`}
+    >
+      <div className={`mx-auto flex max-w-7xl items-center justify-between px-4 ${isScrolled ? 'py-4' : 'py-1'}`}>
         <div className="block flex-none md:hidden">
           <Suspense fallback={null}>
             <MobileMenu menu={mockedMenu} />
@@ -48,7 +62,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:block">
-          <LogoSquare />
+          <LogoSquare size={isScrolled ? 'md' : undefined} />
         </div>
 
         {mockedMenu.length ? (
@@ -77,7 +91,7 @@ export function Navbar() {
 
               {isIngredientsOpen && (
                 <div className="absolute top-full left-0 pt-2">
-                  <div className="w-48 bg-white shadow-lg rounded-md overflow-hidden dark:bg-neutral-900">
+                  <div className="w-48 overflow-hidden rounded-md bg-white shadow-lg dark:bg-neutral-900">
                     <ul className="py-2">
                       {ingredientsMenu.map((item) => (
                         <li key={item.title}>
