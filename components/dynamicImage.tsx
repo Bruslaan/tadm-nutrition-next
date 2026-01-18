@@ -1,15 +1,16 @@
 import Image from 'next/image';
 import { Image as ImageType } from 'lib/shopify/types';
+
 export function DynamicImage({ image, customImage }: { image: ImageType; customImage?: string }) {
   return (
     <Image
       className="h-full w-full object-cover"
-      height={2000}
-      width={20000}
-      alt={image?.altText as string}
+      height={800}
+      width={1200}
+      alt={image?.altText || 'Product image'}
       src={customImage ? `/static/${customImage.split(' ')[0]}.jpg` : (image?.url as string)}
-      priority={true}
-      blurDataURL={image?.url as string}
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      loading="lazy"
     />
   );
 }

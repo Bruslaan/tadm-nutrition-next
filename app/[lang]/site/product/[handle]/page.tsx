@@ -6,11 +6,14 @@ import { HIDDEN_PRODUCT_TAG } from '../../../../../lib/constants';
 import { getProduct, getProductRecommendations } from '../../../../../lib/shopify';
 import DynamicProductPage from '../../../../../components/dynamicProductPage';
 
+const baseUrl = 'https://www.tadm-nutrition.com';
+
 export async function generateMetadata(props: {
-  params: Promise<{ handle: string }>;
+  params: Promise<{ handle: string; lang: 'en' | 'de' }>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const product = await getProduct(params.handle);
+  const { handle, lang } = params;
+  const product = await getProduct(handle);
 
   if (!product) return notFound();
 
@@ -31,13 +34,20 @@ export async function generateMetadata(props: {
       }
     },
     alternates: {
-      canonical: `https://tadm-nutrition.com/product/${product.handle}`
+      canonical: `${baseUrl}/${lang}/site/product/${handle}`,
+      languages: {
+        en: `${baseUrl}/en/site/product/${handle}`,
+        de: `${baseUrl}/de/site/product/${handle}`,
+        'x-default': `${baseUrl}/en/site/product/${handle}`
+      }
     },
     openGraph: url
       ? {
           title: product.seo.title || product.title,
           description: product.seo.description || product.description,
           type: 'website',
+          url: `${baseUrl}/${lang}/site/product/${handle}`,
+          siteName: 'tadm Nutrition',
           images: [
             {
               url,
@@ -51,9 +61,12 @@ export async function generateMetadata(props: {
   };
 }
 
-export default async function ProductPage(props: { params: Promise<{ handle: string }> }) {
+export default async function ProductPage(props: {
+  params: Promise<{ handle: string; lang: 'en' | 'de' }>;
+}) {
   const params = await props.params;
-  const product = await getProduct(params.handle);
+  const { handle, lang } = params;
+  const product = await getProduct(handle);
   if (!product) return notFound();
 
   const relatedProducts = await getProductRecommendations(product.id);
@@ -86,16 +99,11 @@ export default async function ProductPage(props: { params: Promise<{ handle: str
       priceCurrency: product.priceRange.minVariantPrice.currencyCode,
       highPrice: product.priceRange.maxVariantPrice.amount,
       lowPrice: product.priceRange.minVariantPrice.amount,
-      url: `https://tadm-nutrition.com/product/${product.handle}`,
+      url: `${baseUrl}/${lang}/site/product/${handle}`,
       seller: {
         '@type': 'Organization',
         name: 'tadm Nutrition'
       }
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '127'
     }
   };
 
@@ -107,19 +115,19 @@ export default async function ProductPage(props: { params: Promise<{ handle: str
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://tadm-nutrition.com'
+        item: `${baseUrl}/${lang}/site`
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Products',
-        item: 'https://tadm-nutrition.com/search'
+        item: `${baseUrl}/${lang}/site/search`
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: product.title,
-        item: `https://tadm-nutrition.com/product/${product.handle}`
+        item: `${baseUrl}/${lang}/site/product/${handle}`
       }
     ]
   };

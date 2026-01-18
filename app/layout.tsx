@@ -46,12 +46,6 @@ export default function Layout({ children }: { children: ReactNode }) {
           data-website-id="3c2515d0-6388-4428-b7f3-22c58db8c563"
           data-domain="https://www.tadm-nutrition.com/"
         />
-        <Script
-          defer
-          src="https://datafa.st/js/script.js"
-          data-website-id="dfid_Yd0eaw5ATenwmoix7nSlU"
-          data-domain="www.tadm-nutrition.com"
-        />
       </body>
     </html>
   );

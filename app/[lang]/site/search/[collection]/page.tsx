@@ -6,11 +6,14 @@ import Grid from '../../../../../components/grid';
 import ProductGridItems from '../../../../../components/layout/product-grid-items';
 import { defaultSort, sorting } from '../../../../../lib/constants';
 
+const baseUrl = 'https://www.tadm-nutrition.com';
+
 export async function generateMetadata(props: {
-  params: Promise<{ collection: string }>;
+  params: Promise<{ collection: string; lang: 'en' | 'de' }>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const collection = await getCollection(params.collection);
+  const { collection: collectionHandle, lang } = params;
+  const collection = await getCollection(collectionHandle);
 
   if (!collection) return notFound();
 
@@ -25,16 +28,24 @@ export async function generateMetadata(props: {
         index: true,
         follow: true,
         'max-image-preview': 'large',
-        'max-snippet': -1,
+        'max-snippet': -1
       }
     },
     alternates: {
-      canonical: `https://tadm-nutrition.com/search/${params.collection}`
+      canonical: `${baseUrl}/${lang}/site/search/${collectionHandle}`,
+      languages: {
+        en: `${baseUrl}/en/site/search/${collectionHandle}`,
+        de: `${baseUrl}/de/site/search/${collectionHandle}`,
+        'x-default': `${baseUrl}/en/site/search/${collectionHandle}`
+      }
     },
     openGraph: {
       title: collection.seo?.title || collection.title,
-      description: collection.seo?.description || collection.description || `${collection.title} products`,
-      type: 'website'
+      description:
+        collection.seo?.description || collection.description || `${collection.title} products`,
+      type: 'website',
+      url: `${baseUrl}/${lang}/site/search/${collectionHandle}`,
+      siteName: 'tadm Nutrition'
     }
   };
 }

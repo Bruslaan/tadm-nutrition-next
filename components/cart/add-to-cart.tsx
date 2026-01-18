@@ -8,7 +8,6 @@ import { Product, ProductVariant } from 'lib/shopify/types';
 import { useCart } from './cart-context';
 import { useActionState } from 'react';
 import { useDictionary } from '../../app/DictProvider';
-import { useShopifyAnalytics } from '../../lib/shopify/useShopifyPixel';
 
 function SubmitButton({
   availableForSale,
@@ -66,7 +65,6 @@ export function AddToCart({ product }: { product: Product }) {
   const { addCartItem } = useCart();
   const { state } = useProduct();
   const [message, formAction] = useActionState(addItem, null);
-  const { sendAddToCart, sendCustomEvent } = useShopifyAnalytics();
 
   const variant = variants.find((variant: ProductVariant) =>
     variant.selectedOptions.every((option) => option.value === state[option.name.toLowerCase()])
@@ -78,36 +76,7 @@ export function AddToCart({ product }: { product: Product }) {
   return (
     <form
       action={async () => {
-        // Add to cart locally
-        console.log('Adding to cart:', finalVariant, product);
         addCartItem(finalVariant, product);
-
-        // Track the add to cart event
-        sendCustomEvent('add_to_cart_attempt', {
-          productId: product.id,
-          productTitle: product.title,
-          variantId: selectedVariantId,
-          price: finalVariant?.price?.amount,
-          currency: finalVariant?.price?.currencyCode,
-          timestamp: new Date().toISOString()
-        });
-
-        sendAddToCart({
-          cartId: 'tadm_id',
-          totalValue: parseFloat(finalVariant?.price?.amount || '0'),
-          products: [
-            {
-              productGid: product.id,
-              variantGid: selectedVariantId!,
-              name: product.title,
-              brand: 'TADM',
-              category: 'supplement',
-              price: finalVariant?.price?.amount || '0',
-              quantity: 1
-            }
-          ]
-        });
-
         await actionWithVariant();
       }}
     >
