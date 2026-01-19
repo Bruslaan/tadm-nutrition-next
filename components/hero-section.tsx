@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import FloatingIcon from './floating-icon';
 import Discoverbutton from './Discoverbutton';
+import FloatingIcon from './floating-icon';
 
 const HeroIcon = ({ title, subtitle, icon }: { title: string; subtitle: string; icon: string }) => {
   return (
@@ -33,7 +33,7 @@ const HeroSection = async ({ title, subtitle }: { title: string; subtitle: strin
           {subtitle}
         </p>
       </div>
-      <Discoverbutton href={'#text-reveal'} />
+      <Discoverbutton href={'#products'} />
 
       <Image
         src="/static/herobg.webp"

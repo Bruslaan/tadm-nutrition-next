@@ -64,7 +64,10 @@ export async function ThreeItemGrid({ title }: { title: string }) {
   const oldPrices = [39, 99, 74];
 
   return (
-    <section className="relative mx-auto h-full min-h-[80vh] max-w-7xl overflow-hidden p-4">
+    <section
+      id="products"
+      className="relative mx-auto h-full min-h-[80vh] max-w-7xl overflow-hidden p-4"
+    >
       <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
       <h2 className="mb-4 max-w-2xl text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
         {title}
