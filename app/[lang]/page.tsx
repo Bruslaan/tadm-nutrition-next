@@ -161,12 +161,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
           __html: JSON.stringify(faqJsonLd)
         }}
       />
-      <HeroSection
-        title={dict.hero.title}
-        subtitle={dict.hero.subtitle}
-        ctaText={dict.shopNow}
-        lang={lang}
-      />
+      <HeroSection title={dict.hero.title} subtitle={dict.hero.subtitle} lang={lang} />
 
       {/* Products early - let users see what we sell immediately */}
       <ThreeItemGrid title={dict.products.title} lang={lang} />
