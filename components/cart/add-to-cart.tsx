@@ -47,7 +47,7 @@ function SubmitButton({
   return (
     <button
       data-goal="add_to_cart"
-      plausible-event-name="add_to_cart"
+      plausible-event-name="Cart+Click"
       aria-label="Add to cart"
       className={clsx(buttonClasses, {
         'hover:opacity-90': true
