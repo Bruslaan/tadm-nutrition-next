@@ -180,15 +180,27 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
           </div>
         </div>
       </section>
-      <TextRevealDemo text={dict.textReveal} />
+
+      {/* Products early - let users see what we sell immediately */}
       <ThreeItemGrid title={dict.products.title} lang={lang} />
 
+      {/* Social proof right after products - builds confidence for quick buyers */}
+      <MarqueeDemo title={lang === 'de' ? 'Rezensionen' : 'Reviews'} />
+
+      {/* Benefits/features section */}
       <FeatureSection
         sectionTitle={dict.bulletPoints.title}
         items={dict.bulletPoints.list}
         imageUrl="/static/Hand.jpg"
       />
+
+      {/* Brand storytelling for engaged users */}
+      <TextRevealDemo text={dict.textReveal} />
+
+      {/* Deep product education */}
       <VideoScrollSection title={dict.insideTadm.title} items={dict.insideTadm as InsideTadm} />
+
+      {/* Featured bundle promotion */}
       <MixHighlightSection
         title={dict.mix.title}
         description={dict.mix.items[0]?.content || ''}
@@ -197,19 +209,18 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
         lang={lang}
       />
 
-      <br />
-      <br />
+      {/* Expert testimonials - authority proof */}
+      <ExpertsCarusell
+        title={dict.experts.title}
+        testimonials={dict.experts.list as Testimonial[]}
+      />
+
+      {/* Manufacturing quality - trust in production */}
       <FeatureSection2
         title={dict.facility.title}
         accordionContent={dict.facility.list}
         imageUrl="/static/doctor.png"
       />
-
-      <ExpertsCarusell
-        title={dict.experts.title}
-        testimonials={dict.experts.list as Testimonial[]}
-      />
-      <MarqueeDemo title={'Rezensionen'} />
       <FaqPage title={dict.faq.title} items={dict.faq.list} />
       <CallToActionBanner />
       <Footer />
