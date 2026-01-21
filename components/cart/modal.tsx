@@ -52,7 +52,7 @@ export default function CartModal() {
     }
   }, [isOpen, cart?.totalQuantity, quantityRef]);
 
-  if (cart?.totalQuantity === 0 && !pathname.startsWith('/product')) {
+  if (cart?.totalQuantity === 0 && !pathname.includes('/product')) {
     return (
       <Link
         className="shop_now_button block flex-nowrap rounded-md px-4 py-3 text-nowrap hover:bg-gray-500"
@@ -120,7 +120,7 @@ export default function CartModal() {
                         });
 
                         const merchandiseUrl = createUrl(
-                          `/product/${item.merchandise.product.handle}`,
+                          `/${lang}/product/${item.merchandise.product.handle}`,
                           new URLSearchParams(merchandiseSearchParams)
                         );
 
