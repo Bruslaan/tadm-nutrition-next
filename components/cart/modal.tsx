@@ -8,16 +8,16 @@ import { DEFAULT_OPTION } from 'lib/constants';
 import { createUrl } from 'lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { useFormStatus } from 'react-dom';
+import { useDictionary } from '../../app/DictProvider';
 import { createCartAndSetCookie, redirectToCheckout } from './actions';
 import { useCart } from './cart-context';
 import CloseCart from './close-cart';
 import { DeleteItemButton } from './delete-item-button';
 import { EditItemQuantityButton } from './edit-item-quantity-button';
 import OpenCart from './open-cart';
-import { usePathname } from 'next/navigation';
-import { useDictionary } from '../../app/DictProvider';
 
 type MerchandiseSearchParams = {
   [key: string]: string;
@@ -241,6 +241,7 @@ function CheckoutButton() {
   return (
     <button
       data-goal="begin_checkout"
+      plausible-event-name="begin_checkout"
       onClick={handleClick}
       className="relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white outline-hidden"
       type="submit"

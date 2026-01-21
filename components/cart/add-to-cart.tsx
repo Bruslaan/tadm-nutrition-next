@@ -5,9 +5,9 @@ import clsx from 'clsx';
 import { addItem } from 'components/cart/actions';
 import { useProduct } from 'components/product/product-context';
 import { Product, ProductVariant } from 'lib/shopify/types';
-import { useCart } from './cart-context';
 import { useActionState } from 'react';
 import { useDictionary } from '../../app/DictProvider';
+import { useCart } from './cart-context';
 
 function SubmitButton({
   availableForSale,
@@ -47,6 +47,7 @@ function SubmitButton({
   return (
     <button
       data-goal="add_to_cart"
+      plausible-event-name="add_to_cart"
       aria-label="Add to cart"
       className={clsx(buttonClasses, {
         'hover:opacity-90': true
