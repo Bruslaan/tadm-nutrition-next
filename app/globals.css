@@ -137,3 +137,51 @@ button {
     --radius: 0.5rem;
   }
 }
+
+/* Notion Renderer Styles */
+.notion-page {
+  padding: 0;
+}
+
+.notion-h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.notion-h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.notion-h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.notion-text {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.notion-list {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.notion-list-item {
+  margin-bottom: 0.5rem;
+}
+
+.notion-asset-wrapper {
+  margin: 1.5rem 0;
+}
+
+.notion-image {
+  border-radius: 0.75rem;
+}

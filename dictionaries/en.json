@@ -1,4 +1,12 @@
 {
+  "blog": {
+    "title": "Knowledge Hub",
+    "welcomeTitle": "WELCOME TO OUR KNOWLEDGE HUB",
+    "readFull": "Read Full",
+    "notFound": "Article Not Found",
+    "notFoundMessage": "The article you are looking for does not exist.",
+    "returnToBlog": "Return to Blog"
+  },
   "cartTitle": "Shopping Cart",
   "shopNow": "Shop Now",
   "taxes": "Taxes",

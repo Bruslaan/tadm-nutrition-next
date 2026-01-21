@@ -26,7 +26,7 @@ export default async function Footer() {
       title: 'Faq'
     },
     {
-      path: 'https://blog.tadm-nutrition.com/de/blog',
+      path: '/blog',
       title: 'Knowledge Hub'
     }
   ];

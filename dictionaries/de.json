@@ -1,4 +1,12 @@
 {
+  "blog": {
+    "title": "Knowledge Hub",
+    "welcomeTitle": "WILLKOMMEN IM KNOWLEDGE HUB",
+    "readFull": "Weiterlesen",
+    "notFound": "Artikel nicht gefunden",
+    "notFoundMessage": "Der gesuchte Artikel existiert nicht.",
+    "returnToBlog": "Zurück zum Blog"
+  },
   "cartTitle": "Warenkorb",
   "shopNow": "Jetzt bestellen",
   "addToCart": "In den Warenkorb",
