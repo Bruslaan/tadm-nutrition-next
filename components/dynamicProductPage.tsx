@@ -3,6 +3,7 @@ import { DynamicImage } from './dynamicImage';
 import { ReviewStars } from './reviewStars';
 import { ProductCard } from './productCard';
 import { AddToCart } from './cart/add-to-cart';
+import NutritionFactsSection from './nutrition-facts-section';
 import { Product } from 'lib/shopify/types';
 import { useProduct, useUpdateURL } from './product/product-context';
 import { startTransition } from 'react';
@@ -30,17 +31,17 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
         </div>
 
         {/* Product Info Section */}
-        <div className="flex flex-col">
+        <div className="relative z-0 flex flex-col">
           <h1 className="mb-2 text-3xl font-bold md:text-4xl">
             {(dictionary as any).products.title as string}
           </h1>
           <ReviewStars />
 
-          <div className="mt-4 flex flex-col gap-2 rounded-2xl bg-gray-50 p-3">
+          <div className="mt-6 flex flex-col gap-2">
             {allProducts.map((product) => (
               <button
                 key={product.id}
-                className="w-full"
+                className="w-full text-left"
                 onClick={() => {
                   startTransition(() => {
                     const newState = context.updateProduct(product.id);
@@ -53,11 +54,13 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
             ))}
           </div>
 
-          <div className="mt-4 w-full">
+          <div className="mt-6 w-full">
             <AddToCart product={currentProduct as Product} />
           </div>
         </div>
       </div>
+
+      <NutritionFactsSection />
     </div>
   );
 }

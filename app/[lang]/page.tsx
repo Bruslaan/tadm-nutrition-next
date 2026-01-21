@@ -166,8 +166,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
       {/* Products early - let users see what we sell immediately */}
       <ThreeItemGrid title={dict.products.title} lang={lang} />
 
-      {/* Social proof right after products - builds confidence for quick buyers */}
-      <MarqueeDemo title={lang === 'de' ? 'Rezensionen' : 'Reviews'} />
+      {/* Expert testimonials - authority proof */}
+      <ExpertsCarusell
+        title={dict.experts.title}
+        testimonials={dict.experts.list as Testimonial[]}
+      />
 
       {/* Comparison section - why tadm vs alternatives */}
       <ComparisonSection />
@@ -197,11 +200,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
         lang={lang}
       />
 
-      {/* Expert testimonials - authority proof */}
-      <ExpertsCarusell
-        title={dict.experts.title}
-        testimonials={dict.experts.list as Testimonial[]}
-      />
+      {/* Social proof right after products - builds confidence for quick buyers */}
+      <MarqueeDemo title={lang === 'de' ? 'Rezensionen' : 'Reviews'} />
 
       {/* Manufacturing quality - trust in production */}
       <FeatureSection2
