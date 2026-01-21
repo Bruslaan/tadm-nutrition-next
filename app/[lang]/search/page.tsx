@@ -1,12 +1,47 @@
+import { Metadata } from 'next';
 import Grid from '../../../components/grid';
 import ProductGridItems from '../../../components/layout/product-grid-items';
 import { defaultSort, sorting } from '../../../lib/constants';
 import { getProducts } from '../../../lib/shopify';
 
-export const metadata = {
-  title: 'Search',
-  description: 'Search for products in the store.'
-};
+const baseUrl = 'https://www.tadm-nutrition.com';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: 'en' | 'de' }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+
+  const title = lang === 'de' ? 'Suche' : 'Search';
+  const description =
+    lang === 'de'
+      ? 'Durchsuchen Sie unsere Produkte für Gehirngesundheit und Nahrungsergänzungsmittel'
+      : 'Search our brain health products and supplements';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${baseUrl}/${lang}/search`,
+      languages: {
+        en: `${baseUrl}/en/search`,
+        de: `${baseUrl}/de/search`,
+        'x-default': `${baseUrl}/de/search`
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${baseUrl}/${lang}/search`,
+      type: 'website'
+    },
+    robots: {
+      index: false,
+      follow: true
+    }
+  };
+}
 
 export default async function SearchPage(props: {
   params: Promise<{ lang: string }>;

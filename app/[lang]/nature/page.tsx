@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import CallToActionBanner from '../../../components/call-to-action-banner';
 import ImageLeftSection from '../../../components/feature-section-image-left';
 import Footer from '../../../components/layout/footer';
@@ -5,10 +6,55 @@ import NatureHeroSection from './nature-hero-section';
 import RecycleSection from './recycle-section';
 import TableSection from './table-section';
 
-export const metadata = {
-  title: 'Nature Page',
-  description: 'Page where we show our recycling'
-};
+const baseUrl = 'https://www.tadm-nutrition.com';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: 'en' | 'de' }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+
+  const title =
+    lang === 'de'
+      ? 'Nachhaltigkeit & Umwelt | tadm Nutrition'
+      : 'Sustainability & Environment | tadm Nutrition';
+  const description =
+    lang === 'de'
+      ? 'Erfahren Sie mehr über unsere nachhaltigen Produktionsprozesse, Recycling-Initiativen und unser Engagement für die Umwelt.'
+      : 'Learn about our sustainable production processes, recycling initiatives, and commitment to the environment.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${baseUrl}/${lang}/nature`,
+      languages: {
+        en: `${baseUrl}/en/nature`,
+        de: `${baseUrl}/de/nature`,
+        'x-default': `${baseUrl}/de/nature`
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${baseUrl}/${lang}/nature`,
+      type: 'website',
+      images: [
+        {
+          url: `${baseUrl}/static/footprint.png`,
+          width: 1200,
+          height: 630,
+          alt: lang === 'de' ? 'Nachhaltigkeit bei tadm' : 'Sustainability at tadm'
+        }
+      ]
+    },
+    robots: {
+      index: true,
+      follow: true
+    }
+  };
+}
 
 const NaturePage = () => {
   return (

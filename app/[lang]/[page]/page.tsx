@@ -4,21 +4,42 @@ import Prose from '../../../components/prose';
 import { getPage } from '../../../lib/shopify';
 import { notFound } from 'next/navigation';
 
+const baseUrl = 'https://www.tadm-nutrition.com';
+
 export async function generateMetadata(props: {
-  params: Promise<{ page: string }>;
+  params: Promise<{ lang: 'en' | 'de'; page: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const page = await getPage(params.page);
+  const { lang, page: pageHandle } = params;
+  const page = await getPage(pageHandle);
 
   if (!page) return notFound();
 
+  const title = page.seo?.title || page.title;
+  const description = page.seo?.description || page.bodySummary;
+
   return {
-    title: page.seo?.title || page.title,
-    description: page.seo?.description || page.bodySummary,
+    title,
+    description,
+    alternates: {
+      canonical: `${baseUrl}/${lang}/${pageHandle}`,
+      languages: {
+        en: `${baseUrl}/en/${pageHandle}`,
+        de: `${baseUrl}/de/${pageHandle}`,
+        'x-default': `${baseUrl}/de/${pageHandle}`
+      }
+    },
     openGraph: {
+      title,
+      description,
+      url: `${baseUrl}/${lang}/${pageHandle}`,
       publishedTime: page.createdAt,
       modifiedTime: page.updatedAt,
       type: 'article'
+    },
+    robots: {
+      index: true,
+      follow: true
     }
   };
 }
