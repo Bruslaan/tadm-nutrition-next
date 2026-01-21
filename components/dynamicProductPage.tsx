@@ -30,13 +30,13 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
         </div>
 
         {/* Product Info Section */}
-        <div className="flex min-h-[400px] flex-col">
-          <h1 className="mb-3 text-3xl font-bold md:text-4xl">
+        <div className="flex flex-col">
+          <h1 className="mb-2 text-3xl font-bold md:text-4xl">
             {(dictionary as any).products.title as string}
           </h1>
           <ReviewStars />
 
-          <div className="mt-8 flex flex-col gap-3">
+          <div className="mt-4 flex flex-col gap-2 rounded-2xl bg-gray-50 p-3">
             {allProducts.map((product) => (
               <button
                 key={product.id}
@@ -51,10 +51,10 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
                 <ProductCard selected={currentProduct?.id === product.id} product={product} />
               </button>
             ))}
+          </div>
 
-            <div className="mt-6 w-full">
-              <AddToCart product={currentProduct as Product} />
-            </div>
+          <div className="mt-4 w-full">
+            <AddToCart product={currentProduct as Product} />
           </div>
         </div>
       </div>
