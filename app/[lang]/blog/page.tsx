@@ -3,6 +3,10 @@ import { notionClient, getBlogDatabaseId } from '@/lib/notion';
 import { isArticle } from '@/lib/notion/types';
 import { BlogCard } from '@/components/blog/BlogCard';
 
+// Force static generation
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
+
 const baseUrl = 'https://www.tadm-nutrition.com';
 
 export async function generateMetadata({
