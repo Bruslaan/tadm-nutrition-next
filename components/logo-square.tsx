@@ -8,7 +8,7 @@ export default function LogoSquare({ size }: { size?: 'sm' | 'md' | undefined })
   const { lang } = useDictionary();
   return (
     <Link
-      href={`/${lang}/site`}
+      href={`/${lang}`}
       prefetch={true}
       className="flex w-full items-center justify-center md:ml-0 md:w-auto"
     >

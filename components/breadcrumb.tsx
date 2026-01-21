@@ -21,7 +21,7 @@ export default function Breadcrumb({ items, lang }: BreadcrumbProps) {
         '@type': 'ListItem',
         position: 1,
         name: homeText,
-        item: `/${lang}/site/`
+        item: `/${lang}/`
       },
       ...items.map((item, index) => ({
         '@type': 'ListItem',
@@ -44,7 +44,7 @@ export default function Breadcrumb({ items, lang }: BreadcrumbProps) {
         <ol className="flex items-center space-x-2">
           <li>
             <Link
-              href={`/${lang}/site/`}
+              href={`/${lang}/`}
               className="text-gray-500 hover:text-gray-700"
             >
               {homeText}

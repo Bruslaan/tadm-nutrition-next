@@ -26,9 +26,9 @@ const HeroSection = async ({ title, subtitle }: { title: string; subtitle: strin
   return (
     <section className="relative flex min-h-screen flex-col overflow-hidden pt-10 dark:bg-gray-900">
       <div className="mx-auto mt-12 flex h-[35vh] flex-col items-center justify-center p-5">
-        <h2 className="mb-4 text-center text-4xl leading-none font-bold tracking-tight text-gray-900 md:text-6xl dark:text-white">
+        <h1 className="mb-4 text-center text-4xl leading-none font-bold tracking-tight text-gray-900 md:text-6xl dark:text-white">
           {title}
-        </h2>
+        </h1>
         <p className="text-md mb-6 text-center font-light text-gray-800 md:text-xl lg:mb-8 dark:text-gray-400">
           {subtitle}
         </p>

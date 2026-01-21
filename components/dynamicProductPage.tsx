@@ -25,9 +25,9 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
         {initialImage && <DynamicImage image={initialImage} customImage={rightSideImage} />}
       </div>
       <div className="mx-auto flex h-full w-full max-w-xl flex-col items-center justify-center p-10 pt-32">
-        <h2 className="font-manrope mb-2 bg-clip-text text-center text-4xl leading-10 font-bold">
+        <h1 className="font-manrope mb-2 bg-clip-text text-center text-4xl leading-10 font-bold">
           {(dictionary as any).products.title as string}
-        </h2>
+        </h1>
         <ReviewStars />
         <br />
 

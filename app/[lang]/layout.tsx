@@ -7,13 +7,17 @@ import { cookies } from 'next/headers';
 import { ReactNode, Suspense } from 'react';
 import '../globals.css';
 import { DictionaryProvider } from '../DictProvider';
-import { getDictionary } from './site/dictionaries';
+import { getDictionary } from './dictionaries';
 import CookieConsent from '../../components/CookieConsent';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = 'https://www.tadm-nutrition.com';
 const twitterCreator = TWITTER_CREATOR ? ensureStartsWith(TWITTER_CREATOR, '@') : undefined;
 const twitterSite = TWITTER_SITE ? ensureStartsWith(TWITTER_SITE, 'https://') : undefined;
+
+export function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'de' }];
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -36,11 +40,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       }
     },
     alternates: {
-      canonical: `${baseUrl}/${lang}/site/`,
+      canonical: `${baseUrl}/${lang}/`,
       languages: {
-        'en': `${baseUrl}/en/site/`,
-        'de': `${baseUrl}/de/site/`,
-        'x-default': `${baseUrl}/en/site/`
+        'en': `${baseUrl}/en/`,
+        'de': `${baseUrl}/de/`,
+        'x-default': `${baseUrl}/en/`
       }
     },
     verification: {
@@ -65,7 +69,7 @@ function generateAlternateLanguages(currentLang: 'en' | 'de', pathname: string) 
 
   languages.forEach((lang) => {
     if (lang !== currentLang) {
-      alternates[lang] = `${baseUrl}/${lang}/site${pathname}`;
+      alternates[lang] = `${baseUrl}/${lang}${pathname}`;
     }
   });
 

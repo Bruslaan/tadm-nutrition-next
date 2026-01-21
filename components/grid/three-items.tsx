@@ -20,7 +20,7 @@ function ThreeItemGridItem({
     >
       <Link
         className="block aspect-square h-full w-full overflow-hidden"
-        href={`site/product/${item.handle}`}
+        href={`/product/${item.handle}`}
         prefetch={true}
       >
         <GridTileImage

@@ -15,33 +15,33 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Basic static routes that don't require Shopify API
   const routesMap = [
     // Main pages for both languages
-    { url: `${baseUrl}/en/site/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/site/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/`, lastModified: new Date().toISOString() },
     // Product pages
-    { url: `${baseUrl}/en/site/algae/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/site/algae/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/site/cannabis/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/site/cannabis/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/site/cumin/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/site/cumin/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/site/mix/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/site/mix/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/site/nature/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/site/nature/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/site/softgel/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/site/softgel/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/site/walnut/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/site/walnut/`, lastModified: new Date().toISOString() }
+    { url: `${baseUrl}/en/algae/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/algae/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/cannabis/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/cannabis/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/cumin/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/cumin/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/mix/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/mix/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/nature/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/nature/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/softgel/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/softgel/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/en/walnut/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/walnut/`, lastModified: new Date().toISOString() }
   ];
 
   const collectionsPromise = getCollections().then((collections) =>
     collections.flatMap((collection) => [
       {
-        url: `${baseUrl}/en/site${collection.path}`,
+        url: `${baseUrl}/en${collection.path}`,
         lastModified: collection.updatedAt
       },
       {
-        url: `${baseUrl}/de/site${collection.path}`,
+        url: `${baseUrl}/de${collection.path}`,
         lastModified: collection.updatedAt
       }
     ])
@@ -50,11 +50,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const productsPromise = getProducts({}).then((products) =>
     products.flatMap((product) => [
       {
-        url: `${baseUrl}/en/site/product/${product.handle}`,
+        url: `${baseUrl}/en/product/${product.handle}`,
         lastModified: product.updatedAt
       },
       {
-        url: `${baseUrl}/de/site/product/${product.handle}`,
+        url: `${baseUrl}/de/product/${product.handle}`,
         lastModified: product.updatedAt
       }
     ])
@@ -63,11 +63,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pagesPromise = getPages().then((pages) =>
     pages.flatMap((page) => [
       {
-        url: `${baseUrl}/en/site/${page.handle}`,
+        url: `${baseUrl}/en/${page.handle}`,
         lastModified: page.updatedAt
       },
       {
-        url: `${baseUrl}/de/site/${page.handle}`,
+        url: `${baseUrl}/de/${page.handle}`,
         lastModified: page.updatedAt
       }
     ])
