@@ -1,5 +1,7 @@
 import { getCollections, getPages, getProducts } from '../lib/shopify';
 import { validateEnvironmentVariables } from '../lib/utils';
+import { notionClient, getBlogDatabaseId } from '../lib/notion';
+import { isArticle } from '../lib/notion/types';
 import { MetadataRoute } from 'next';
 
 type Route = {
@@ -9,6 +11,11 @@ type Route = {
 
 const baseUrl = 'https://www.tadm-nutrition.com';
 
+// Known problematic articles to exclude from sitemap
+const EXCLUDED_SLUGS = [
+  'moeglichkeiten-und-grenzen-der-schlafueberwachung-mit-Smartwaches'
+];
+
 export const dynamic = 'force-dynamic';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -17,6 +24,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Main pages for both languages
     { url: `${baseUrl}/en/`, lastModified: new Date().toISOString() },
     { url: `${baseUrl}/de/`, lastModified: new Date().toISOString() },
+    // Blog list pages
+    { url: `${baseUrl}/en/blog/`, lastModified: new Date().toISOString() },
+    { url: `${baseUrl}/de/blog/`, lastModified: new Date().toISOString() },
     // Product pages
     { url: `${baseUrl}/en/algae/`, lastModified: new Date().toISOString() },
     { url: `${baseUrl}/de/algae/`, lastModified: new Date().toISOString() },
@@ -73,6 +83,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ])
   );
 
+  // Fetch blog articles from Notion
+  const blogPromise = (async (): Promise<Route[]> => {
+    const routes: Route[] = [];
+    const languages: ('en' | 'de')[] = ['en', 'de'];
+
+    for (const lang of languages) {
+      try {
+        const articles = await notionClient.getDatabaseEntries(getBlogDatabaseId(lang), isArticle);
+
+        for (const article of articles) {
+          // Skip known problematic articles
+          if (EXCLUDED_SLUGS.includes(article.slug)) {
+            continue;
+          }
+
+          routes.push({
+            url: `${baseUrl}/${lang}/blog/${article.published}/${article.slug}`,
+            lastModified: new Date().toISOString()
+          });
+        }
+      } catch (error) {
+        console.warn(`Error fetching blog articles for ${lang}:`, error);
+      }
+    }
+
+    return routes;
+  })();
+
   let fetchedRoutes: Route[] = [];
 
   // Only try to fetch Shopify data if environment variables are available
@@ -85,5 +123,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fetchedRoutes = [];
   }
 
-  return [...routesMap, ...fetchedRoutes];
+  // Fetch blog routes separately (doesn't depend on Shopify env vars)
+  let blogRoutes: Route[] = [];
+  try {
+    blogRoutes = await blogPromise;
+  } catch (error) {
+    console.warn('Error fetching blog routes for sitemap:', error);
+    blogRoutes = [];
+  }
+
+  return [...routesMap, ...fetchedRoutes, ...blogRoutes];
 }
