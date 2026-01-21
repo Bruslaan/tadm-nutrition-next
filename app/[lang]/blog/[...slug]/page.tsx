@@ -6,9 +6,10 @@ import { notionClient, getBlogDatabaseId } from '@/lib/notion';
 import { isArticle } from '@/lib/notion/types';
 import { NotionRenderer } from '@/components/blog/NotionRenderer';
 
-// Force static generation
+// Force static generation - all pages pre-built at build time
 export const dynamic = 'force-static';
-export const revalidate = 3600; // Revalidate every hour
+export const dynamicParams = false; // Return 404 for paths not in generateStaticParams
+export const revalidate = 3600; // Revalidate every hour via ISR
 
 const baseUrl = 'https://www.tadm-nutrition.com';
 
@@ -106,6 +107,11 @@ export default async function ArticlePage({
   );
 }
 
+// Known problematic articles that crash react-notion renderer
+const EXCLUDED_SLUGS = [
+  'moeglichkeiten-und-grenzen-der-schlafueberwachung-mit-Smartwaches'
+];
+
 export async function generateStaticParams() {
   const languages: ('en' | 'de')[] = ['en', 'de'];
   const params: { lang: string; slug: string[] }[] = [];
@@ -114,12 +120,18 @@ export async function generateStaticParams() {
     try {
       const articles = await notionClient.getDatabaseEntries(getBlogDatabaseId(lang), isArticle);
 
-      articles.forEach(({ published, slug }) => {
+      for (const { published, slug } of articles) {
+        // Skip known problematic articles
+        if (EXCLUDED_SLUGS.includes(slug)) {
+          console.warn(`Skipping excluded article: ${lang}/${published}/${slug}`);
+          continue;
+        }
+
         params.push({
           lang,
           slug: [published, slug]
         });
-      });
+      }
     } catch (e) {
       console.error(`Error fetching articles for ${lang}:`, e);
     }
