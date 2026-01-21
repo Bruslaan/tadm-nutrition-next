@@ -10,8 +10,8 @@ export const ProductCard = ({ product, selected }: { product: Product; selected:
       data-goal="product_click"
       data-goal-product={product.handle}
       className={clsx(
-        'hover relative flex w-full transform cursor-pointer items-center justify-center overflow-hidden rounded-2xl border transition-shadow duration-300 hover:border-gray-700 hover:bg-orange-50',
-        selected && 'border-2 border-gray-800'
+        'relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl border-2 transition-all duration-200 hover:border-gray-400 hover:bg-orange-50',
+        selected ? 'border-gray-800 bg-orange-50' : 'border-gray-200'
       )}
     >
       <div className="h-full md:hidden">

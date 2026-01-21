@@ -1,5 +1,6 @@
 import ExpertsCarusell, { Testimonial } from '@/components/ui/experts-carusell';
 import CallToActionBanner from '../../components/call-to-action-banner';
+import ComparisonSection from '../../components/comparison-section';
 import FaqPage from '../../components/faq-page';
 import FeatureSection, { FeatureSection2 } from '../../components/feature-section';
 import { ThreeItemGrid } from '../../components/grid/three-items';
@@ -160,13 +161,21 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
           __html: JSON.stringify(faqJsonLd)
         }}
       />
-      <HeroSection title={dict.hero.title} subtitle={dict.hero.subtitle} />
+      <HeroSection
+        title={dict.hero.title}
+        subtitle={dict.hero.subtitle}
+        ctaText={dict.shopNow}
+        lang={lang}
+      />
 
       {/* Products early - let users see what we sell immediately */}
       <ThreeItemGrid title={dict.products.title} lang={lang} />
 
       {/* Social proof right after products - builds confidence for quick buyers */}
       <MarqueeDemo title={lang === 'de' ? 'Rezensionen' : 'Reviews'} />
+
+      {/* Comparison section - why tadm vs alternatives */}
+      <ComparisonSection />
 
       {/* Benefits/features section */}
       <FeatureSection

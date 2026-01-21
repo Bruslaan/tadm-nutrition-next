@@ -21,22 +21,22 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
   // @ts-ignore
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-8 pt-24 md:px-8 md:py-16 md:pt-28">
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+      <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
         {/* Image Section */}
-        <div className="flex items-center justify-center rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 p-6 md:p-10">
+        <div className="aspect-square rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 p-6 md:p-10 lg:sticky lg:top-28">
           <div className="relative h-full w-full overflow-hidden rounded-xl">
             {initialImage && <DynamicImage image={initialImage} customImage={rightSideImage} />}
           </div>
         </div>
 
         {/* Product Info Section */}
-        <div className="flex flex-col justify-center">
+        <div className="flex min-h-[400px] flex-col">
           <h1 className="mb-3 text-3xl font-bold md:text-4xl">
             {(dictionary as any).products.title as string}
           </h1>
           <ReviewStars />
 
-          <div className="mt-8 flex flex-col gap-4">
+          <div className="mt-8 flex flex-col gap-3">
             {allProducts.map((product) => (
               <button
                 key={product.id}

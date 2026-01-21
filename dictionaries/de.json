@@ -284,6 +284,79 @@
       }
     ]
   },
+  "comparison": {
+    "title": "Warum tadm Brain wählen?",
+    "subtitle": "Vergleiche tadm Brain mit herkömmlichen Omega-3 Produkten und entdecke den Unterschied",
+    "tadmLabel": "tadm Brain",
+    "fishOilLabel": "Fischöl Kapseln",
+    "standardLabel": "Standard Omega-3",
+    "ctaText": "Jetzt tadm Brain probieren",
+    "items": [
+      {
+        "feature": "Herkunft",
+        "tadm": "100% vegan & pflanzlich",
+        "tadmStatus": "good",
+        "fishOil": "Tierisch (Fisch)",
+        "fishOilStatus": "bad",
+        "standard": "Oft tierisch",
+        "standardStatus": "bad"
+      },
+      {
+        "feature": "Inhaltsstoffe",
+        "tadm": "4 Premium-Öle kombiniert",
+        "tadmStatus": "good",
+        "fishOil": "Einzelne Quelle",
+        "fishOilStatus": "neutral",
+        "standard": "Variiert",
+        "standardStatus": "neutral"
+      },
+      {
+        "feature": "Omega-Spektrum",
+        "tadm": "DHA, EPA + GLA",
+        "tadmStatus": "good",
+        "fishOil": "Nur DHA/EPA",
+        "fishOilStatus": "neutral",
+        "standard": "Meist nur Omega-3",
+        "standardStatus": "bad"
+      },
+      {
+        "feature": "Geschmack",
+        "tadm": "Geschmacksneutral",
+        "tadmStatus": "good",
+        "fishOil": "Fischiger Nachgeschmack",
+        "fishOilStatus": "bad",
+        "standard": "Variiert",
+        "standardStatus": "neutral"
+      },
+      {
+        "feature": "Qualität",
+        "tadm": "Made in Germany, GMP",
+        "tadmStatus": "good",
+        "fishOil": "Variiert",
+        "fishOilStatus": "neutral",
+        "standard": "Oft importiert",
+        "standardStatus": "bad"
+      },
+      {
+        "feature": "Reinheit",
+        "tadm": "Schwermetallfrei",
+        "tadmStatus": "good",
+        "fishOil": "Kontaminationsrisiko",
+        "fishOilStatus": "bad",
+        "standard": "Unbekannt",
+        "standardStatus": "bad"
+      },
+      {
+        "feature": "Zusatznutzen",
+        "tadm": "Thymoquinon + Vitamin E",
+        "tadmStatus": "good",
+        "fishOil": "Keine",
+        "fishOilStatus": "bad",
+        "standard": "Keine",
+        "standardStatus": "bad"
+      }
+    ]
+  },
   "bulletPoints": {
     "title": "Warum tadm Brain?",
     "list": [
