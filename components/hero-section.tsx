@@ -1,23 +1,17 @@
 import Image from 'next/image';
-import Discoverbutton from './Discoverbutton';
 import FloatingIcon from './floating-icon';
 
-const HeroIcon = ({ title, subtitle, icon }: { title: string; subtitle: string; icon: string }) => {
+const TrustBadge = ({ icon, text }: { icon: string; text: string }) => {
   return (
-    <div className="flex w-32 flex-col items-center justify-center gap-1 text-center text-xs font-bold uppercase">
+    <div className="flex items-center gap-2 text-xs font-medium text-gray-700 sm:text-sm">
       <Image
-        style={{ height: '30px' }}
-        className="w-auto object-contain"
+        className="h-5 w-5 object-contain sm:h-6 sm:w-6"
         src={icon}
-        width={30}
-        height={30}
-        alt={`${title} - ${subtitle} certification`}
-        loading="lazy"
+        width={24}
+        height={24}
+        alt={text}
       />
-      <div>
-        <p> {title}</p>
-        <p>{subtitle}</p>
-      </div>
+      <span>{text}</span>
     </div>
   );
 };
@@ -33,7 +27,22 @@ const HeroSection = async ({ title, subtitle }: { title: string; subtitle: strin
           {subtitle}
         </p>
       </div>
-      <Discoverbutton href={'#products'} />
+
+      {/* Trust badges at bottom */}
+      <div className="absolute inset-x-0 bottom-8 z-10 flex flex-col items-center gap-3 px-4">
+        <Image
+          className="h-8 w-auto object-contain"
+          src="/static/madeingermany.svg"
+          width={160}
+          height={40}
+          alt="Made in Germany"
+        />
+        <div className="flex flex-wrap items-center justify-center gap-4 rounded-full bg-white/80 px-5 py-2 backdrop-blur-sm sm:gap-6">
+          <TrustBadge icon="/static/vegan-icon.svg" text="100% Vegan" />
+          <TrustBadge icon="/static/earth-icon.svg" text="Non-GMO" />
+          <TrustBadge icon="/static/noanimals-icon.svg" text="Cruelty Free" />
+        </div>
+      </div>
 
       <Image
         src="/static/herobg.webp"

@@ -1,6 +1,4 @@
 import ExpertsCarusell, { Testimonial } from '@/components/ui/experts-carusell';
-import Image from 'next/image';
-import TrustItem from '../../components/TrustItem';
 import CallToActionBanner from '../../components/call-to-action-banner';
 import FaqPage from '../../components/faq-page';
 import FeatureSection, { FeatureSection2 } from '../../components/feature-section';
@@ -162,24 +160,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
         }}
       />
       <HeroSection title={dict.hero.title} subtitle={dict.hero.subtitle} />
-      <section className="mt-14 flex flex-col items-center justify-evenly gap-9 px-4">
-        <Image
-          className="h-10 w-auto object-contain"
-          src={'/static/madeingermany.svg'}
-          width={200}
-          height={80}
-          alt="Made in Germany - Premium quality supplement manufacturing"
-          loading="lazy"
-        />
-
-        <div className="flex w-full justify-center rounded-lg bg-gray-100 md:w-auto md:rounded-full">
-          <div className="flex shrink-0 flex-col flex-wrap items-start gap-4 rounded-lg bg-gray-100 p-4 px-10 text-nowrap md:w-auto md:flex-row md:gap-6 md:rounded-full md:py-3">
-            <TrustItem iconName="/static/vegan-icon.svg" text={'100% Vegan'} />
-            <TrustItem iconName="/static/earth-icon.svg" text={'non-Gmo, 100% Natural'} />
-            <TrustItem iconName="/static/noanimals-icon.svg" text={'No animals harmed'} />
-          </div>
-        </div>
-      </section>
 
       {/* Products early - let users see what we sell immediately */}
       <ThreeItemGrid title={dict.products.title} lang={lang} />
