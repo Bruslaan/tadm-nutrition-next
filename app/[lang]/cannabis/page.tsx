@@ -63,7 +63,7 @@ const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> })
         <FeatureSectionNoImage sectionTitle={dict.hemp.sectionTitle} items={dict.hemp.items} />
       </section>
 
-      <LinkToMix title={dict.mix.linkTitle} />
+      <LinkToMix title={dict.mix.linkTitle} lang={lang} />
 
       <CallToActionBanner />
       <Footer></Footer>

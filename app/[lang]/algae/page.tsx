@@ -66,7 +66,7 @@ const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> })
         />
       </section>
 
-      <LinkToMix title={dict.mix.title} />
+      <LinkToMix title={dict.mix.title} lang={lang} />
 
       <CallToActionBanner />
       <Footer></Footer>

@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import { useDictionary } from '../app/DictProvider';
 
 const VideoScrollCard = ({
   title,
@@ -15,6 +16,7 @@ const VideoScrollCard = ({
   ref?: any;
   text?: string | ReactNode;
 }) => {
+  const { lang } = useDictionary();
   return (
     <div
       ref={ref}
@@ -30,7 +32,7 @@ const VideoScrollCard = ({
         rel="preload"
         prefetch={true}
         className="group h-full overflow-hidden p-7"
-        href={urlTo ?? '/nature'}
+        href={`/${lang}${urlTo ?? '/nature'}`}
       >
         <h2 className={clsx('text-3xl font-semibold')}>{title}</h2>
         <br />

@@ -61,7 +61,7 @@ const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> })
       <br />
       <br />
       <FeatureSectionNoImage sectionTitle={dict.softgel.title} items={dict.softgel.items} />
-      <LinkToMix title={dict.mix.linkTitle} />
+      <LinkToMix title={dict.mix.linkTitle} lang={lang} />
 
       <CallToActionBanner />
 

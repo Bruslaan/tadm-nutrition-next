@@ -9,8 +9,11 @@ export const metadata = {
 };
 
 export default async function SearchPage(props: {
+  params: Promise<{ lang: string }>;
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  const params = await props.params;
+  const { lang } = params;
   const searchParams = await props.searchParams;
   const { sort, q: searchValue } = searchParams as { [key: string]: string };
   const { sortKey, reverse } = sorting.find((item) => item.slug === sort) || defaultSort;
@@ -30,7 +33,7 @@ export default async function SearchPage(props: {
       ) : null}
       {products.length > 0 ? (
         <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <ProductGridItems products={products} />
+          <ProductGridItems products={products} lang={lang} />
         </Grid>
       ) : null}
     </>

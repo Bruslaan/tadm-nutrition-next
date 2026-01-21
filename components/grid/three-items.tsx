@@ -7,12 +7,14 @@ function ThreeItemGridItem({
   item,
   size,
   priority,
-  oldPrice
+  oldPrice,
+  lang
 }: {
   item: Product;
   size: 'full' | 'half';
   priority?: boolean;
   oldPrice?: number;
+  lang: string;
 }) {
   return (
     <div
@@ -20,7 +22,7 @@ function ThreeItemGridItem({
     >
       <Link
         className="block aspect-square h-full w-full overflow-hidden"
-        href={`/product/${item.handle}`}
+        href={`/${lang}/product/${item.handle}`}
         prefetch={true}
       >
         <GridTileImage
@@ -45,7 +47,7 @@ function ThreeItemGridItem({
   );
 }
 
-export async function ThreeItemGrid({ title }: { title: string }) {
+export async function ThreeItemGrid({ title, lang }: { title: string; lang: string }) {
   let homepageItems: Product[] = [];
 
   try {
@@ -81,6 +83,7 @@ export async function ThreeItemGrid({ title }: { title: string }) {
               item={item}
               priority={true}
               oldPrice={oldPrices[index]}
+              lang={lang}
             />
           ))}
         </div>

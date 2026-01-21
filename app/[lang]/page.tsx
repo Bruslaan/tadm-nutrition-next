@@ -181,7 +181,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
         </div>
       </section>
       <TextRevealDemo text={dict.textReveal} />
-      <ThreeItemGrid title={dict.products.title} />
+      <ThreeItemGrid title={dict.products.title} lang={lang} />
 
       <FeatureSection
         sectionTitle={dict.bulletPoints.title}
