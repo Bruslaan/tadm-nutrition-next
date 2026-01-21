@@ -1,6 +1,8 @@
 'use client';
 
+import { IconX } from '@tabler/icons-react';
 import Image from 'next/image';
+import { useState } from 'react';
 import { useDictionary } from '../app/DictProvider';
 
 interface Ingredient {
@@ -26,6 +28,7 @@ interface NutritionFactsData {
 export default function NutritionFactsSection() {
   const { dictionary } = useDictionary();
   const data = (dictionary as any).nutritionFacts as NutritionFactsData;
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (!data) return null;
 
@@ -33,28 +36,32 @@ export default function NutritionFactsSection() {
   const maxOmega = Math.max(...data.omegaFats.map((o) => o.amount));
 
   return (
-    <section className="bg-gradient-to-b from-white to-orange-50 py-16 md:py-24">
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <h2 className="mb-3 text-3xl font-bold md:text-4xl lg:text-5xl">{data.title}</h2>
-          <p className="text-lg text-gray-600">{data.subtitle}</p>
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-          {/* Left: Product Image */}
-          <div className="flex items-center justify-center">
-            <div className="relative aspect-square w-full max-w-sm">
-              <Image
-                src="/static/mix.jpg"
-                alt="tadm Brain Softgels"
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 400px"
-              />
-            </div>
+    <>
+      <section className="bg-gradient-to-b from-white to-orange-50 py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          {/* Header */}
+          <div className="mb-12 text-center">
+            <h2 className="mb-3 text-3xl font-bold md:text-4xl lg:text-5xl">{data.title}</h2>
+            <p className="text-lg text-gray-600">{data.subtitle}</p>
           </div>
+
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+            {/* Left: Product Image */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="flex cursor-pointer items-center justify-center rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 p-6 transition-all hover:ring-2 hover:ring-orange-300 md:p-10"
+            >
+              <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-xl">
+                <Image
+                  src="/static/tadm.jpeg"
+                  alt="tadm Brain Softgels"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                />
+              </div>
+            </button>
 
           {/* Right: Ingredient Breakdown */}
           <div className="flex flex-col justify-center">
@@ -146,5 +153,37 @@ export default function NutritionFactsSection() {
         </div>
       </div>
     </section>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="relative max-h-[90vh] w-full max-w-2xl overflow-hidden rounded-2xl bg-white"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-gray-500 transition-colors hover:bg-white hover:text-gray-700"
+              aria-label="Close"
+            >
+              <IconX className="h-4 w-4" />
+            </button>
+
+            <div className="relative aspect-square w-full">
+              <Image
+                src="/static/tadm.jpeg"
+                alt="tadm Brain Softgels - Full View"
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 672px"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
