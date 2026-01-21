@@ -50,7 +50,7 @@ function SubmitButton({
       plausible-event-name="Cart+Click"
       aria-label="Add to cart"
       className={clsx(buttonClasses, {
-        'hover:opacity-90': true
+        'plausible-event-name=Cart+Click hover:opacity-90': true
       })}
     >
       <div className="absolute left-0 ml-4">

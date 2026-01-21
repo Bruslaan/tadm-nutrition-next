@@ -241,9 +241,8 @@ function CheckoutButton() {
   return (
     <button
       data-goal="begin_checkout"
-      plausible-event-name="Begin+Checkout"
       onClick={handleClick}
-      className="relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white outline-hidden"
+      className="plausible-event-name=Begin+Checkout relative flex w-full items-center justify-center rounded-xl bg-black p-4 tracking-wide text-white outline-hidden"
       type="submit"
       disabled={pending}
     >
