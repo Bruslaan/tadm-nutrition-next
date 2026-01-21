@@ -22,11 +22,10 @@ export function ProductDescription({ product }: { product: Product }) {
   const currencyCode = product.priceRange.maxVariantPrice.currencyCode;
 
   return (
-    <div className="flex flex-col gap-2 text-start">
-      <h2 className="text-2xl font-medium">{product.title}</h2>
-      {/*<VariantSelector options={product.options} variants={product.variants} />*/}
+    <div className="flex flex-col gap-1 text-start">
+      <h2 className="truncate text-lg font-medium md:text-xl">{product.title}</h2>
       {product.descriptionHtml ? (
-        <p className="text-sm leading-tight text-gray-700 dark:text-white/[60%]">
+        <p className="line-clamp-1 text-sm leading-tight text-gray-700 dark:text-white/[60%]">
           {lang === 'de' ? descriptionTranslations[product.id] : product.description}
         </p>
       ) : null}
@@ -41,8 +40,6 @@ export function ProductDescription({ product }: { product: Product }) {
           currencyCode={currencyCode}
         />
       </div>
-
-      {/*<AddToCart product={product} />*/}
     </div>
   );
 }
