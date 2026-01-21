@@ -1,7 +1,15 @@
-import clsx from 'clsx';
+'use client';
+
+import { IconX } from '@tabler/icons-react';
+import { useState } from 'react';
 import StarRating from './star-rating';
 
-const reviews = [
+type Review = {
+  name: string;
+  body: string;
+};
+
+const reviews: Review[] = [
   {
     name: 'Maria G.',
     body: "I received tadm Brain as a gift from my sister and I'm absolutely thrilled with this vegan alternative for Omega-3. Living in Norway, I know how important Omega-3 is, but most people here rely on fish oil. tadm Brain is a far better choice. plant based, high quality, and exactly what I was looking for!"
@@ -10,7 +18,6 @@ const reviews = [
     name: 'Lisa M.',
     body: 'I started taking tadm a few months ago, and I can truly feel the difference. My ability to focus has improved, and I retain information much better. Whether at work or during my studies, I feel mentally sharper and more alert throughout the day.'
   },
-
   {
     name: 'Eva G.',
     body: 'Seit sechs Monaten nehme ich gemeinsam mit meinen Kindern (7 und 2 Jahre) tadm Brain und merke, wie wir insgesamt widerstandsfähiger gegen Erkältungen und Krankheiten sind. Besonders freut mich, dass meine Kinder es gerne einnehmen – mein Kleiner kaut sogar mit Begeisterung auf den veganen Softgels. Eine einfache und effektive Ergänzung für unsere Gesundheit!'
@@ -48,74 +55,116 @@ const reviews = [
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
-const firstRowRepeat = [
-  ...firstRow,
-  ...firstRow,
-  ...secondRow,
-  ...secondRow,
-  ...firstRow,
-  ...firstRow,
-  ...secondRow,
-  ...secondRow
-];
+const rowsRepeated = [...firstRow, ...firstRow, ...secondRow, ...secondRow];
+
+const MAX_BODY_LENGTH = 100;
+
+const truncateText = (text: string) => {
+  if (text.length <= MAX_BODY_LENGTH) return { text, isTruncated: false };
+  return { text: text.slice(0, MAX_BODY_LENGTH).trim() + '...', isTruncated: true };
+};
+
 const ReviewCard = ({
-  name,
-  username,
-  body
+  review,
+  onSelect
 }: {
-  name: string;
-  username?: string;
-  body: string;
+  review: Review;
+  onSelect: (review: Review) => void;
 }) => {
+  const { text, isTruncated } = truncateText(review.body);
+
   return (
-    <figure
-      className={clsx(
-        'relative w-56 cursor-pointer overflow-hidden rounded-xl border p-4 md:w-96',
-        'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
-        'dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]'
-      )}
+    <button
+      onClick={() => onSelect(review)}
+      className="w-64 shrink-0 cursor-pointer rounded-2xl bg-white p-5 text-left ring-1 ring-gray-200 transition-all hover:ring-orange-300 md:w-80"
     >
-      <div className="flex flex-row items-center gap-2">
-        <div className="flex flex-col">
-          <figcaption className="text-lg font-medium dark:text-white">{name}</figcaption>
-          {username && <p className="text-lg font-medium dark:text-white/40">{username}</p>}
-        </div>
-      </div>
-      <div className="mt-2 -ml-1">
+      <div className="mb-3 flex items-center justify-between">
+        <span className="text-sm font-semibold text-gray-900">{review.name}</span>
         <StarRating />
       </div>
-
-      <blockquote className="md:text-md mt-2 text-xs">{body}</blockquote>
-    </figure>
+      <blockquote className="text-sm leading-relaxed text-gray-600">
+        &ldquo;{text}&rdquo;
+        {isTruncated && <span className="ml-1 font-medium text-orange-500">mehr</span>}
+      </blockquote>
+    </button>
   );
 };
 
 export function MarqueeDemo({ title }: { title: string }) {
+  const [selectedReview, setSelectedReview] = useState<Review | null>(null);
+
   return (
-    <section className="w-full pt-10 md:text-xs">
-      <div className="mx-auto flex max-w-(--breakpoint-xl) justify-center px-4">
-        <h2 className="mb-4 max-w-2xl text-3xl leading-none font-bold tracking-tight md:text-4xl xl:text-5xl dark:text-white">
-          {title}
-        </h2>
-      </div>
-      <div className="relative w-full">
-        <div className="bg-background relative mt-5 flex w-full flex-col items-center justify-center gap-4 overflow-hidden">
-          <div className="flex flex-col items-center justify-center gap-4 py-7">
+    <>
+      <section className="overflow-hidden py-16">
+        {/* Header */}
+        <div className="mx-auto mb-10 max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <span className="mb-3 inline-block rounded-full bg-orange-100 px-4 py-1.5 text-sm font-medium text-orange-700">
+            Kundenstimmen
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+            {title}
+          </h2>
+        </div>
+
+        {/* Marquee */}
+        <div className="relative">
+          <div className="flex flex-col gap-4">
+            {/* Row 1 - scrolls left */}
             <div className="animate-carousel flex gap-4">
-              {firstRowRepeat.map((review, index) => (
-                <ReviewCard key={'first-row-' + index} {...review} />
+              {rowsRepeated.map((review, index) => (
+                <ReviewCard key={`row1-${index}`} review={review} onSelect={setSelectedReview} />
               ))}
             </div>
+            {/* Row 2 - scrolls right */}
             <div className="animate-carousel_reverse flex gap-4">
-              {firstRowRepeat.map((review, index) => (
-                <ReviewCard key={'second-row' + index} {...review} />
+              {rowsRepeated.map((review, index) => (
+                <ReviewCard key={`row2-${index}`} review={review} onSelect={setSelectedReview} />
               ))}
             </div>
           </div>
+
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent sm:w-32" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent sm:w-32" />
         </div>
-        <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-linear-to-r from-white"></div>
-        <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-linear-to-l from-white"></div>
-      </div>
-    </section>
+      </section>
+
+      {/* Modal */}
+      {selectedReview && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+          onClick={() => setSelectedReview(null)}
+        >
+          <div
+            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl bg-white p-6 ring-1 ring-gray-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedReview(null)}
+              className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-700"
+              aria-label="Close"
+            >
+              <IconX className="h-4 w-4" />
+            </button>
+
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-sm font-bold text-orange-600">
+                {selectedReview.name.charAt(0)}
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900">{selectedReview.name}</h3>
+                <StarRating />
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-orange-50 p-4">
+              <blockquote className="text-base leading-relaxed text-gray-700">
+                &ldquo;{selectedReview.body}&rdquo;
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
