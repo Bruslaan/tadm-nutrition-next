@@ -47,7 +47,7 @@ export async function generateMetadata({
       languages: {
         en: `${baseUrl}/en/cannabis`,
         de: `${baseUrl}/de/cannabis`,
-        'x-default': `${baseUrl}/en/cannabis`
+        'x-default': `${baseUrl}/de/cannabis`
       }
     }
   };

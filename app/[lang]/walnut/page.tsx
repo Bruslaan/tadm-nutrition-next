@@ -47,7 +47,7 @@ export async function generateMetadata({
       languages: {
         en: `${baseUrl}/en/walnut`,
         de: `${baseUrl}/de/walnut`,
-        'x-default': `${baseUrl}/en/walnut`
+        'x-default': `${baseUrl}/de/walnut`
       }
     }
   };

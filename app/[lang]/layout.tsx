@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       languages: {
         'en': `${baseUrl}/en/`,
         'de': `${baseUrl}/de/`,
-        'x-default': `${baseUrl}/en/`
+        'x-default': `${baseUrl}/de/`
       }
     },
     verification: {
@@ -88,7 +88,7 @@ export default async function Layout({
   const cart = getCart(cartId);
 
   const { lang: langParam } = await params;
-  const lang = (langParam === 'en' || langParam === 'de' ? langParam : 'en') as 'en' | 'de';
+  const lang = (langParam === 'en' || langParam === 'de' ? langParam : 'de') as 'en' | 'de';
   const dict = await getDictionary(lang);
 
   return (

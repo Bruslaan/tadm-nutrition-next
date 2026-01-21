@@ -36,7 +36,7 @@ export async function generateMetadata(props: {
       languages: {
         en: `${baseUrl}/en/search/${collectionHandle}`,
         de: `${baseUrl}/de/search/${collectionHandle}`,
-        'x-default': `${baseUrl}/en/search/${collectionHandle}`
+        'x-default': `${baseUrl}/de/search/${collectionHandle}`
       }
     },
     openGraph: {

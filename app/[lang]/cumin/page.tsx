@@ -47,7 +47,7 @@ export async function generateMetadata({
       languages: {
         en: `${baseUrl}/en/cumin`,
         de: `${baseUrl}/de/cumin`,
-        'x-default': `${baseUrl}/en/cumin`
+        'x-default': `${baseUrl}/de/cumin`
       }
     }
   };

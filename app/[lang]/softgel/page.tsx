@@ -47,7 +47,7 @@ export async function generateMetadata({
       languages: {
         en: `${baseUrl}/en/softgel`,
         de: `${baseUrl}/de/softgel`,
-        'x-default': `${baseUrl}/en/softgel`
+        'x-default': `${baseUrl}/de/softgel`
       }
     }
   };

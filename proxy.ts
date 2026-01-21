@@ -2,8 +2,8 @@ import { NextResponse, NextRequest } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 
-const locales = ['en', 'de'];
-const defaultLocale = 'en';
+const locales = ['de', 'en'];
+const defaultLocale = 'de';
 
 function getLocale(request: NextRequest): string {
   const { pathname } = request.nextUrl;
@@ -13,7 +13,7 @@ function getLocale(request: NextRequest): string {
 
   if (pathLocale) return pathLocale;
 
-  const headers = { 'accept-language': request.headers.get('accept-language') || 'en,en;q=0.5' };
+  const headers = { 'accept-language': request.headers.get('accept-language') || 'de,de;q=0.5' };
   const languages = new Negotiator({ headers }).languages();
   return match(languages, locales, defaultLocale);
 }

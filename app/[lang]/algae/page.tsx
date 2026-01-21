@@ -47,7 +47,7 @@ export async function generateMetadata({
       languages: {
         en: `${baseUrl}/en/algae`,
         de: `${baseUrl}/de/algae`,
-        'x-default': `${baseUrl}/en/algae`
+        'x-default': `${baseUrl}/de/algae`
       }
     }
   };
