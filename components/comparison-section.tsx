@@ -26,20 +26,40 @@ interface ComparisonData {
 const StatusIcon = ({ status }: { status: 'good' | 'bad' | 'neutral' }) => {
   if (status === 'good') {
     return (
-      <svg className="h-5 w-5 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg
+        className="h-5 w-5 shrink-0 text-green-500"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
       </svg>
     );
   }
   if (status === 'bad') {
     return (
-      <svg className="h-5 w-5 shrink-0 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      <svg
+        className="h-5 w-5 shrink-0 text-red-500"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M6 18L18 6M6 6l12 12"
+        />
       </svg>
     );
   }
   return (
-    <svg className="h-5 w-5 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg
+      className="h-5 w-5 shrink-0 text-gray-400"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
     </svg>
   );
@@ -117,7 +137,7 @@ export default function ComparisonSection() {
         {/* CTA Button */}
         <div className="mt-12 text-center">
           <Link
-            href={`/${lang}/product/tadm-brain-120-softgels`}
+            href={`/${lang}/product/tadm-max-pack`}
             className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-4 text-base font-medium text-white transition-all hover:bg-gray-800 hover:shadow-lg"
           >
             {data.ctaText}
