@@ -20,35 +20,41 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
 
   // @ts-ignore
   return (
-    <div className="grild-cols-1 grid w-full overflow-hidden md:grid-cols-2">
-      <div className="hidden h-screen items-center justify-center bg-linear-to-b from-orange-100 to-orange-200 object-cover md:flex">
-        {initialImage && <DynamicImage image={initialImage} customImage={rightSideImage} />}
-      </div>
-      <div className="mx-auto flex h-full w-full max-w-xl flex-col items-center justify-center p-10 pt-32">
-        <h1 className="font-manrope mb-2 bg-clip-text text-center text-4xl leading-10 font-bold">
-          {(dictionary as any).products.title as string}
-        </h1>
-        <ReviewStars />
-        <br />
+    <div className="mx-auto w-full max-w-7xl px-4 py-8 pt-24 md:px-8 md:py-16 md:pt-28">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+        {/* Image Section */}
+        <div className="flex items-center justify-center rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 p-6 md:p-10">
+          <div className="relative h-full w-full overflow-hidden rounded-xl">
+            {initialImage && <DynamicImage image={initialImage} customImage={rightSideImage} />}
+          </div>
+        </div>
 
-        <div className="flex w-full flex-col items-center justify-center gap-5">
-          {allProducts.map((product) => (
-            <button
-              key={product.id}
-              className="w-full"
-              onClick={() => {
-                startTransition(() => {
-                  const newState = context.updateProduct(product.id);
-                  updateURL(newState);
-                });
-              }}
-            >
-              <ProductCard selected={currentProduct?.id === product.id} product={product} />
-            </button>
-          ))}
+        {/* Product Info Section */}
+        <div className="flex flex-col justify-center">
+          <h1 className="mb-3 text-3xl font-bold md:text-4xl">
+            {(dictionary as any).products.title as string}
+          </h1>
+          <ReviewStars />
 
-          <div className="mt-10 w-full">
-            <AddToCart product={currentProduct as Product} />
+          <div className="mt-8 flex flex-col gap-4">
+            {allProducts.map((product) => (
+              <button
+                key={product.id}
+                className="w-full"
+                onClick={() => {
+                  startTransition(() => {
+                    const newState = context.updateProduct(product.id);
+                    updateURL(newState);
+                  });
+                }}
+              >
+                <ProductCard selected={currentProduct?.id === product.id} product={product} />
+              </button>
+            ))}
+
+            <div className="mt-6 w-full">
+              <AddToCart product={currentProduct as Product} />
+            </div>
           </div>
         </div>
       </div>
