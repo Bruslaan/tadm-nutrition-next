@@ -10,6 +10,8 @@ const oldPrices: Record<string, number> = {
 export const ProductCard = ({ product, selected }: { product: Product; selected: boolean }) => {
   const oldPrice = oldPrices[product.id];
   const currencyCode = product.priceRange.maxVariantPrice.currencyCode;
+  const currentPrice = parseFloat(product.priceRange.maxVariantPrice.amount);
+  const discountPercent = oldPrice ? Math.round(((oldPrice - currentPrice) / oldPrice) * 100) : 0;
 
   return (
     <div
@@ -24,10 +26,14 @@ export const ProductCard = ({ product, selected }: { product: Product; selected:
     >
       <div>
         <span className="font-medium">{product.title}</span>
-        <p className="text-sm text-gray-500">{product.description}</p>
+        <p className="text-sm font-medium">{product.description}</p>
       </div>
       <div className="flex shrink-0 items-center gap-2">
-        {oldPrice && <span className="text-sm text-gray-400 line-through">{oldPrice}€</span>}
+        {oldPrice && (
+          <span className="rounded-full bg-red-500 px-2 py-0.5 text-xs font-medium text-white">
+            -{discountPercent}%
+          </span>
+        )}
         <span className="font-semibold">
           {product.priceRange.maxVariantPrice.amount} {currencyCode}
         </span>

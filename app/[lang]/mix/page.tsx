@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
 import CallToActionBanner from '../../../components/call-to-action-banner';
-import Footer from '../../../components/layout/footer';
-import CuminHeroSection from './cumin-hero-section';
 import { FeatureSectionNoImage } from '../../../components/feature-section';
+import Footer from '../../../components/layout/footer';
+import NutritionFactsSection from '../../../components/nutrition-facts-section';
 import { getDictionary } from '../dictionaries';
-
 const baseUrl = 'https://www.tadm-nutrition.com';
 
 export async function generateMetadata({
@@ -16,7 +15,9 @@ export async function generateMetadata({
   const dict = await getDictionary(lang);
 
   const title = dict.mix.title;
-  const description = dict.mix.items[0]?.content?.slice(0, 160) || 'Unique blend of premium oils for optimal brain nutrition and cognitive performance.';
+  const description =
+    dict.mix.items[0]?.content?.slice(0, 160) ||
+    'Unique blend of premium oils for optimal brain nutrition and cognitive performance.';
 
   return {
     title,
@@ -60,6 +61,9 @@ const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> })
       <br />
       <br />
       <FeatureSectionNoImage sectionTitle={dict.mix.title} items={dict.mix.items} />
+      <NutritionFactsSection />
+      <br />
+      <br />
       <CallToActionBanner />
       <Footer></Footer>
     </>
