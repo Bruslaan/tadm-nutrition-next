@@ -235,6 +235,23 @@
       }
     ]
   },
+  "nutritionFacts": {
+    "title": "What's Inside tadm Brain?",
+    "subtitle": "Per daily dose (2000mg / 4 Softgels)",
+    "ingredients": [
+      { "name": "Black Seed Oil", "latin": "Nigella sativa oleum", "amount": 712 },
+      { "name": "Algae Oil", "latin": "Schizochytrium sp. oleum", "amount": 558 },
+      { "name": "Walnut Oil", "latin": "Juglans regia oleum", "amount": 374 },
+      { "name": "Hemp Oil", "latin": "Cannabis sativa oleum", "amount": 356 }
+    ],
+    "omegaFats": [
+      { "type": "Omega-3", "amount": 831 },
+      { "type": "Omega-6", "amount": 821 },
+      { "type": "Omega-9", "amount": 304 }
+    ],
+    "dailyDose": "Daily dose: 2000mg / 4 Softgels",
+    "perBottle": "120 Softgels per bottle"
+  },
   "facility": {
     "title": "Highest Standards in Production & Quality",
     "list": [

@@ -194,6 +194,23 @@
       ]
     }
   },
+  "nutritionFacts": {
+    "title": "Was steckt in tadm Brain?",
+    "subtitle": "Pro Tagesdosis (2000mg / 4 Softgels)",
+    "ingredients": [
+      { "name": "Schwarzkümmelöl", "latin": "Nigella sativa oleum", "amount": 712 },
+      { "name": "Algenöl", "latin": "Schizochytrium sp. oleum", "amount": 558 },
+      { "name": "Walnussöl", "latin": "Juglans regia oleum", "amount": 374 },
+      { "name": "Hanföl", "latin": "Cannabis sativa oleum", "amount": 356 }
+    ],
+    "omegaFats": [
+      { "type": "Omega-3", "amount": 831 },
+      { "type": "Omega-6", "amount": 821 },
+      { "type": "Omega-9", "amount": 304 }
+    ],
+    "dailyDose": "Tagesdosis: 2000mg / 4 Softgels",
+    "perBottle": "120 Softgels pro Flasche"
+  },
   "facility": {
     "title": "Höchste Standards in Produktion & Qualitätssicherung",
     "list": [

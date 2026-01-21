@@ -6,6 +6,7 @@ import { ThreeItemGrid } from '../../components/grid/three-items';
 import HeroSection from '../../components/hero-section';
 import Footer from '../../components/layout/footer';
 import MixHighlightSection from '../../components/mix-highlight-section';
+import NutritionFactsSection from '../../components/nutrition-facts-section';
 import { MarqueeDemo } from '../../components/testimonals';
 import { TextRevealDemo } from '../../components/text-reveal';
 import VideoScrollSection, { InsideTadm } from '../../components/video-scroll-section';
@@ -179,6 +180,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
 
       {/* Deep product education */}
       <VideoScrollSection title={dict.insideTadm.title} items={dict.insideTadm as InsideTadm} />
+
+      {/* Nutrition facts */}
+      <NutritionFactsSection />
 
       {/* Featured bundle promotion */}
       <MixHighlightSection
