@@ -15,12 +15,13 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
+  const lang = pathname.startsWith('/de') ? 'de' : 'en';
 
   const ingredientsMenu = [
-    { path: '/algae', title: 'Algae Oil' },
-    { path: '/cannabis', title: 'Hemp Oil' },
-    { path: '/cumin', title: 'Black Cumin' },
-    { path: '/walnut', title: 'Walnut Oil' }
+    { path: `/${lang}/algae`, title: 'Algae Oil' },
+    { path: `/${lang}/cannabis`, title: 'Hemp Oil' },
+    { path: `/${lang}/cumin`, title: 'Black Cumin' },
+    { path: `/${lang}/walnut`, title: 'Walnut Oil' }
   ];
 
   useEffect(() => {

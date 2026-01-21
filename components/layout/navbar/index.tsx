@@ -4,6 +4,7 @@ import CartModal from 'components/cart/modal';
 import LogoSquare from 'components/logo-square';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 import LanguageSwitcher from '../../LanguageSwitcher';
 import MobileMenu from './mobile-menu';
@@ -11,6 +12,8 @@ import MobileMenu from './mobile-menu';
 export function Navbar() {
   const [isIngredientsOpen, setIsIngredientsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const lang = pathname.startsWith('/de') ? 'de' : 'en';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,30 +25,26 @@ export function Navbar() {
   }, []);
 
   const mockedMenu = [
-    { path: '/', title: 'Home' },
+    { path: `/${lang}`, title: 'Home' },
     {
-      path: '/#feature',
+      path: `/${lang}#inside-tadm`,
       title: 'Inside the tadm'
     },
-    // {
-    //   path: '/nature',
-    //   title: 'Nature'
-    // },
     {
-      path: '/#faq',
+      path: `/${lang}#faq`,
       title: 'Faq'
     },
     {
-      path: '/blog',
+      path: `/${lang}/blog`,
       title: 'Knowledge Hub'
     }
   ];
 
   const ingredientsMenu = [
-    { path: '/algae', title: 'Algae Oil' },
-    { path: '/cannabis', title: 'Hemp Oil' },
-    { path: '/cumin', title: 'Black Cumin' },
-    { path: '/walnut', title: 'Walnut Oil' }
+    { path: `/${lang}/algae`, title: 'Algae Oil' },
+    { path: `/${lang}/cannabis`, title: 'Hemp Oil' },
+    { path: `/${lang}/cumin`, title: 'Black Cumin' },
+    { path: `/${lang}/walnut`, title: 'Walnut Oil' }
   ];
 
   return (
