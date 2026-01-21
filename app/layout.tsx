@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import Script from 'next/script';
+import { ReactNode } from 'react';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = 'https://www.tadm-nutrition.com';
@@ -48,6 +48,11 @@ export default function Layout({ children }: { children: ReactNode }) {
           data-website-id="3c2515d0-6388-4428-b7f3-22c58db8c563"
           data-domain="https://www.tadm-nutrition.com/"
         />
+        {/* Plausible Analytics */}
+        <Script async src="https://plausible.io/js/pa-zu7LXyKyFihNk6CAkza5I.js" />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`}
+        </Script>
       </body>
     </html>
   );
