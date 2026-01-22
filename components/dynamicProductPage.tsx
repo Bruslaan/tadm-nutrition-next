@@ -1,12 +1,12 @@
 'use client';
 import clsx from 'clsx';
-import { DynamicImage } from './dynamicImage';
-import { AddToCart } from './cart/add-to-cart';
-import { ProductDescription } from './product-description';
 import { Product } from 'lib/shopify/types';
-import { useProduct, useUpdateURL } from './product/product-context';
 import { startTransition } from 'react';
 import { useDictionary } from '../app/DictProvider';
+import { AddToCart } from './cart/add-to-cart';
+import { DynamicImage } from './dynamicImage';
+import { ProductDescription } from './product-description';
+import { useProduct, useUpdateURL } from './product/product-context';
 
 const oldPrices: Record<string, number> = {
   'gid://shopify/Product/10152999780686': 39,
@@ -28,11 +28,9 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
     <div className="mx-auto w-full max-w-7xl px-4 py-8 pt-24 md:px-8 md:py-16 md:pt-28">
       <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
         {/* Image Section */}
-        <div className="aspect-square rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 p-6 md:p-10 lg:sticky lg:top-28">
+        <div className="aspect-square rounded-2xl bg-gradient-to-br from-orange-100 to-orange-50 p-6 md:p-10 lg:sticky lg:top-28">
           <div className="relative h-full w-full overflow-hidden rounded-xl">
-            {initialImage && (
-              <DynamicImage image={initialImage} customImage={rightSideImage} />
-            )}
+            {initialImage && <DynamicImage image={initialImage} customImage={rightSideImage} />}
           </div>
         </div>
 
@@ -64,8 +62,8 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
                   className={clsx(
                     'flex w-full items-center justify-between rounded-xl border-2 px-4 py-3 text-left transition-all',
                     isSelected
-                      ? 'border-gray-900 bg-orange-50'
-                      : 'border-gray-200 bg-white hover:border-gray-400 hover:bg-orange-50/50'
+                      ? 'border-orange-400 bg-orange-50'
+                      : 'border-gray-200 bg-white hover:border-orange-400 hover:bg-orange-50/50'
                   )}
                 >
                   <div>
@@ -84,7 +82,6 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
               );
             })}
           </div>
-
 
           <div className="mt-6 w-full">
             <AddToCart product={currentProduct as Product} />
