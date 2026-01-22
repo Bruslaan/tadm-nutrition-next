@@ -7,7 +7,6 @@ import { ThreeItemGrid } from '../../components/grid/three-items';
 import HeroSection from '../../components/hero-section';
 import Footer from '../../components/layout/footer';
 import MixHighlightSection from '../../components/mix-highlight-section';
-import { MarqueeDemo } from '../../components/testimonals';
 import { TextRevealDemo } from '../../components/text-reveal';
 import VideoScrollSection, { InsideTadm } from '../../components/video-scroll-section';
 import { getDictionary } from './dictionaries';
@@ -200,7 +199,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
       />
 
       {/* Social proof right after products - builds confidence for quick buyers */}
-      <MarqueeDemo title={lang === 'de' ? 'Rezensionen' : 'Reviews'} />
+      {/* <MarqueeDemo title={lang === 'de' ? 'Rezensionen' : 'Reviews'} /> */}
 
       {/* Manufacturing quality - trust in production */}
       <FeatureSection2
