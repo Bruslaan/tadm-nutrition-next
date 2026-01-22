@@ -30,7 +30,9 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
         {/* Image Section */}
         <div className="aspect-square rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 p-6 md:p-10 lg:sticky lg:top-28">
           <div className="relative h-full w-full overflow-hidden rounded-xl">
-            {initialImage && <DynamicImage image={initialImage} customImage={rightSideImage} />}
+            {initialImage && (
+              <DynamicImage image={initialImage} customImage={rightSideImage} />
+            )}
           </div>
         </div>
 

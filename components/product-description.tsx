@@ -41,10 +41,10 @@ export function ProductDescription() {
   return (
     <div className="mt-8 space-y-2">
       {/* Ingredients Accordion */}
-      <div className="overflow-hidden rounded-xl bg-orange-50">
+      <div className="overflow-hidden rounded-xl bg-gray-100">
         <button
           onClick={() => toggleSection('ingredients')}
-          className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-orange-100"
+          className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-200"
         >
           <span className="font-semibold">
             {dictionary.lang === 'de' ? 'Inhaltsstoffe' : 'Ingredients'}
@@ -63,7 +63,7 @@ export function ProductDescription() {
           )}
         >
           <div className="overflow-hidden">
-            <div className="space-y-3 border-t border-orange-100 px-4 py-4">
+            <div className="space-y-3 border-t border-gray-200 px-4 py-4">
               {data.ingredients.map((ingredient) => (
                 <div key={ingredient.name}>
                   <div className="mb-1 flex justify-between text-sm">
@@ -87,10 +87,10 @@ export function ProductDescription() {
       </div>
 
       {/* Fatty Acids Accordion */}
-      <div className="overflow-hidden rounded-xl bg-orange-50">
+      <div className="overflow-hidden rounded-xl bg-gray-100">
         <button
           onClick={() => toggleSection('omega')}
-          className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-orange-100"
+          className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-200"
         >
           <span className="font-semibold">
             {dictionary.lang === 'de' ? 'Fettsäuren' : 'Fatty Acids'}
@@ -109,7 +109,7 @@ export function ProductDescription() {
           )}
         >
           <div className="overflow-hidden">
-            <div className="border-t border-orange-100 px-4 py-4">
+            <div className="border-t border-gray-200 px-4 py-4">
               <div className="grid grid-cols-3 gap-3">
                 {data.omegaFats.map((omega, index) => {
                   const colors = ['bg-blue-500', 'bg-green-500', 'bg-purple-500'];
@@ -133,10 +133,10 @@ export function ProductDescription() {
       </div>
 
       {/* Daily Dose Accordion */}
-      <div className="overflow-hidden rounded-xl bg-orange-50">
+      <div className="overflow-hidden rounded-xl bg-gray-100">
         <button
           onClick={() => toggleSection('dosage')}
-          className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-orange-100"
+          className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-200"
         >
           <span className="font-semibold">
             {dictionary.lang === 'de' ? 'Dosierung' : 'Dosage'}
@@ -155,7 +155,7 @@ export function ProductDescription() {
           )}
         >
           <div className="overflow-hidden">
-            <div className="flex flex-col gap-3 border-t border-orange-100 px-4 py-4 text-sm text-gray-700">
+            <div className="flex flex-col gap-3 border-t border-gray-200 px-4 py-4 text-sm text-gray-700">
               <div className="flex items-center gap-2">
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path

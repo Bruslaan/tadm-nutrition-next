@@ -1,3 +1,4 @@
+import NutritionFactsSection from '@/components/nutrition-facts-section';
 import ExpertsCarusell, { Testimonial } from '@/components/ui/experts-carusell';
 import CallToActionBanner from '../../components/call-to-action-banner';
 import ComparisonSection from '../../components/comparison-section';
@@ -187,7 +188,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: 'en
       <VideoScrollSection title={dict.insideTadm.title} items={dict.insideTadm as InsideTadm} />
 
       {/* Nutrition facts */}
-      {/* <NutritionFactsSection /> */}
+      <NutritionFactsSection />
 
       {/* Featured bundle promotion */}
       <MixHighlightSection
