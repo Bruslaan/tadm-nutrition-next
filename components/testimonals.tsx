@@ -110,13 +110,13 @@ export function MarqueeDemo({ title }: { title: string }) {
         <div className="relative">
           <div className="flex flex-col gap-4">
             {/* Row 1 - scrolls left */}
-            <div className="animate-carousel flex gap-4">
+            <div className="animate-carousel flex gap-4 overflow-x-scroll px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {rowsRepeated.map((review, index) => (
                 <ReviewCard key={`row1-${index}`} review={review} onSelect={setSelectedReview} />
               ))}
             </div>
             {/* Row 2 - scrolls right */}
-            <div className="animate-carousel_reverse flex gap-4">
+            <div className="animate-carousel_reverse flex gap-4 overflow-x-scroll px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {rowsRepeated.map((review, index) => (
                 <ReviewCard key={`row2-${index}`} review={review} onSelect={setSelectedReview} />
               ))}

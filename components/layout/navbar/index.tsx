@@ -12,17 +12,30 @@ import MobileMenu from './mobile-menu';
 export function Navbar() {
   const [isIngredientsOpen, setIsIngredientsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
   const lang = pathname.startsWith('/de') ? 'de' : 'en';
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      setIsScrolled(currentScrollY > 50);
+
+      // Show navbar when scrolling up, hide when scrolling down
+      if (currentScrollY < lastScrollY || currentScrollY < 50) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const mockedMenu = [
     { path: `/${lang}`, title: 'Home' },
@@ -51,7 +64,7 @@ export function Navbar() {
     <nav
       className={`top-0 right-0 left-0 z-50 transition-all duration-300 ${
         isScrolled ? 'fixed bg-white/10 shadow-md backdrop-blur-md dark:bg-black/90' : 'absolute'
-      }`}
+      } ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className={`mx-auto flex max-w-7xl items-center justify-between px-4 ${isScrolled ? 'py-4' : 'py-1'}`}>
         <div className="block flex-none md:hidden">
