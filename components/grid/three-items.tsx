@@ -1,3 +1,4 @@
+import { InlineAddToCart } from 'components/cart/inline-add-to-cart';
 import { GridTileImage } from 'components/grid/tile';
 import { getCollectionProducts } from 'lib/shopify';
 import type { Product } from 'lib/shopify/types';
@@ -8,17 +9,19 @@ function ThreeItemGridItem({
   size,
   priority,
   oldPrice,
-  lang
+  lang,
+  recommended
 }: {
   item: Product;
   size: 'full' | 'half';
   priority?: boolean;
   oldPrice?: number;
   lang: string;
+  recommended?: boolean;
 }) {
   return (
     <div
-      className={size === 'full' ? 'md:col-span-4 md:row-span-2' : 'md:col-span-2 md:row-span-1'}
+      className={`relative ${size === 'full' ? 'md:col-span-4 md:row-span-2' : 'md:col-span-2 md:row-span-1'}`}
     >
       <Link
         className="block aspect-square h-full w-full overflow-hidden"
@@ -39,10 +42,14 @@ function ThreeItemGridItem({
             amount: item.priceRange.maxVariantPrice.amount,
             currencyCode: item.priceRange.maxVariantPrice.currencyCode,
             description: item.description,
-            oldPrice
+            oldPrice,
+            recommended
           }}
         />
       </Link>
+      <div className="absolute inset-x-0 -bottom-3 z-10 flex justify-center">
+        <InlineAddToCart product={item} />
+      </div>
     </div>
   );
 }
@@ -84,6 +91,7 @@ export async function ThreeItemGrid({ title, lang }: { title: string; lang: stri
               priority={true}
               oldPrice={oldPrices[index]}
               lang={lang}
+              recommended={index === 1}
             />
           ))}
         </div>

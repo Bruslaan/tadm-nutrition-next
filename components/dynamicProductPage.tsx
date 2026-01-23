@@ -1,9 +1,9 @@
 'use client';
 import clsx from 'clsx';
+import { InlineAddToCart } from 'components/cart/inline-add-to-cart';
 import { Product } from 'lib/shopify/types';
 import { startTransition } from 'react';
 import { useDictionary } from '../app/DictProvider';
-import { AddToCart } from './cart/add-to-cart';
 import { DynamicImage } from './dynamicImage';
 import { ProductDescription } from './product-description';
 import { useProduct, useUpdateURL } from './product/product-context';
@@ -51,7 +51,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
                 : 0;
 
               return (
-                <button
+                <div
                   key={product.id}
                   onClick={() => {
                     startTransition(() => {
@@ -60,7 +60,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
                     });
                   }}
                   className={clsx(
-                    'flex w-full items-center justify-between rounded-xl border-2 px-4 py-3 text-left transition-all',
+                    'flex w-full cursor-pointer items-center justify-between rounded-xl border-2 px-4 py-3 text-left transition-all',
                     isSelected
                       ? 'border-orange-400 bg-orange-50'
                       : 'border-gray-200 bg-white hover:border-orange-400 hover:bg-orange-50/50'
@@ -70,21 +70,18 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
                     <span className="font-medium">{product.title}</span>
                     <p className="text-sm font-medium text-gray-900">{product.description}</p>
                   </div>
-                  <div className="flex shrink-0 items-center gap-2">
+                  <div className="flex shrink-0 items-center gap-3">
                     {discountPercent > 0 && (
                       <span className="rounded-full bg-red-500 px-2 py-0.5 text-xs font-medium text-white">
                         -{discountPercent}%
                       </span>
                     )}
                     <span className="font-semibold">{currentPrice}€</span>
+                    <InlineAddToCart product={product} />
                   </div>
-                </button>
+                </div>
               );
             })}
-          </div>
-
-          <div className="mt-6 w-full">
-            <AddToCart product={currentProduct as Product} />
           </div>
 
           {/* Product Description Section */}
