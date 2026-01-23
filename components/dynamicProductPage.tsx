@@ -53,7 +53,7 @@ export default function DynamicProductPage({ allProducts }: { allProducts: Produ
               return (
                 <div
                   key={product.id}
-                  onClick={() => {
+                  onMouseEnter={() => {
                     startTransition(() => {
                       const newState = context.updateProduct(product.id);
                       updateURL(newState);
