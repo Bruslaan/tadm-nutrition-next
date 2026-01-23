@@ -21,7 +21,7 @@ function ThreeItemGridItem({
 }) {
   return (
     <div
-      className={`relative ${size === 'full' ? 'md:col-span-4 md:row-span-2' : 'md:col-span-2 md:row-span-1'}`}
+      className={`group relative ${size === 'full' ? 'md:col-span-4 md:row-span-2' : 'md:col-span-2 md:row-span-1'}`}
     >
       <Link
         className="block aspect-square h-full w-full overflow-hidden"
@@ -47,7 +47,7 @@ function ThreeItemGridItem({
           }}
         />
       </Link>
-      <div className="absolute inset-x-0 -bottom-3 z-10 flex justify-center">
+      <div className="absolute inset-x-0 -bottom-3 z-10 flex justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <InlineAddToCart product={item} />
       </div>
     </div>

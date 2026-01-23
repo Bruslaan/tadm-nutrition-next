@@ -41,10 +41,15 @@ export function GridTileImage({
       ) : null}
       {label ? (
         <>
-          <div className="absolute top-4 left-4 max-w-[60%] rounded-xl bg-orange-50 px-4 py-2 text-gray-800 transition duration-300">
+          <div className="absolute top-4 left-4 rounded-xl bg-orange-50 px-4 py-2 text-gray-800 transition duration-300">
             <h2 className="text-xl font-bold">{label.title}</h2>
             {label.description && (
-              <p className="text-sm font-medium">{label.description}</p>
+              <>
+                <p className="sr-only">{label.description}</p>
+                <p className="hidden text-sm font-medium group-hover:block" aria-hidden="true">
+                  {label.description}
+                </p>
+              </>
             )}
           </div>
 

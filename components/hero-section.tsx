@@ -58,7 +58,7 @@ const HeroSection = async ({ title, subtitle }: { title: string; subtitle: strin
       <div className="pointer-events-none absolute inset-x-0 -bottom-1 h-32 bg-gradient-to-b from-transparent to-white" />
       <div className="hidden md:flex">
         <FloatingIcon className="right-0 bottom-4 z-10 rotate-45 blur-xs" size={130} />
-        <FloatingIcon className="top-1/2 left-1/6 rotate-45" size={90} />
+        <FloatingIcon className="top-1/2 left-1/6 rotate-45 blur-md" size={90} />
         <FloatingIcon className="bottom-10 left-1/4 -rotate-45" size={90} />
         <FloatingIcon className="bottom-1/4 left-0 blur-xs" size={30} />
         <FloatingIcon className="-right-10 bottom-1/4" size={80} />
