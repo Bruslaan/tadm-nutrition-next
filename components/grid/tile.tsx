@@ -46,7 +46,7 @@ export function GridTileImage({
             {label.description && (
               <>
                 <p className="sr-only">{label.description}</p>
-                <p className="hidden text-sm font-medium group-hover:block" aria-hidden="true">
+                <p className="text-sm font-medium md:hidden md:group-hover:block" aria-hidden="true">
                   {label.description}
                 </p>
               </>

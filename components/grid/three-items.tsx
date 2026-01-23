@@ -47,7 +47,7 @@ function ThreeItemGridItem({
           }}
         />
       </Link>
-      <div className="absolute inset-x-0 -bottom-3 z-10 flex justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute inset-x-0 -bottom-3 z-10 flex justify-center transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
         <InlineAddToCart product={item} />
       </div>
     </div>
