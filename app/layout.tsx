@@ -44,15 +44,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         {children}
         <Script
           defer
-          src="https://analyticsvibe-production.up.railway.app/tracker.js"
-          data-website-id="3c2515d0-6388-4428-b7f3-22c58db8c563"
-          data-domain="https://www.tadm-nutrition.com/"
+          src="https://www.impulseto.work/api/pixel.js"
+          data-website-id="097d36c0-dbbc-4ec9-8975-d8093fd04114"
+          data-domain="tadm-nutrition.com"
         />
-        {/* Plausible Analytics */}
-        <Script async src="https://plausible.io/js/pa-zu7LXyKyFihNk6CAkza5I.js" />
-        <Script id="plausible-init" strategy="afterInteractive">
-          {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`}
-        </Script>
       </body>
     </html>
   );
