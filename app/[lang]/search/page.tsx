@@ -57,15 +57,38 @@ export default async function SearchPage(props: {
   const { sortKey, reverse } = sorting.find((item) => item.slug === sort) || defaultSort;
 
   const products = await getProducts({ sortKey, reverse, query: searchValue });
-  const resultsText = products.length > 1 ? 'results' : 'result';
+  const resultsText =
+    lang === 'de'
+      ? products.length > 1
+        ? 'Ergebnisse'
+        : 'Ergebnis'
+      : lang === 'ru'
+        ? products.length > 1
+          ? 'результатов'
+          : 'результат'
+        : products.length > 1
+          ? 'results'
+          : 'result';
+  const noResultsText =
+    lang === 'de'
+      ? 'Es gibt keine Produkte passend zu '
+      : lang === 'ru'
+        ? 'Нет продуктов, соответствующих запросу '
+        : 'There are no products that match ';
+  const showingText =
+    lang === 'de'
+      ? `${products.length} ${resultsText} für `
+      : lang === 'ru'
+        ? `Показано ${products.length} ${resultsText} для `
+        : `Showing ${products.length} ${resultsText} for `;
 
   return (
     <>
       {searchValue ? (
         <p className="mb-4">
           {products.length === 0
-            ? 'There are no products that match '
-            : `Showing ${products.length} ${resultsText} for `}
+            ? noResultsText
+            : showingText}
           <span className="font-bold">&quot;{searchValue}&quot;</span>
         </p>
       ) : null}

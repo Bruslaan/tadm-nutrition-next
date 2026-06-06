@@ -7,6 +7,8 @@
     "notFoundMessage": "Der gesuchte Artikel existiert nicht.",
     "returnToBlog": "Zurück zum Blog"
   },
+  "home": "Startseite",
+  "ingredients": "Inhaltsstoffe",
   "cartTitle": "Warenkorb",
   "shopNow": "Jetzt bestellen",
   "addToCart": "In den Warenkorb",
@@ -250,6 +252,7 @@
     ]
   },
   "experts": {
+    "label": "Rezensionen",
     "title": "Top-Performer & Spitzensportler setzen auf tadm Brain",
     "list": [
       {

@@ -59,7 +59,7 @@ const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' | 'ru
   const dict = (await getDictionary(lang)) ?? 'en';
   return (
     <>
-      <CuminHeroSection />
+      <CuminHeroSection title={dict.cumin.sectionTitle} />
       <section id="cumin-section">
         <FeatureSectionNoImage sectionTitle={dict.cumin.sectionTitle} items={dict.cumin.items} />
       </section>

@@ -1,11 +1,11 @@
 import FloatingIcon from '../../../components/floating-icon';
 import Image from 'next/image';
 import Discoverbutton from '../../../components/Discoverbutton';
-const CuminHeroSection = () => {
+const CuminHeroSection = ({ title = 'Black Cumin Seed Oil' }: { title?: string }) => {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden text-center">
       <h2 className="max-w-5xl text-5xl font-bold text-blue-200 uppercase lg:text-9xl">
-        Black Cumin Seed Oil
+        {title}
       </h2>
       <div className="relative -mt-20">
         {/* svg */}

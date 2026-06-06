@@ -7,6 +7,8 @@
     "notFoundMessage": "The article you are looking for does not exist.",
     "returnToBlog": "Return to Blog"
   },
+  "home": "Home",
+  "ingredients": "Ingredients",
   "cartTitle": "Shopping Cart",
   "shopNow": "Shop Now",
   "taxes": "Taxes",
@@ -281,6 +283,7 @@
     }
   },
   "experts": {
+    "label": "Testimonials",
     "title": "Top Performers & Elite Athletes Rely on tadm Brain",
     "list": [
       {

@@ -1,11 +1,11 @@
 import FloatingIcon from '../../../components/floating-icon';
 import Image from 'next/image';
 import Discoverbutton from '../../../components/Discoverbutton';
-const HeroSection = () => {
+const HeroSection = ({ title = 'Walnut Oil' }: { title?: string }) => {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden text-center">
       <h1 className="max-w-5xl text-5xl font-bold text-orange-200 uppercase lg:text-9xl">
-        Walnut Oil
+        {title}
       </h1>
       <div className="relative -mt-20">
         <div className="relative">

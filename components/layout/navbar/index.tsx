@@ -9,14 +9,17 @@ import { Suspense, useEffect, useState } from 'react';
 import LanguageSwitcher from '../../LanguageSwitcher';
 import MobileMenu from './mobile-menu';
 import { getLocaleFromPathname } from '../../../lib/i18n';
+import { useDictionary } from '../../../app/DictProvider';
 
 export function Navbar() {
+  const { dictionary } = useDictionary();
   const [isIngredientsOpen, setIsIngredientsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
   const lang = getLocaleFromPathname(pathname);
+  const dict = dictionary as any;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,26 +42,26 @@ export function Navbar() {
   }, [lastScrollY]);
 
   const mockedMenu = [
-    { path: `/${lang}`, title: 'Home' },
+    { path: `/${lang}`, title: dict.home ?? 'Home' },
     {
       path: `/${lang}#inside-tadm`,
-      title: 'Inside the tadm'
+      title: dict.insideTadm?.title ?? 'Inside tadm'
     },
     {
       path: `/${lang}#faq`,
-      title: 'Faq'
+      title: dict.faq?.title ?? 'FAQ'
     },
     {
       path: `/${lang}/blog`,
-      title: 'Knowledge Hub'
+      title: dict.blog?.title ?? 'Knowledge Hub'
     }
   ];
 
   const ingredientsMenu = [
-    { path: `/${lang}/algae`, title: 'Algae Oil' },
-    { path: `/${lang}/cannabis`, title: 'Hemp Oil' },
-    { path: `/${lang}/cumin`, title: 'Black Cumin' },
-    { path: `/${lang}/walnut`, title: 'Walnut Oil' }
+    { path: `/${lang}/algae`, title: dict.algenoel?.sectionTitle ?? 'Algae Oil' },
+    { path: `/${lang}/cannabis`, title: dict.hemp?.sectionTitle ?? 'Hemp Oil' },
+    { path: `/${lang}/cumin`, title: dict.cumin?.sectionTitle ?? 'Black Cumin' },
+    { path: `/${lang}/walnut`, title: dict.walnut?.sectionTitle ?? 'Walnut Oil' }
   ];
 
   return (
@@ -99,7 +102,7 @@ export function Navbar() {
               onMouseLeave={() => setIsIngredientsOpen(false)}
             >
               <button className="font-semibold text-black uppercase underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300">
-                Ingredients
+                {dict.ingredients ?? 'Ingredients'}
               </button>
 
               {isIngredientsOpen && (

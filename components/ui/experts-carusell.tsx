@@ -100,7 +100,7 @@ const ExpertsCarousel = ({
           {/* Header */}
           <div className="mb-12 text-center lg:mb-16">
             <span className="mb-3 inline-block rounded-full bg-orange-100 px-4 py-1.5 text-sm font-medium text-orange-700">
-              Testimonials
+              {((dictionary as any).experts?.label as string | undefined) ?? 'Testimonials'}
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
               {title}

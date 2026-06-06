@@ -9,20 +9,23 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Menu } from 'lib/shopify/types';
 import LanguageSwitcher from '../../LanguageSwitcher';
 import { getLocaleFromPathname } from '../../../lib/i18n';
+import { useDictionary } from '../../../app/DictProvider';
 
 export default function MobileMenu({ menu }: { menu: Menu[] }) {
+  const { dictionary } = useDictionary();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
   const lang = getLocaleFromPathname(pathname);
+  const dict = dictionary as any;
 
   const ingredientsMenu = [
-    { path: `/${lang}/algae`, title: 'Algae Oil' },
-    { path: `/${lang}/cannabis`, title: 'Hemp Oil' },
-    { path: `/${lang}/cumin`, title: 'Black Cumin' },
-    { path: `/${lang}/walnut`, title: 'Walnut Oil' }
+    { path: `/${lang}/algae`, title: dict.algenoel?.sectionTitle ?? 'Algae Oil' },
+    { path: `/${lang}/cannabis`, title: dict.hemp?.sectionTitle ?? 'Hemp Oil' },
+    { path: `/${lang}/cumin`, title: dict.cumin?.sectionTitle ?? 'Black Cumin' },
+    { path: `/${lang}/walnut`, title: dict.walnut?.sectionTitle ?? 'Walnut Oil' }
   ];
 
   useEffect(() => {
