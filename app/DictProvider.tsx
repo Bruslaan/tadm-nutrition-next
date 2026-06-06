@@ -2,13 +2,14 @@
 'use client';
 
 import { createContext, useContext, ReactNode } from 'react';
+import type { Locale } from '../lib/i18n';
 
 // Define the dictionary type (adjust according to your actual structure)
 type Dictionary = Record<string, unknown>;
 
 interface DictionaryContextType {
   dictionary: Dictionary;
-  lang: 'en' | 'de';
+  lang: Locale;
 }
 
 const DictionaryContext = createContext<DictionaryContextType | undefined>(undefined);
@@ -20,7 +21,7 @@ export function DictionaryProvider({
 }: {
   children: ReactNode;
   dictionary: Dictionary;
-  lang: 'en' | 'de';
+  lang: Locale;
 }) {
   return (
     <DictionaryContext.Provider value={{ dictionary, lang }}>{children}</DictionaryContext.Provider>

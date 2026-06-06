@@ -1,15 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server';
-
-const locales = ['de', 'en'];
-const defaultLocale = 'de';
+import { defaultLocale, getLocaleFromPathname, locales } from './lib/i18n';
 
 function getLocale(request: NextRequest): string {
-  const { pathname } = request.nextUrl;
-  const pathLocale = locales.find(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  );
-
-  return pathLocale || defaultLocale;
+  return getLocaleFromPathname(request.nextUrl.pathname) || defaultLocale;
 }
 
 export function proxy(request: NextRequest) {

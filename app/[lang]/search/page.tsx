@@ -9,14 +9,16 @@ const baseUrl = 'https://www.tadm-nutrition.com';
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' }>;
 }): Promise<Metadata> {
   const { lang } = await params;
 
-  const title = lang === 'de' ? 'Suche' : 'Search';
+  const title = lang === 'de' ? 'Suche' : lang === 'ru' ? 'Поиск' : 'Search';
   const description =
     lang === 'de'
       ? 'Durchsuchen Sie unsere Produkte für Gehirngesundheit und Nahrungsergänzungsmittel'
+      : lang === 'ru'
+        ? 'Ищите наши продукты и добавки для здоровья мозга'
       : 'Search our brain health products and supplements';
 
   return {
@@ -27,6 +29,7 @@ export async function generateMetadata({
       languages: {
         en: `${baseUrl}/en/search`,
         de: `${baseUrl}/de/search`,
+        ru: `${baseUrl}/ru/search`,
         'x-default': `${baseUrl}/de/search`
       }
     },

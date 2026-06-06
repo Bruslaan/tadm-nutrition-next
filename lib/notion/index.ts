@@ -4,6 +4,7 @@ import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoint
 import type { ExtendedRecordMap } from 'notion-types';
 import { formatNotionPageAttributes, isNonEmptyNonPartialNotionResponse } from './utils';
 import { NotionDatabaseProperty } from './types';
+import type { Locale } from '../i18n';
 
 class NotionClient {
   private notionContentClient: NotionAPI;
@@ -98,6 +99,6 @@ class NotionClient {
 
 export const notionClient = new NotionClient();
 
-export const getBlogDatabaseId = (lang: 'en' | 'de'): string | undefined => {
+export const getBlogDatabaseId = (lang: Locale): string | undefined => {
   return lang === 'de' ? process.env.NOTION_DATABASE_ID_DE : process.env.NOTION_DATABASE_ID;
 };

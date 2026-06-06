@@ -11,7 +11,7 @@ const baseUrl = 'https://www.tadm-nutrition.com';
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' }>;
 }): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang);
@@ -47,13 +47,14 @@ export async function generateMetadata({
       languages: {
         en: `${baseUrl}/en/algae`,
         de: `${baseUrl}/de/algae`,
+        ru: `${baseUrl}/ru/algae`,
         'x-default': `${baseUrl}/de/algae`
       }
     }
   };
 }
 
-const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' }> }) => {
+const CuminPage = async ({ params }: { params: Promise<{ lang: 'en' | 'de' | 'ru' }> }) => {
   const { lang } = await params;
   const dict = (await getDictionary(lang)) ?? 'en';
   return (

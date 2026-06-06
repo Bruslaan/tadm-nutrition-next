@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Globe } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
+import { locales } from '../lib/i18n';
 
 export const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ export const LanguageSwitcher = () => {
     const pathSegments = pathname.split('/').filter(Boolean);
 
     // If the first segment is a locale, remove it
-    if (pathSegments.length > 0 && ['en', 'de'].includes(pathSegments[0]!)) {
+    if (pathSegments.length > 0 && locales.includes(pathSegments[0] as (typeof locales)[number])) {
       newPath = '/' + pathSegments.slice(1).join('/');
     }
 
@@ -59,6 +60,14 @@ export const LanguageSwitcher = () => {
                   className="block w-full rounded-md px-4 py-2 text-left hover:bg-gray-100"
                 >
                   English
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => switchLanguage('ru')}
+                  className="block w-full rounded-md px-4 py-2 text-left hover:bg-gray-100"
+                >
+                  Русский
                 </button>
               </li>
             </ul>

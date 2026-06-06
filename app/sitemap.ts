@@ -3,6 +3,7 @@ import { validateEnvironmentVariables } from '../lib/utils';
 import { notionClient, getBlogDatabaseId } from '../lib/notion';
 import { isArticle } from '../lib/notion/types';
 import { MetadataRoute } from 'next';
+import { locales, type Locale } from '../lib/i18n';
 
 type Route = {
   url: string;
@@ -20,73 +21,46 @@ export const dynamic = 'force-dynamic';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Basic static routes that don't require Shopify API
-  const routesMap = [
-    // Main pages for both languages
-    { url: `${baseUrl}/en/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/`, lastModified: new Date().toISOString() },
-    // Blog list pages
-    { url: `${baseUrl}/en/blog/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/blog/`, lastModified: new Date().toISOString() },
-    // Product pages
-    { url: `${baseUrl}/en/algae/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/algae/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/cannabis/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/cannabis/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/cumin/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/cumin/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/mix/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/mix/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/nature/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/nature/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/softgel/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/softgel/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/en/walnut/`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/de/walnut/`, lastModified: new Date().toISOString() }
-  ];
+  const now = new Date().toISOString();
+  const staticPages = ['', 'blog', 'algae', 'cannabis', 'cumin', 'mix', 'nature', 'softgel', 'walnut'];
+  const routesMap = locales.flatMap((lang) =>
+    staticPages.map((page) => ({
+      url: `${baseUrl}/${lang}/${page ? `${page}/` : ''}`,
+      lastModified: now
+    }))
+  );
 
   const collectionsPromise = getCollections().then((collections) =>
-    collections.flatMap((collection) => [
-      {
-        url: `${baseUrl}/en${collection.path}`,
+    collections.flatMap((collection) =>
+      locales.map((lang) => ({
+        url: `${baseUrl}/${lang}${collection.path}`,
         lastModified: collection.updatedAt
-      },
-      {
-        url: `${baseUrl}/de${collection.path}`,
-        lastModified: collection.updatedAt
-      }
-    ])
+      }))
+    )
   );
 
   const productsPromise = getProducts({}).then((products) =>
-    products.flatMap((product) => [
-      {
-        url: `${baseUrl}/en/product/${product.handle}`,
+    products.flatMap((product) =>
+      locales.map((lang) => ({
+        url: `${baseUrl}/${lang}/product/${product.handle}`,
         lastModified: product.updatedAt
-      },
-      {
-        url: `${baseUrl}/de/product/${product.handle}`,
-        lastModified: product.updatedAt
-      }
-    ])
+      }))
+    )
   );
 
   const pagesPromise = getPages().then((pages) =>
-    pages.flatMap((page) => [
-      {
-        url: `${baseUrl}/en/${page.handle}`,
+    pages.flatMap((page) =>
+      locales.map((lang) => ({
+        url: `${baseUrl}/${lang}/${page.handle}`,
         lastModified: page.updatedAt
-      },
-      {
-        url: `${baseUrl}/de/${page.handle}`,
-        lastModified: page.updatedAt
-      }
-    ])
+      }))
+    )
   );
 
   // Fetch blog articles from Notion
   const blogPromise = (async (): Promise<Route[]> => {
     const routes: Route[] = [];
-    const languages: ('en' | 'de')[] = ['en', 'de'];
+    const languages: Locale[] = [...locales];
 
     for (const lang of languages) {
       try {

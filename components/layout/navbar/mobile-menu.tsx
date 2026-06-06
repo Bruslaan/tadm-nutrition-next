@@ -8,6 +8,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Menu } from 'lib/shopify/types';
 import LanguageSwitcher from '../../LanguageSwitcher';
+import { getLocaleFromPathname } from '../../../lib/i18n';
 
 export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const pathname = usePathname();
@@ -15,7 +16,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
-  const lang = pathname.startsWith('/de') ? 'de' : 'en';
+  const lang = getLocaleFromPathname(pathname);
 
   const ingredientsMenu = [
     { path: `/${lang}/algae`, title: 'Algae Oil' },

@@ -9,6 +9,7 @@ import '../globals.css';
 import { DictionaryProvider } from '../DictProvider';
 import { getDictionary } from './dictionaries';
 import CookieConsent from '../../components/CookieConsent';
+import { isLocale, locales, type Locale } from '../../lib/i18n';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = 'https://www.tadm-nutrition.com';
@@ -16,7 +17,7 @@ const twitterCreator = TWITTER_CREATOR ? ensureStartsWith(TWITTER_CREATOR, '@') 
 const twitterSite = TWITTER_SITE ? ensureStartsWith(TWITTER_SITE, 'https://') : undefined;
 
 export function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'de' }];
+  return locales.map((lang) => ({ lang }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -44,6 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       languages: {
         'en': `${baseUrl}/en/`,
         'de': `${baseUrl}/de/`,
+        'ru': `${baseUrl}/ru/`,
         'x-default': `${baseUrl}/de/`
       }
     },
@@ -63,11 +65,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
-function generateAlternateLanguages(currentLang: 'en' | 'de', pathname: string) {
-  const languages = ['en', 'de'];
+function generateAlternateLanguages(currentLang: Locale, pathname: string) {
   const alternates: { [key: string]: string } = {};
 
-  languages.forEach((lang) => {
+  locales.forEach((lang) => {
     if (lang !== currentLang) {
       alternates[lang] = `${baseUrl}/${lang}${pathname}`;
     }
@@ -88,7 +89,7 @@ export default async function Layout({
   const cart = getCart(cartId);
 
   const { lang: langParam } = await params;
-  const lang = (langParam === 'en' || langParam === 'de' ? langParam : 'de') as 'en' | 'de';
+  const lang = isLocale(langParam) ? langParam : 'de';
   const dict = await getDictionary(lang);
 
   return (

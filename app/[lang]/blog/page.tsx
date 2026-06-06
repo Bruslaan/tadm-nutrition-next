@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notionClient, getBlogDatabaseId } from '@/lib/notion';
 import { isArticle } from '@/lib/notion/types';
 import { BlogCard } from '@/components/blog/BlogCard';
+import { locales } from '@/lib/i18n';
 
 // Force static generation
 export const dynamic = 'force-static';
@@ -12,7 +13,7 @@ const baseUrl = 'https://www.tadm-nutrition.com';
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' }>;
 }): Promise<Metadata> {
   const { lang } = await params;
 
@@ -21,12 +22,15 @@ export async function generateMetadata({
     description:
       lang === 'de'
         ? 'Entdecken Sie unsere Artikel über Ernährung und Gesundheit'
+        : lang === 'ru'
+          ? 'Читайте наши статьи о питании и здоровье'
         : 'Discover our articles about nutrition and health',
     alternates: {
       canonical: `${baseUrl}/${lang}/blog`,
       languages: {
         en: `${baseUrl}/en/blog`,
         de: `${baseUrl}/de/blog`,
+        ru: `${baseUrl}/ru/blog`,
         'x-default': `${baseUrl}/de/blog`
       }
     }
@@ -36,7 +40,7 @@ export async function generateMetadata({
 export default async function BlogPage({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' }>;
 }) {
   const { lang } = await params;
   const articles = await notionClient.getDatabaseEntries(getBlogDatabaseId(lang), isArticle);
@@ -44,7 +48,11 @@ export default async function BlogPage({
   return (
     <main className="pb-16 pt-24">
       <h1 className="mx-auto mb-12 max-w-xl text-center text-xl md:text-6xl">
-        {lang === 'de' ? 'WILLKOMMEN IM KNOWLEDGE HUB' : 'WELCOME TO OUR KNOWLEDGE HUB'}
+        {lang === 'de'
+          ? 'WILLKOMMEN IM KNOWLEDGE HUB'
+          : lang === 'ru'
+            ? 'ДОБРО ПОЖАЛОВАТЬ В НАШУ БАЗУ ЗНАНИЙ'
+            : 'WELCOME TO OUR KNOWLEDGE HUB'}
       </h1>
       <div className="mx-auto grid max-w-[900px] grid-cols-12 gap-y-5 p-4 md:gap-14">
         {articles.map((article, index) => (
@@ -56,5 +64,5 @@ export default async function BlogPage({
 }
 
 export function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'de' }];
+  return locales.map((lang) => ({ lang }));
 }

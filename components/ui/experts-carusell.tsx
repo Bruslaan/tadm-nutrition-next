@@ -2,6 +2,7 @@
 import { IconArrowLeft, IconArrowRight, IconQuote, IconX } from '@tabler/icons-react';
 import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useDictionary } from '../../app/DictProvider';
 
 export type Testimonial = {
   quote: string;
@@ -19,9 +20,11 @@ const ExpertsCarousel = ({
   title: string;
   testimonials: Testimonial[];
 }) => {
+  const { dictionary } = useDictionary();
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedTestimonial, setSelectedTestimonial] = useState<Testimonial | null>(null);
+  const readMoreLabel = ((dictionary as any).blog?.readFull as string | undefined) ?? 'Read Full';
 
   const scrollToSlide = useCallback(
     (index: number) => {
@@ -130,7 +133,7 @@ const ExpertsCarousel = ({
                       <blockquote className="mb-4 text-sm leading-relaxed text-gray-600">
                         &ldquo;{text}&rdquo;
                         {isTruncated && (
-                          <span className="ml-1 font-medium text-orange-500">Read more</span>
+                          <span className="ml-1 font-medium text-orange-500">{readMoreLabel}</span>
                         )}
                       </blockquote>
 

@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 import LanguageSwitcher from '../../LanguageSwitcher';
 import MobileMenu from './mobile-menu';
+import { getLocaleFromPathname } from '../../../lib/i18n';
 
 export function Navbar() {
   const [isIngredientsOpen, setIsIngredientsOpen] = useState(false);
@@ -15,7 +16,7 @@ export function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
-  const lang = pathname.startsWith('/de') ? 'de' : 'en';
+  const lang = getLocaleFromPathname(pathname);
 
   useEffect(() => {
     const handleScroll = () => {

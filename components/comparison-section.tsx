@@ -85,7 +85,7 @@ export default function ComparisonSection() {
           {/* tadm Brain Card - Highlighted */}
           <div className="relative overflow-hidden rounded-2xl border-2 border-orange-400 bg-gradient-to-b from-orange-50 to-white p-6 shadow-lg">
             <div className="absolute top-0 right-0 rounded-bl-lg bg-orange-400 px-3 py-1 text-xs font-semibold text-white">
-              {lang === 'de' ? 'Empfohlen' : 'Recommended'}
+              {lang === 'de' ? 'Empfohlen' : lang === 'ru' ? 'Рекомендуем' : 'Recommended'}
             </div>
             <h3 className="mb-6 text-xl font-bold text-gray-900">{data.tadmLabel}</h3>
             <ul className="space-y-4">

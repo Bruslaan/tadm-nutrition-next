@@ -26,7 +26,7 @@ interface NutritionFactsData {
 }
 
 export function ProductDescription() {
-  const { dictionary } = useDictionary();
+  const { dictionary, lang } = useDictionary();
   const data = (dictionary as any).nutritionFacts as NutritionFactsData;
   const [openSection, setOpenSection] = useState<string | null>(null);
 
@@ -47,7 +47,7 @@ export function ProductDescription() {
           className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-200"
         >
           <span className="font-semibold">
-            {dictionary.lang === 'de' ? 'Inhaltsstoffe' : 'Ingredients'}
+            {lang === 'de' ? 'Inhaltsstoffe' : lang === 'ru' ? 'Ингредиенты' : 'Ingredients'}
           </span>
           <IconChevronDown
             className={clsx(
@@ -93,7 +93,7 @@ export function ProductDescription() {
           className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-200"
         >
           <span className="font-semibold">
-            {dictionary.lang === 'de' ? 'Fettsäuren' : 'Fatty Acids'}
+            {lang === 'de' ? 'Fettsäuren' : lang === 'ru' ? 'Жирные кислоты' : 'Fatty Acids'}
           </span>
           <IconChevronDown
             className={clsx(
@@ -139,7 +139,7 @@ export function ProductDescription() {
           className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-200"
         >
           <span className="font-semibold">
-            {dictionary.lang === 'de' ? 'Dosierung' : 'Dosage'}
+            {lang === 'de' ? 'Dosierung' : lang === 'ru' ? 'Дозировка' : 'Dosage'}
           </span>
           <IconChevronDown
             className={clsx(

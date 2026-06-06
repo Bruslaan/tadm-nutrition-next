@@ -26,7 +26,7 @@ interface NutritionFactsData {
 }
 
 export default function NutritionFactsSection() {
-  const { dictionary } = useDictionary();
+  const { dictionary, lang } = useDictionary();
   const data = (dictionary as any).nutritionFacts as NutritionFactsData;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -66,7 +66,7 @@ export default function NutritionFactsSection() {
           {/* Right: Ingredient Breakdown */}
           <div className="flex flex-col justify-center">
             <h3 className="mb-6 text-xl font-semibold">
-              {dictionary.lang === 'de' ? 'Inhaltsstoffe' : 'Ingredients'}
+              {lang === 'de' ? 'Inhaltsstoffe' : lang === 'ru' ? 'Ингредиенты' : 'Ingredients'}
             </h3>
 
             <div className="space-y-4">
@@ -94,7 +94,7 @@ export default function NutritionFactsSection() {
         {/* Omega Fatty Acids Section */}
         <div className="mt-16">
           <h3 className="mb-8 text-center text-xl font-semibold">
-            {dictionary.lang === 'de' ? 'Fettsäuren' : 'Fatty Acids'}
+            {lang === 'de' ? 'Fettsäuren' : lang === 'ru' ? 'Жирные кислоты' : 'Fatty Acids'}
           </h3>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

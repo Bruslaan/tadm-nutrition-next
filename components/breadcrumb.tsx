@@ -7,12 +7,12 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
-  lang: 'en' | 'de';
+  lang: 'en' | 'de' | 'ru';
 }
 
 export default function Breadcrumb({ items, lang }: BreadcrumbProps) {
-  const homeText = lang === 'de' ? 'Startseite' : 'Home';
-  
+  const homeText = lang === 'de' ? 'Startseite' : lang === 'ru' ? 'Главная' : 'Home';
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

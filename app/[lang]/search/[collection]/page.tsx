@@ -9,7 +9,7 @@ import { defaultSort, sorting } from '../../../../lib/constants';
 const baseUrl = 'https://www.tadm-nutrition.com';
 
 export async function generateMetadata(props: {
-  params: Promise<{ collection: string; lang: 'en' | 'de' }>;
+  params: Promise<{ collection: string; lang: 'en' | 'de' | 'ru' }>;
 }): Promise<Metadata> {
   const params = await props.params;
   const { collection: collectionHandle, lang } = params;
@@ -36,6 +36,7 @@ export async function generateMetadata(props: {
       languages: {
         en: `${baseUrl}/en/search/${collectionHandle}`,
         de: `${baseUrl}/de/search/${collectionHandle}`,
+        ru: `${baseUrl}/ru/search/${collectionHandle}`,
         'x-default': `${baseUrl}/de/search/${collectionHandle}`
       }
     },
