@@ -9,7 +9,7 @@ import DynamicProductPage from '../../../../components/dynamicProductPage';
 const baseUrl = 'https://www.tadm-nutrition.com';
 
 export async function generateMetadata(props: {
-  params: Promise<{ handle: string; lang: 'en' | 'de' | 'ru' }>;
+  params: Promise<{ handle: string; lang: 'en' | 'de' | 'ru' | 'uk' }>;
 }): Promise<Metadata> {
   const params = await props.params;
   const { handle, lang } = params;
@@ -39,6 +39,7 @@ export async function generateMetadata(props: {
         en: `${baseUrl}/en/product/${handle}`,
         de: `${baseUrl}/de/product/${handle}`,
         ru: `${baseUrl}/ru/product/${handle}`,
+        uk: `${baseUrl}/uk/product/${handle}`,
         'x-default': `${baseUrl}/de/product/${handle}`
       }
     },
@@ -63,7 +64,7 @@ export async function generateMetadata(props: {
 }
 
 export default async function ProductPage(props: {
-  params: Promise<{ handle: string; lang: 'en' | 'de' | 'ru' }>;
+  params: Promise<{ handle: string; lang: 'en' | 'de' | 'ru' | 'uk' }>;
 }) {
   const params = await props.params;
   const { handle, lang } = params;

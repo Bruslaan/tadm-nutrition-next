@@ -13,7 +13,7 @@ const baseUrl = 'https://www.tadm-nutrition.com';
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' | 'ru' }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' | 'uk' }>;
 }): Promise<Metadata> {
   const { lang } = await params;
 
@@ -24,6 +24,8 @@ export async function generateMetadata({
         ? 'Entdecken Sie unsere Artikel über Ernährung und Gesundheit'
         : lang === 'ru'
           ? 'Читайте наши статьи о питании и здоровье'
+          : lang === 'uk'
+            ? 'Читайте наші статті про харчування та здоров’я'
         : 'Discover our articles about nutrition and health',
     alternates: {
       canonical: `${baseUrl}/${lang}/blog`,
@@ -31,6 +33,7 @@ export async function generateMetadata({
         en: `${baseUrl}/en/blog`,
         de: `${baseUrl}/de/blog`,
         ru: `${baseUrl}/ru/blog`,
+        uk: `${baseUrl}/uk/blog`,
         'x-default': `${baseUrl}/de/blog`
       }
     }
@@ -40,7 +43,7 @@ export async function generateMetadata({
 export default async function BlogPage({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' | 'ru' }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' | 'uk' }>;
 }) {
   const { lang } = await params;
   const articles = await notionClient.getDatabaseEntries(getBlogDatabaseId(lang), isArticle);
@@ -52,6 +55,8 @@ export default async function BlogPage({
           ? 'WILLKOMMEN IM KNOWLEDGE HUB'
           : lang === 'ru'
             ? 'ДОБРО ПОЖАЛОВАТЬ В НАШУ БАЗУ ЗНАНИЙ'
+            : lang === 'uk'
+              ? 'ЛАСКАВО ПРОСИМО ДО НАШОЇ БАЗИ ЗНАНЬ'
             : 'WELCOME TO OUR KNOWLEDGE HUB'}
       </h1>
       <div className="mx-auto grid max-w-[900px] grid-cols-12 gap-y-5 p-4 md:gap-14">

@@ -47,7 +47,13 @@ export function ProductDescription() {
           className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-200"
         >
           <span className="font-semibold">
-            {lang === 'de' ? 'Inhaltsstoffe' : lang === 'ru' ? 'Ингредиенты' : 'Ingredients'}
+            {lang === 'de'
+              ? 'Inhaltsstoffe'
+              : lang === 'ru'
+                ? 'Ингредиенты'
+                : lang === 'uk'
+                  ? 'Інгредієнти'
+                  : 'Ingredients'}
           </span>
           <IconChevronDown
             className={clsx(
@@ -93,7 +99,13 @@ export function ProductDescription() {
           className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-200"
         >
           <span className="font-semibold">
-            {lang === 'de' ? 'Fettsäuren' : lang === 'ru' ? 'Жирные кислоты' : 'Fatty Acids'}
+            {lang === 'de'
+              ? 'Fettsäuren'
+              : lang === 'ru'
+                ? 'Жирные кислоты'
+                : lang === 'uk'
+                  ? 'Жирні кислоти'
+                  : 'Fatty Acids'}
           </span>
           <IconChevronDown
             className={clsx(
@@ -139,7 +151,13 @@ export function ProductDescription() {
           className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-200"
         >
           <span className="font-semibold">
-            {lang === 'de' ? 'Dosierung' : lang === 'ru' ? 'Дозировка' : 'Dosage'}
+            {lang === 'de'
+              ? 'Dosierung'
+              : lang === 'ru'
+                ? 'Дозировка'
+                : lang === 'uk'
+                  ? 'Дозування'
+                  : 'Dosage'}
           </span>
           <IconChevronDown
             className={clsx(

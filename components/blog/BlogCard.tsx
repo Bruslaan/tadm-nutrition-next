@@ -5,7 +5,7 @@ import { Article } from '@/lib/notion/types';
 interface BlogCardProps {
   article: Article;
   spotlight?: boolean;
-  lang: 'en' | 'de' | 'ru';
+  lang: 'en' | 'de' | 'ru' | 'uk';
 }
 
 export function BlogCard({ article, spotlight, lang }: BlogCardProps) {
@@ -32,7 +32,13 @@ export function BlogCard({ article, spotlight, lang }: BlogCardProps) {
         <p>{article.tags?.[0]?.name || 'Insights'}</p>
         <div className="flex justify-end">
           <p className="uppercase">
-            {lang === 'de' ? 'Weiterlesen' : lang === 'ru' ? 'Читать полностью' : 'Read Full'}
+            {lang === 'de'
+              ? 'Weiterlesen'
+              : lang === 'ru'
+                ? 'Читать полностью'
+                : lang === 'uk'
+                  ? 'Читати повністю'
+                  : 'Read Full'}
           </p>
         </div>
       </div>

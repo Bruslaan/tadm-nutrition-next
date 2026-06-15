@@ -66,7 +66,13 @@ export default function NutritionFactsSection() {
           {/* Right: Ingredient Breakdown */}
           <div className="flex flex-col justify-center">
             <h3 className="mb-6 text-xl font-semibold">
-              {lang === 'de' ? 'Inhaltsstoffe' : lang === 'ru' ? 'Ингредиенты' : 'Ingredients'}
+              {lang === 'de'
+                ? 'Inhaltsstoffe'
+                : lang === 'ru'
+                  ? 'Ингредиенты'
+                  : lang === 'uk'
+                    ? 'Інгредієнти'
+                    : 'Ingredients'}
             </h3>
 
             <div className="space-y-4">
@@ -94,7 +100,13 @@ export default function NutritionFactsSection() {
         {/* Omega Fatty Acids Section */}
         <div className="mt-16">
           <h3 className="mb-8 text-center text-xl font-semibold">
-            {lang === 'de' ? 'Fettsäuren' : lang === 'ru' ? 'Жирные кислоты' : 'Fatty Acids'}
+            {lang === 'de'
+              ? 'Fettsäuren'
+              : lang === 'ru'
+                ? 'Жирные кислоты'
+                : lang === 'uk'
+                  ? 'Жирні кислоти'
+                  : 'Fatty Acids'}
           </h3>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

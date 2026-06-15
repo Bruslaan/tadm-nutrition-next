@@ -9,16 +9,18 @@ const baseUrl = 'https://www.tadm-nutrition.com';
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' | 'ru' }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' | 'uk' }>;
 }): Promise<Metadata> {
   const { lang } = await params;
 
-  const title = lang === 'de' ? 'Suche' : lang === 'ru' ? 'Поиск' : 'Search';
+  const title = lang === 'de' ? 'Suche' : lang === 'ru' ? 'Поиск' : lang === 'uk' ? 'Пошук' : 'Search';
   const description =
     lang === 'de'
       ? 'Durchsuchen Sie unsere Produkte für Gehirngesundheit und Nahrungsergänzungsmittel'
       : lang === 'ru'
         ? 'Ищите наши продукты и добавки для здоровья мозга'
+        : lang === 'uk'
+          ? 'Шукайте наші продукти та добавки для здоров’я мозку'
       : 'Search our brain health products and supplements';
 
   return {
@@ -30,6 +32,7 @@ export async function generateMetadata({
         en: `${baseUrl}/en/search`,
         de: `${baseUrl}/de/search`,
         ru: `${baseUrl}/ru/search`,
+        uk: `${baseUrl}/uk/search`,
         'x-default': `${baseUrl}/de/search`
       }
     },
@@ -66,6 +69,10 @@ export default async function SearchPage(props: {
         ? products.length > 1
           ? 'результатов'
           : 'результат'
+        : lang === 'uk'
+          ? products.length > 1
+            ? 'результатів'
+            : 'результат'
         : products.length > 1
           ? 'results'
           : 'result';
@@ -74,12 +81,16 @@ export default async function SearchPage(props: {
       ? 'Es gibt keine Produkte passend zu '
       : lang === 'ru'
         ? 'Нет продуктов, соответствующих запросу '
+        : lang === 'uk'
+          ? 'Немає продуктів, що відповідають запиту '
         : 'There are no products that match ';
   const showingText =
     lang === 'de'
       ? `${products.length} ${resultsText} für `
       : lang === 'ru'
         ? `Показано ${products.length} ${resultsText} для `
+        : lang === 'uk'
+          ? `Показано ${products.length} ${resultsText} для `
         : `Showing ${products.length} ${resultsText} for `;
 
   return (

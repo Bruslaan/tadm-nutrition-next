@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 const baseUrl = 'https://www.tadm-nutrition.com';
 
 export async function generateMetadata(props: {
-  params: Promise<{ lang: 'en' | 'de' | 'ru'; page: string }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' | 'uk'; page: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
   const { lang, page: pageHandle } = params;
@@ -27,6 +27,7 @@ export async function generateMetadata(props: {
         en: `${baseUrl}/en/${pageHandle}`,
         de: `${baseUrl}/de/${pageHandle}`,
         ru: `${baseUrl}/ru/${pageHandle}`,
+        uk: `${baseUrl}/uk/${pageHandle}`,
         'x-default': `${baseUrl}/de/${pageHandle}`
       }
     },

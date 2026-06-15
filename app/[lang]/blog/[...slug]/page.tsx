@@ -17,7 +17,7 @@ function isValidSlug(slug: string[] | undefined): slug is [string, string] {
   return Array.isArray(slug) && slug.length === 2 && slug.every((s) => typeof s === 'string');
 }
 
-const getArticle = cache(async (date: string, slug: string, lang: 'en' | 'de' | 'ru') => {
+const getArticle = cache(async (date: string, slug: string, lang: 'en' | 'de' | 'ru' | 'uk') => {
   try {
     return await notionClient.getPageContent(getBlogDatabaseId(lang), {
       and: [
@@ -33,7 +33,7 @@ const getArticle = cache(async (date: string, slug: string, lang: 'en' | 'de' | 
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' | 'ru'; slug: string[] }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' | 'uk'; slug: string[] }>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
 
@@ -62,6 +62,7 @@ export async function generateMetadata({
         en: `${baseUrl}/en/blog/${date}/${articleSlug}`,
         de: `${baseUrl}/de/blog/${date}/${articleSlug}`,
         ru: `${baseUrl}/ru/blog/${date}/${articleSlug}`,
+        uk: `${baseUrl}/uk/blog/${date}/${articleSlug}`,
         'x-default': `${baseUrl}/de/blog/${date}/${articleSlug}`
       }
     }
@@ -71,7 +72,7 @@ export async function generateMetadata({
 export default async function ArticlePage({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' | 'ru'; slug: string[] }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' | 'uk'; slug: string[] }>;
 }) {
   const { lang, slug } = await params;
 
@@ -114,7 +115,7 @@ const EXCLUDED_SLUGS = [
 ];
 
 export async function generateStaticParams() {
-  const languages: ('en' | 'de' | 'ru')[] = ['en', 'de', 'ru'];
+  const languages: ('en' | 'de' | 'ru' | 'uk')[] = ['en', 'de', 'ru', 'uk'];
   const params: { lang: string; slug: string[] }[] = [];
 
   for (const lang of languages) {

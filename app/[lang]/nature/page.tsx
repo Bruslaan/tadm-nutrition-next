@@ -11,7 +11,7 @@ const baseUrl = 'https://www.tadm-nutrition.com';
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ lang: 'en' | 'de' | 'ru' }>;
+  params: Promise<{ lang: 'en' | 'de' | 'ru' | 'uk' }>;
 }): Promise<Metadata> {
   const { lang } = await params;
 
@@ -20,12 +20,16 @@ export async function generateMetadata({
       ? 'Nachhaltigkeit & Umwelt | tadm Nutrition'
       : lang === 'ru'
         ? 'Устойчивость и окружающая среда | tadm Nutrition'
+        : lang === 'uk'
+          ? 'Сталість і довкілля | tadm Nutrition'
       : 'Sustainability & Environment | tadm Nutrition';
   const description =
     lang === 'de'
       ? 'Erfahren Sie mehr über unsere nachhaltigen Produktionsprozesse, Recycling-Initiativen und unser Engagement für die Umwelt.'
       : lang === 'ru'
         ? 'Узнайте больше о наших устойчивых производственных процессах, инициативах по переработке и заботе об окружающей среде.'
+        : lang === 'uk'
+          ? 'Дізнайтеся більше про наші сталі виробничі процеси, ініціативи з переробки та турботу про довкілля.'
       : 'Learn about our sustainable production processes, recycling initiatives, and commitment to the environment.';
 
   return {
@@ -37,6 +41,7 @@ export async function generateMetadata({
         en: `${baseUrl}/en/nature`,
         de: `${baseUrl}/de/nature`,
         ru: `${baseUrl}/ru/nature`,
+        uk: `${baseUrl}/uk/nature`,
         'x-default': `${baseUrl}/de/nature`
       }
     },
@@ -55,6 +60,8 @@ export async function generateMetadata({
               ? 'Nachhaltigkeit bei tadm'
               : lang === 'ru'
                 ? 'Устойчивость в tadm'
+                : lang === 'uk'
+                  ? 'Сталість у tadm'
                 : 'Sustainability at tadm'
         }
       ]

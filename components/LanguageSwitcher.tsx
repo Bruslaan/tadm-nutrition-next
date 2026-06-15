@@ -70,6 +70,14 @@ export const LanguageSwitcher = () => {
                   Русский
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => switchLanguage('uk')}
+                  className="block w-full rounded-md px-4 py-2 text-left hover:bg-gray-100"
+                >
+                  Українська
+                </button>
+              </li>
             </ul>
           </div>
         </>

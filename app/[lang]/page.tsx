@@ -12,7 +12,7 @@ import { TextRevealDemo } from '../../components/text-reveal';
 import VideoScrollSection, { InsideTadm } from '../../components/video-scroll-section';
 import { getDictionary } from './dictionaries';
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: 'en' | 'de' | 'ru' }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ lang: 'en' | 'de' | 'ru' | 'uk' }> }) {
   const { lang } = await params;
 
   return {
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
       title: 'tadm Nutrition - Premium Brain Health Supplements',
       description:
         'Premium vegan brain health supplements made in Germany. Natural ingredients for optimal cognitive function.',
-      locale: lang === 'de' ? 'de_DE' : lang === 'ru' ? 'ru_RU' : 'en_US',
+      locale: lang === 'de' ? 'de_DE' : lang === 'ru' ? 'ru_RU' : lang === 'uk' ? 'uk_UA' : 'en_US',
       images: [
         {
           url: 'https://tadm-nutrition.com/static/combo.jpg',
@@ -66,13 +66,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
       languages: {
         en: 'https://tadm-nutrition.com/en',
         de: 'https://tadm-nutrition.com/de',
-        ru: 'https://tadm-nutrition.com/ru'
+        ru: 'https://tadm-nutrition.com/ru',
+        uk: 'https://tadm-nutrition.com/uk'
       }
     }
   };
 }
 
-export default async function HomePage({ params }: { params: Promise<{ lang: 'en' | 'de' | 'ru' }> }) {
+export default async function HomePage({ params }: { params: Promise<{ lang: 'en' | 'de' | 'ru' | 'uk' }> }) {
   const { lang } = await params;
   const dict = (await getDictionary(lang)) ?? 'en';
 
